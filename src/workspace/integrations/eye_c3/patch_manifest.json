@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "source_archive": "GuardianLoop_team_20261017_03(1).zip",
+  "source_archive_sha256": "2daa0483e2499e0fa4389f5108b1c8fd8ad0d9b09694eb8e934f3d43b0171983",
+  "files": {
+    "media_player.py": {
+      "before": "3f5d0553a2e46ab3dc31c3482878832d388f1516f56cfd215179a4f3fdad0db2",
+      "after": "f37be8c0bdb5fe235e7cd4a67259a5376dc07b6dc0dea130935cf54ee16e49b2"
+    },
+    "system_hdmi.py": {
+      "before": "4cdf7ed38753d819f4f5d2e7ad5650cfa24529292dfa479fe184d6403b772e5a",
+      "after": "0cd2789f8ad44427d684049e790d4e0c39eb83e878a778ca34c8d8c54641e4d6"
+    },
+    "system_runtime/guardianloop_system/eye_devices.py": {
+      "before": null,
+      "after": "2c125e3fbf94712005c977277a75782e07138286bac79c7f6f226aab6b427a04"
+    },
+    "system_runtime/guardianloop_system/device_link.py": {
+      "before": null,
+      "after": "90fa05c45e18f9373f03ad81ffc6895c74be8c7c4a83a12f4e84ae2cfd9be69c"
+    },
+    "system_runtime/guardianloop_system/c3_client.py": {
+      "before": null,
+      "after": "1685b7c8773cfc064646f9bc232352aac63ace5250b89fa772871e35912d5aed"
+    }
+  },
+  "required": {
+    "system_runtime/guardianloop_system/core.py": "33738d2014c698d31d12040871a23bcf98813b54975983ea50c68f18ee9ad350",
+    "system_runtime/guardianloop_system/page_policy.py": "667631ce9cc670e04b31031212efc91bfa850114dfd74c2470aac4c4d63a1eb9",
+    "system_runtime/guardianloop_system/live_inputs.py": "909c779b5efc94887b3aaaf0579746ce4a8e40877eb463595705931b66707e1d"
+  },
+  "c3_client_source": "D:/emg_mpu_pendulum/tools/pc_client.py",
+  "c3_client_sha256": "1685b7c8773cfc064646f9bc232352aac63ace5250b89fa772871e35912d5aed"
+}

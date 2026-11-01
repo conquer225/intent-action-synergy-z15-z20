@@ -1,0 +1,44 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8">
+<title>实时运动想象：短校准与独立确认</title>
+<style>body{font-family:system-ui,sans-serif;max-width:900px;margin:30px auto;padding:20px;background:#f2f6f5}button{font-size:20px;padding:14px;margin:6px}#cue{background:#26353d;color:white;font-size:64px;text-align:center;padding:70px 20px;border-radius:16px}pre{white-space:pre-wrap}#error{color:#b02020}</style>
+<h1>实时 MI 隔离候选</h1>
+<p>固定八通道；真实 Cyton 输入。校准和确认分开录制。物理、虚拟控制均关闭，不闪烁。</p>
+<p>双手保持放松不动。提示左／右手时，用第一人称感受该手缓慢反复握拳与松开；不要只观看想象中的手。休息时停止想象。</p>
+<p id="input">读取输入状态…</p><p id="progress">尚未开始</p>
+<button id="cal" disabled>开始短校准（12 次，约 75 秒）</button>
+<button id="test" disabled>开始独立确认（另 12 次）</button>
+<button id="stop">立即停止</button>
+<div id="cue">休息</div><p id="error"></p><pre id="report"></pre>
+<p>测试期间不展示预测。提示只是预期想象类别，不证明生理真值；小样本确认不能代表跨人准确率。页面隐藏、断连或信号异常不会输出控制动作。</p>
+<script>
+let running=false, generation=0, current=null;
+const el=id=>document.getElementById(id), delay=ms=>new Promise(r=>setTimeout(r,ms));
+async function api(body){let r=await fetch('/api/mi-cue',body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:{cache:'no-store'});let s=await r.json();if(!r.ok)throw Error(s.error||'接口异常');return s;}
+function render(s){current=s;el('input').textContent=`来源：${s.source}；输入：${s.input_state}；质量：${s.quality.reason} ${s.quality.invalid_channels.join('、')}`;
+let d=s.study;el('progress').textContent=d.phase?`${d.phase==='calibration'?'校准':'独立确认'}：${d.completed_trials}/${d.total}`:'未进行试次';
+const ready=s.source==='live'&&s.input_state==='ready'&&s.quality.ready&&!d.fatal_error;
+el('cal').disabled=running||!ready||!!d.phase||!!d.completed.calibration;
+el('test').disabled=running||!ready||!!d.phase||!d.personal_fitted||!!d.completed.confirmation;
+el('report').textContent=JSON.stringify(d.completed,null,2);}
+async function refresh(){try{render(await api());}catch(e){el('input').textContent='连接中断，不使用旧结果';el('cal').disabled=el('test').disabled=true;}}
+async function stop(reason='user_stopped'){generation++;running=false;el('cue').textContent='停止';
+try{if(current&&current.id)await api({action:'stop',id:current.id,reason});render(await api({action:'study_abort'}));}catch(e){el('error').textContent=e.message;} }
+async function run(phase){const token=++generation;running=true;el('error').textContent='';
+try{render(await api({action:'study_begin',phase}));
+for(let i=0;i<12;i++){if(token!==generation||document.hidden)return;
+el('cue').textContent='休息';await delay(2400);if(token!==generation||document.hidden)return;
+let s=await api({action:'study_next'});render(s);const id=s.id;
+el('cue').textContent=s.target==='left'?'想象左手握拳':'想象右手握拳';
+const onset=await new Promise(resolve=>requestAnimationFrame(t=>resolve(t)));
+render(await api({action:'presented',id,browser_onset_ms:onset,browser_send_ms:performance.now()}));
+const end=performance.now()+3600;
+while(performance.now()<end){await delay(300);if(token!==generation||document.hidden)return;render(await api({action:'heartbeat',id}));}
+render(await api({action:'study_finish',id}));}
+el('cue').textContent=phase==='calibration'?'校准段结束，请休息':'独立确认结束';
+}catch(e){el('error').textContent=e.message;await stop('network_error');}
+finally{if(token===generation){running=false;await refresh();}}}
+el('cal').onclick=()=>run('calibration');el('test').onclick=()=>run('confirmation');el('stop').onclick=()=>stop();
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&running)stop('page_hidden');});
+window.addEventListener('pagehide',()=>{if(running){generation++;running=false;fetch('/api/mi-cue',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'study_abort'}),keepalive:true}).catch(()=>{});}});
+refresh();setInterval(()=>{if(!running)refresh();},1000);
+</script></html>

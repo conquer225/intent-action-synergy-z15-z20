@@ -1,0 +1,140 @@
+{
+  "release_id": "guardianloop-fixed8-mood-display-20261007",
+  "channels": [
+    "F3",
+    "F4",
+    "C3",
+    "C4",
+    "T7",
+    "T8",
+    "O1",
+    "O2"
+  ],
+  "files": {
+    "cyton_covariance.py": "3ac75c9b1dee4453a76b3f4fc585e31994e556a02e9e096583558034ff7e7463",
+    "cyton_fatigue.py": "a2e057ba2715432e07490e6b12cf10ed1091199f33191995b93f4f6176b82eaf",
+    "cyton_fatigue_overlap4.json": "18dd9908e01f4dd28e8ca1d7d20e3d207e51be779e76bfa4524b6857a36606a6",
+    "cyton_guardianloop.py": "f9bc24318be504251d4dc2ef5656de6b542dbc3e3ec0596b5115b4fc95110db8",
+    "cyton_reader_sink.py": "87b6dbe56303ec5571138f3b4386d90a44f4a55338005d36ef0e31af184cb377",
+    "cyton_sqi.py": "9e99682ae8b284cf4cdabb251997952b6cd9facda25486ff15133e06007e6d12",
+    "cyton_trial_recorder.py": "16a29ef63e95bd71b5e54c8882aeaaf6ef397ad0f80f6ef6c1710d3c5c06ef2c",
+    "experimental_eegnet.npz": "178ad7c177adde6fdc939969a40bf25d9e0802d6b230b9127063f14c8402d7e6",
+    "experimental_rms_eegnet.npz": "363daf3b68da6e80495319052447ec83e06b9e3e327a1bd0ff9e6023a5b54221",
+    "gameemo_covariance_svm.npz": "e379f2ba4569b63bf3cd85985a7936eb56bb38798473640a5657b9da4d107155",
+    "guardianloop_acquisition.py": "54c0c81a4431901b192f8d6b214757ea11b7d161e981846c29cb0b04cf393b83",
+    "guardianloop_pynq.bit": "c39b891704471a712fb7be3591841af1dd6791387957b873b11450c99eca41ca",
+    "guardianloop_pynq.hwh": "2ab7ffa36398be4eee20d90512c7f1c6d29a7066c9d1bf0683a3bcad2501f92b",
+    "guardianloop_pynq.py": "9ec1f7a8d56c8e2e75ed9b90095881b23551b375a1c80393472caaba981ab9d1",
+    "guardianloop_startup.py": "61630c7aa4d231e574e921a39d853c25e55d51ee9bfb62d7fda35de3c148de03",
+    "guardianloop_web.py": "cb8d6993428f05c012c4fa8fc9c0117b24fc6afed105d6d8dff59dbd1fa6104b",
+    "mi_acquisition.py": "e6bebd025605c711d846ac27cfd36e6874e2257b29788ae6f2eb67d46da100f0",
+    "mi_cued.html": "b373e0943ffa5dacdd587355291935cb87b8edab0ab3e320819179e0b6590696",
+    "mi_cued.py": "6aae23e3c4e00d66d583365b15743d8a994b41044f21c979850bc96926193fe3",
+    "mi_cued_server.py": "852661194e574d889130bad6a876f337ac2a84b34e0ae6070a3ddbead833f333",
+    "mi_eegnet_portable.py": "c220761ed1b20b76b483c3eb8d46f79f287f17200fa3e5c45350de967c5986d0",
+    "mi_eegnet_rms.py": "fb2ff5451ed36c89239508111d47959b9739b41619f36aed91a522ac9e0a935f",
+    "mi_features.py": "3688195f63ac5e2bad4547136d851d26aed47f587903dadd8d808fc2b2453faa",
+    "mi_rms_live_virtual.py": "84ce148937a388ef8ff9fad2778d451c3c9b68a35dc1a8e1cb9745c1457a237b",
+    "mi_service_config.py": "a6bdd3e2e1bf707745ca645fba4b55692a32d956f794ad9efc35674f7479fbfa",
+    "mi_web_bridge.py": "d11ee02a4afa01950d38570476cd4c0bc7b78dccfcb898590f80dbdaf2f91380",
+    "mi_window_rms.py": "3eb2252f4607086e8ed32d3fe4ab31998438cb057436c75b1af59ba8cdd652f1",
+    "pl_causal_filter.py": "1bf51cdb121f63294215f886d821ae0373a56cafef2125e3f49a18df7b1aa18b",
+    "seed_gate_policy.py": "b8029403a31a0d43ce5b099b227400b6f34b395f421e9408219759554907a0a4",
+    "seed_quality_runtime.py": "243c6504c09bdcf66ac3ba0b1830f31333ffa156a0af62eedcbc88426ce1b519",
+    "seed_replay_check.py": "5088e6ea5d834f7f3cfcabccb8d64a39274f4d3a2c9ec56d0f18b315fd31228e",
+    "seed_shadow.py": "0e8c341fb0ddba7dd3dc5dfc9262a36a17c8e8a4e2653364848aa17a9f9f79fb",
+    "seed_shadow_policy.py": "2493640bbc5df91bf1545b7edbee79586af3bbf0ddf33b6b1ff2d4c1d2450c83",
+    "seed_shadow_weights.npz": "efc86603148130f3bd25deb0f853fb02fb753b25f4256ee01ed58a12e6b75dca",
+    "ssvep_acquisition.py": "72c3a7b456a3f4ecbed094eb963c6fe4c92b0c05776c4af556eef62b1beb2b4a",
+    "ssvep_candidate_sos.npy": "bf074f6175e694ed869621ae897aac88cf5164cd1684a32c463c5d407b3b180c",
+    "ssvep_causal_protocol.json": "2a23f3ce2c6497cca416c0f31c044c496d16197cf2bd63cdc9fbb43cb3c26d0f",
+    "ssvep_core.py": "a1a57465c97608ce6ff84b6261a29ef46fc626bec676eb5af1fd4fd0a67c012c",
+    "ssvep_cued.py": "7ce915e4889649fa727c62c7792da1e4ba7acaa799748dc7bc0311432ba633f5",
+    "ssvep_cue_runtime.py": "a662a724d92a337c609c04f02bb458e2921ff4bde730895e5f73341b75b5b629",
+    "ssvep_free.html": "8c5f20c3d8f00145bc506b5833982b21209adeba49a17c6f83cadbce43fefd3d",
+    "ssvep_free.py": "97ab5f947efb939734fbc0519fe666bb3a0279c80f066719f9582bea0750acc1",
+    "ssvep_recording.py": "cc86ff9eb824825088075abd6c731a6de337f76d1e7c71ecfb9b7c9137a02342",
+    "ssvep_shadow.py": "490be63357dab77e3b67388f5a8b1cca8476a0defcf9585b781978a639613b92",
+    "ssvep_stream.py": "61351b4831b92f64faaa6f9a68225a63a5f21145adbba974ff8099bd35214189",
+    "ssvep_study.py": "30c87452b440ef7d06fef45cbcba66a9d03d4d5fe58a9218089f48b5a332ffd0",
+    "mobile.html": "e6ceab9370dbb6f45142cc9429f896a71e2a420d597b92682f7f53142cbc34a8",
+    "mobile.js": "e98a79a48a1268d23f1d488502b0e9175e2517eb863ccd6ac3ea79ccc725cb67",
+    "async_seed_candidate.py": "b42836114e59ab562031ad2ae159a08797d220f3cb948f002ea710da9c643710",
+    "page_policy.py": "b1b139d3e7c65478a1353bd0ca22700ad43c54ef6a2b24831d77225f1355f72e"
+  },
+  "previous_release_id": "guardianloop-fixed8-load-relief-20261007",
+  "mi": {
+    "enabled_by_installed_config": true,
+    "model_name": "experimental_rms_eegnet.npz",
+    "model_sha256": "363daf3b68da6e80495319052447ec83e06b9e3e327a1bd0ff9e6023a5b54221",
+    "model_status": "experimental_unpromoted",
+    "user_selected_for_virtual_control": true,
+    "personal_head_enabled": false,
+    "control_enabled": false,
+    "production_eligible": false
+  },
+  "ssvep_cue": {
+    "state_owner": "acquisition",
+    "observation_mode": "producer_callbacks",
+    "required_consecutive_windows": 3,
+    "window_samples": 500,
+    "hop_samples": 50,
+    "control_enabled": false,
+    "live_accuracy_verified": false,
+    "raw_recording_supported": true,
+    "raw_alignment": "packet_index_and_usb_receive_monotonic_not_optical"
+  },
+  "ssvep_free": {
+    "enabled": true,
+    "experimental": true,
+    "channels": [
+      "O1",
+      "O2"
+    ],
+    "frequencies": [
+      8,
+      10,
+      12,
+      14
+    ],
+    "idle_classifier_validated": false,
+    "control_enabled": false
+  },
+  "mobile_web": {
+    "path": "/mobile",
+    "android_device_verified": false,
+    "ssvep_stimulus_enabled": false,
+    "background_monitoring": false,
+    "model_changes": false
+  },
+  "usb_recovery": {
+    "serial_identity": "/dev/serial/by-id/usb-FTDI_FT231X_USB_UART_D309LDXY-if00-port0",
+    "restart_owner": "systemd",
+    "wait_without_receiver": true,
+    "models_changed": false,
+    "physical_usb_stability_verified": false,
+    "service_override": "/etc/systemd/system/guardianloop-cyton.service.d/40-usb-recovery.conf",
+    "service_override_sha256": "6c4186cbda7dab412626b77bbb729de822e0f7d32b03a4ac096a322a1c0668ff"
+  },
+  "load_relief": {
+    "primary_models_changed": false,
+    "pl_changed": false,
+    "covariance_storage": "array",
+    "seed_candidate": "bounded_async_paused_optional_diagnostic",
+    "ssvep_schedule": "HDMI_direction_page_or_standalone",
+    "primary_numeric_parity_windows": 30,
+    "live_HDMI_acceptance": false,
+    "scope": "Fixed recorded bench input; software computation/latency, not recognition accuracy or live radio/HDMI acceptance"
+  },
+  "emotion_display": {
+    "mapping": {
+      "funny": "正向情绪",
+      "calm": "中性情绪",
+      "boring": "中性情绪",
+      "horror": "负向情绪"
+    },
+    "raw_labels_preserved": true,
+    "weights_changed": false,
+    "invalid_is_neutral": false
+  }
+}

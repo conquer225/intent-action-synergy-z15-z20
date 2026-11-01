@@ -1,0 +1,14 @@
+{"event": "connect", "at_ms": 0, "session": "A", "epoch": 0}
+{"event": "result", "at_ms": 10, "session": "A", "epoch": 0, "sequence": 0, "accepted": true, "valid": true, "source": "synthetic:sample-a"}
+{"event": "display", "at_ms": 11, "session": "A", "epoch": 0, "sequence": 0, "valid": true, "source": "synthetic:sample-a"}
+{"event": "mode", "at_ms": 20, "session": "A", "epoch": 1}
+{"event": "result", "at_ms": 21, "session": "A", "epoch": 0, "sequence": 1, "accepted": false, "valid": true, "source": "synthetic:old-mode"}
+{"event": "display", "at_ms": 22, "valid": false, "class_id": null, "scores": null}
+{"event": "disconnect", "at_ms": 30, "session": "A"}
+{"event": "connect", "at_ms": 31, "session": "B", "epoch": 0}
+{"event": "result", "at_ms": 32, "session": "A", "epoch": 1, "sequence": 2, "accepted": false, "valid": true, "source": "synthetic:old-connection"}
+{"event": "display", "at_ms": 33, "valid": false, "class_id": null, "scores": null}
+{"event": "result", "at_ms": 40, "session": "B", "epoch": 0, "sequence": 0, "accepted": true, "valid": true, "source": "synthetic:sample-b"}
+{"event": "display", "at_ms": 41, "session": "B", "epoch": 0, "sequence": 0, "valid": true, "source": "synthetic:sample-b"}
+{"event": "heartbeat", "at_ms": 139, "session": "B"}
+{"event": "display", "at_ms": 140, "valid": false, "class_id": null, "scores": null}

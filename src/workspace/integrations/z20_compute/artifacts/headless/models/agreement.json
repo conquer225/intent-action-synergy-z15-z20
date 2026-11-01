@@ -1,0 +1,184 @@
+{
+  "scope": "original model agreement; wearer accuracy unmeasured",
+  "tasks": {
+    "emotion": {
+      "version": "4fbca7b68d54c4ef6e6bbcc1",
+      "recorded_windows": 19,
+      "calibration_windows": 9,
+      "recorded_teacher_agreement": {
+        "samples": 19,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "confusion_matrix": [
+          [
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            9
+          ]
+        ],
+        "rejected_by_class": [
+          0,
+          0,
+          0
+        ],
+        "coverage": 1.0
+      },
+      "held_out_teacher_agreement": {
+        "samples": 10,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            6
+          ]
+        ],
+        "rejected_by_class": [
+          0,
+          0,
+          0
+        ],
+        "coverage": 1.0
+      },
+      "teacher_class_counts": [
+        8,
+        2,
+        9
+      ]
+    },
+    "fatigue": {
+      "version": "3e67c59556e4e36e3dc995dd",
+      "recorded_windows": 20,
+      "teacher_class_counts": [
+        18,
+        2,
+        0
+      ],
+      "recorded_teacher_agreement": {
+        "samples": 20,
+        "accuracy": 0.9,
+        "macro_f1": 0.5359477124183006,
+        "balanced_accuracy": 0.6296296296296297,
+        "confusion_matrix": [
+          [
+            16,
+            2,
+            0
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "rejected_by_class": [
+          0,
+          0,
+          0
+        ],
+        "coverage": 1.0
+      },
+      "probe_training": {
+        "task": "fatigue",
+        "source": "original HGB teacher on synthetic classifier-input probes; thresholds 0.35/0.70",
+        "source_kind": "synthetic",
+        "split_by": "recording/session group",
+        "epochs": 300,
+        "seed": 7,
+        "version": "3e67c59556e4e36e3dc995dd",
+        "validation": {
+          "samples": 1000,
+          "accuracy": 0.855,
+          "macro_f1": 0.7874499292277498,
+          "balanced_accuracy": 0.7665445231928456,
+          "confusion_matrix": [
+            [
+              486,
+              38,
+              0
+            ],
+            [
+              52,
+              322,
+              16
+            ],
+            [
+              0,
+              39,
+              47
+            ]
+          ],
+          "rejected_by_class": [
+            0,
+            0,
+            0
+          ],
+          "coverage": 1.0,
+          "float_accuracy": 0.852,
+          "integer_float_agreement": 0.991
+        },
+        "test": {
+          "samples": 1000,
+          "accuracy": 0.854,
+          "macro_f1": 0.7629942605274745,
+          "balanced_accuracy": 0.7388563604389917,
+          "confusion_matrix": [
+            [
+              479,
+              36,
+              0
+            ],
+            [
+              47,
+              337,
+              15
+            ],
+            [
+              0,
+              48,
+              38
+            ]
+          ],
+          "rejected_by_class": [
+            0,
+            0,
+            0
+          ],
+          "coverage": 1.0,
+          "float_accuracy": 0.856,
+          "integer_float_agreement": 0.988
+        }
+      },
+      "deployable": false,
+      "scope": "teacher distillation on explicit synthetic feature probes; recorded EEG is held out"
+    }
+  }
+}

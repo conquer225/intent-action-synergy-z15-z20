@@ -1,0 +1,75 @@
+{
+  "session": "play-8694dbd9",
+  "checks": [
+    {
+      "page": "home",
+      "speed": 1,
+      "direction": "stop",
+      "manual_test": true
+    },
+    {
+      "page": "speed",
+      "speed": 1,
+      "direction": "stop",
+      "manual_test": true
+    },
+    {
+      "page": "drive",
+      "speed": 2,
+      "direction": "stop",
+      "manual_test": true
+    },
+    {
+      "page": "media",
+      "speed": 2,
+      "direction": "stop",
+      "manual_test": true
+    },
+    {
+      "page": "video",
+      "speed": 2,
+      "direction": "stop",
+      "manual_test": true
+    },
+    {
+      "page": "video_rate",
+      "speed": 2,
+      "direction": "stop",
+      "manual_test": true
+    },
+    {
+      "page": "video",
+      "speed": 2,
+      "direction": "stop",
+      "manual_test": true
+    },
+    {
+      "page": "video_nav",
+      "speed": 2,
+      "direction": "stop",
+      "manual_test": true
+    },
+    {
+      "page": "video",
+      "speed": 2,
+      "direction": "stop",
+      "manual_test": true
+    },
+    {
+      "eye": {
+        "connected": true,
+        "calibrated": false,
+        "valid": false,
+        "state": "prepare",
+        "samples": 0,
+        "error": null,
+        "source": "native_relative_eye",
+        "physical_output_enabled": false
+      }
+    },
+    {
+      "controlled_stop": true,
+      "original_restored": true
+    }
+  ]
+}

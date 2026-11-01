@@ -1,0 +1,16 @@
+# Navigator ATK-DF7010/7020P audio pins from vendor example 37_audio_loopback.
+set_property -dict {PACKAGE_PIN U18 IOSTANDARD LVCMOS33} [get_ports sys_clk]
+set_property -dict {PACKAGE_PIN N16 IOSTANDARD LVCMOS33} [get_ports sys_rst_n]
+set_property -dict {PACKAGE_PIN L14 IOSTANDARD LVCMOS33} [get_ports key]
+# Navigator active-high onboard buzzer; hold low during audio experiments.
+set_property -dict {PACKAGE_PIN M14 IOSTANDARD LVCMOS33} [get_ports beep]
+set_property -dict {PACKAGE_PIN E18 IOSTANDARD LVCMOS33} [get_ports aud_scl]
+set_property -dict {PACKAGE_PIN F17 IOSTANDARD LVCMOS33} [get_ports aud_sda]
+set_property -dict {PACKAGE_PIN M17 IOSTANDARD LVCMOS33} [get_ports aud_adcdat]
+set_property -dict {PACKAGE_PIN L20 IOSTANDARD LVCMOS33} [get_ports aud_lrc]
+set_property -dict {PACKAGE_PIN G17 IOSTANDARD LVCMOS33} [get_ports aud_dacdat]
+set_property -dict {PACKAGE_PIN E19 IOSTANDARD LVCMOS33} [get_ports aud_mclk]
+set_property -dict {PACKAGE_PIN M18 IOSTANDARD LVCMOS33} [get_ports aud_bclk]
+create_clock -period 20.000 -name sys_clk [get_ports sys_clk]
+create_generated_clock -name aud_bclk_generated -source [get_pins u_audio/u_clocks/aud_bclk_reg/C] -divide_by 4 [get_pins u_audio/u_clocks/aud_bclk_reg/Q]
+create_generated_clock -name i2c_dri_generated -source [get_pins u_audio/u_codec/u_i2c_dri/dri_clk_reg/C] -divide_by 50 [get_pins u_audio/u_codec/u_i2c_dri/dri_clk_reg/Q]

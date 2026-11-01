@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "release_id": "guardianloop-fixed8-mood-display-20261007",
+  "verified_files": 50,
+  "acquisition_unchanged": true,
+  "models_unchanged": true,
+  "pl_unchanged": true,
+  "boot_unchanged": true,
+  "cyton": {
+    "MainPID": "23531",
+    "NRestarts": "0",
+    "ActiveState": "active"
+  },
+  "web": {
+    "MainPID": "26555",
+    "NRestarts": "0",
+    "ActiveState": "active"
+  },
+  "routes": {
+    "/": {
+      "status": 200,
+      "cache": "no-store"
+    },
+    "/mobile": {
+      "status": 200,
+      "cache": "no-store"
+    },
+    "/mobile.js": {
+      "status": 200,
+      "cache": "no-store"
+    },
+    "/api/status": {
+      "status": 200,
+      "cache": "no-store"
+    }
+  },
+  "shells": 10,
+  "admission": {
+    "brain_release": "guardianloop-fixed8-mood-display-20261007",
+    "brain_pid": 23531,
+    "boot_id": "8f136697-cbea-4b20-a74f-c899978d7f3a",
+    "brain_backend": "arm",
+    "pl_role": "eye_hdmi",
+    "brain_services_stopped": false,
+    "physical_control": false
+  },
+  "actual_HDMI_display_tested": false,
+  "backup": "/home/xilinx/gl-mood-display-MyI74a/backup"
+}

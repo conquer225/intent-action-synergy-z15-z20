@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "checks": {
+    "fluid_visible_pixels": true,
+    "fluid_action_count": true,
+    "real_spectrum_history": true,
+    "silent": true,
+    "recorded_npu_input": true,
+    "software_marked": true,
+    "recorded_depth": true,
+    "soak_completed": true,
+    "received_frames": true,
+    "memory_display_frames": true,
+    "no_external_requests": true,
+    "browser_errors": true
+  },
+  "browser_errors": [],
+  "accepted_frames": 6200,
+  "memory_display_frames": 6177,
+  "elapsed_seconds": 632.969,
+  "physical_wifi": false,
+  "physical_pl": false,
+  "physical_hdmi": false,
+  "input": "existing recorded PCM; optional previously recorded camera image",
+  "soak": {
+    "seconds": 600.2339999999999,
+    "received_frames": 5933,
+    "received_fps": 9.884478386762497,
+    "command_ack_p95_ms": 0.0,
+    "physical_wireless": false,
+    "mode": "fluid",
+    "note": "desktop loopback, not full physical combined acceptance"
+  }
+}

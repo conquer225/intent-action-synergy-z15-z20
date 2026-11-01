@@ -1,0 +1,20 @@
+{
+  "source": "D:\\ican\\codex_project\\eeg_apps_z15\\output\\pl_integrated_candidate_20260929\\recorded_input.npz",
+  "source_sha256": "e263590f40edbf4581b106cc202b092b7855e68f1f3febf40bd8bc7b2bf1f255",
+  "samples": 3000,
+  "channels": [
+    "F3",
+    "F4",
+    "T7",
+    "T8",
+    "O1",
+    "O2"
+  ],
+  "band_hz": [
+    1,
+    4
+  ],
+  "integer_lsb_uv": 0.25,
+  "golden_elements": 27,
+  "max_abs_quantized": 10594
+}

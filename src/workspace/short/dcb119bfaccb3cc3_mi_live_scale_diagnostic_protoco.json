@@ -1,0 +1,23 @@
+{
+  "id": "mi-live-scale-diagnostic-20261003",
+  "scope": "Offline cause investigation only; no model fitting, deployment, channel change, or live-label parameter selection",
+  "channels": ["F3", "F4", "C3", "C4", "T7", "T8", "O1", "O2"],
+  "hypothesis": "The frozen source scaler is inflated by high-energy source trials, compressing ordinary source and Cyton windows towards a class-biased near-zero model response.",
+  "falsification": "Reject the outlier-dominance explanation if the highest-energy 1% of source-fitting trials account for no more than half of the total centered energy. Treat scale compression as insufficient to explain class bias if ordinary-amplitude source windows do not show the same bias.",
+  "source_cache": "output/mi_model_comparison_20261001",
+  "model": "output/mi_cued_delivery_20261002_final/experimental_eegnet.npz",
+  "capture": "output/mi_live_capture_20261003/full_capture_audit",
+  "allowed_source_people": [1,2,3,4,5,7,8,11,14,18,20,23,24,25,26,28,29,31,32,34,35,39,40,41,43,44,46,47,50,52],
+  "source_target_excluded": 1,
+  "confirmation_people_forbidden": [9,13,15,16,17,22,27,30,33,38,48,51],
+  "primary_diagnostics": ["source scaler reproduction error", "top 1% fitting-trial centered-energy fraction", "fitting and validation amplitude distributions", "fixed-model left output rate in source-amplitude quartiles", "raw source re-extraction error", "FIR steady-state gain", "reset versus continuous filtering difference"],
+  "source_inference": "Frozen checkpoint only; report descriptive fitting and source-validation responses, not new held-out cross-person accuracy",
+  "live_amplitude_factors": [0,1,2,4,8,16,32],
+  "live_sensitivity_rule": "Apply every factor to every saved waveform, report all outputs without scoring cue agreement or choosing a factor. This is an unphysical diagnostic, not an approved gain correction.",
+  "source_raw_examples": "Three fitting trials: two largest centered-energy trials and the median-energy trial, with ties broken by cache order. Selection is label-blind.",
+  "reset_counterfactual": "Filter the 7 seconds preceding each saved window from zero state and compare to recorded continuous processing. This is a sensitivity bound, not a reconstructed original trial baseline or proof of reference equivalence.",
+  "seed": 42,
+  "board_access": false,
+  "production_files_modified": false,
+  "claims_forbidden": ["new accuracy improvement", "chosen live gain", "true internal imagery labels", "final cause proven from seven trials", "brain control ready"]
+}

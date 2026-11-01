@@ -1,0 +1,27 @@
+{
+  "checked_at_utc": "2026-10-07T14:50:27Z",
+  "release_id": "guardianloop-fixed8-load-relief-20261007",
+  "manifest_sha": "49790364ad4a1c50e5a609e71dd7a1bd529106d209cc85f7a6171694b7670002",
+  "verified_files": 50,
+  "all_release_hashes_match": true,
+  "all_install_targets_match": true,
+  "installation_phase": "installed_verified_software_only",
+  "boot_id": "8f136697-cbea-4b20-a74f-c899978d7f3a",
+  "pl_bitfile": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_pynq.bit",
+  "bit_sha": "c39b891704471a712fb7be3591841af1dd6791387957b873b11450c99eca41ca",
+  "hwh_sha": "2ab7ffa36398be4eee20d90512c7f1c6d29a7066c9d1bf0683a3bcad2501f92b",
+  "services": "MainPID=23531\nNRestarts=0\nId=guardianloop-cyton.service\nActiveState=active\n\nMainPID=669\nNRestarts=0\nId=guardianloop-web.service\nActiveState=active\n",
+  "temporary_units": "Id=gl-load-relief-install-5oZzkP-rollback.timer\nActiveState=inactive\n\nMainPID=0\nId=gl-load-relief-install-5oZzkP.service\nActiveState=inactive\n\nMainPID=0\nId=gl-load-relief-install-5oZzkP-tests.service\nActiveState=inactive\n",
+  "primary": {
+    "valid": false,
+    "state": "invalid",
+    "reason": "WAITING_FOR_CYTON",
+    "packets_seen": 0
+  },
+  "seed": {
+    "valid": false,
+    "source": "live",
+    "reason": "page_task_suspended"
+  },
+  "actual_HDMI_acceptance": false
+}

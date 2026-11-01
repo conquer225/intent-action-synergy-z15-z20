@@ -1,0 +1,8 @@
+{
+  "changed": {
+    "/home/xilinx/gl-audio-level-20261016-DMoJIj/carefree_48k.wav": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav"
+  },
+  "real_boot_validator_passed": true,
+  "restarted": false,
+  "boot_image_modified": false
+}

@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "group": "media",
+      "name": "system_hdmi.py",
+      "source": "legacy_debug_hold/system_hdmi.py",
+      "baseline_source": "legacy_debug_hold/baseline_20261018/system_hdmi.py",
+      "before": "39db7b339ab9cc6083022695d996bd0ad8f53cf7063a5d2637f6b6e5239b0433",
+      "after": "1f541150e90eda7abe1e84eea57d3a347918084a65f795829a559fa8fefce527"
+    },
+    {
+      "group": "media",
+      "name": "system_runtime/guardianloop_system/device_link.py",
+      "source": "legacy_debug_hold/device_link.py",
+      "baseline_source": "legacy_debug_hold/baseline_20261018/device_link.py",
+      "before": "abcac1a6df78dfb86a4c83555738c27cd4f7c9af282bfa1e73ffa77de5b22dab",
+      "after": "251d35c0396266b8cb5fbd02629d5e1b53c73d7281b3897be4360ecaba993f09"
+    }
+  ]
+}

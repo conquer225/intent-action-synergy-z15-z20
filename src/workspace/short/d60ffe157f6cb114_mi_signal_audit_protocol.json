@@ -1,0 +1,15 @@
+{
+  "protocol_id": "cho2017_training_only_signal_audit_20261001",
+  "status": "fixed_before_this_signal_audit",
+  "training_protocol": "cho2017_training_diagnostic_protocol.json",
+  "cache": "output/cho2017_training_diagnostic_20261001/training_statistics.npz",
+  "channels": ["F3", "F4", "C3", "C4", "T7", "T8", "O1", "O2"],
+  "bands": [[8,12],[18,26]],
+  "sample_policy": "all original 6080 training trials, including every author flag; no filtering by model score or physiology; former10 development and12 confirmation EEG/cache forbidden",
+  "contrast": "r=ln(max(task_variance,1e-12)/max(baseline_variance,1e-12)); d=r_C3-r_C4; per-person contrast=mean(d|left=0)-mean(d|right=1)",
+  "aggregation": "equal weight per person; report mean, median, sign counts and all person values; descriptive only, not classifier accuracy or a significance test",
+  "filter_audit": "existing causal 50Hz notch plus1-45Hz and unchanged fourth-order band filters; inspect gain/group delay at10Hz for8-12Hz and22Hz for18-26Hz; include existing0.04s resampler delay; not a physiological onset estimate",
+  "prohibited": ["classifier fitting", "scoring new classifiers", "changing preprocessing", "reading held-out EEG", "dropping trials", "deploying models", "board access"],
+  "promotion_gate_passed": false,
+  "control_enabled": false
+}

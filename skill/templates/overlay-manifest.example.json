@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "build_id": "REPLACE_WITH_TRUSTED_BUILD_ID",
+  "target_part": "REPLACE_WITH_DEVICE_AND_PACKAGE",
+  "bit": {
+    "path": "design.bit",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "hwh": {
+    "path": "design.hwh",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "required_ips": ["REPLACE_WITH_ACTUAL_IP_INSTANCE_PATH"]
+}

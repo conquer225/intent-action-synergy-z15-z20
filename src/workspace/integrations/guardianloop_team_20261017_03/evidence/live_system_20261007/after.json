@@ -1,0 +1,13 @@
+{
+  "release_unchanged": true,
+  "services": "MainPID=677\nNRestarts=0\nId=guardianloop-web.service\nActiveState=active\n\nMainPID=24926\nNRestarts=0\nId=guardianloop-cyton.service\nActiveState=active\n",
+  "protected": "c6f768eccfa638245c3983e3585433cad98792247cf51b0e24825f2b00211e2c  /etc/systemd/system/guardianloop-ap.service\n6f70421707784c641b893298b737de1d2561d683b55139d1bc67d889f22cd802  /etc/systemd/system/guardianloop-dhcp.service\n6bc9d3c7919daf11d3d88e1d8f9caca4511c84b848604f3714af5b37aeb9a31f  /etc/systemd/system/guardianloop-web.service\na649cf36e0c566160c301dba666dbe5570634b72aeb0251a2395ea9cbfc36add  /etc/systemd/system/guardianloop-cyton.service\n13b96d77b5f51b41b5a60eaf460ba6b59c563b2d38c5fa09b916c625b8ed172d  /etc/NetworkManager/conf.d/99-guardianloop-wlan0-unmanaged.conf\n21d2ef676010175446757451450fffc6c19096f9c2854c5c784a9e918676fb63  /boot/boot.scr\n27ee421d07d70f972e8a3bca96e1bc7810e847be2da2360aa5c11d36c93e89b2  /boot/image.ub\nf4b4b877e9273646ead7040a6664e27c3018561bd34cb7781b1349d59f20a377  /home/xilinx/jupyter_notebooks/guardianloop_pynq/release_manifest.json\n",
+  "boot": "e0fd1f19-9ccd-494d-b262-7a5924046336",
+  "pl": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_pynq.bit",
+  "protected_unchanged": true,
+  "services_unchanged": true,
+  "boot_unchanged": true,
+  "original_pl_restored": true,
+  "audio_output": false,
+  "physical_output_enabled": false
+}

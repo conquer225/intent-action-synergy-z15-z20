@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GuardianLoop 眼控手机</title>
+<style>
+body{font:18px system-ui,sans-serif;background:#f2f5f7;color:#172431;margin:0;padding:24px;line-height:1.6}
+main{max-width:1050px;margin:auto}h1{font-size:28px}button{font:inherit;padding:12px 18px;border-radius:8px;border:1px solid #aab8c4;background:white;margin:5px;cursor:pointer}button:disabled{opacity:.45;cursor:default}
+.panel{background:white;padding:20px;border-radius:12px;margin:18px 0}.zones{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;height:260px}.zone{display:flex;align-items:center;justify-content:center;text-align:center;border:2px solid #b7c4d0;border-radius:12px;font-size:25px}.active{border:5px solid #096cb5;background:#e8f3ff}.stop{background:#a12626;color:white}.muted{font-size:15px;color:#4d6171}#error{color:#9e1f1f}#state{white-space:pre-line}
+</style><main>
+<h1>眼控手机 · 独立无线测试</h1>
+<p>手机保留原来的联网方式并播放抖音。Z15 直接向备用 ESP32 发无线指令，电脑不转发命令；不改 PL、脑控服务或轮椅程序。</p>
+<section class="panel"><strong>1. 左右方向短校准</strong><p>将眼控模组固定在你要注视的屏幕附近。按中、左、右顺序采样；这里只确认左右方向，不校准手机的精确像素坐标。提示点不闪烁。</p>
+<button id="calibrate">开始短校准</button><button id="point" disabled>采集当前点（6 秒）</button><button id="compute" disabled>确认三个方向</button>
+<div class="zones"><div class="zone" id="left">左<br>上一条</div><div class="zone" id="center">中<br>不触发翻页</div><div class="zone" id="right">右<br>下一条</div></div></section>
+<section class="panel"><strong>2. 明确开启一次控制许可</strong><p>校准后先看中央至少 0.6 秒；看左／右侧约 1.2 秒触发一次。每次翻页后必须回中央；一直看同一侧不会连翻。许可约 29 秒，到期需手动再次开启。</p>
+<button id="virtual" disabled>虚拟测试（不翻页）</button><p><label><input type="checkbox" id="phoneReady">我确认抖音在手机前台，蓝牙已连接，鼠标指针在视频中央</label></p>
+<button id="hid" disabled>开启真实手机翻页（29 秒）</button><button id="stop" class="stop">关闭控制</button>
+<p class="muted">断流、坏眼位、无线或蓝牙异常会关闭控制；不会自动重新启用。拖动后的回程是相对位移归零，不保证碰到屏幕边缘或鼠标加速度影响后的精确居中。先用虚拟输出，再少量监督测试。此页面不控制点赞、评论、关注或支付。</p></section>
+<section class="panel"><div id="state">读取状态…</div><div id="error"></div></section>
+</main><script>
+const token='__TOKEN__';let state=null;
+async function act(action,extra={}){document.querySelector('#error').textContent='';try{const r=await fetch('/api/control',{method:'POST',headers:{'Content-Type':'application/json','X-Phone-Session':token},body:JSON.stringify({action,...extra})});const data=await r.json();if(!r.ok)throw Error(data.error);render(data)}catch(e){document.querySelector('#error').textContent=e.message}}
+function render(s){state=s;document.querySelector('#state').textContent=`阶段：${s.phase}；${s.detail}\n输入：${s.eye_fresh?'新鲜眼位':'等待有效眼位'}；区域：${s.eye_region}；输出：${s.output_mode}；剩余许可：${s.lease_seconds} 秒\n已发送眼控事件：${s.events_sent}；ESP 虚拟事件：${s.receiver.virtual_commands}；ESP 手机事件：${s.receiver.hid_commands}；蓝牙：${s.receiver.ble_ready?'就绪':'未就绪'}`;
+const calibration=s.phase==='calibration';document.querySelector('#calibrate').disabled=['starting','calibration','computing','tracking'].includes(s.phase);
+document.querySelector('#point').disabled=!calibration||s.point_pending||s.next_point>=3;document.querySelector('#point').textContent=s.point_pending?'采样中，请保持注视…':`采集${['中央','左侧','右侧'][s.next_point]||'已完成'}（6 秒）`;
+document.querySelector('#compute').disabled=!calibration||s.point_pending||s.next_point!==3;
+const ready=s.trained&&s.eye_fresh&&s.center_ready&&s.output_mode==='off';document.querySelector('#virtual').disabled=!ready;document.querySelector('#hid').disabled=!ready||!s.receiver.ble_ready||!document.querySelector('#phoneReady').checked;
+for(const name of ['left','center','right'])document.querySelector('#'+name).classList.toggle('active',calibration?name===['center','left','right'][s.next_point]:name===s.eye_region)}
+document.querySelector('#calibrate').onclick=()=>act('calibrate');document.querySelector('#point').onclick=()=>act('point');document.querySelector('#compute').onclick=()=>act('compute');document.querySelector('#virtual').onclick=()=>act('arm',{mode:'virtual'});document.querySelector('#hid').onclick=()=>act('arm',{mode:'hid',phone_ready:document.querySelector('#phoneReady').checked});document.querySelector('#stop').onclick=()=>act('stop');document.querySelector('#phoneReady').onchange=()=>state&&render(state);
+setInterval(async()=>{try{const r=await fetch('/api/status',{cache:'no-store'});if(!r.ok)throw Error('status');render(await r.json())}catch(e){document.querySelector('#state').textContent='页面连接中断，不要假定控制仍有效';document.querySelector('#virtual').disabled=document.querySelector('#hid').disabled=true}},250);
+</script></html>

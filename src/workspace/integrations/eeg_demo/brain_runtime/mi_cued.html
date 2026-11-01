@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>左右手运动想象 · 隔离候选</title>
+<style>
+body{font:16px system-ui,sans-serif;background:#f4f6f5;color:#18342d;margin:0}
+main{max-width:840px;margin:32px auto;padding:20px}h1{font-size:1.6rem}
+section{border:1px solid #cbd5d0;background:white;padding:20px;margin:16px 0;border-radius:8px}
+button{font:inherit;padding:12px 18px;background:white;border:1px solid #617b70;border-radius:6px;margin:4px;cursor:pointer}
+button:disabled{opacity:.5;cursor:default}#cue{font-size:3rem;text-align:center;min-height:90px}
+.muted{color:#56685f}.badge{font-weight:bold;color:#795712}#feedback{font-size:1.3rem;min-height:32px}
+.virtual-panel{display:flex;align-items:center;gap:24px;flex-wrap:wrap}.virtual-panel svg{width:170px;height:210px}
+label{display:block;padding:12px 0}input[type=checkbox]{width:18px;height:18px;vertical-align:middle}
+#virtualPose{font-size:1.25rem}#virtualStatus{max-width:470px}
+</style>
+<main>
+<h1>左右手运动想象 · 有提示交互</h1>
+<p class="badge" id="source">检查来源中 · 永不驱动外设</p>
+<p>固定八通道：F3、F4、C3、C4、T7、T8、O1、O2。实验模型未晋升正式版。</p>
+<section>
+<p>想象提示侧手掌反复握拳，不真实用力，不必调节情绪。每次先等数据热身，提示后收集0.5–2.5秒窗口；模型未通过正式晋升。</p>
+<label><input id="virtualEnabled" type="checkbox"> 本次使用候选驱动虚拟手（默认只观察，不连接真实硬件）</label>
+<div id="cue">等待开始</div>
+<button id="left" data-target="left">想象左手</button>
+<button id="right" data-target="right">想象右手</button>
+<button id="rest" data-target="rest">休息（禁用推理）</button>
+<button id="stop">立即停止</button>
+</section>
+<section>
+<h2>虚拟手 · 非真实执行器</h2>
+<div class="virtual-panel">
+<svg viewBox="0 0 180 220" role="img" aria-label="虚拟手末次姿态">
+<g id="virtualFingers" fill="#83baaa" stroke="#285e50" stroke-width="3">
+<rect x="47" y="29" width="20" height="87" rx="10"/>
+<rect x="73" y="15" width="20" height="101" rx="10"/>
+<rect x="99" y="25" width="20" height="91" rx="10"/>
+<rect x="125" y="43" width="20" height="73" rx="10"/>
+</g>
+<rect x="46" y="104" width="99" height="84" rx="25" fill="#b9dace" stroke="#285e50" stroke-width="3"/>
+<rect x="26" y="100" width="25" height="72" rx="12" transform="rotate(-24 40 166)" fill="#b9dace" stroke="#285e50" stroke-width="3"/>
+<rect x="64" y="180" width="62" height="26" rx="6" fill="#b9dace" stroke="#285e50" stroke-width="3"/>
+</svg>
+<div><p id="virtualPose">末次虚拟握合位置：0%</p><p id="virtualStatus">未启用；没有控制命令</p>
+<p class="muted">左类→张开一步，右类→握合一步，每次20%，范围0–100%。只跟随模型答案，不跟随提示；一次提示最多执行一次。停止后保留末次姿态，但不继续运动。</p></div>
+</div>
+</section>
+<section>
+<div id="feedback">未收到数据</div>
+<p id="detail" class="muted"></p>
+<p class="muted">休息不是模型识别的第三类。分数不是校准概率。页面隐藏、网络失效、质量不合格或断流会撤销当前候选。</p>
+</section>
+<p class="muted">实验入口可由正式网页代理或隔离回放服务提供，是否开启由ARM配置决定；本页不会开启采集、上传脑电或直接指定虚拟手位置。浏览器呈现报告以服务器收到时的样本水位对齐，未验证屏幕光学起点或跨机时钟精度。无输入时不会按提示生成预测。</p>
+</main>
+<script>
+let trialId = null, epoch = 0, pending = false, polling = false;
+const labels = {left:'左手',right:'右手',rest:'休息'};
+const reasons = {
+  cue_required:'等待手动提示', waiting_for_display:'等待提示绘制',
+  collecting_window:'收集完整提示后窗口', rest_no_inference:'休息：不调用分类器',
+  model_unavailable:'模型不可用：未安装实验候选', filter_warmup_required:'滤波未热身，请等待后重试',
+  no_fresh_data:'未收到及时数据，旧结果已撤销', signal_invalid:'信号质量不合格，已拒绝',
+  sequence_gap_or_stall:'丢包或断流，已撤销并重新热身', transport_disconnected:'连接中断，已撤销',
+  browser_heartbeat_lost:'页面心跳丢失，已撤销', trial_timeout:'本次提示结束，结果已撤销',
+  user_stopped:'已停止', page_hidden:'页面已隐藏，已停止', page_closed:'页面关闭，已停止',
+  experimental_candidate:'实验候选', late_or_reordered_batch:'迟到或乱序数据，已拒绝',
+  invalid_packet_batch:'数据包格式错误，已拒绝', inference_invalid:'模型数值无效，已拒绝',
+  network_error:'网络失效，旧结果已撤销', window_buffer_expired:'窗口不完整，已拒绝'
+};
+const el = id => document.getElementById(id);
+function buttons(active) {
+  for (const target of ['left','right','rest']) el(target).disabled = active || pending;
+  el('virtualEnabled').disabled = active || pending;
+}
+function clearCurrent(message) {
+  el('feedback').textContent = message;
+  el('detail').textContent = '';
+}
+function renderVirtual(data, active) {
+  const hand = data.virtual_hand;
+  if (!hand || hand.simulation !== true || hand.control_enabled !== false) {
+    el('virtualStatus').textContent = '虚拟控制不可用；没有控制命令';
+    return;
+  }
+  const pose = hand.position_percent;
+  if (!Number.isFinite(pose) || pose < 0 || pose > 100) {
+    el('virtualStatus').textContent = '虚拟姿态无效；没有控制命令';
+    return;
+  }
+  el('virtualPose').textContent = '末次虚拟握合位置：' + pose + '%';
+  el('virtualFingers').setAttribute('transform',
+    'translate(0 112) scale(1 ' + (1 - .65 * pose / 100) + ') translate(0 -112)');
+  const command = hand.last_command;
+  const owned = active && trialId && data.id === trialId && !document.hidden;
+  if (owned && hand.enabled && command && command.trial_id === trialId && command.source === data.source) {
+    el('virtualStatus').textContent = '已执行一次虚拟' + (command.label === 'left' ? '张开' : '握合') +
+      '；命令编号 ' + command.sequence + '；不是实际灵巧手动作';
+  } else {
+    el('virtualStatus').textContent = owned && hand.enabled
+      ? '等待完整、及时、合格的模型输出；尚未移动'
+      : '已停止／未启用；没有正在执行的命令，保留末次虚拟姿态';
+  }
+}
+async function api(body) {
+  const response = await fetch('/api/mi-cue', {
+    method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body),
+    signal:AbortSignal.timeout(2000), cache:'no-store'
+  });
+  const data = await response.json();
+  if (!response.ok) throw Error(data.error || '请求失败');
+  return data;
+}
+function render(data) {
+  el('source').textContent = (data.source === 'replay' ? '回放：不是真实实时识别' : '实时接口：未证明识别准确率') + ' · 永不驱动外设';
+  const active = data.state === 'active' || data.state === 'awaiting_presentation';
+  buttons(active);
+  renderVirtual(data, active);
+  if (!trialId || data.id !== trialId || !active || document.hidden) {
+    clearCurrent(data.input_state === 'no_data' && data.reason === 'cue_required'
+      ? '未收到数据' : (reasons[data.reason] || data.reason || '等待开始'));
+    el('detail').textContent = '输入：' + data.input_state + '；模型：' + data.model_status;
+    if (!active && data.id === trialId) {trialId = null; el('cue').textContent = '等待开始';}
+    return;
+  }
+  if (data.result && data.result.source === data.source) {
+    el('feedback').textContent = '候选：' + labels[data.result.label];
+    el('detail').textContent = (data.result.matches_cue ? '与提示一致' : '与提示不同') + '；只是实验候选，不是识别准确率证明。';
+  } else clearCurrent(reasons[data.reason] || data.reason);
+}
+async function startTrial(target) {
+  if (pending || trialId || document.hidden) return;
+  const version = ++epoch;
+  pending = true; buttons(true); clearCurrent('准备提示');
+  let created = null;
+  try {
+    created = await api({action:'start',target,
+      virtual_control:target !== 'rest' && el('virtualEnabled').checked === true});
+    if (version !== epoch || document.hidden) {
+      await api({action:'stop',id:created.id,reason:'page_hidden'}); return;
+    }
+    trialId = created.id;
+    el('cue').textContent = target === 'rest' ? '休息' : (target === 'left' ? '← 想象左手' : '想象右手 →');
+    const onset = await new Promise(resolve => requestAnimationFrame(resolve));
+    if (version !== epoch || document.hidden) return;
+    const data = await api({action:'presented',id:trialId,browser_onset_ms:onset,browser_send_ms:performance.now()});
+    if (version === epoch) render(data);
+  } catch (error) {
+    if (version === epoch) {
+      clearCurrent('未开始／已撤销：' + error.message); trialId = null;
+      el('cue').textContent = '等待开始';
+      el('virtualStatus').textContent = '请求失败，虚拟控制已停止';
+      el('virtualEnabled').checked = false;
+    }
+    if (created) api({action:'stop',id:created.id,reason:'network_error'}).catch(() => {});
+  } finally {pending = false; buttons(Boolean(trialId));}
+}
+function stopTrial(reason = 'user_stopped') {
+  ++epoch;
+  const id = trialId;
+  trialId = null; el('cue').textContent = '等待开始';
+  clearCurrent(reasons[reason]); buttons(false);
+  el('virtualEnabled').checked = false;
+  el('virtualStatus').textContent = '已停止；没有正在执行的命令，保留末次虚拟姿态';
+  if (id) api({action:'stop',id,reason}).catch(() => {});
+}
+async function poll() {
+  if (polling || pending || document.hidden) return;
+  polling = true;
+  const version = epoch;
+  try {
+    const data = trialId ? await api({action:'heartbeat',id:trialId}) : await fetch('/api/mi-cue', {
+      cache:'no-store',signal:AbortSignal.timeout(2000)
+    }).then(response => {if (!response.ok) throw Error('HTTP'); return response.json();});
+    if (version === epoch) render(data);
+  } catch (error) {if (version === epoch) stopTrial('network_error');}
+  finally {polling = false;}
+}
+for (const target of ['left','right','rest']) el(target).onclick = () => startTrial(target);
+el('stop').onclick = () => stopTrial();
+document.addEventListener('visibilitychange', () => {if (document.hidden) stopTrial('page_hidden');});
+window.addEventListener('pagehide', () => {
+  const id = trialId;
+  stopTrial('page_closed');
+  if (id) fetch('/api/mi-cue',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({action:'stop',id,reason:'page_closed'}),keepalive:true}).catch(() => {});
+});
+setInterval(poll, 400);
+poll();
+</script>
+</html>

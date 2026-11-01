@@ -1,0 +1,5 @@
+{
+  "extends": "ssvep_wearable_8ch_sanity_protocol.json",
+  "electrode_axis_names": ["dry", "wet"],
+  "metadata_correction": "The Figshare Readme.pdf claims axis-2 index 1=wet, 2=dry, but Impedance.mat means are [261.67489949, 19.63169622] kOhm for zero-based indices [0,1]. The article reports 261.67 kOhm dry and 19.63 kOhm wet. We therefore label data axis index 0=dry, 1=wet; source discrepancy is retained."
+}

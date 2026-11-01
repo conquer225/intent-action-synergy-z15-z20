@@ -1,0 +1,163 @@
+{
+  "remote": "/home/xilinx/gl-hdmi-audio-installed-20261016-2jBKz1",
+  "plan": {
+    "boot": "dbabd156-a8fd-45c1-9a05-bf10615a5998",
+    "services": [
+      {
+        "unit": "play-85593c12.service",
+        "argv": [
+          "/usr/bin/env",
+          "XILINX_XRT=/usr",
+          "OPENBLAS_NUM_THREADS=1",
+          "/usr/local/share/pynq-venv/bin/python3",
+          "/home/xilinx/gl-hdmi-live-20261008-ea117349/media_player.py",
+          "--state",
+          "/home/xilinx/gl-hdmi-live-20261008-ea117349/play-85593c12.json",
+          "--hdmi-candidate",
+          "--ssvep-runtime",
+          "/home/xilinx/gl-hdmi-software-20261008-6797e092/runtime",
+          "--ssvep-port",
+          "9105",
+          "--native-scan-library",
+          "/home/xilinx/gl-hdmi-live-20261008-ea117349/libguardianloop_scan.so",
+          "--native-scan-sha256",
+          "c43866c005586cb891312099bbf29301f8cd015e5841021943ac6fc3a4e404c4"
+        ],
+        "properties": {
+          "TimeoutStopSec": "infinity",
+          "KillMode": "process",
+          "LimitCORE": "0",
+          "Nice": "5"
+        }
+      },
+      {
+        "unit": "gl-hdmi-live-20261008-ea117349-server.service",
+        "argv": [
+          "/usr/bin/env",
+          "XILINX_XRT=/usr",
+          "OPENBLAS_NUM_THREADS=1",
+          "/usr/local/share/pynq-venv/bin/python3",
+          "/home/xilinx/gl-hdmi-live-20261008-ea117349/media_server.py",
+          "--key-file",
+          "/home/xilinx/gl-hdmi-live-20261008-ea117349/access.key",
+          "--port",
+          "9119"
+        ],
+        "properties": {
+          "TimeoutStopSec": "10s",
+          "MemoryMax": "402653184",
+          "Nice": "5",
+          "LimitCORE": "0"
+        }
+      },
+      {
+        "unit": "gl-hdmi-live-20261008-ea117349-watch.service",
+        "argv": [
+          "/usr/bin/env",
+          "XILINX_XRT=/usr",
+          "/usr/local/share/pynq-venv/bin/python3",
+          "/home/xilinx/gl-hdmi-live-20261008-ea117349/hdmi_live_session.py",
+          "watch",
+          "--state",
+          "/home/xilinx/gl-hdmi-live-20261008-ea117349/state.json"
+        ],
+        "properties": {
+          "OnFailure": "gl-hdmi-live-20261008-ea117349-recover.service",
+          "KillMode": "process",
+          "TimeoutStopSec": "infinity"
+        }
+      }
+    ],
+    "files": [
+      {
+        "target": "/home/xilinx/gl-hdmi-live-20261008-ea117349/media_player.py",
+        "key": "media_player.py",
+        "old_sha": "144fc6d79978c6c1703e7501cd1e6b32ab1e294f25c438a9e18ab840199aa53f",
+        "new_sha": "3f5d0553a2e46ab3dc31c3482878832d388f1516f56cfd215179a4f3fdad0db2",
+        "mode": 420
+      },
+      {
+        "target": "/home/xilinx/gl-hdmi-live-20261008-ea117349/media_server.py",
+        "key": "media_server.py",
+        "old_sha": "e73e11bc0a7e9e9221d3abad45fede83ac4a0ac5caadcf98eb42ee602b267e3d",
+        "new_sha": "c5397d98b20a956707ccf2ec32d8314f8ff038e61a1980466e72f2428834ffcf",
+        "mode": 420
+      },
+      {
+        "target": "/home/xilinx/gl-hdmi-live-20261008-ea117349/system_hdmi.py",
+        "key": "system_hdmi.py",
+        "old_sha": "eaae86c0d4d8780db590518e799b42b14d4fda99464f375ca04df03b195b9c59",
+        "new_sha": "4cdf7ed38753d819f4f5d2e7ad5650cfa24529292dfa479fe184d6403b772e5a",
+        "mode": 420
+      },
+      {
+        "target": "/home/xilinx/gl-hdmi-live-20261008-ea117349/system_mobile.html",
+        "key": "system_mobile.html",
+        "old_sha": "41f7412c9cdf58099a85c600cd56b52feedcbc3a04d9c09e1e28376a2d1c3232",
+        "new_sha": "ebb0a33524c66fb6d376b411607d8b13df64b3de71d13a2b4dfe5deab22b3237",
+        "mode": 420
+      },
+      {
+        "target": "/home/xilinx/gl-hdmi-live-20261008-ea117349/system_mobile.js",
+        "key": "system_mobile.js",
+        "old_sha": "524b1364fa5f0388f4faf836a1e158fc24cf481d47cf5fc5da21cf557c87bc3e",
+        "new_sha": "9b35c724510f9de3736697e9b312d4e6a7d1aa9e0cb318295b5a2bdccb933ae5",
+        "mode": 420
+      },
+      {
+        "target": "/home/xilinx/gl-hdmi-live-20261008-ea117349/audio_session.py",
+        "key": "audio_session.py",
+        "old_sha": null,
+        "new_sha": "bf419f8a93af02828b0d49e7d6ee2662f27da8f672c9dd2aff6c9f1d619e6714",
+        "mode": 420
+      },
+      {
+        "target": "/home/xilinx/gl-hdmi-live-20261008-ea117349/page_audio.py",
+        "key": "page_audio.py",
+        "old_sha": null,
+        "new_sha": "2a0b6d77ae1e911930be0d185532868e5b3b920e8032e9e9f3f80eba8cd7fe5e",
+        "mode": 420
+      },
+      {
+        "target": "/home/xilinx/gl-hdmi-live-20261008-ea117349/media_state.json",
+        "key": "media_state.json",
+        "old_sha": "b6f23e5c5f1439980f8b0ae5b208787df91b183ed85fd3056f284cb7e608102a",
+        "new_sha": "be83ab97a51e9120c82c462b65f9729f71609e9bd3e8f477b5a5be1c70498513",
+        "mode": 384
+      },
+      {
+        "target": "/home/xilinx/gl-hdmi-live-20261008-ea117349/play-85593c12.json",
+        "key": "play-85593c12.json",
+        "old_sha": "e5884ba3598dbe6522680e41a98f868dba02d4c43ffe5a7b456e7fef375ede50",
+        "new_sha": "5d7ff6afd577ceb824fa21f8ac632a5021804001f8f7f2ec13c47940677bea64",
+        "mode": 384
+      },
+      {
+        "target": "/home/xilinx/gl-hdmi-live-20261008-ea117349/boot-pins.json",
+        "key": "boot-pins.json",
+        "old_sha": "cc0a0eebbb176d5cdf5beb791d0e7d5ebfa70a6e98b14623127d857b5426cebd",
+        "new_sha": "87fb9f8a912f666764b04aeaeb45256c12775937952bdf28177547c56ce04d14",
+        "mode": 384
+      }
+    ],
+    "artifacts": {
+      "/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_pynq.bit": "c39b891704471a712fb7be3591841af1dd6791387957b873b11450c99eca41ca",
+      "/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_pynq.hwh": "2ab7ffa36398be4eee20d90512c7f1c6d29a7066c9d1bf0683a3bcad2501f92b",
+      "/home/xilinx/tobii_z15/overlay/eye_wifi.bit": "8b52892466a1b4d025c5c693a951727ae6215e57ca3e5fa0dedaa2a1d510d50f",
+      "/home/xilinx/tobii_z15/overlay/eye_wifi.hwh": "5dcfe537c6793f5b18b47550f73078ab8d73500888e585037a707c8be1ebacef",
+      "/home/xilinx/gl-hdmi-audio-installed-20261016-2jBKz1/guardianloop_display_audio.bit": "ef60c903c519efb7b4eb5dbcadca1594208f5049207e1a92e422b918dbaae2f6",
+      "/home/xilinx/gl-hdmi-audio-installed-20261016-2jBKz1/guardianloop_display_audio.hwh": "e7c3bcb9024393fba331f6b0c9b85b4a488832555c06309142703b308819767d",
+      "/home/xilinx/gl-pcm-player-20261016-TA9R7U/pcm_player": "36809ed09748340b056947e209fc5c45a4af4ebe71d0964a0a8de2644d0559d0",
+      "/home/xilinx/gl-audio-level-20261016-DMoJIj/carefree_48k.wav": "4d582429eefecc3d89c0c96cab6405b43141304f5991d0ae21bef12b80a67835",
+      "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_water_48k.wav": "bc6d71045fd967959ff317bdfa653eb1b2033dd7be6d88c3283eeac88ccdda77",
+      "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_help_48k.wav": "8d7381b55c341b8ff1eff45c4f64b9f872bd1b8e44ee94393180052109863b32",
+      "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav": "820fc0fa87682a25e06b125989c33c921863095342800a2fb47aa8ab85cbd37d"
+    },
+    "player_state": "/home/xilinx/gl-hdmi-live-20261008-ea117349/play-85593c12.json",
+    "session_id": "play-85593c12",
+    "original_overlay": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_pynq.bit",
+    "display_overlay": "/home/xilinx/gl-hdmi-audio-installed-20261016-2jBKz1/guardianloop_display_audio.bit",
+    "acquisition_pid": 13373,
+    "rollback_timer": "gl-hdmi-audio-installed-20261016-2jBKz1-rollback"
+  }
+}

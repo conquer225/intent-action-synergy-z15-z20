@@ -1,0 +1,48 @@
+{
+  "revision": "20261030-offline",
+  "board_accessed": false,
+  "board_deployed": false,
+  "hardware_motion_verified": false,
+  "regressions": [
+    {
+      "command": "local/vision_tools/Scripts/python.exe integrations/eeg_demo/run_eye_regressions.py",
+      "tests": 150,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "report": "integrations/eeg_demo/report/eye_regression/tests.json"
+    },
+    {
+      "command": "local/vision_tools/Scripts/python.exe integrations/eye_c3/run_tests.py",
+      "tests": 145,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "report": "integrations/eye_c3/report/tests.json"
+    }
+  ],
+  "focused_checks": {
+    "menu_installer_and_release": {"tests": 5, "failures": 0, "errors": 0},
+    "z20_menu_adapter": {"tests": 4, "failures": 0, "errors": 0},
+    "existing_visual_installer": {"tests": 1, "failures": 0, "errors": 0},
+    "baseline_full_install_and_rollback": {"tests": 1, "failures": 0, "errors": 0},
+    "historical_debug_hold_installer": {"tests": 1, "failures": 0, "errors": 0},
+    "paired_transaction": {"tests": 4, "failures": 0, "errors": 0},
+    "busy_request_feedback": {"tests": 1, "failures": 0, "errors": 0}
+  },
+  "syntax": {"grammar": "Python 3.8", "files": 20, "passed": true},
+  "runtime_python": "3.14.7",
+  "native_fitter": "host GCC reference from unchanged C source; not ARM execution",
+  "runtime_payload_manifests_verified": true,
+  "controller_variants_identical": true,
+  "impeccable_detector": {"exit_code": 0, "findings": 0, "targets": ["integrations/eeg_demo/runtime/system_hdmi.py", "integrations/eye_c3/runtime/system_hdmi.py"]},
+  "preview_review": {
+    "renderer": "actual UnifiedDisplay with test link and installed Windows fonts",
+    "size": [1280, 720],
+    "images": ["equipment.png", "hand.png", "hand_stopped.png", "hand_disconnected.png", "pendulum_menu.png", "pendulum_balance.png", "pendulum_turn.png"],
+    "final_images_inspected": true,
+    "hardware_screenshots": false
+  },
+  "frozen_archive": {"writes_performed": false, "size_bytes": 19129366464, "readonly": true, "content_rehashed_this_revision": false},
+  "scope": "The suites overlap; their counts are separate executions, not unique tests. Host tests cover reproduced navigation paths and command framing. Live eye, wireless, ARM timing and actuator acceptance remain pending."
+}

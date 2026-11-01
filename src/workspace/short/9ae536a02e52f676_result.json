@@ -1,0 +1,62 @@
+{
+  "depth_source": "monocular_model_prediction",
+  "model": "yolo26m-depth.pt",
+  "metric_verified": false,
+  "geometry_verified": false,
+  "coordinate_units": "relative_depth_median",
+  "raw_depth_median": 1.1242958307266235,
+  "assumed_intrinsics": [
+    [
+      300.0,
+      0.0,
+      159.5
+    ],
+    [
+      0.0,
+      300.0,
+      179.5
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "image_size": [
+    320,
+    360
+  ],
+  "input_pixels_sha256": "0449aaf76355748d325484ddbab39b5fc1365a957839370a73b0ca00777ebcce",
+  "vertices": 28800,
+  "triangles": 56590,
+  "valid_depth_fraction": 1.0,
+  "mesh_stride": 2,
+  "mesh_max_relative_depth_jump": 0.08,
+  "raw_prediction_range": [
+    0.9086588418483734,
+    1.1242958307266235,
+    1.2585172748565674
+  ],
+  "device": "cpu",
+  "imgsz": 768,
+  "ultralytics_version": "8.4.189",
+  "model_sha256": "c0ff310571f0f159436e95a2a4fa3f8c40e1fbf36fac66a211347bd189990165",
+  "prediction_elapsed_s": 12.98390389999986,
+  "model_speed_ms": {
+    "preprocess": 4.688699999860546,
+    "inference": 543.073199999526,
+    "postprocess": 1.1188000007678056
+  },
+  "input": {
+    "frame_id": "4627",
+    "capture_mode": "navigator-q4-left-rgb-v1",
+    "camera_index": 0,
+    "width": 320,
+    "height": 360,
+    "source": "live:Z20_camera",
+    "metric_verified": false
+  },
+  "session": "1a921c4ad31546c4b91b3b559eee443d",
+  "epoch": 12,
+  "input_sha256": "0449aaf76355748d325484ddbab39b5fc1365a957839370a73b0ca00777ebcce"
+}

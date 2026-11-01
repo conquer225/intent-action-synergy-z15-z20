@@ -1,0 +1,71 @@
+{
+  "scope": "real_archived_artifacts_static_check",
+  "board_executed": false,
+  "archive_path": "integrations/z20_compute/artifacts/z15-motion-firmware-candidate-20261028.zip",
+  "archive_sha256": "28571bbf2a362caacbdae310a9248ef59cd1eead82c8b2b9929e01d5c5dcdac7",
+  "archive_crc_passed": true,
+  "artifact_hashes_verified_against_quality": true,
+  "manifest": {
+    "schema_version": 1,
+    "build_id": "original-z15-motion-20261028",
+    "target_part": "7z015clg485",
+    "required_ips": [
+      "axi_vdma_0",
+      "axi_vdma_1",
+      "live_osd_0",
+      "v_tc_0",
+      "pcm_buffer_0",
+      "vision_core_0",
+      "vision_keys_0",
+      "audio_fft_0"
+    ],
+    "bit": {
+      "path": "guardianloop_display_audio.bit",
+      "sha256": "4c26537cde6262c2add85566ab6e7c61492cbb80cfb72a469253d787f36898ac"
+    },
+    "hwh": {
+      "path": "guardianloop_display_audio.hwh",
+      "sha256": "854062ce95969530dea62e8414c693e1bc8f4937f81f9009196eeadcfd4f4ef7"
+    }
+  },
+  "checks": [
+    {
+      "command": "python scripts/check_overlay.py TEMP_RELEASE/manifest.json --part 7z015clg485",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "report": {
+        "passed": true,
+        "scope": "offline_artifact_identity",
+        "board_executed": false,
+        "build_id": "original-z15-motion-20261028",
+        "bit_part": "7z015clg485",
+        "hwh_part": "7z015clg485",
+        "checked_files": [
+          "guardianloop_display_audio.bit",
+          "guardianloop_display_audio.hwh"
+        ],
+        "required_ips": [
+          "axi_vdma_0",
+          "axi_vdma_1",
+          "live_osd_0",
+          "v_tc_0",
+          "pcm_buffer_0",
+          "vision_core_0",
+          "vision_keys_0",
+          "audio_fft_0"
+        ]
+      }
+    },
+    {
+      "command": "python scripts/check_overlay.py TEMP_RELEASE/manifest.json --part 7z020clg400",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "report": {
+        "passed": false,
+        "scope": "offline_artifact_identity",
+        "board_executed": false,
+        "error": "manifest part differs from the supplied physical part"
+      }
+    }
+  ]
+}

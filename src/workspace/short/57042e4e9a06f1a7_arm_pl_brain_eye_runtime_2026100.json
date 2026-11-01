@@ -1,0 +1,737 @@
+{
+  "checked_on_client_date": "2026-10-05",
+  "read_only": true,
+  "board_boot_id": "810e96c1-6788-4bf6-939a-72e38787bfca",
+  "release": "guardianloop-fixed8-mobile-web-20261003",
+  "brain_file_hashes": {
+    "cyton_covariance.py": {
+      "sha256": "738b5bf96caa5dafbc64616d41dd566da3f087e4fb08cb3420cdbba67a64f9f2",
+      "matches": true
+    },
+    "cyton_fatigue.py": {
+      "sha256": "a2e057ba2715432e07490e6b12cf10ed1091199f33191995b93f4f6176b82eaf",
+      "matches": true
+    },
+    "cyton_fatigue_overlap4.json": {
+      "sha256": "18dd9908e01f4dd28e8ca1d7d20e3d207e51be779e76bfa4524b6857a36606a6",
+      "matches": true
+    },
+    "cyton_guardianloop.py": {
+      "sha256": "6d70f4fffcfc794ed410c413b21c596b22131f33099f84d798e09c1068d2349f",
+      "matches": true
+    },
+    "cyton_reader_sink.py": {
+      "sha256": "87b6dbe56303ec5571138f3b4386d90a44f4a55338005d36ef0e31af184cb377",
+      "matches": true
+    },
+    "cyton_sqi.py": {
+      "sha256": "9e99682ae8b284cf4cdabb251997952b6cd9facda25486ff15133e06007e6d12",
+      "matches": true
+    },
+    "cyton_trial_recorder.py": {
+      "sha256": "16a29ef63e95bd71b5e54c8882aeaaf6ef397ad0f80f6ef6c1710d3c5c06ef2c",
+      "matches": true
+    },
+    "experimental_eegnet.npz": {
+      "sha256": "178ad7c177adde6fdc939969a40bf25d9e0802d6b230b9127063f14c8402d7e6",
+      "matches": true
+    },
+    "experimental_rms_eegnet.npz": {
+      "sha256": "363daf3b68da6e80495319052447ec83e06b9e3e327a1bd0ff9e6023a5b54221",
+      "matches": true
+    },
+    "gameemo_covariance_svm.npz": {
+      "sha256": "e379f2ba4569b63bf3cd85985a7936eb56bb38798473640a5657b9da4d107155",
+      "matches": true
+    },
+    "guardianloop_acquisition.py": {
+      "sha256": "d3265afe4bf739478fb21158760d122b5c3f106c5e7ad4ee4bc56453b861f7b6",
+      "matches": true
+    },
+    "guardianloop_pynq.bit": {
+      "sha256": "c39b891704471a712fb7be3591841af1dd6791387957b873b11450c99eca41ca",
+      "matches": true
+    },
+    "guardianloop_pynq.hwh": {
+      "sha256": "2ab7ffa36398be4eee20d90512c7f1c6d29a7066c9d1bf0683a3bcad2501f92b",
+      "matches": true
+    },
+    "guardianloop_pynq.py": {
+      "sha256": "9ec1f7a8d56c8e2e75ed9b90095881b23551b375a1c80393472caaba981ab9d1",
+      "matches": true
+    },
+    "guardianloop_startup.py": {
+      "sha256": "61630c7aa4d231e574e921a39d853c25e55d51ee9bfb62d7fda35de3c148de03",
+      "matches": true
+    },
+    "guardianloop_web.py": {
+      "sha256": "84c763588971ab2d9fcc68f75a6eca622280420d9d0ec45661c0d983073cee1a",
+      "matches": true
+    },
+    "mi_acquisition.py": {
+      "sha256": "e6bebd025605c711d846ac27cfd36e6874e2257b29788ae6f2eb67d46da100f0",
+      "matches": true
+    },
+    "mi_cued.html": {
+      "sha256": "b373e0943ffa5dacdd587355291935cb87b8edab0ab3e320819179e0b6590696",
+      "matches": true
+    },
+    "mi_cued.py": {
+      "sha256": "6aae23e3c4e00d66d583365b15743d8a994b41044f21c979850bc96926193fe3",
+      "matches": true
+    },
+    "mi_cued_server.py": {
+      "sha256": "852661194e574d889130bad6a876f337ac2a84b34e0ae6070a3ddbead833f333",
+      "matches": true
+    },
+    "mi_eegnet_portable.py": {
+      "sha256": "c220761ed1b20b76b483c3eb8d46f79f287f17200fa3e5c45350de967c5986d0",
+      "matches": true
+    },
+    "mi_eegnet_rms.py": {
+      "sha256": "fb2ff5451ed36c89239508111d47959b9739b41619f36aed91a522ac9e0a935f",
+      "matches": true
+    },
+    "mi_features.py": {
+      "sha256": "3688195f63ac5e2bad4547136d851d26aed47f587903dadd8d808fc2b2453faa",
+      "matches": true
+    },
+    "mi_rms_live_virtual.py": {
+      "sha256": "84ce148937a388ef8ff9fad2778d451c3c9b68a35dc1a8e1cb9745c1457a237b",
+      "matches": true
+    },
+    "mi_service_config.py": {
+      "sha256": "a6bdd3e2e1bf707745ca645fba4b55692a32d956f794ad9efc35674f7479fbfa",
+      "matches": true
+    },
+    "mi_web_bridge.py": {
+      "sha256": "d11ee02a4afa01950d38570476cd4c0bc7b78dccfcb898590f80dbdaf2f91380",
+      "matches": true
+    },
+    "mi_window_rms.py": {
+      "sha256": "3eb2252f4607086e8ed32d3fe4ab31998438cb057436c75b1af59ba8cdd652f1",
+      "matches": true
+    },
+    "pl_causal_filter.py": {
+      "sha256": "1bf51cdb121f63294215f886d821ae0373a56cafef2125e3f49a18df7b1aa18b",
+      "matches": true
+    },
+    "seed_gate_policy.py": {
+      "sha256": "b8029403a31a0d43ce5b099b227400b6f34b395f421e9408219759554907a0a4",
+      "matches": true
+    },
+    "seed_quality_runtime.py": {
+      "sha256": "243c6504c09bdcf66ac3ba0b1830f31333ffa156a0af62eedcbc88426ce1b519",
+      "matches": true
+    },
+    "seed_replay_check.py": {
+      "sha256": "5088e6ea5d834f7f3cfcabccb8d64a39274f4d3a2c9ec56d0f18b315fd31228e",
+      "matches": true
+    },
+    "seed_shadow.py": {
+      "sha256": "0e8c341fb0ddba7dd3dc5dfc9262a36a17c8e8a4e2653364848aa17a9f9f79fb",
+      "matches": true
+    },
+    "seed_shadow_policy.py": {
+      "sha256": "2493640bbc5df91bf1545b7edbee79586af3bbf0ddf33b6b1ff2d4c1d2450c83",
+      "matches": true
+    },
+    "seed_shadow_weights.npz": {
+      "sha256": "efc86603148130f3bd25deb0f853fb02fb753b25f4256ee01ed58a12e6b75dca",
+      "matches": true
+    },
+    "ssvep_acquisition.py": {
+      "sha256": "7d747e8349c7e839a41aa8f44353effb93f0229d4ff884f96f4b0126e75c67b4",
+      "matches": true
+    },
+    "ssvep_candidate_sos.npy": {
+      "sha256": "bf074f6175e694ed869621ae897aac88cf5164cd1684a32c463c5d407b3b180c",
+      "matches": true
+    },
+    "ssvep_causal_protocol.json": {
+      "sha256": "2a23f3ce2c6497cca416c0f31c044c496d16197cf2bd63cdc9fbb43cb3c26d0f",
+      "matches": true
+    },
+    "ssvep_core.py": {
+      "sha256": "a1a57465c97608ce6ff84b6261a29ef46fc626bec676eb5af1fd4fd0a67c012c",
+      "matches": true
+    },
+    "ssvep_cued.py": {
+      "sha256": "7ce915e4889649fa727c62c7792da1e4ba7acaa799748dc7bc0311432ba633f5",
+      "matches": true
+    },
+    "ssvep_cue_runtime.py": {
+      "sha256": "a662a724d92a337c609c04f02bb458e2921ff4bde730895e5f73341b75b5b629",
+      "matches": true
+    },
+    "ssvep_free.html": {
+      "sha256": "8c5f20c3d8f00145bc506b5833982b21209adeba49a17c6f83cadbce43fefd3d",
+      "matches": true
+    },
+    "ssvep_free.py": {
+      "sha256": "97ab5f947efb939734fbc0519fe666bb3a0279c80f066719f9582bea0750acc1",
+      "matches": true
+    },
+    "ssvep_recording.py": {
+      "sha256": "cc86ff9eb824825088075abd6c731a6de337f76d1e7c71ecfb9b7c9137a02342",
+      "matches": true
+    },
+    "ssvep_shadow.py": {
+      "sha256": "490be63357dab77e3b67388f5a8b1cca8476a0defcf9585b781978a639613b92",
+      "matches": true
+    },
+    "ssvep_stream.py": {
+      "sha256": "61351b4831b92f64faaa6f9a68225a63a5f21145adbba974ff8099bd35214189",
+      "matches": true
+    },
+    "ssvep_study.py": {
+      "sha256": "30c87452b440ef7d06fef45cbcba66a9d03d4d5fe58a9218089f48b5a332ffd0",
+      "matches": true
+    },
+    "mobile.html": {
+      "sha256": "58557898dcb8539246d655ee24486caa31f63197980986da630b9505cf962a43",
+      "matches": true
+    },
+    "mobile.js": {
+      "sha256": "4f557fa53f4462b950169b06d44dbd6e5588de5bc16abd06a29e82b92b32d8af",
+      "matches": true
+    }
+  },
+  "eye_files": {
+    "overlay/eye_wifi.bit": {
+      "bytes": 3510778,
+      "sha256": "8b52892466a1b4d025c5c693a951727ae6215e57ca3e5fa0dedaa2a1d510d50f"
+    },
+    "overlay/eye_wifi.hwh": {
+      "bytes": 622883,
+      "sha256": "5dcfe537c6793f5b18b47550f73078ab8d73500888e585037a707c8be1ebacef"
+    },
+    "display_session.sh": {
+      "bytes": 1270,
+      "sha256": "d347d3afcf853cd923c5f29a463daf42d3a19c29256a76cbfd1a2815bee7c6a3"
+    },
+    "start_local_media.sh": {
+      "bytes": 320,
+      "sha256": "c5f8e552af3bc12a1020d56a5a2149b57e6d77bd7f94bc3cd444f0eb34e9f8ad"
+    }
+  },
+  "eye_ip": [
+    {
+      "name": "DVI_Transmitter_0",
+      "type": "openedv.com:user:DVI_Transmitter:1.0"
+    },
+    {
+      "name": "axi_mem_intercon",
+      "type": "xilinx.com:ip:axi_interconnect:2.1"
+    },
+    {
+      "name": "axi_vdma_0",
+      "type": "xilinx.com:ip:axi_vdma:6.3"
+    },
+    {
+      "name": "axi_vdma_1",
+      "type": "xilinx.com:ip:axi_vdma:6.3"
+    },
+    {
+      "name": "clk_wiz_0",
+      "type": "xilinx.com:ip:clk_wiz:6.0"
+    },
+    {
+      "name": "live_osd_0",
+      "type": "xilinx.com:module_ref:live_osd:1.0"
+    },
+    {
+      "name": "ov5640_capture_data_0",
+      "type": "alientek.com:user:ov5640_capture_data:1.0"
+    },
+    {
+      "name": "processing_system7_0",
+      "type": "xilinx.com:ip:processing_system7:5.5"
+    },
+    {
+      "name": "ps7_0_axi_periph",
+      "type": "xilinx.com:ip:axi_interconnect:2.1"
+    },
+    {
+      "name": "rst_ps7_0_100M",
+      "type": "xilinx.com:ip:proc_sys_reset:5.0"
+    },
+    {
+      "name": "rst_ps7_0_150M",
+      "type": "xilinx.com:ip:proc_sys_reset:5.0"
+    },
+    {
+      "name": "util_vector_logic_0",
+      "type": "xilinx.com:ip:util_vector_logic:2.0"
+    },
+    {
+      "name": "v_axi4s_vid_out_0",
+      "type": "xilinx.com:ip:v_axi4s_vid_out:4.0"
+    },
+    {
+      "name": "v_tc_0",
+      "type": "xilinx.com:ip:v_tc:6.2"
+    },
+    {
+      "name": "v_vid_in_axi4s_0",
+      "type": "xilinx.com:ip:v_vid_in_axi4s:5.0"
+    },
+    {
+      "name": "v_vid_snapshot",
+      "type": "xilinx.com:ip:v_vid_in_axi4s:5.0"
+    }
+  ],
+  "eye_code_excerpts": {
+    "src/tracking.py": {
+      "sha256": "cc9b61a08ef3926a07f3f2199114ebf18135af27aeb93ceefacd601e7d9e5497",
+      "lines": [],
+      "total_lines": 35,
+      "excerpt": true
+    },
+    "src/hdmi_guide.py": {
+      "sha256": "9e5c03e6546cef2d3e66e7e6d7648a152817bb3c4e20ed4d143bfb1eaba9d72b",
+      "lines": [
+        "11: from calibration_worker import Worker, CalibrationRestart",
+        "12: from guide_render import Renderer",
+        "13: from buttons import Buttons",
+        "14: from tracking import Tracking",
+        "15: from validation import Validation, TARGETS",
+        "16: from selection import Selection",
+        "17: from media_menu import Catalog, MediaMenu",
+        "20:     parser = argparse.ArgumentParser()",
+        "21:     parser.add_argument(\"--seconds\", type=int, default=900)",
+        "22:     parser.add_argument(\"--control-dir\", default=\"/dev/shm/tobii_z15/guide\")",
+        "23:     parser.add_argument(\"--preview\", action=\"store_true\")",
+        "24:     parser.add_argument(\"--no-buttons\", action=\"store_true\")",
+        "25:     parser.add_argument(\"--live\",action=\"store_true\")",
+        "26:     parser.add_argument(\"--relaxed\",action=\"store_true\",help=\"Longer settle and bounded same-point retries\")",
+        "27:     parser.add_argument(\"--selection-test\",action=\"store_true\",help=\"Calibrate then keep streaming to a three-region dwell test\")",
+        "28:     parser.add_argument(\"--relative-selection\",action=\"store_true\",help=\"Board-only three horizontal anchors from available live gaze; no OEM model compute\")",
+        "29:     parser.add_argument(\"--local-media\", action=\"store_true\", help=\"Relative gaze menus with SD-card speech, silent video and music\")",
+        "30:     parser.add_argument(\"--media-dir\", type=Path, help=\"Directory containing playlist.json and prepared assets\")",
+        "31:     parser.add_argument(\"--audio-device\", help=\"ALSA device override, e.g. plughw:CARD=Device,DEV=0\")",
+        "32:     parser.add_argument(\"--calibration-points\",type=int,choices=(3,5,9),default=3)",
+        "33:     parser.add_argument(\"--width-mm\",type=float,default=220)",
+        "34:     parser.add_argument(\"--height-mm\",type=float,default=160)",
+        "43:             raise ValueError(\"Selection test requires live calibration, without restored model or preview\")",
+        "44:         args.relaxed=True",
+        "45:     from pynq import Overlay, PL, allocate",
+        "46:     import numpy as np",
+        "47:     root = Path(__file__).resolve().parents[1]",
+        "48:     control = Path(args.control_dir)",
+        "51:     for name in (\"command.json\", \"backend.json\"):",
+        "52:         (control/name).unlink(missing_ok=True)",
+        "53:     lock = open(\"/run/lock/tobii_display.lock\", \"w\")",
+        "54:     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)",
+        "55:     original = PL.bitfile_name",
+        "56:     if not original or not Path(original).exists():",
+        "57:         raise RuntimeError(\"Original overlay unavailable\")",
+        "58:     lib = C.CDLL(str(root/\"libtobii_display.so\"))",
+        "59:     lib.display_open.argtypes = [C.POINTER(C.c_uint32)]",
+        "60:     lib.display_park.argtypes = [C.c_uint]",
+        "61:     lib.display_status.restype = lib.display_frames.restype = C.c_uint32",
+        "62:     buffers, overlay, mapped = [], None, False",
+        "66:     points = DIRECTION_POINTS if args.relative_selection else {3:HORIZONTAL_POINTS,5:FIVE_POINTS,9:POINTS}[args.calibration_points] if args.selection_test else POINTS",
+        "67:     state = Validation() if validating else Guide(relaxed=args.relaxed,points=points,diagnostic_seconds=10 if args.selection_test else 15,collect_seconds=6 if args.relative_selection else 3)",
+        "68:     renderer = Renderer(buttons=not args.no_buttons,live=args.live,relaxed=args.relaxed,validation=validating,selection_test=args.selection_test,calibration_points=args.calibration_points,relative=args.relative_selection,local_media=args.local_media)",
+        "69:     selection=None",
+        "70:     menu = None",
+        "71:     catalog = Catalog(args.media_dir or root / \"media\") if args.local_media else None",
+        "72:     buttons = None",
+        "73:     worker, sent_point, compute_sent = None, -1, False",
+        "74:     restart = CalibrationRestart()",
+        "75:     cleanup_pending = None",
+        "76:     tracking = Tracking(reference_cm=(40,43) if args.relative_selection else None)",
+        "77:     generation, last_command, last_backend, last_view = None, None, None, None",
+        "78:     def begin(now,preview,diagnostic=False):",
+        "79:         nonlocal worker,sent_point,compute_sent,generation,cleanup_pending,tracking,menu,selection",
+        "80:         if state.phase not in (\"ready\",\"complete\",\"failed\",\"cancelled\",\"checked\",\"validated\",\"usable\",\"validation_failed\",\"restarting\"):",
+        "81:             return False",
+        "82:         if worker is not None:",
+        "91:         sent_point,compute_sent=-1,False",
+        "92:         cleanup_pending=None",
+        "93:         tracking=Tracking(reference_cm=(40,43) if args.relative_selection else None)",
+        "94:         if preview:",
+        "95:             state.start(now,preview=True)",
+        "96:         else:",
+        "107:     signal.signal(signal.SIGTERM,stop)",
+        "108:     try:",
+        "109:         if not args.no_buttons:",
+        "110:             buttons=Buttons()",
+        "111:             print(\"buttons=PS_KEY0:%s PS_KEY1:pause\"%(\"start_validation\" if validating else \"start_calibration\" if args.live else \"start_preview\"),flush=True)",
+        "112:         overlay = Overlay(str(root/\"overlay/eye_wifi.bit\"))",
+        "113:         for name,address in {\"axi_vdma_0\":0x43000000,\"axi_vdma_1\":0x43010000,",
+        "114:                              \"live_osd_0\":0x43c00000,\"v_tc_0\":0x43c10000}.items():",
+        "115:             if overlay.ip_dict.get(name,{}).get(\"phys_addr\") != address:",
+        "116:                 raise RuntimeError(\"Overlay mismatch: \"+name)",
+        "117:         initial = renderer.render(state.tick(time.monotonic()))",
+        "118:         for _ in range(3):",
+        "119:             b=allocate(shape=initial.shape,dtype=np.uint8)",
+        "123:         mapped = True",
+        "124:         physical=(C.c_uint32*3)(*[b.physical_address for b in buffers])",
+        "125:         if not lib.display_open(physical) or not lib.display_park(0):",
+        "126:             raise RuntimeError(\"HDMI initialization failed\")",
+        "127:         current=0",
+        "128:         if args.preview:",
+        "134:             if menu is not None and state.phase!=\"selection\":",
+        "135:                 menu.close();menu=None;selection=None",
+        "136:             if buttons is not None:",
+        "137:                 actions=buttons.poll(now)",
+        "138:                 # Cancel has priority if both keys are pressed together.",
+        "139:                 if \"pause\" in actions:",
+        "140:                     restart.cancel()",
+        "155:                     elif state.phase in (\"ready\",\"complete\",\"failed\",\"cancelled\",\"checked\",\"validated\",\"usable\",\"validation_failed\"):",
+        "156:                         if begin(now,preview=not args.live):",
+        "157:                             print(\"button=PS_KEY0 action=%s\"%(\"start_validation\" if validating else \"start_calibration\" if args.live else \"start_preview\"),flush=True)",
+        "158:                     else:",
+        "159:                         print(\"button=PS_KEY0 action=ignored_running\",flush=True)",
+        "160:             try:",
+        "201:                     if restart.pending:",
+        "202:                         continue  # Old points/results/exit errors cannot mutate the new session.",
+        "203:                     if event.get(\"kind\") not in (\"quality\",\"gaze\",\"direction_gaze\",\"horizontal_gaze\"):print(\"worker_event=\"+json.dumps(event),flush=True)",
+        "204:                     if event.get(\"kind\")==\"ready\" and state.phase==\"connecting\":",
+        "205:                         if args.relative_selection:",
+        "206:                             state.phase=\"positioning\"",
+        "217:                         state.detail=\"正在第 %d / %d 次采样，请继续看白点\"%(event[\"attempt\"],event[\"limit\"])",
+        "218:                     elif event.get(\"kind\")==\"quality\":",
+        "219:                         tracking.update(event,time.monotonic())",
+        "220:                     elif event.get(\"kind\")==\"gaze\" and validating:",
+        "221:                         state.update_gaze(event,time.monotonic())",
+        "222:                     elif event.get(\"kind\")==\"gaze\" and selection is not None and state.phase==\"selection\" and not args.local_media:",
+        "223:                         if selection.update(event,time.monotonic()):",
+        "224:                             print(\"selection_event=\"+json.dumps(dict(region=selection.selected,count=selection.confirmations,monotonic_ns=event.get(\"monotonic_ns\"))),flush=True)",
+        "225:                     elif event.get(\"kind\")==\"horizontal_gaze\" and args.relative_selection and selection is not None and state.phase==\"selection\":",
+        "226:                         if menu is not None:",
+        "227:                             if menu.gaze(event,time.monotonic()):",
+        "228:                                 print(\"media_selection=\"+json.dumps(dict(action=menu.last_action,region=selection.selected,count=selection.confirmations,monotonic_ns=event.get(\"monotonic_ns\"))),flush=True)",
+        "229:                         elif not args.local_media and selection.update_horizontal(event,time.monotonic()):",
+        "230:                             print(\"selection_event=\"+json.dumps(dict(region=selection.selected,count=selection.confirmations,monotonic_ns=event.get(\"monotonic_ns\"),mode=\"relative\")),flush=True)",
+        "259:                         state.detail=\"位置检查采样已结束，按 PS_KEY0 可重新连接\" if positioning else \"三个方向数据不足或未分开，请调整后重做\" if args.relative_selection else (\"%d 点采样完成，校准计算失败 0x%08X；请重新校准\"%(len(points),event.get(\"status\",0)) if computing and args.selection_test else \"模组处理未完成，错误 %s；可以移开视线\"%event.get(\"code\"))",
+        "260:                 if state.phase==\"connecting\" and now-worker.started>(20 if validating else 12):",
+        "261:                     state.phase=\"failed\";state.detail=\"连接等待超过 12 秒，请检查 USB\"",
+        "262:                 if state.phase==\"diagnostic\" and now-state.started>30:",
+        "263:                     state.phase=\"failed\";state.detail=\"定位检查等待超过 30 秒，正在停止\"",
+        "264:             try:",
+        "276:             now=time.monotonic()",
+        "277:             if args.local_media and menu is None and selection is not None and state.phase==\"selection\":",
+        "278:                 menu=MediaMenu(catalog,selection,now=now,audio_device=args.audio_device)",
+        "279:             if menu is not None:menu.tick(now)",
+        "280:             view=state.tick(now)",
+        "281:             if state.phase==\"selection\" and selection is not None:",
+        "282:                 view=menu.view(now) if menu is not None else selection.view(now)",
+        "283:             if worker is not None and view.phase in (\"positioning\",\"prepare\",\"settle\",\"collect\",\"waiting\",\"compute\",\"diagnostic\",\"vsettle\",\"vcollect\",\"selection\",\"menu\",\"video\",\"failed\",\"cancelled\",\"checked\") and not view.preview:",
+        "284:                 view=replace(view,tracking=tracking.lines(now))",
+        "285:             # Acknowledge presentation only after parking has selected the new",
+        "286:             # flushed buffer. Never write into the displayed CMA frame.",
+        "287:             if view!=last_view:",
+        "296:                 payload=dict(phase=view.phase,point=view.point,remaining=view.remaining,",
+        "297:                              preview=view.preview,generation=generation,monotonic_s=now)",
+        "298:                 if view.tracking:payload[\"tracking\"]=view.tracking",
+        "299:                 if view.phase==\"selection\":",
+        "300:                     payload.update(hover=view.hover,selected=view.selected,progress=view.progress,confirmations=view.confirmations,paused=view.paused)",
+        "301:                 elif view.phase in (\"menu\",\"video\"):",
+        "352:         if menu is not None:menu.close()",
+        "353:         if worker is not None:worker.close()",
+        "354:         if buttons is not None:",
+        "355:             buttons.close()",
+        "356:         halted=lib.display_close() if mapped else True",
+        "357:         if not halted:",
+        "358:             overlay.download()  # If reset fails, retain possibly-owned CMA.",
+        "359:         for b in buffers:",
+        "360:             b.freebuffer()",
+        "361:         if overlay is not None:",
+        "362:             Overlay(original)",
+        "363:             print(\"restored_overlay=\"+original,flush=True)",
+        "364:         lock.close()",
+        "365: ",
+        "366: if __name__==\"__main__\":"
+      ],
+      "total_lines": 367,
+      "excerpt": true
+    },
+    "src/buttons.py": {
+      "sha256": "fed2ef4c3646a8423dfb64fe6d8ffeadebd1b5f797aa6892c4ab1dd91654adc7",
+      "lines": [
+        "54:         self.buffer = bytearray()",
+        "55:         self.mapping = {}",
+        "56:         root = Path(\"/proc/device-tree/keys\")",
+        "57:         for child in root.iterdir():",
+        "58:             if child.is_dir() and (child/\"label\").exists():",
+        "59:                 label=(child/\"label\").read_bytes().rstrip(b\"\\0\").decode()",
+        "66:                     self.mapping[code]=\"start\" if label==\"ps_key0\" else \"pause\"",
+        "67:         if set(self.mapping.values()) != {\"start\",\"pause\"}:",
+        "68:             raise RuntimeError(\"Both Z15 PS buttons are required\")",
+        "69:         for event in sorted(Path(\"/sys/class/input\").glob(\"event*\")):",
+        "70:             if (event/\"device/name\").read_text().strip()==\"keys\":",
+        "71:                 self.fd=os.open(\"/dev/input/\"+event.name,os.O_RDONLY|os.O_NONBLOCK|os.O_CLOEXEC)",
+        "72:                 break",
+        "73:         if self.fd is None:",
+        "92:                 break",
+        "93:             if not chunk:",
+        "94:                 raise RuntimeError(\"Z15 button device disconnected\")",
+        "95:             self.buffer.extend(chunk)",
+        "96:         actions=[]",
+        "97:         while len(self.buffer)>=EVENT.size:"
+      ],
+      "total_lines": 112,
+      "excerpt": true
+    },
+    "src/calibration_worker.py": {
+      "sha256": "909466e111424f3923431c14e9c2c9b08d4afe8561a62f7d3d4ce03fbe476b17",
+      "lines": [
+        "1: \"\"\"Nonblocking UI/USB boundary; each press owns one finite native session.\"\"\"",
+        "2: import json",
+        "3: import os",
+        "4: from pathlib import Path",
+        "53:         self.log=open(self.directory/\"worker.log\",\"wb\")",
+        "54:         options=([\"--validate-model\",str(validation_model)] if validation_model else",
+        "55:                  [\"--locate\"] if locate else [\"--check-tracking\"] if diagnostic else [\"--relative-selection\"] if relative else [{3:\"--selection-test\",5:\"--selection-test5\",9:\"--selection-test9\"}[calibration_points]] if selection_test else [\"--relaxed\"] if relaxed else [])",
+        "56:         self.process=subprocess.Popen([str(Path(root)/\"is4-calibration\"),",
+        "57:             str(self.directory),str(width),str(height)]+options,stdin=subprocess.PIPE,",
+        "58:             stdout=subprocess.PIPE,stderr=self.log,start_new_session=True)",
+        "59:         os.set_blocking(self.process.stdout.fileno(),False)",
+        "100:                 os.killpg(self.process.pid,signal.SIGKILL)",
+        "101:                 self.process.wait(timeout=2)",
+        "102:                 print(\"worker_cleanup_timeout; device state needs recheck\",flush=True)",
+        "103:         self.process.stdin.close();self.process.stdout.close();self.log.close()",
+        "104: ",
+        "105:     def abort(self):"
+      ],
+      "total_lines": 108,
+      "excerpt": true
+    },
+    "src/calibration.c": {
+      "sha256": "0ae5d8664016949773aa7d8270012297f619b3df47980c5b7a5f2d36748eefc2",
+      "lines": [
+        "1: /* IS4 board worker. Reuses the credited, generated USB framing/decoder only. */",
+        "2: #define main diagnostic_probe_main",
+        "3: #include \"is4-probe.c\"",
+        "4: #undef main",
+        "5: #include <poll.h>",
+        "6: #include <unistd.h>",
+        "13: static struct parser parser;",
+        "14: static struct ttp_frame reply;",
+        "15: static libusb_device_handle *device;",
+        "16: static uint32_t sequence;",
+        "17: static FILE *samples;",
+        "18: static int valid_count, sample_count;",
+        "46: static double target_x,target_y;",
+        "47: static char target_label[32];",
+        "48: static uint64_t next_gaze_event,last_gaze_ns,max_gaze_gap_ns;",
+        "49: static int target_samples[9],target_valid[9],target_correct[9];",
+        "50: static double target_error_sum[9];",
+        "51: ",
+        "64:     }",
+        "65:     if (frame->magic != TTP_MAGIC_NOTIFY || frame->op != STREAM_GAZE) return;",
+        "66:     struct gaze_sample g;",
+        "67:     if (!decode_gaze_sample(frame->payload, frame->plen, &g)) return;",
+        "68:     sample_count++;",
+        "69:     quality_samples++;",
+        "70:     bool left=g.eye_present_l==1,right=g.eye_present_r==1;",
+        "92:     detected_pupil_left+=left && g.has_pupil_l && isfinite(g.pupil_l_mm) && g.pupil_l_mm>0;",
+        "93:     detected_pupil_right+=right && g.has_pupil_r && isfinite(g.pupil_r_mm) && g.pupil_r_mm>0;",
+        "94:     bool valid = g.gaze_valid == 1 && g.has_gaze_2d && isfinite(g.gaze_x) &&",
+        "95:         (direction_mode || (isfinite(g.gaze_y) && g.gaze_x >= 0 && g.gaze_x <= 1 &&",
+        "96:         g.gaze_y >= 0 && g.gaze_y <= 1)) &&",
+        "97:         ((g.eye_present_l == 1 && g.validity_l == 0) ||",
+        "98:          (g.eye_present_r == 1 && g.validity_r == 0));",
+        "99:     if (valid) valid_count++;",
+        "104:             if(!direction_n[i])direction_first[i]=now;",
+        "105:             direction_last[i]=now;",
+        "106:             direction_data[i][direction_n[i]++]=g.gaze_x;",
+        "107:         }",
+        "108:     }",
+        "109:     if(selection_stream) {",
+        "110:         uint64_t now=monotonic_ns();",
+        "111:         if(direction_mode) {",
+        "112:             const char *kind=direction_trained?\"horizontal_gaze\":\"direction_gaze\";",
+        "113:             double x=direction_trained?direction_normalize(g.gaze_x):g.gaze_x;",
+        "114:             if(valid)printf(\"{\\\"kind\\\":\\\"%s\\\",\\\"valid\\\":true,\\\"x\\\":%.6f,\\\"monotonic_ns\\\":%llu}\\n\",kind,x,(unsigned long long)now);",
+        "115:             else printf(\"{\\\"kind\\\":\\\"%s\\\",\\\"valid\\\":false,\\\"monotonic_ns\\\":%llu}\\n\",kind,(unsigned long long)now);",
+        "116:         }",
+        "117:         else if(valid)printf(\"{\\\"kind\\\":\\\"gaze\\\",\\\"valid\\\":true,\\\"x\\\":%.6f,\\\"y\\\":%.6f,\\\"monotonic_ns\\\":%llu}\\n\",g.gaze_x,g.gaze_y,(unsigned long long)now);",
+        "118:         else printf(\"{\\\"kind\\\":\\\"gaze\\\",\\\"valid\\\":false,\\\"monotonic_ns\\\":%llu}\\n\",(unsigned long long)now);",
+        "119:     }",
+        "120:     if(validation_stream) {",
+        "121:         uint64_t now=monotonic_ns();",
+        "122:         if(last_gaze_ns && now-last_gaze_ns>max_gaze_gap_ns)max_gaze_gap_ns=now-last_gaze_ns;",
+        "123:         last_gaze_ns=now;",
+        "124:         if(target_index>=0) {",
+        "125:             target_samples[target_index]++;",
+        "126:             if(valid) {",
+        "127:                 target_valid[target_index]++;",
+        "128:                 target_correct[target_index]+=(g.gaze_x<1.0/3?0:g.gaze_x<2.0/3?1:2)==(int)(target_x*3);",
+        "129:                 target_error_sum[target_index]+=hypot(g.gaze_x-target_x,g.gaze_y-target_y);",
+        "130:             }",
+        "131:         }",
+        "132:         if(now>=next_gaze_event) {",
+        "133:             if(valid)printf(\"{\\\"kind\\\":\\\"gaze\\\",\\\"valid\\\":true,\\\"x\\\":%.6f,\\\"y\\\":%.6f}\\n\",g.gaze_x,g.gaze_y);",
+        "134:             else puts(\"{\\\"kind\\\":\\\"gaze\\\",\\\"valid\\\":false}\");",
+        "135:             next_gaze_event=now+100000000ull;",
+        "136:         }",
+        "137:     }",
+        "138:     if (samples) { write_csv_sample(samples,sample_label,session_start,monotonic_ns(),sample_count,frame,&g); fflush(samples); }",
+        "143:     if (len > CALIBRATION_MAX_BYTES) return -1;",
+        "144:     unsigned char *packet=malloc(ENVELOPE_SIZE+TTP_HDR_SIZE+len);",
+        "145:     if(!packet)return LIBUSB_ERROR_NO_MEM;",
+        "146:     uint32_t seq = sequence++;",
+        "147:     uint64_t request_start=monotonic_ns();",
+        "148:     size_t n = build_frame(packet+ENVELOPE_SIZE, seq, op, payload, len);",
+        "149:     memset(packet,0,4);put_le32(packet+4,(uint32_t)n);",
+        "150:     int err=0;",
+        "151:     if(ENVELOPE_SIZE+n<=CALIBRATION_USB_CHUNK)err=send_packet(device,packet,ENVELOPE_SIZE+n);",
+        "152:     else {",
+        "153:         unsigned char chunk[CALIBRATION_USB_CHUNK];",
+        "154:         for(size_t offset=0;offset<n && !err;) {",
+        "155:             if(stop_requested){err=LIBUSB_ERROR_INTERRUPTED;break;}",
+        "156:             size_t bytes=calibration_out_chunk(chunk,packet+ENVELOPE_SIZE,n,offset);",
+        "157:             int transferred=0;",
+        "158:             err=libusb_bulk_transfer(device,TOBII_EP_OUT,chunk,(int)bytes,&transferred,2000);",
+        "159:             if(!err && transferred!=(int)bytes)err=LIBUSB_ERROR_IO;",
+        "160:             if(err){fprintf(stderr,\"large_send_failed op=%04x offset=%zu bytes=%zu transferred=%d error=%d\\n\",op,offset,bytes,transferred,err);break;}",
+        "161:             offset+=bytes-ENVELOPE_SIZE;",
+        "162:             /* Keep incoming images/gaze draining while writing a large blob.",
+        "163:              * Parser sees each actual IN transfer, preserving envelope boundaries. */",
+        "164:             uint64_t drain_until=monotonic_ns()+20000000ull;",
+        "165:             while(monotonic_ns()<drain_until && offset<n) {",
+        "166:                 unsigned char incoming[READ_BUFFER_BYTES];int received=0;",
+        "167:                 int rc=libusb_bulk_transfer(device,TOBII_EP_IN,incoming,sizeof(incoming),&received,1);",
+        "168:                 if(received>0 && parser_feed(&parser,incoming,received)){err=LIBUSB_ERROR_OVERFLOW;break;}",
+        "169:                 int popped;",
+        "170:                 while((popped=parser_pop(&parser,&reply))>0)notify_sample(&reply);",
+        "171:                 if(popped<0){err=LIBUSB_ERROR_OTHER;break;}",
+        "172:                 if(rc && rc!=LIBUSB_ERROR_TIMEOUT){err=rc;break;}",
+        "173:                 if(!received)break;",
+        "174:             }",
+        "175:         }",
+        "180:     uint64_t until = monotonic_ns()+(uint64_t)ms*1000000ull;",
+        "181:     while (!stop_requested && monotonic_ns()<until) {",
+        "182:         int rc=read_next_frame(device,&parser,&reply,100);",
+        "183:         if (rc<0) {fprintf(stderr,\"command_read_failed op=%04x error=%d\\n\",op,rc);return rc;}",
+        "184:         if (!rc) continue;",
+        "185:         notify_sample(&reply);",
+        "190:         return 0;",
+        "191:     }",
+        "192:     return LIBUSB_ERROR_TIMEOUT;",
+        "193: }",
+        "194: ",
+        "195: static bool blob_valid(const unsigned char *p, uint32_t len) {",
+        "243:     return 0;",
+        "244: }",
+        "245: static int validate_tracking(void) {",
+        "246:     sample_label=\"transition\";validation_stream=true;",
+        "247:     puts(\"{\\\"kind\\\":\\\"ready\\\"}\");",
+        "248:     int next=0;",
+        "269:                 bool unchanged=ok && reply.plen==n && !memcmp(reply.payload,verified,n);free(verified);"
+      ],
+      "total_lines": 644,
+      "excerpt": true
+    }
+  },
+  "initial_services": "MainPID=0\nResult=success\nNRestarts=0\nExecStart={ path=/usr/local/share/pynq-venv/bin/python3 ; argv[]=/usr/local/share/pynq-venv/bin/python3 /home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_startup.py ; ignore_errors=no ; start_time=[Thu 2021-11-25 14:17:08 UTC] ; stop_time=[Thu 2021-11-25 14:17:41 UTC] ; pid=244 ; code=exited ; status=0 }\nId=guardianloop-startup.service\nActiveState=active\nSubState=exited\nFragmentPath=/etc/systemd/system/guardianloop-startup.service\nDropInPaths=\nNeedDaemonReload=no\n\nMainPID=700\nResult=success\nNRestarts=0\nExecStart={ path=/usr/local/share/pynq-venv/bin/python3 ; argv[]=/usr/local/share/pynq-venv/bin/python3 /home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_acquisition.py --windows 0 --status-file /run/guardianloop/status.json --telemetry-file /run/guardianloop/telemetry.json ; ignore_errors=no ; start_time=[Thu 2021-11-25 14:17:41 UTC] ; stop_time=[n/a] ; pid=700 ; code=(null) ; status=0/0 }\nId=guardianloop-cyton.service\nActiveState=active\nSubState=running\nFragmentPath=/etc/systemd/system/guardianloop-cyton.service\nDropInPaths=/etc/systemd/system/guardianloop-cyton.service.d/20-startup.conf /etc/systemd/system/guardianloop-cyton.service.d/30-mi-entry.conf\nNeedDaemonReload=yes\n\nMainPID=699\nResult=success\nNRestarts=0\nExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_web.py ; ignore_errors=no ; start_time=[Thu 2021-11-25 14:17:41 UTC] ; stop_time=[n/a] ; pid=699 ; code=(null) ; status=0/0 }\nId=guardianloop-web.service\nActiveState=active\nSubState=running\nFragmentPath=/etc/systemd/system/guardianloop-web.service\nDropInPaths=/etc/systemd/system/guardianloop-web.service.d/20-startup.conf\nNeedDaemonReload=yes\n",
+  "startup": {
+    "state": "ready",
+    "stage": "complete",
+    "boot_id": "810e96c1-6788-4bf6-939a-72e38787bfca",
+    "updated_at": 1637849860.660289,
+    "pl": {
+      "loaded": true,
+      "ids": {
+        "de": "44453031",
+        "hgb": "48473031",
+        "model": "50537911"
+      },
+      "used_by_current_cap": false,
+      "verified_at_startup": true
+    },
+    "tasks": {
+      "filter_quality": {
+        "backend": "arm",
+        "channels": [
+          "F3",
+          "F4",
+          "C3",
+          "C4",
+          "T7",
+          "T8",
+          "O1",
+          "O2"
+        ]
+      },
+      "emotion": {
+        "backend": "arm",
+        "channels": [
+          "F3",
+          "F4",
+          "T7",
+          "T8",
+          "O1",
+          "O2"
+        ]
+      },
+      "fatigue": {
+        "backend": "arm",
+        "channels": [
+          "T7",
+          "T8",
+          "O1",
+          "O2"
+        ]
+      },
+      "seed_candidate": {
+        "backend": "arm",
+        "channels": [
+          "F3",
+          "F4",
+          "C3",
+          "C4",
+          "T7",
+          "T8",
+          "O1",
+          "O2"
+        ]
+      },
+      "ssvep_candidate": {
+        "backend": "arm",
+        "channels": [
+          "O1",
+          "O2"
+        ]
+      },
+      "mi_virtual": {
+        "backend": "arm",
+        "channels": [
+          "F3",
+          "F4",
+          "C3",
+          "C4",
+          "T7",
+          "T8",
+          "O1",
+          "O2"
+        ],
+        "model_sha256": "363daf3b68da6e80495319052447ec83e06b9e3e327a1bd0ff9e6023a5b54221",
+        "enabled_by_config": true,
+        "personal_head_enabled": false,
+        "physical_control": false
+      }
+    },
+    "release_id": "guardianloop-fixed8-mobile-web-20261003",
+    "verified_files": 48
+  },
+  "last_checks": {
+    "9090_entry": "{\"arguments_count\": 3, \"entry_tokens\": [\"/usr/local/bin/redirect_server\", \"\"]}\n",
+    "short_stable_services": "MainPID=700\nNRestarts=0\nId=guardianloop-cyton.service\nActiveState=active\n\nMainPID=699\nNRestarts=0\nId=guardianloop-web.service\nActiveState=active\n",
+    "memory": "              total        used        free      shared  buff/cache   available\nMem:           1001         239         605           1         157         741\nSwap:           511           0         511\n",
+    "brain_page": "200 34633\n"
+  },
+  "pc_wifi_restored": "JLU.WIFI",
+  "scope": {
+    "pl_reloaded": false,
+    "board_rebooted": false,
+    "service_started_or_stopped": false,
+    "board_files_changed": false,
+    "eye_started": false,
+    "human_accuracy_tested": false
+  }
+}

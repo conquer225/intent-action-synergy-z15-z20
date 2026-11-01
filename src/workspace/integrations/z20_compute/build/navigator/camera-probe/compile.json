@@ -1,0 +1,31 @@
+{
+  "command": [
+    "D:\\fpga\\z15_multimodal\\integrations\\z20_compute\\build\\arm_compiler\\arm-xilinx-linux-gnueabi-g++.exe",
+    "-BD:/fpga/z15_multimodal/integrations/z20_compute/build/arm_compiler/",
+    "-BD:/vivado/Vitis/2023.1/gnu/aarch32/nt/gcc-arm-linux-gnueabi/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabihf/12.2.0/",
+    "-BD:/vivado/Vitis/2023.1/gnu/aarch32/nt/gcc-arm-linux-gnueabi/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/",
+    "--sysroot=D:/vivado/Vitis/2023.1/gnu/aarch32/nt/gcc-arm-linux-gnueabi/cortexa9t2hf-neon-xilinx-linux-gnueabi",
+    "-isystem",
+    "D:\\vivado\\Vitis\\2023.1\\gnu\\aarch32\\nt\\gcc-arm-linux-gnueabi\\x86_64-petalinux-mingw32\\usr\\lib\\arm-xilinx-linux-gnueabi\\gcc\\arm-xilinx-linux-gnueabi\\12.2.0\\include",
+    "-isystem",
+    "D:\\vivado\\Vitis\\2023.1\\gnu\\aarch32\\nt\\gcc-arm-linux-gnueabi\\x86_64-petalinux-mingw32\\usr\\lib\\arm-xilinx-linux-gnueabi\\gcc\\arm-xilinx-linux-gnueabi\\12.2.0\\include-fixed",
+    "-LD:/vivado/Vitis/2023.1/gnu/aarch32/nt/gcc-arm-linux-gnueabi/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib",
+    "-LD:/vivado/Vitis/2023.1/gnu/aarch32/nt/gcc-arm-linux-gnueabi/cortexa9t2hf-neon-xilinx-linux-gnueabi/lib",
+    "-march=armv7-a",
+    "-mfpu=neon",
+    "-mfloat-abi=hard",
+    "-static",
+    "-O2",
+    "-std=c++11",
+    "-Wno-unknown-pragmas",
+    "-ID:\\fpga\\z15_multimodal\\integrations\\z20_compute\\build\\navigator\\camera-probe",
+    "D:\\fpga\\z15_multimodal\\integrations\\z20_compute\\build\\navigator\\camera-probe\\linux_gpio.cpp",
+    "D:\\fpga\\z15_multimodal\\integrations\\z20_compute\\build\\navigator\\camera-probe\\emio_sccb_cfg\\emio_sccb_cfg.c",
+    "D:\\fpga\\z15_multimodal\\integrations\\z20_compute\\build\\navigator\\camera-probe\\ov5640\\ov5640_init.c",
+    "-o",
+    "D:\\fpga\\z15_multimodal\\integrations\\z20_compute\\build\\navigator\\camera-probe\\camera_probe"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

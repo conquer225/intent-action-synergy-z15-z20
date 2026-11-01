@@ -1,0 +1,18 @@
+{
+  "format": "z20-mlp-v1",
+  "task": "emotion",
+  "version": "4fbca7b68d54c4ef6e6bbcc1",
+  "preprocessor": "seed-causal-180-v1",
+  "labels": [
+    "negative",
+    "neutral",
+    "positive"
+  ],
+  "hidden_shift": 7,
+  "input_scale": 0.015625,
+  "score_scale": 0.00048828125,
+  "minimum_margin": 0.0,
+  "source": "original SEED linear classifier: efc86603148130f3bd25deb0f853fb02fb753b25f4256ee01ed58a12e6b75dca",
+  "source_kind": "public",
+  "weights_sha256": "7a7d5a95127de1d55e031b013dfdd850e2aa2b4b4170989d146ed8ff2dd3f216"
+}

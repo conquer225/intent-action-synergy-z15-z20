@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-01",
+  "timezone": "Asia/Shanghai",
+  "scope": "portable_skill_package_offline_verification",
+  "board_executed": false,
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.7",
+    "project_regression_numpy": "2.5.2",
+    "portable_tools_dependencies": "Python standard library"
+  },
+  "checks": [
+    {
+      "name": "portable_cli_tests",
+      "command": "python -m unittest discover -s skill/tests -v",
+      "cwd": "original engineering root",
+      "tests": 14,
+      "exit_code": 0,
+      "log": "portable-tests.txt"
+    },
+    {
+      "name": "project_related_tests",
+      "cwd": "integrations/z20_compute",
+      "test_patterns": [
+        "test_npu.py",
+        "test_backend.py",
+        "test_board_target.py",
+        "test_link.py",
+        "test_video.py"
+      ],
+      "tests": 12,
+      "exit_code": 0,
+      "log": "project-tests.txt"
+    },
+    {
+      "name": "positive_negative_examples",
+      "commands": 4,
+      "exit_codes": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "expected_exit_codes": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "record": "cli-examples.json"
+    },
+    {
+      "name": "archived_z15_overlay_static_identity",
+      "checks": 2,
+      "exit_codes": [
+        0,
+        1
+      ],
+      "record": "archived-overlay.json",
+      "board_executed": false
+    },
+    {
+      "name": "syntax_and_provenance",
+      "record": "source-and-syntax.json"
+    },
+    {
+      "name": "skill_metadata",
+      "validator": "skill-creator/scripts/quick_validate.py",
+      "command": "python -X utf8 <local skill-creator>/scripts/quick_validate.py skill",
+      "exit_code": 0,
+      "stdout": "Skill is valid!"
+    },
+    {
+      "name": "isolated_directory_copy",
+      "tests": 14,
+      "examples": 4,
+      "passed": true,
+      "record": "isolation-check.json",
+      "log": "isolated-tests.txt"
+    },
+    {
+      "name": "file_checks",
+      "record": "file-checks.json"
+    }
+  ],
+  "historical_board_results": "evidence/project_observations.json and evidence/project_excerpt.json; these are historical records, not new execution",
+  "not_executed": [
+    "new board/PL programming",
+    "live DMA transfer",
+    "Vivado synthesis or implementation",
+    "new board network recovery",
+    "new HDMI visual acceptance",
+    "new human classification accuracy evaluation",
+    "new mechanical motion acceptance",
+    "other Python runtime versions",
+    "other physical boards",
+    "cross-model prompt success rate"
+  ]
+}

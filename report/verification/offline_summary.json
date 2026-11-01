@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "scope": "offline_software_regression_only",
+  "board_executed": false,
+  "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "workspace": "C:\\work\\intent_action_public_runtime_20261101",
+  "package": "C:\\Users\\conquer\\Documents\\ChatGPT\\npu以及联动\\output\\github_publication_20261101\\intent_action_synergy",
+  "results": [
+    {
+      "name": "z20_regression",
+      "exit_code": 0,
+      "duration_seconds": 0.4054667000000336,
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "portable_skill",
+      "exit_code": 0,
+      "duration_seconds": 4.008091499999864,
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "submission_tools",
+      "exit_code": 0,
+      "duration_seconds": 1.756503700000394,
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ]
+}

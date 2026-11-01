@@ -1,0 +1,17 @@
+{
+  "board_executed": false,
+  "image_sha256": null,
+  "board_revision": null,
+  "camera_module": "ATK-MC5640D",
+  "connector": "J22",
+  "boot_log": null,
+  "pixel_order_verified": false,
+  "left_right_verified": false,
+  "calibration_file": null,
+  "camera_fps": [null, null],
+  "hdmi_refresh_hz": null,
+  "depth_updates_hz": null,
+  "analysis_delay_does_not_stop_video": null,
+  "invalid_target_clears_distance": null,
+  "known_distance_trials_m": []
+}

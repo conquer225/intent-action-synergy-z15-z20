@@ -1,0 +1,7 @@
+{
+  "note": "Replace with at least ten synchronized left/right pairs in the exact capture mode",
+  "pairs": [
+    {"left": "pairs/001-left.png", "right": "pairs/001-right.png"},
+    {"left": "pairs/002-left.png", "right": "pairs/002-right.png"}
+  ]
+}

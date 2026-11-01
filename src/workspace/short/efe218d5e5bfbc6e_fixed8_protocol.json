@@ -1,0 +1,29 @@
+{
+  "status": "frozen before access to licensed DEAP files",
+  "objective": "Emotion recognition with the Z15's unchanged eight-electrode montage and participant-independent evaluation",
+  "montage_ch1_to_ch8": ["F3", "F4", "C3", "C4", "T7", "T8", "O1", "O2"],
+  "reference": "Cyton: left ear SRB2, right ear BIAS; DEAP: common-average reference, requiring domain-shift validation",
+  "dataset": "licensed DEAP preprocessed Python, 32 participants, 40 trials per participant",
+  "tasks": ["valence binary", "arousal binary"],
+  "label_policy": "trial self-rating <5 is low, >5 is high, exactly 5 is excluded; never infer game labels as personal emotion labels",
+  "development_subjects": "s01-s24, used only for participant-level model selection and tuning",
+  "untouched_holdout_subjects": "s25-s32, evaluated once after all choices are fixed",
+  "window_policy": "remove the 3-second pre-stimulus baseline; split each 60-second trial into five non-overlapping 12-second windows; all windows inherit their parent trial's self-rating",
+  "primary_metric": "mean per-participant balanced accuracy on each binary task, with per-participant scores and macro-F1",
+  "initial_methods": [
+    "four-band (4–43 Hz) log power + linear classifier",
+    "four-band (4–43 Hz) regularized log covariance + SVM",
+    "four-band (4–43 Hz) tangent-space covariance + linear classifier",
+    "quality-aware covariance as a separately evaluated robustness variant"
+  ],
+  "adaptation_policy": "new-user adaptation may use only a declared early calibration segment; report its duration, whether labels were used, and latency; never fit on future test windows",
+  "deployment_policy": "the Z15 performs acquisition, filtering, quality control and inference locally; browser is display only; ARM-only baseline precedes any PL/Verilog accelerator",
+  "hypothesis": "spatial covariance or tangent-space features improve participant-independent balanced accuracy over band power for the unchanged eight channels",
+  "falsification": "no paired improvement on development participants, or holdout degradation versus the simpler baseline",
+  "limitations": [
+    "DEAP's headset, reference and controlled video stimuli differ from a live Cyton session",
+    "official preprocessed DEAP is already high-pass filtered near 4 Hz; delta-band comparisons require separately licensed raw files",
+    "one trial-level self-rating is inherited by multiple windows and is not a direct per-window emotion label",
+    "offline DEAP accuracy alone cannot establish Cyton or FPGA accuracy"
+  ]
+}

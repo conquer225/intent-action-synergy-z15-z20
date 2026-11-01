@@ -1,0 +1,43 @@
+/* Include a decompilation of this physical board's running DTB, not Z20/CLG484. */
+/include/ "navigator-factory.dts"
+
+/ {
+ /delete-node/ amba_pl;
+ /delete-node/ leds;
+ /delete-node/ keys;
+ /delete-node/ beep;
+ reserved-memory {
+  #address-cells = <1>;
+  #size-cells = <1>;
+  ranges;
+  video@1000000 { reg = <0x01000000 0x007e9000>; no-map; };
+  npu@2000000 { reg = <0x02000000 0x00100000>; no-map; };
+ };
+ video-observer@43c20000 {
+  compatible = "generic-uio";
+  linux,uio-name = "z20-video-observer";
+  reg = <0x43c20000 0x10000>, <0x01000000 0x007e9000>;
+  status = "okay";
+ };
+ npu@40000000 {
+  compatible = "generic-uio";
+  linux,uio-name = "navigator-mlp";
+  reg = <0x40000000 0x10000>;
+  status = "okay";
+ };
+ npu-dma@2000000 {
+  compatible = "generic-uio";
+  linux,uio-name = "navigator-npu-dma";
+  reg = <0x02000000 0x00100000>;
+  status = "okay";
+ };
+ vdma-control@43000000 {
+  compatible = "generic-uio";
+  linux,uio-name = "navigator-vdma-control";
+  reg = <0x43000000 0x30000>;
+  status = "okay";
+ };
+};
+
+/* GEM1 uses the old PL design. Keep the PS GEM0 link for this bring-up. */
+&{/amba/ethernet@e000c000} { status = "disabled"; };

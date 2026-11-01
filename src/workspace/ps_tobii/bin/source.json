@@ -1,0 +1,7 @@
+{
+  "url": "https://ports.ubuntu.com/pool/main/a/alsa-utils/alsa-utils_1.2.2-1ubuntu2.1_armhf.deb",
+  "package_sha256": "843cab47cdbeb7132208464370c0a6056646c6baca442b0d773bc463474d919d",
+  "aplay_sha256": "fed4e94456320245bc1f8fb23021fd70e95fc14a219164f2f11169bb3d632d8f",
+  "source_directory": "https://ports.ubuntu.com/pool/main/a/alsa-utils/",
+  "target": "Ubuntu focal ARM hard-float; needs libasound.so.2"
+}

@@ -1,0 +1,159 @@
+{
+  "id": "cho2017_fixed8_nonlinear_readout_source_diagnostic_20261002",
+  "scope": "Exploratory source-fit/source-validation diagnostic only; no new outer-target score, independent confirmation or deployment claim",
+  "original_run": "output/mi_model_comparison_20261001",
+  "baseline_run": "output/mi_time_frequency_source_diagnostic_20261002",
+  "baseline_feature_cache": "output/mi_logcov_sourceonly_20261002/log_features.npy",
+  "input_sha256": {
+    "output/mi_model_comparison_20261001/waveforms.npy": "48cc8fff3b5ecc8d9119ae142ba347329d31c614843aa29574c3ee1f55a68d94",
+    "output/mi_model_comparison_20261001/statistics.npz": "1297ade4b4fca09f0fc2fd9449736b1b074a239e14b302ee7a471878478d423b",
+    "output/mi_model_comparison_20261001/fold_manifest.json": "1b56f068d8ac6db25047279dc427c0a90c037e72f47585387ec628ece095c2e4",
+    "output/mi_model_comparison_20261001/trial_manifest.json": "ef3b34464ba1c24268e59aca52f3303174ea418b3376ba051f1da0eccd213750",
+    "output/mi_model_comparison_20261001/protocol.json": "df69155e0347357701abc8c5bdd3e48fefa0793adc78e57dacbdf91ae1d3d6c7",
+    "output/mi_logcov_sourceonly_20261002/log_features.npy": "5aa25e0b92ba7bbb9091ee38911b3a38ee1bb498991b79d61c62ad1a17249adc",
+    "output/mi_time_frequency_source_diagnostic_20261002/source_freeze.json": "04bf3a35798cc715d09c126eae70a0d947906d5f87378e9add89f7ce07b58209",
+    "output/mi_time_frequency_source_diagnostic_20261002/lock.json": "fb76df475433abefea7320f956dc5ea248066221d316adc9f27ade021a49e0d0",
+    "output/mi_time_frequency_source_diagnostic_20261002/results.json": "0dce1073a469b96c516d0661fb7b3a0fd81343a4e680a0ef21de09b9480840b5",
+    "output/mi_time_frequency_source_diagnostic_20261002/verification.json": "bcd4e2a1c45ac7a6241edf442e9f3757d643288cb6e5e181cc38527c160cc236",
+    "output/mi_time_frequency_source_diagnostic_20261002/integer_count_audit.json": "b213b1f8a4b365732716056451a2578d8af43956de4fc23a44e838fa7879c09b"
+  },
+  "participants": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    11,
+    14,
+    18,
+    20,
+    23,
+    24,
+    25,
+    26,
+    28,
+    29,
+    31,
+    32,
+    34,
+    35,
+    39,
+    40,
+    41,
+    43,
+    44,
+    46,
+    47,
+    50,
+    52
+  ],
+  "channels": [
+    "F3",
+    "F4",
+    "C3",
+    "C4",
+    "T7",
+    "T8",
+    "O1",
+    "O2"
+  ],
+  "methods": [
+    "LINEAR",
+    "LINEAR_PROJECTED",
+    "LINEAR_RFF"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "linear_seed_sentinel": 0,
+  "input": "Only existing whole2s,8-30Hz,CAR,trace-normalized,0.05-regularized36dim weighted log covariance; no winning time/frequency branch",
+  "mapping": {
+    "components": 128,
+    "gamma": 0.013888888888888888,
+    "distribution": "RBFSampler fixed numeric gamma, float64 dummy1x36 fit; W iid N(0,2gamma), b iid U(0,2pi), seeds42/43/44; maps identical across folds and both augmented methods",
+    "rff": "sqrt(2/128)*cos(zW+b), sklearn1.4.2 RBFSampler.transform",
+    "linear_control": "zW/sqrt(128), no cosine or offset; same W and164dim coefficient array but still affine in original36features"
+  },
+  "normalization": "Fit StandardScaler only26source people. LINEAR uses z unchanged. Augmented use [z/sqrt(2), (aux-mean_source_aux)*sqrt(18/mean_source_squared_aux_norm)]. Both blocks source mean squared norm18, total36. One source scalar per aux block, not column scaler. No validation-fit normalizer.",
+  "dimensions": {
+    "LINEAR": 36,
+    "LINEAR_PROJECTED": 164,
+    "LINEAR_RFF": 164
+  },
+  "learned_coefficients_including_intercept": {
+    "LINEAR": 37,
+    "LINEAR_PROJECTED": 165,
+    "LINEAR_RFF": 165
+  },
+  "classifier": {
+    "C": 0.1,
+    "solver": "lbfgs",
+    "tol": 1e-10,
+    "max_iter": 1000,
+    "fit_intercept": true,
+    "class_weight": null,
+    "warm_start": false
+  },
+  "budget": "30 existing LINEAR models reused byte-exact; 30folds x2augmented conditions x3fixed maps=180new logistic fits; 210total states frozen together before this round scoring. No gamma/C/dimension/seed grid or validation checkpoint selection.",
+  "hypothesis": "A fixed restricted nonlinear boundary on the same WHOLE representation improves source validation beyond both original linear and affine reparameterization controls",
+  "falsification": "Do not nominate if either co-primary source-validation gate fails; cannot infer all nonlinear models ineffective or missing signal information recovered",
+  "co_primary": [
+    {
+      "candidate": "LINEAR_RFF",
+      "reference": "LINEAR",
+      "minimum_gain": 0.02,
+      "lower_greater_than": 0,
+      "lowest7_drop_at_most": 0.01
+    },
+    {
+      "candidate": "LINEAR_RFF",
+      "reference": "LINEAR_PROJECTED",
+      "minimum_gain": 0.01,
+      "lower_greater_than": 0,
+      "lowest7_drop_at_most": 0.01
+    }
+  ],
+  "secondary": [
+    [
+      "LINEAR_PROJECTED",
+      "LINEAR"
+    ]
+  ],
+  "aggregation": "Each person's BA/F1 first average validation appearances for each seed; then average all3seeds, then equal mean28people. Baseline one deterministic state, not best seed or prediction ensemble. 90person appearances per seed;14and28 absent. Individual seeds descriptive only.",
+  "bootstrap": {
+    "seed": 20261002,
+    "draws": 10000,
+    "co_primary_coverage": 0.975,
+    "secondary_coverage": 0.95,
+    "unit": "28 people after equal seed/appearance averaging",
+    "limitation": "Repeated source-validation development and overlapping training sets; intervals descriptive, Bonferroni nominal coverage not independent confirmation"
+  },
+  "source_fit_metrics": "Predeclared descriptive mean of26source-person BA per state, then seed/fold average; not external generalization, no model selection",
+  "bad_trial_policy": "Keep6080trials/515originalauthorflags; all5680source-validation unique trials and510flags retained; no dropping difficult people or trials",
+  "verification": {
+    "feature_rtol": 5e-9,
+    "feature_atol": 5e-9,
+    "transform_rtol": 5e-9,
+    "transform_atol": 5e-9,
+    "coefficient_rtol": 0.0005,
+    "coefficient_atol": 0.00002,
+    "score_rtol": 0.0002,
+    "score_atol": 0.0002,
+    "classes_exact": true,
+    "independent": "Schur logm36dim all6080waves; independently regenerated RandomState maps; complex exp real-part and einsum projection; independently source-normalized mappings; trust-exact plus previously predeclared Newton residual refinement; gradient infinity norm<=1e-6"
+  },
+  "raw_mat_read": false,
+  "other22_people_eeg_read": false,
+  "outer_target_scored": false,
+  "target_person_labels_for_adaptation": false,
+  "board_accessed": false,
+  "arm_exported": false,
+  "control_enabled": false,
+  "novelty_claim": false,
+  "method_reference": "https://scikit-learn.org/stable/modules/kernel_approximation.html",
+  "implementation_reference": "https://scikit-learn.org/stable/modules/generated/sklearn.kernel_approximation.RBFSampler.html"
+}

@@ -1,0 +1,18 @@
+{
+  "format": "z20-mlp-v1",
+  "task": "fatigue",
+  "version": "3e67c59556e4e36e3dc995dd",
+  "preprocessor": "fatigue-calibrated-de20-v1",
+  "labels": [
+    "awake",
+    "mild",
+    "severe"
+  ],
+  "hidden_shift": 7,
+  "input_scale": 0.0625,
+  "score_scale": 0.00390625,
+  "minimum_margin": 0.0,
+  "source": "original HGB teacher on synthetic classifier-input probes; thresholds 0.35/0.70",
+  "source_kind": "synthetic",
+  "weights_sha256": "be25f012b21701cc35475a94036d9e409153fe33eface1fa1058d24e03ac6913"
+}

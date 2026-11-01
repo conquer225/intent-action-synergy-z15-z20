@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "source_sha256": "5b94955cacb582cb844669de850ad5a105903b5b0f84549bfa7a39ccb4854e95",
+  "binary_sha256": "cfae9f0929ff71b0eb612304dd6076066c4424e61a6e8c0392d9981c8115497a",
+  "board_executed": true,
+  "build_environment": "Z15 Ubuntu gcc 9.3.0 native ARMv7 glibc 2.31",
+  "glibc_compatible": true,
+  "glibc_requirements": [
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      17
+    ],
+    [
+      2,
+      28
+    ]
+  ],
+  "inspect_frames": 2304000
+}

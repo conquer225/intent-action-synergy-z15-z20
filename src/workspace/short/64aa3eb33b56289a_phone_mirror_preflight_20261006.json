@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-06",
+  "scope": "read-only casting preflight; no receiver installed, no network/PL/service changes",
+  "interfaces": {
+    "command": "ip -br addr",
+    "status": 0,
+    "stdout": "lo               UNKNOWN        127.0.0.1/8 ::1/128 \ndummy0           DOWN           \neth0             UP             192.168.2.99/24 fe80::20a:35ff:fe00:8b87/64 \nsit0@NONE        DOWN           \nwlan0            UP             192.168.50.1/24 \n",
+    "stderr": ""
+  },
+  "wifi_info": {
+    "command": "iw dev wlan0 info",
+    "status": 0,
+    "stdout": "Interface wlan0\n\tifindex 5\n\twdev 0x1\n\taddr 00:0f:00:40:81:09\n\tssid GuardianLoop-Z15\n\ttype AP\n\twiphy 0\n\ttxpower 13.00 dBm\n",
+    "stderr": ""
+  },
+  "wireless_capabilities": {
+    "command": "iw list",
+    "status": 0,
+    "stdout": "Wiphy phy0\n\tmax # scan SSIDs: 9\n\tmax scan IEs length: 2304 bytes\n\tmax # sched scan SSIDs: 0\n\tmax # match sets: 0\n\tmax # scan plans: 1\n\tmax scan plan interval: -1\n\tmax scan plan iterations: 0\n\tRetry short limit: 7\n\tRetry long limit: 4\n\tCoverage class: 0 (up to 0m)\n\tSupported Ciphers:\n\t\t* WEP40 (00-0f-ac:1)\n\t\t* WEP104 (00-0f-ac:5)\n\t\t* TKIP (00-0f-ac:2)\n\t\t* CCMP-128 (00-0f-ac:4)\n\tAvailable Antennas: TX 0 RX 0\n\tSupported interface modes:\n\t\t * IBSS\n\t\t * managed\n\t\t * AP\n\t\t * monitor\n\t\t * P2P-client\n\t\t * P2P-GO\n\tBand 1:\n\t\tCapabilities: 0x1972\n\t\t\tHT20/HT40\n\t\t\tStatic SM Power Save\n\t\t\tRX Greenfield\n\t\t\tRX HT20 SGI\n\t\t\tRX HT40 SGI\n\t\t\tRX STBC 1-stream\n\t\t\tMax AMSDU length: 7935 bytes\n\t\t\tDSSS/CCK HT40\n\t\tMaximum RX AMPDU length 65535 bytes (exponent: 0x003)\n\t\tMinimum RX AMPDU time spacing: 16 usec (0x07)\n\t\tHT Max RX data rate: 150 Mbps\n\t\tHT TX/RX MCS rate indexes supported: 0-7\n\t\tVHT Capabilities (0x00000010):\n\t\t\tMax MPDU length: 3895\n\t\t\tSupported Channel Width: neither 160 nor 80+80\n\t\t\tRX LDPC\n\t\tVHT RX MCS set:\n\t\t\t1 streams: MCS 0-9\n\t\t\t2 streams: MCS 0-9\n\t\t\t3 streams: MCS 0-9\n\t\t\t4 streams: MCS 0-9\n\t\t\t5 streams: MCS 0-9\n\t\t\t6 streams: MCS 0-9\n\t\t\t7 streams: MCS 0-9\n\t\t\t8 streams: MCS 0-9\n\t\tVHT RX highest supported: 0 Mbps\n\t\tVHT TX MCS set:\n\t\t\t1 streams: MCS 0-9\n\t\t\t2 streams: MCS 0-9\n\t\t\t3 streams: MCS 0-9\n\t\t\t4 streams: MCS 0-9\n\t\t\t5 streams: MCS 0-9\n\t\t\t6 streams: MCS 0-9\n\t\t\t7 streams: MCS 0-9\n\t\t\t8 streams: MCS 0-9\n\t\tVHT TX highest supported: 0 Mbps\n\t\tBitrates (non-HT):\n\t\t\t* 1.0 Mbps\n\t\t\t* 2.0 Mbps\n\t\t\t* 5.5 Mbps\n\t\t\t* 11.0 Mbps\n\t\t\t* 6.0 Mbps\n\t\t\t* 9.0 Mbps\n\t\t\t* 12.0 Mbps\n\t\t\t* 18.0 Mbps\n\t\t\t* 24.0 Mbps\n\t\t\t* 36.0 Mbps\n\t\t\t* 48.0 Mbps\n\t\t\t* 54.0 Mbps\n\t\tFrequencies:\n\t\t\t* 2412 MHz [1] (20.0 dBm)\n\t\t\t* 2417 MHz [2] (20.0 dBm)\n\t\t\t* 2422 MHz [3] (20.0 dBm)\n\t\t\t* 2427 MHz [4] (20.0 dBm)\n\t\t\t* 2432 MHz [5] (20.0 dBm)\n\t\t\t* 2437 MHz [6] (20.0 dBm)\n\t\t\t* 2442 MHz [7] (20.0 dBm)\n\t\t\t* 2447 MHz [8] (20.0 dBm)\n\t\t\t* 2452 MHz [9] (20.0 dBm)\n\t\t\t* 2457 MHz [10] (20.0 dBm)\n\t\t\t* 2462 MHz [11] (20.0 dBm)\n\t\t\t* 2467 MHz [12] (20.0 dBm) (no IR)\n\t\t\t* 2472 MHz [13] (20.0 dBm) (no IR)\n\t\t\t* 2484 MHz [14] (disabled)\n\tSupported commands:\n\t\t * new_interface\n\t\t * set_interface\n\t\t * new_key\n\t\t * start_ap\n\t\t * new_station\n\t\t * set_bss\n\t\t * join_ibss\n\t\t * set_pmksa\n\t\t * del_pmksa\n\t\t * flush_pmksa\n\t\t * remain_on_channel\n\t\t * frame\n\t\t * set_channel\n\t\t * connect\n\t\t * disconnect\n\tSupported TX frame types:\n\t\t * IBSS: 0x00 0x10 0x20 0x30 0x40 0x50 0x60 0x70 0x80 0x90 0xa0 0xb0 0xc0 0xd0 0xe0 0xf0\n\t\t * managed: 0x00 0x10 0x20 0x30 0x40 0x50 0x60 0x70 0x80 0x90 0xa0 0xb0 0xc0 0xd0 0xe0 0xf0\n\t\t * AP: 0x00 0x10 0x20 0x30 0x40 0x50 0x60 0x70 0x80 0x90 0xa0 0xb0 0xc0 0xd0 0xe0 0xf0\n\t\t * AP/VLAN: 0x00 0x10 0x20 0x30 0x40 0x50 0x60 0x70 0x80 0x90 0xa0 0xb0 0xc0 0xd0 0xe0 0xf0\n\t\t * P2P-client: 0x00 0x10 0x20 0x30 0x40 0x50 0x60 0x70 0x80 0x90 0xa0 0xb0 0xc0 0xd0 0xe0 0xf0\n\t\t * P2P-GO: 0x00 0x10 0x20 0x30 0x40 0x50 0x60 0x70 0x80 0x90 0xa0 0xb0 0xc0 0xd0 0xe0 0xf0\n\tSupported RX frame types:\n\t\t * IBSS: 0xd0\n\t\t * managed: 0x40 0xd0\n\t\t * AP: 0x00 0x20 0x40 0xa0 0xb0 0xc0 0xd0\n\t\t * AP/VLAN: 0x00 0x20 0x40 0xa0 0xb0 0xc0 0xd0\n\t\t * P2P-client: 0x40 0xd0\n\t\t * P2P-GO: 0x00 0x20 0x40 0xa0 0xb0 0xc0 0xd0\n\tWoWLAN support:\n\t\t * wake up on anything (device continues operating normally)\n\tsoftware interface modes (can always be added):\n\t\t * monitor\n\tinterface combinations are not supported\n\tDevice supports scan flush.\n\tSupported extended features:\n",
+    "stderr": ""
+  },
+  "adapter": {
+    "command": "cat /sys/class/net/wlan0/device/uevent",
+    "status": 0,
+    "stdout": "DEVTYPE=usb_interface\nDRIVER=8188eu\nPRODUCT=bda/8179/0\nTYPE=0/0/0\nINTERFACE=255/255/255\nMODALIAS=usb:v0BDAp8179d0000dc00dsc00dp00icFFiscFFipFFin00\n",
+    "stderr": ""
+  },
+  "services": {
+    "command": "systemctl show guardianloop-web.service guardianloop-cyton.service guardianloop-ap.service guardianloop-dhcp.service -p Id -p MainPID -p NRestarts -p ActiveState",
+    "status": 0,
+    "stdout": "MainPID=677\nNRestarts=0\nId=guardianloop-web.service\nActiveState=active\n\nMainPID=2077\nNRestarts=178\nId=guardianloop-cyton.service\nActiveState=active\n\nMainPID=6628\nNRestarts=0\nId=guardianloop-ap.service\nActiveState=active\n\nMainPID=6630\nNRestarts=0\nId=guardianloop-dhcp.service\nActiveState=active\n",
+    "stderr": ""
+  },
+  "executables": {
+    "command": "command -v miracle-wifid miracle-sinkctl ffmpeg gst-launch-1.0 rygel wpa_supplicant",
+    "status": 0,
+    "stdout": "/usr/bin/rygel\n/sbin/wpa_supplicant\n",
+    "stderr": ""
+  },
+  "development_libraries": {
+    "command": "pkg-config --modversion libsystemd libudev glib-2.0 gstreamer-1.0",
+    "status": 1,
+    "stdout": "",
+    "stderr": "Package libsystemd was not found in the pkg-config search path.\nPerhaps you should add the directory containing `libsystemd.pc'\nto the PKG_CONFIG_PATH environment variable\nNo package 'libsystemd' found\nPackage libudev was not found in the pkg-config search path.\nPerhaps you should add the directory containing `libudev.pc'\nto the PKG_CONFIG_PATH environment variable\nNo package 'libudev' found\nPackage gstreamer-1.0 was not found in the pkg-config search path.\nPerhaps you should add the directory containing `gstreamer-1.0.pc'\nto the PKG_CONFIG_PATH environment variable\nNo package 'gstreamer-1.0' found\n"
+  },
+  "ap_rollback_log": {
+    "command": "journalctl -u gl-phone-3111b3b575-guard.service --no-pager -n 10 -o cat",
+    "status": 0,
+    "stdout": "Started /usr/bin/python3 /home/xilinx/gl-phone-3111b3b575/network.py guard.\nORIGINAL_AP_RESTORED\ngl-phone-3111b3b575-guard.service: Succeeded.\n",
+    "stderr": ""
+  },
+  "package_dry_run": {
+    "command": "apt-get -s install --no-install-recommends libsystemd-dev gstreamer1.0-tools gstreamer1.0-plugins-bad gstreamer1.0-libav",
+    "status": 100,
+    "stdout": "NOTE: This is only a simulation!\n      apt-get needs root privileges for real execution.\n      Keep also in mind that locking is deactivated,\n      so don't depend on the relevance to the real current situation!\nReading package lists...\nBuilding dependency tree...\nPackage gstreamer1.0-plugins-bad is not available, but is referred to by another package.\nThis may mean that the package is missing, has been obsoleted, or\nis only available from another source\nHowever the following packages replace it:\n  gstreamer1.0-plugins-good gstreamer1.0-plugins-base gstreamer1.0-gl\n\nPackage gstreamer1.0-tools is not available, but is referred to by another package.\nThis may mean that the package is missing, has been obsoleted, or\nis only available from another source\n\nPackage gstreamer1.0-libav is not available, but is referred to by another package.\nThis may mean that the package is missing, has been obsoleted, or\nis only available from another source\n\n",
+    "stderr": "E: Unable to locate package libsystemd-dev\nE: Package 'gstreamer1.0-tools' has no installation candidate\nE: Package 'gstreamer1.0-plugins-bad' has no installation candidate\nE: Package 'gstreamer1.0-libav' has no installation candidate\n"
+  },
+  "boot_id": {
+    "command": "cat /proc/sys/kernel/random/boot_id",
+    "status": 0,
+    "stdout": "e0fd1f19-9ccd-494d-b262-7a5924046336\n",
+    "stderr": ""
+  },
+  "protected_hashes": "c6f768eccfa638245c3983e3585433cad98792247cf51b0e24825f2b00211e2c  /etc/systemd/system/guardianloop-ap.service\n6f70421707784c641b893298b737de1d2561d683b55139d1bc67d889f22cd802  /etc/systemd/system/guardianloop-dhcp.service\n6bc9d3c7919daf11d3d88e1d8f9caca4511c84b848604f3714af5b37aeb9a31f  /etc/systemd/system/guardianloop-web.service\na649cf36e0c566160c301dba666dbe5570634b72aeb0251a2395ea9cbfc36add  /etc/systemd/system/guardianloop-cyton.service\n13b96d77b5f51b41b5a60eaf460ba6b59c563b2d38c5fa09b916c625b8ed172d  /etc/NetworkManager/conf.d/99-guardianloop-wlan0-unmanaged.conf\n21d2ef676010175446757451450fffc6c19096f9c2854c5c784a9e918676fb63  /boot/boot.scr\n27ee421d07d70f972e8a3bca96e1bc7810e847be2da2360aa5c11d36c93e89b2  /boot/image.ub\nf4b4b877e9273646ead7040a6664e27c3018561bd34cb7781b1349d59f20a377  /home/xilinx/jupyter_notebooks/guardianloop_pynq/release_manifest.json\n",
+  "protected_files_match_video_test": true,
+  "gst_factories": {
+    "udpsrc": true,
+    "rtpjitterbuffer": true,
+    "rtpmp2tdepay": true,
+    "tsdemux": false,
+    "h264parse": false,
+    "avdec_h264": false,
+    "autovideosink": true,
+    "videoconvert": true,
+    "appsink": true
+  }
+}

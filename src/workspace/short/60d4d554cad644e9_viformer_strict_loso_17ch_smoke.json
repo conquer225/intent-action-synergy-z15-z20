@@ -1,0 +1,50 @@
+{
+  "status": "partial_audit",
+  "protocol": "participant-grouped outer LOSO; separate development participant for early stopping and threshold tuning; 120 s calibration excluded",
+  "channels": [
+    "FT7",
+    "FT8",
+    "T7",
+    "T8",
+    "TP7",
+    "TP8",
+    "CP1",
+    "CP2",
+    "P1",
+    "PZ",
+    "P2",
+    "PO3",
+    "POZ",
+    "PO4",
+    "O1",
+    "OZ",
+    "O2"
+  ],
+  "architecture": "dual-branch ViFormerNet/Conformer, 17 channels, d_model=64, 4 blocks",
+  "device": "cuda",
+  "folds": [
+    {
+      "pearson": 0.9025392532348633,
+      "spearman": 0.7794894727890176,
+      "rmse": 0.15216949582099915,
+      "mae": 0.11666186153888702,
+      "accuracy": 0.5149425287356322,
+      "macro_f1": 0.3743487893241588,
+      "held_out": "1",
+      "validation": "2",
+      "epochs": 2,
+      "thresholds": [
+        0.24811496044460096,
+        0.30635878773112046
+      ]
+    }
+  ],
+  "aggregate": {
+    "pearson": 0.9025392532348633,
+    "spearman": 0.7794894727890176,
+    "rmse": 0.15216949582099915,
+    "mae": 0.11666186153888702,
+    "accuracy": 0.5149425287356322,
+    "macro_f1": 0.3743487893241588
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "candidate": "guardianloop-hdmi-theme-20261007",
+  "scope": "visual-only update of the existing private HDMI candidate",
+  "formal_promotion": false,
+  "pl_loaded_during_this_update": false,
+  "video_roi": [505, 148, 270, 480],
+  "sources": {
+    "phone_video_upload/system_hdmi.py": "c01c0360e2f990fc0ac998527c13896d2456ba43be116fbee0256f9ccdc46aeb",
+    "phone_video_upload/test_system_hdmi.py": "2460e2ef925c129fb1983e26d0d406bdc7e145b3510c168ddd47c69f7412f866",
+    "phone_video_upload/preview_hdmi_theme.py": "50da9242b456380946947a4a5df5cd5a634d7d56529e7d53e81cb75a79fa83f8"
+  },
+  "baseline_renderer": "baseline-system_hdmi.py",
+  "baseline_sha256": "61761441268bb84bebecf3113943b17d014e7bb9680a24a5e8ca467e831895d5",
+  "board_display_tests_final": {"run": 10, "failed": 0, "skipped": 0},
+  "software_preview_only": true,
+  "audio_output": false,
+  "physical_output_enabled": false
+}

@@ -1,0 +1,18 @@
+{
+  "kernel": "5.4.0-xilinx-v2020.2",
+  "machine": "armv7l",
+  "source_repository": "https://github.com/Xilinx/linux-xlnx/tree/xilinx-v2020.2",
+  "source_archive": "usb_audio_source.tar.gz",
+  "headers": "Existing matching PYNQ kernel headers copied from /lib/modules/5.4.0-xilinx-v2020.2/build; system header files unchanged",
+  "compiler": "gcc (Ubuntu 9.3.0-10ubuntu2) 9.3.0",
+  "build": "make -C private_headers ARCH=arm prepare scripts; make -C private_headers ARCH=arm M=usb_audio_source -j2 modules",
+  "kernel_config": "CONFIG_MODVERSIONS=y; CONFIG_SND=y; CONFIG_SND_PCM=y; CONFIG_SND_USB_AUDIO originally disabled",
+  "load_test": "All four insmod calls returned 0; snd-usb-audio USB driver registered; no soundcards present",
+  "sha256": {
+    "usb_audio_source.tar.gz": "555a5ccbe6ed71d15b7313206d37e6a129146c7145fde972f96f66587a41f938",
+    "5.4.0-xilinx-v2020.2/snd-hwdep.ko": "e9613d9a279767a4bc493d6473838a16d943d95b5f798f11c1d87c8e8f6037a9",
+    "5.4.0-xilinx-v2020.2/snd-rawmidi.ko": "ad2fe8612f1f412975d7e127e92692be0347d1f514346286ec753fb1b8dfe140",
+    "5.4.0-xilinx-v2020.2/snd-usb-audio.ko": "c1444dd36e55bec686fdceaab4f4986ebc2a38bafdb24a789d74d9296fc77b36",
+    "5.4.0-xilinx-v2020.2/snd-usbmidi-lib.ko": "bde6c7c8394a7968b9f38b57fab2ca7a26ef25c5f83931f3cb3bf6357f314019"
+  }
+}

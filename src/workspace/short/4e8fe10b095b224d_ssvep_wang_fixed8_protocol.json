@@ -1,0 +1,46 @@
+{
+  "dataset": "Wang2016 40-target benchmark, Zenodo record 14865172 (MOABB reupload)",
+  "dataset_licence": "CC BY 4.0 as declared on Zenodo",
+  "source_record": "https://zenodo.org/records/14865172",
+  "original_source": "https://bci.med.tsinghua.edu.cn/download.html",
+  "frequency_order_crosscheck": "https://github.com/NeuroTechX/moabb/blob/develop/moabb/datasets/ssvep_wang.py",
+  "pilot_format_subjects_not_scored": [1],
+  "evaluation_subjects_predeclared": [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+  "selection_reason": "Consecutive naive subjects chosen before inspecting their EEG or predictions; pilot S1 is experienced and only verifies format.",
+  "sample_rate_hz": 250,
+  "epoch_samples": 1500,
+  "epoch_shape": [64, 1500, 40, 6],
+  "channel_order": ["F3", "F4", "C3", "C4", "T7", "T8", "O1", "O2"],
+  "channel_indices_zero_based": [7, 11, 25, 29, 23, 31, 60, 62],
+  "montages": {
+    "O1_O2": [6, 7],
+    "fixed_eight": [0, 1, 2, 3, 4, 5, 6, 7]
+  },
+  "primary_task": {
+    "name": "four_spaced_targets",
+    "target_indices_zero_based": [0, 2, 4, 6],
+    "expected_frequencies_hz": [8.0, 10.0, 12.0, 14.0],
+    "window_seconds": 2
+  },
+  "secondary_tasks": ["all_40_targets", "one_second_window"],
+  "filter": {
+    "kind": "4th order Butterworth, 6-45 Hz, zero-phase offline",
+    "low_hz": 6,
+    "high_hz": 45,
+    "order": 4,
+    "scope": "Only samples from epoch start through the analysis-window end; no future-trial samples. Not equivalent to causal Z15 filtering."
+  },
+  "analysis_start_sample": 160,
+  "analysis_start_definition": "0.5 s stimulus onset + fixed 0.14 s visual-response latency, selected before scoring",
+  "window_seconds": [1, 2],
+  "cca_harmonics": 3,
+  "decoder": "Calibration-free CCA sine/cosine references; exactly the same filter, target set, trial IDs, and decoder for both montages",
+  "score_unit": "Participant, not trial",
+  "paired_ci": "Participant bootstrap, 10000 resamples, seed 20260926",
+  "success_rule": "Eight-channel primary mean paired accuracy gain >= 0.05 AND participant-bootstrap 95% CI lower bound > 0. No deployment based on secondary tasks alone.",
+  "important_limitations": [
+    "Wang uses vertex reference and clinical EEG amplifier, unlike Cyton ear reference and hardware; offline accuracy cannot establish device accuracy.",
+    "One cue per target per block; the four-class subset still comes from a 40-flicker display, not an actual four-flicker screen.",
+    "Zero-phase offline filtering is not board causal processing."
+  ]
+}

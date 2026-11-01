@@ -1,0 +1,10 @@
+{
+  "services": [
+    "play-85593c12.service",
+    "gl-hdmi-live-20261008-ea117349-server.service",
+    "gl-hdmi-live-20261008-ea117349-watch.service"
+  ],
+  "boot": "dbabd156-a8fd-45c1-9a05-bf10615a5998",
+  "previous_program_files_modified": false,
+  "motors_commanded": false
+}

@@ -1,0 +1,42 @@
+{
+  "study": "O1/O2-only calibration-free SSVEP pilot",
+  "dataset": "Zhu et al. 2021 wearable SSVEP, Figshare article 13560281 version 4",
+  "dataset_url": "https://figshare.com/articles/dataset/An_Open_Dataset_for_Wearable_SSVEP-Based_Brain-Computer_Interfaces/13560281",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7916479/",
+  "pilot_subjects": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "channels_zero_based": [6, 7],
+  "channel_names": ["O1", "O2"],
+  "sampling_rate_hz": 250,
+  "epoch_shape": [8, 710, 2, 10, 12],
+  "stimulus_onset_sample": 125,
+  "visual_latency_samples": 35,
+  "analysis_start_sample": 160,
+  "window_seconds": [1, 2],
+  "frequencies_hz": [9.25, 11.25, 13.25, 9.75, 11.75, 13.75, 10.25, 12.25, 14.25, 10.75, 12.75, 14.75],
+  "methods": ["cca", "fbcca"],
+  "preprocessing": {
+    "cca_band_hz": [6, 90],
+    "fbcca_low_edges_hz": [8, 16, 24, 32, 40],
+    "fbcca_high_edge_hz": 90,
+    "butterworth_order": 4,
+    "filter_phase": "zero-phase full-epoch offline; not equivalent to board causal filter",
+    "harmonics": 5,
+    "fbcca_weights": "w(n) = n^(-1.25) + 0.25; fixed before test, shared wet/dry"
+  },
+  "evaluation": {
+    "unit": "one target trial per subject, block, electrode type",
+    "subject_partition": "pilot IDs fixed in advance; no fitting or hyperparameter tuning on any subject",
+    "score": "mean subject accuracy, with wet and dry reported separately",
+    "chance_accuracy": 0.08333333333333333,
+    "selection": "report all four method-by-window conditions; no choosing a winner from pilot for a deployment claim",
+    "rejection": "none; any nonfinite or rank-deficient trial is counted incorrect and reported",
+    "hypothesis": "O1/O2-only frequency CCA is above 1/12 chance; FBCCA may improve over CCA, especially at 1 second",
+    "falsification": "If O1/O2 performance is near chance or FBCCA gain is inconsistent across subjects, do not deploy as a reliable BCI"
+  },
+  "scope_limitations": [
+    "Dataset uses a different amplifier/reference/stimulus from Cyton+Z15.",
+    "This is a predeclared 10-subject pilot, not the complete 102-subject result.",
+    "Offline zero-phase filtering cannot be claimed to match online causal filtering.",
+    "No user-worn or Z15 real-time SSVEP accuracy is established by this pilot."
+  ]
+}

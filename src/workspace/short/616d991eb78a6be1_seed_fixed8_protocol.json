@@ -1,0 +1,25 @@
+{
+  "status": "fixed before first full-SEED model run",
+  "hypothesis": "Fixed-eight-channel log power or covariance provides participant-independent information for SEED positive/neutral/negative classification",
+  "falsification": "Participant bootstrap uncertainty overlaps the 1/3 balanced-accuracy baseline; no evidence for deployment from this experiment",
+  "montage": ["F3", "F4", "C3", "C4", "T7", "T8", "O1", "O2"],
+  "seed_zero_based_indices": [7, 11, 25, 29, 23, 31, 58, 60],
+  "subjects": "1-15, all three sessions each; leave one entire participant out",
+  "labels": "-1 negative, 0 neutral, 1 positive; provided trial labels, not instantaneous wearer reports",
+  "sampling_hz": 200,
+  "windows": "12 seconds non-overlapping; discard first 2 seconds for causal filter warmup and incomplete tail per trial",
+  "bands_hz": [[1, 4], [4, 8], [8, 14], [14, 31], [31, 45]],
+  "filter": "fourth-order Butterworth SOS causal, reset at each movie trial; upstream supplied SEED preprocessing remains offline",
+  "features": "log variance and matrix-log regularized covariance; band-major; covariance += 0.05*trace(C)/8*I",
+  "models": {
+    "power_lda": "train-only StandardScaler then lsqr LDA, shrinkage auto, equal class priors",
+    "logcov_lda": "same classifier on 180 log-covariance features",
+    "power_hgb": "100 iterations, .1 learning rate, 15 leaf nodes, min leaf 30, L2=1, class-balanced sample weights, early_stopping=false, seed=20260926"
+  },
+  "budget": "45 fits, fixed hyperparameters; deterministic methods with no subsampling; no target-person adaptation",
+  "primary": "mean participant balanced accuracy",
+  "secondary": "participant accuracy, macro-F1 and confusion matrix; paired bootstrap comparisons to power_lda",
+  "statistics": "participant bootstrap 20000 resamples, seed 20260926; 95% mean intervals, 97.5% paired intervals for two comparisons; exploratory model comparison, not separate heldout confirmation",
+  "sources": ["https://bcmi.sjtu.edu.cn/home/seed/seed.html", "https://raw.githubusercontent.com/torcheeg/torcheeg/main/torcheeg/datasets/constants/emotion_recognition/seed.py"],
+  "limitations": ["shared videos across people; not unseen-stimulus validation", "reference and acquisition differ from Cyton", "12-second data window is not execution latency", "not directly comparable with DEAP or GAMEEMO label tasks", "no board deployment authorized by a high offline score alone"]
+}

@@ -1,0 +1,47 @@
+{
+  "reference": "D:\\ai\\WebcamGaze_Communication\\WebcamGaze_Communication\\WebcamGaze_Communication",
+  "voice_model": "zh_CN-xiao_ya-medium.onnx",
+  "voice_model_sha256": "cb2ce4ca1f5a36a7b23ae48f0651ce2c854c331ef7a804e5c5dc643d0f74f0e2",
+  "voice_license": "# Model card for 小雅 (Xiǎo Yǎ) (medium)\n\n* Language: zh_CN (Chinese, China)\n* Speakers: 1\n* Quality: medium\n* Samplerate: 22,050Hz\n\n## Notes\n\nOnly works on the Python version of Piper 1.4+ due to a dependency on [g2pW](https://github.com/GitYCC/g2pW/)\n\n## Dataset\n\n* URL: https://huggingface.co/openspeech/BZNSYP\n* License: Non-commercial use (see https://www.data-baker.com/data/index/TNtts/)\n\n## Training\n\nTrained from scratch\n",
+  "music": [
+    {
+      "title": "贝多芬 · 艾格蒙特序曲",
+      "file": "01_Egmont_Overture.ogg",
+      "source": "https://archive.org/details/MusopenCollectionAsFlac",
+      "license": "Musopen recordings released into the public domain; Egmont recording is CC0 on Wikimedia Commons",
+      "source_sha256": "2007b57e8ab1dbe6c9df4d3c91d3de185457ad70cbeb9b4c2864e5161a64c3ae"
+    },
+    {
+      "title": "巴赫 · 哥德堡变奏曲：咏叹调",
+      "file": "02_Bach_Goldberg_Aria.ogg",
+      "source": "https://archive.org/details/MusopenCollectionAsFlac",
+      "license": "Musopen recordings released into the public domain; Egmont recording is CC0 on Wikimedia Commons",
+      "source_sha256": "6b2f93801af98782bc9f54a855d7bcc4d59d5652460a74d5e858817cba745a29"
+    },
+    {
+      "title": "格里格 · 晨景",
+      "file": "03_Grieg_Morning.ogg",
+      "source": "https://archive.org/details/MusopenCollectionAsFlac",
+      "license": "Musopen recordings released into the public domain; Egmont recording is CC0 on Wikimedia Commons",
+      "source_sha256": "c286bbb1723ef04b6b8adec04cdb9773312d6eceead3d4f7d182eb063d15812a"
+    }
+  ],
+  "videos": [
+    {
+      "file": "01_7378694282091220262.mp4",
+      "title": "谁能拒绝这么可爱的小奶猫粽子呢？ #小奶猫 #小奶猫的点点滴滴 #可爱到爆炸💥 #萌宠出道计划",
+      "author": "胖明和猫猫",
+      "source": "https://www.douyin.com/video/7378694282091220262",
+      "duration_seconds": 17.5,
+      "source_sha256": "a7e94384db86ce7ac5ca0d4b4e1a6349d51b377e01d36c7ba696fc133432816d"
+    },
+    {
+      "file": "02_7610007082594985657.mp4",
+      "title": "上条视频好多人喜欢我家小狗，大壮感谢大家喜欢😘#它好像个宝宝 #萌宠萌不萌 #这个bgm太适合萌宠了 #它们真的好像个小宝宝 #搞怪萌宠",
+      "author": "大壮壮好棒棒",
+      "source": "https://www.douyin.com/video/7610007082594985657",
+      "duration_seconds": 10.2,
+      "source_sha256": "ad457cdd2784ea7255a3ea42972a4f425ca5e2ec05af1b28dd26f7113ca71635"
+    }
+  ]
+}

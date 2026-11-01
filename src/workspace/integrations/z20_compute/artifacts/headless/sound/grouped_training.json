@@ -1,0 +1,74 @@
+{
+  "task": "sound",
+  "source": "ESC-50 clap/wood knock and documented human Freesound CC0 whistles; source-recording groups",
+  "source_kind": "public",
+  "split_by": "recording/session group",
+  "epochs": 500,
+  "seed": 7,
+  "version": "bcb91d05575221a77767cff1",
+  "weighting": "equal_class_then_source_recording",
+  "validation": {
+    "samples": 83,
+    "accuracy": 0.6024096385542169,
+    "macro_f1": 0.5318444995864351,
+    "balanced_accuracy": 0.625,
+    "confusion_matrix": [
+      [
+        36,
+        0,
+        0
+      ],
+      [
+        30,
+        0,
+        1
+      ],
+      [
+        2,
+        0,
+        14
+      ]
+    ],
+    "rejected_by_class": [
+      0,
+      0,
+      0
+    ],
+    "coverage": 1.0,
+    "float_accuracy": 0.6024096385542169,
+    "integer_float_agreement": 1.0,
+    "weighted_accuracy": 0.625
+  },
+  "test": {
+    "samples": 88,
+    "accuracy": 0.7727272727272727,
+    "macro_f1": 0.7184709312921451,
+    "balanced_accuracy": 0.7452991452991453,
+    "confusion_matrix": [
+      [
+        40,
+        2,
+        10
+      ],
+      [
+        1,
+        7,
+        7
+      ],
+      [
+        0,
+        0,
+        21
+      ]
+    ],
+    "rejected_by_class": [
+      0,
+      0,
+      0
+    ],
+    "coverage": 1.0,
+    "float_accuracy": 0.7727272727272727,
+    "integer_float_agreement": 0.9886363636363636,
+    "weighted_accuracy": 0.6902356902356902
+  }
+}

@@ -1,0 +1,3519 @@
+{
+  "audibility_requires_user_confirmation": true,
+  "motors_commanded": false,
+  "phases": [
+    {
+      "name": "water",
+      "samples": [
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "starting",
+              "revision": 1,
+              "pid": 11193,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_water_48k.wav",
+              "position_frames_estimate": 0,
+              "requested_revision": 1,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 70,
+            "started": 11888.531136327,
+            "pending": false,
+            "last_check_ms": 235.45603300044604,
+            "maximum_check_ms": 316.22847899961926,
+            "wake_delay_ms": 15.269984000042314,
+            "maximum_wake_delay_ms": 23.120941999877687,
+            "native_tid": 10386,
+            "verification_age_ms": 134.7937530008494,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "starting",
+              "revision": 1,
+              "pid": 11193,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_water_48k.wav",
+              "position_frames_estimate": 0,
+              "requested_revision": 1,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 70,
+            "started": 11888.531136327,
+            "pending": false,
+            "last_check_ms": 235.45603300044604,
+            "maximum_check_ms": 316.22847899961926,
+            "wake_delay_ms": 15.269984000042314,
+            "maximum_wake_delay_ms": 23.120941999877687,
+            "native_tid": 10386,
+            "verification_age_ms": 417.67159399933007,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "starting",
+              "revision": 1,
+              "pid": 11193,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_water_48k.wav",
+              "position_frames_estimate": 0,
+              "requested_revision": 1,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 70,
+            "started": 11888.531136327,
+            "pending": false,
+            "last_check_ms": 235.45603300044604,
+            "maximum_check_ms": 316.22847899961926,
+            "wake_delay_ms": 15.269984000042314,
+            "maximum_wake_delay_ms": 23.120941999877687,
+            "native_tid": 10386,
+            "verification_age_ms": 417.67159399933007,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "starting",
+              "revision": 1,
+              "pid": 11193,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_water_48k.wav",
+              "position_frames_estimate": 0,
+              "requested_revision": 1,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 70,
+            "started": 11888.531136327,
+            "pending": false,
+            "last_check_ms": 235.45603300044604,
+            "maximum_check_ms": 316.22847899961926,
+            "wake_delay_ms": 15.269984000042314,
+            "maximum_wake_delay_ms": 23.120941999877687,
+            "native_tid": 10386,
+            "verification_age_ms": 417.67159399933007,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 1,
+              "pid": 11193,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_water_48k.wav",
+              "position_frames_estimate": 29360,
+              "underruns": 0,
+              "requested_revision": 1,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 70,
+            "started": 11889.769095132,
+            "pending": true,
+            "last_check_ms": 235.45603300044604,
+            "maximum_check_ms": 316.22847899961926,
+            "wake_delay_ms": 2.502772000298137,
+            "maximum_wake_delay_ms": 23.120941999877687,
+            "native_tid": 10386,
+            "verification_age_ms": 1142.9251400004432,
+            "pending_elapsed_ms": 140.42236800014507,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 1,
+              "pid": 11193,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_water_48k.wav",
+              "position_frames_estimate": 39052,
+              "underruns": 0,
+              "requested_revision": 1,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 71,
+            "started": 11889.769095132,
+            "pending": false,
+            "last_check_ms": 151.56975900026737,
+            "maximum_check_ms": 316.22847899961926,
+            "wake_delay_ms": 2.502772000298137,
+            "maximum_wake_delay_ms": 23.120941999877687,
+            "native_tid": 10386,
+            "verification_age_ms": 288.1903979996423,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 1,
+              "pid": 11193,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_water_48k.wav",
+              "position_frames_estimate": 39052,
+              "underruns": 0,
+              "requested_revision": 1,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 71,
+            "started": 11889.769095132,
+            "pending": false,
+            "last_check_ms": 151.56975900026737,
+            "maximum_check_ms": 316.22847899961926,
+            "wake_delay_ms": 2.502772000298137,
+            "maximum_wake_delay_ms": 23.120941999877687,
+            "native_tid": 10386,
+            "verification_age_ms": 288.1903979996423,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 1,
+              "pid": 11193,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_water_48k.wav",
+              "position_frames_estimate": 68250,
+              "underruns": 0,
+              "requested_revision": 1,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 71,
+            "started": 11889.769095132,
+            "pending": false,
+            "last_check_ms": 151.56975900026737,
+            "maximum_check_ms": 316.22847899961926,
+            "wake_delay_ms": 2.502772000298137,
+            "maximum_wake_delay_ms": 23.120941999877687,
+            "native_tid": 10386,
+            "verification_age_ms": 815.2163350005139,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 1,
+              "pid": 11193,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_water_48k.wav",
+              "position_frames_estimate": 68250,
+              "underruns": 0,
+              "requested_revision": 1,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 71,
+            "started": 11889.769095132,
+            "pending": false,
+            "last_check_ms": 151.56975900026737,
+            "maximum_check_ms": 316.22847899961926,
+            "wake_delay_ms": 2.502772000298137,
+            "maximum_wake_delay_ms": 23.120941999877687,
+            "native_tid": 10386,
+            "verification_age_ms": 815.2163350005139,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 1,
+              "pid": 11193,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_water_48k.wav",
+              "position_frames_estimate": 92480,
+              "underruns": 0,
+              "requested_revision": 1,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 72,
+            "started": 11890.921331195,
+            "pending": false,
+            "last_check_ms": 67.99111599866592,
+            "maximum_check_ms": 316.22847899961926,
+            "wake_delay_ms": 0.6663040003331844,
+            "maximum_wake_delay_ms": 23.120941999877687,
+            "native_tid": 10386,
+            "verification_age_ms": 271.50255300148274,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 1,
+              "pid": 11193,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_water_48k.wav",
+              "position_frames_estimate": 92480,
+              "underruns": 0,
+              "requested_revision": 1,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 72,
+            "started": 11890.921331195,
+            "pending": false,
+            "last_check_ms": 67.99111599866592,
+            "maximum_check_ms": 316.22847899961926,
+            "wake_delay_ms": 0.6663040003331844,
+            "maximum_wake_delay_ms": 23.120941999877687,
+            "native_tid": 10386,
+            "verification_age_ms": 271.50255300148274,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 1,
+              "pid": 11193,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_water_48k.wav",
+              "position_frames_estimate": 92480,
+              "underruns": 0,
+              "requested_revision": 1,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 72,
+            "started": 11890.921331195,
+            "pending": false,
+            "last_check_ms": 67.99111599866592,
+            "maximum_check_ms": 316.22847899961926,
+            "wake_delay_ms": 0.6663040003331844,
+            "maximum_wake_delay_ms": 23.120941999877687,
+            "native_tid": 10386,
+            "verification_age_ms": 271.50255300148274,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "completed",
+              "revision": 1,
+              "pid": null,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_water_48k.wav",
+              "position_frames_estimate": 99031,
+              "underruns": 53,
+              "returncode": 0,
+              "requested_revision": 1,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 72,
+            "started": 11890.921331195,
+            "pending": false,
+            "last_check_ms": 67.99111599866592,
+            "maximum_check_ms": 316.22847899961926,
+            "wake_delay_ms": 0.6663040003331844,
+            "maximum_wake_delay_ms": 23.120941999877687,
+            "native_tid": 10386,
+            "verification_age_ms": 949.7724880002352,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        }
+      ],
+      "feeding_seen": true,
+      "errors": []
+    },
+    {
+      "name": "help",
+      "samples": [
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "starting",
+              "revision": 2,
+              "pid": 11244,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_help_48k.wav",
+              "position_frames_estimate": 0,
+              "requested_revision": 2,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 73,
+            "started": 11893.082824815,
+            "pending": true,
+            "last_check_ms": 61.589037999510765,
+            "maximum_check_ms": 316.22847899961926,
+            "wake_delay_ms": 31.638032000046223,
+            "maximum_wake_delay_ms": 31.638032000046223,
+            "native_tid": 10386,
+            "verification_age_ms": 1506.1667250010942,
+            "pending_elapsed_ms": 474.52869300104794,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 2,
+              "pid": 11244,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_help_48k.wav",
+              "position_frames_estimate": 9862,
+              "underruns": 0,
+              "requested_revision": 2,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 74,
+            "started": 11893.082824815,
+            "pending": false,
+            "last_check_ms": 478.932423000515,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 31.638032000046223,
+            "maximum_wake_delay_ms": 31.638032000046223,
+            "native_tid": 10386,
+            "verification_age_ms": 282.7882439996756,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 2,
+              "pid": 11244,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_help_48k.wav",
+              "position_frames_estimate": 24291,
+              "underruns": 0,
+              "requested_revision": 2,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 74,
+            "started": 11893.082824815,
+            "pending": false,
+            "last_check_ms": 478.932423000515,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 31.638032000046223,
+            "maximum_wake_delay_ms": 31.638032000046223,
+            "native_tid": 10386,
+            "verification_age_ms": 559.0720500003954,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 2,
+              "pid": 11244,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_help_48k.wav",
+              "position_frames_estimate": 24291,
+              "underruns": 0,
+              "requested_revision": 2,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 74,
+            "started": 11893.082824815,
+            "pending": false,
+            "last_check_ms": 478.932423000515,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 31.638032000046223,
+            "maximum_wake_delay_ms": 31.638032000046223,
+            "native_tid": 10386,
+            "verification_age_ms": 559.0720500003954,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 2,
+              "pid": 11244,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_help_48k.wav",
+              "position_frames_estimate": 48413,
+              "underruns": 0,
+              "requested_revision": 2,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 75,
+            "started": 11894.56202399,
+            "pending": false,
+            "last_check_ms": 64.42636400061019,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.2667520002432866,
+            "maximum_wake_delay_ms": 31.638032000046223,
+            "native_tid": 10386,
+            "verification_age_ms": 1.4217749994713813,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 2,
+              "pid": 11244,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_help_48k.wav",
+              "position_frames_estimate": 48413,
+              "underruns": 0,
+              "requested_revision": 2,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 75,
+            "started": 11894.56202399,
+            "pending": false,
+            "last_check_ms": 64.42636400061019,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.2667520002432866,
+            "maximum_wake_delay_ms": 31.638032000046223,
+            "native_tid": 10386,
+            "verification_age_ms": 1.4217749994713813,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 2,
+              "pid": 11244,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_help_48k.wav",
+              "position_frames_estimate": 72833,
+              "underruns": 0,
+              "requested_revision": 2,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 75,
+            "started": 11894.56202399,
+            "pending": false,
+            "last_check_ms": 64.42636400061019,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.2667520002432866,
+            "maximum_wake_delay_ms": 31.638032000046223,
+            "native_tid": 10386,
+            "verification_age_ms": 522.8765800002293,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 2,
+              "pid": 11244,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_help_48k.wav",
+              "position_frames_estimate": 72833,
+              "underruns": 0,
+              "requested_revision": 2,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 75,
+            "started": 11894.56202399,
+            "pending": false,
+            "last_check_ms": 64.42636400061019,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.2667520002432866,
+            "maximum_wake_delay_ms": 31.638032000046223,
+            "native_tid": 10386,
+            "verification_age_ms": 522.8765800002293,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 2,
+              "pid": 11244,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_help_48k.wav",
+              "position_frames_estimate": 72833,
+              "underruns": 0,
+              "requested_revision": 2,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 75,
+            "started": 11894.56202399,
+            "pending": false,
+            "last_check_ms": 64.42636400061019,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.2667520002432866,
+            "maximum_wake_delay_ms": 31.638032000046223,
+            "native_tid": 10386,
+            "verification_age_ms": 522.8765800002293,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 2,
+              "pid": 11244,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_help_48k.wav",
+              "position_frames_estimate": 96999,
+              "underruns": 0,
+              "requested_revision": 2,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 75,
+            "started": 11895.626740079,
+            "pending": true,
+            "last_check_ms": 64.42636400061019,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.28972499967494514,
+            "maximum_wake_delay_ms": 31.638032000046223,
+            "native_tid": 10386,
+            "verification_age_ms": 1030.8034310000949,
+            "pending_elapsed_ms": 30.513706000419916,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 2,
+              "pid": 11244,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_help_48k.wav",
+              "position_frames_estimate": 96999,
+              "underruns": 0,
+              "requested_revision": 2,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 75,
+            "started": 11895.626740079,
+            "pending": true,
+            "last_check_ms": 64.42636400061019,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.28972499967494514,
+            "maximum_wake_delay_ms": 31.638032000046223,
+            "native_tid": 10386,
+            "verification_age_ms": 1030.8034310000949,
+            "pending_elapsed_ms": 30.513706000419916,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "completed",
+              "revision": 2,
+              "pid": null,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_help_48k.wav",
+              "position_frames_estimate": 108228,
+              "underruns": 150,
+              "returncode": 0,
+              "requested_revision": 2,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 76,
+            "started": 11895.626740079,
+            "pending": false,
+            "last_check_ms": 84.00246500059438,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.28972499967494514,
+            "maximum_wake_delay_ms": 31.638032000046223,
+            "native_tid": 10386,
+            "verification_age_ms": 625.3193949996785,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "speech",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "speech",
+            "reason": "selected",
+            "player": {
+              "phase": "completed",
+              "revision": 2,
+              "pid": null,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_help_48k.wav",
+              "position_frames_estimate": 108228,
+              "underruns": 150,
+              "returncode": 0,
+              "requested_revision": 2,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 76,
+            "started": 11895.626740079,
+            "pending": false,
+            "last_check_ms": 84.00246500059438,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.28972499967494514,
+            "maximum_wake_delay_ms": 31.638032000046223,
+            "native_tid": 10386,
+            "verification_age_ms": 625.3193949996785,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        }
+      ],
+      "feeding_seen": true,
+      "errors": []
+    },
+    {
+      "name": "music",
+      "samples": [
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 43676,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 82,
+            "started": 11902.394256962,
+            "pending": false,
+            "last_check_ms": 138.40411199998925,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.9061629989446374,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 459.34426200074086,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 43676,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 82,
+            "started": 11902.394256962,
+            "pending": false,
+            "last_check_ms": 138.40411199998925,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.9061629989446374,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 459.34426200074086,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 67994,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 82,
+            "started": 11902.394256962,
+            "pending": false,
+            "last_check_ms": 138.40411199998925,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.9061629989446374,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 957.260662000408,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 67994,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 82,
+            "started": 11902.394256962,
+            "pending": false,
+            "last_check_ms": 138.40411199998925,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.9061629989446374,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 957.260662000408,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 92582,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 83,
+            "started": 11903.532939475,
+            "pending": false,
+            "last_check_ms": 79.04804499958118,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.27840100119647104,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 387.7273369998875,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 92582,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 83,
+            "started": 11903.532939475,
+            "pending": false,
+            "last_check_ms": 79.04804499958118,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.27840100119647104,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 387.7273369998875,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 116931,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 83,
+            "started": 11903.532939475,
+            "pending": false,
+            "last_check_ms": 79.04804499958118,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.27840100119647104,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 901.3966319998872,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 116931,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 83,
+            "started": 11903.532939475,
+            "pending": false,
+            "last_check_ms": 79.04804499958118,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.27840100119647104,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 901.3966319998872,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 141084,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 84,
+            "started": 11904.612286804,
+            "pending": false,
+            "last_check_ms": 83.08893200046441,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.2992839999933494,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 324.56784599889943,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 141084,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 84,
+            "started": 11904.612286804,
+            "pending": false,
+            "last_check_ms": 83.08893200046441,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.2992839999933494,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 324.56784599889943,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 165338,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 84,
+            "started": 11904.612286804,
+            "pending": false,
+            "last_check_ms": 83.08893200046441,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.2992839999933494,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 844.4113389996346,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 165338,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 84,
+            "started": 11904.612286804,
+            "pending": false,
+            "last_check_ms": 83.08893200046441,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.2992839999933494,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 844.4113389996346,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 189451,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 85,
+            "started": 11905.695734384,
+            "pending": false,
+            "last_check_ms": 143.5440919995017,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.35864799974660855,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 224.44727900074213,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 189451,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 85,
+            "started": 11905.695734384,
+            "pending": false,
+            "last_check_ms": 143.5440919995017,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.35864799974660855,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 224.44727900074213,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 218425,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 85,
+            "started": 11905.695734384,
+            "pending": false,
+            "last_check_ms": 143.5440919995017,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.35864799974660855,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 756.6003329993691,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 218425,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 85,
+            "started": 11905.695734384,
+            "pending": false,
+            "last_check_ms": 143.5440919995017,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.35864799974660855,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 756.6003329993691,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 242619,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 86,
+            "started": 11906.839705746,
+            "pending": false,
+            "last_check_ms": 82.55798599930131,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.4272700007277308,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 180.19604700020864,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 242619,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 86,
+            "started": 11906.839705746,
+            "pending": false,
+            "last_check_ms": 82.55798599930131,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.4272700007277308,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 180.19604700020864,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 267011,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 86,
+            "started": 11906.839705746,
+            "pending": false,
+            "last_check_ms": 82.55798599930131,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.4272700007277308,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 696.1291190000338,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 4,
+              "pid": 11378,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 267011,
+              "underruns": 0,
+              "requested_revision": 4,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 86,
+            "started": 11906.839705746,
+            "pending": false,
+            "last_check_ms": 82.55798599930131,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.4272700007277308,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 696.1291190000338,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        }
+      ],
+      "feeding_seen": true,
+      "errors": []
+    },
+    {
+      "name": "volume30",
+      "samples": [
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 30,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "starting",
+              "revision": 5,
+              "pid": 11519,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 305837,
+              "requested_revision": 5,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 87,
+            "started": 11907.922538953,
+            "pending": false,
+            "last_check_ms": 64.40149599984579,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.2752210002654465,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 835.5451250008628,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 30,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "starting",
+              "revision": 5,
+              "pid": 11519,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 305837,
+              "requested_revision": 5,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 88,
+            "started": 11908.987276603,
+            "pending": false,
+            "last_check_ms": 121.36748299963074,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.33615400025155395,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 11.158921000969713,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 30,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "starting",
+              "revision": 5,
+              "pid": 11519,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 305837,
+              "requested_revision": 5,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 88,
+            "started": 11908.987276603,
+            "pending": false,
+            "last_check_ms": 121.36748299963074,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.33615400025155395,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 11.158921000969713,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 30,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 5,
+              "pid": 11519,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 335258,
+              "underruns": 0,
+              "requested_revision": 5,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 88,
+            "started": 11908.987276603,
+            "pending": false,
+            "last_check_ms": 121.36748299963074,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.33615400025155395,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 698.951764999947,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 30,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 5,
+              "pid": 11519,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 335258,
+              "underruns": 0,
+              "requested_revision": 5,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 88,
+            "started": 11908.987276603,
+            "pending": false,
+            "last_check_ms": 121.36748299963074,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.33615400025155395,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 698.951764999947,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 30,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 5,
+              "pid": 11519,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 349768,
+              "underruns": 0,
+              "requested_revision": 5,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 88,
+            "started": 11910.109093823,
+            "pending": true,
+            "last_check_ms": 121.36748299963074,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.44973700096306857,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 1040.2821810002933,
+            "pending_elapsed_ms": 39.83244399933028,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "menu",
+          "page": "music",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 30,
+            "kind": "music",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 5,
+              "pid": 11519,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+              "position_frames_estimate": 349768,
+              "underruns": 0,
+              "requested_revision": 5,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 0,
+          "error": null,
+          "runtime_guard": {
+            "checks": 88,
+            "started": 11910.109093823,
+            "pending": true,
+            "last_check_ms": 121.36748299963074,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.44973700096306857,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 1040.2821810002933,
+            "pending_elapsed_ms": 39.83244399933028,
+            "thread_alive": true,
+            "error": null
+          }
+        }
+      ],
+      "feeding_seen": true,
+      "errors": []
+    },
+    {
+      "name": "uploaded_video",
+      "samples": [
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "video",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 8,
+              "pid": 11612,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 29037,
+              "underruns": 0,
+              "requested_revision": 8,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": -595.0625,
+            "speaker_latency_measured": false
+          },
+          "frame": 25,
+          "error": null,
+          "runtime_guard": {
+            "checks": 94,
+            "started": 11915.563897509,
+            "pending": false,
+            "last_check_ms": 131.03624299947114,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.36408400046639144,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 778.2357010000851,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "video",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 8,
+              "pid": 11612,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 29037,
+              "underruns": 0,
+              "requested_revision": 8,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": -595.0625,
+            "speaker_latency_measured": false
+          },
+          "frame": 25,
+          "error": null,
+          "runtime_guard": {
+            "checks": 94,
+            "started": 11915.563897509,
+            "pending": false,
+            "last_check_ms": 131.03624299947114,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.36408400046639144,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 778.2357010000851,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "video",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 8,
+              "pid": 11612,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 48469,
+              "underruns": 0,
+              "requested_revision": 8,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": -640.2291666666666,
+            "speaker_latency_measured": false
+          },
+          "frame": 34,
+          "error": null,
+          "runtime_guard": {
+            "checks": 95,
+            "started": 11916.695277715,
+            "pending": false,
+            "last_check_ms": 72.31268000032287,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.34396299997752067,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 98.04475599958096,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "video",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 8,
+              "pid": 11612,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 48469,
+              "underruns": 0,
+              "requested_revision": 8,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": -640.2291666666666,
+            "speaker_latency_measured": false
+          },
+          "frame": 34,
+          "error": null,
+          "runtime_guard": {
+            "checks": 95,
+            "started": 11916.695277715,
+            "pending": false,
+            "last_check_ms": 72.31268000032287,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.34396299997752067,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 98.04475599958096,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "video",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 8,
+              "pid": 11612,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 72643,
+              "underruns": 0,
+              "requested_revision": 8,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": -686.6041666666666,
+            "speaker_latency_measured": false
+          },
+          "frame": 45,
+          "error": null,
+          "runtime_guard": {
+            "checks": 95,
+            "started": 11916.695277715,
+            "pending": false,
+            "last_check_ms": 72.31268000032287,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.34396299997752067,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 641.1955589992431,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "video",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 8,
+              "pid": 11612,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 72643,
+              "underruns": 0,
+              "requested_revision": 8,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": -686.6041666666666,
+            "speaker_latency_measured": false
+          },
+          "frame": 45,
+          "error": null,
+          "runtime_guard": {
+            "checks": 95,
+            "started": 11916.695277715,
+            "pending": false,
+            "last_check_ms": 72.31268000032287,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.34396299997752067,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 641.1955589992431,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "video",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 8,
+              "pid": 11612,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 72643,
+              "underruns": 0,
+              "requested_revision": 8,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": -686.6041666666666,
+            "speaker_latency_measured": false
+          },
+          "frame": 45,
+          "error": null,
+          "runtime_guard": {
+            "checks": 95,
+            "started": 11916.695277715,
+            "pending": false,
+            "last_check_ms": 72.31268000032287,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.34396299997752067,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 641.1955589992431,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "video",
+            "reason": "selected",
+            "player": {
+              "phase": "stopped",
+              "revision": 9,
+              "pid": null,
+              "audible_verified": false,
+              "requested_revision": 10,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 56,
+          "error": null,
+          "runtime_guard": {
+            "checks": 96,
+            "started": 11917.768536676,
+            "pending": false,
+            "last_check_ms": 179.6024680006667,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.9462809994147392,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 315.13564200031396,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "video",
+            "reason": "selected",
+            "player": {
+              "phase": "stopped",
+              "revision": 9,
+              "pid": null,
+              "audible_verified": false,
+              "requested_revision": 10,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 56,
+          "error": null,
+          "runtime_guard": {
+            "checks": 96,
+            "started": 11917.768536676,
+            "pending": false,
+            "last_check_ms": 179.6024680006667,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.9462809994147392,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 315.13564200031396,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "video",
+            "reason": "selected",
+            "player": {
+              "phase": "starting",
+              "revision": 10,
+              "pid": 11676,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 0,
+              "requested_revision": 10,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": -300.0,
+            "speaker_latency_measured": false
+          },
+          "frame": 62,
+          "error": null,
+          "runtime_guard": {
+            "checks": 96,
+            "started": 11918.95172767,
+            "pending": true,
+            "last_check_ms": 179.6024680006667,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 3.5885260003851727,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 1131.197238999448,
+            "pending_elapsed_ms": 127.60871299906285,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "video",
+            "reason": "selected",
+            "player": {
+              "phase": "starting",
+              "revision": 10,
+              "pid": 11676,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 0,
+              "requested_revision": 10,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": -300.0,
+            "speaker_latency_measured": false
+          },
+          "frame": 62,
+          "error": null,
+          "runtime_guard": {
+            "checks": 96,
+            "started": 11918.95172767,
+            "pending": true,
+            "last_check_ms": 179.6024680006667,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 3.5885260003851727,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 1131.197238999448,
+            "pending_elapsed_ms": 127.60871299906285,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "video",
+            "reason": "selected",
+            "player": {
+              "phase": "starting",
+              "revision": 10,
+              "pid": 11676,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 0,
+              "requested_revision": 10,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": -750.0,
+            "speaker_latency_measured": false
+          },
+          "frame": 71,
+          "error": null,
+          "runtime_guard": {
+            "checks": 97,
+            "started": 11918.95172767,
+            "pending": false,
+            "last_check_ms": 301.6471349983476,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 3.5885260003851727,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 370.4017420004675,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "video",
+            "reason": "selected",
+            "player": {
+              "phase": "starting",
+              "revision": 10,
+              "pid": 11676,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 0,
+              "requested_revision": 10,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": -750.0,
+            "speaker_latency_measured": false
+          },
+          "frame": 71,
+          "error": null,
+          "runtime_guard": {
+            "checks": 97,
+            "started": 11918.95172767,
+            "pending": false,
+            "last_check_ms": 301.6471349983476,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 3.5885260003851727,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 370.4017420004675,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "video",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 10,
+              "pid": 11676,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 14633,
+              "underruns": 0,
+              "requested_revision": 10,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": -945.1458333333334,
+            "speaker_latency_measured": false
+          },
+          "frame": 81,
+          "error": null,
+          "runtime_guard": {
+            "checks": 97,
+            "started": 11920.264053711,
+            "pending": true,
+            "last_check_ms": 301.6471349983476,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 10.678906000975985,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 1100.929204001659,
+            "pending_elapsed_ms": 90.25029800068296,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "video",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 10,
+              "pid": 11676,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 34011,
+              "underruns": 0,
+              "requested_revision": 10,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": -891.4375,
+            "speaker_latency_measured": false
+          },
+          "frame": 88,
+          "error": null,
+          "runtime_guard": {
+            "checks": 98,
+            "started": 11920.264053711,
+            "pending": false,
+            "last_check_ms": 152.73991499998374,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 10.678906000975985,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 287.78457599946705,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "video",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 10,
+              "pid": 11676,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 34011,
+              "underruns": 0,
+              "requested_revision": 10,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": -891.4375,
+            "speaker_latency_measured": false
+          },
+          "frame": 88,
+          "error": null,
+          "runtime_guard": {
+            "checks": 98,
+            "started": 11920.264053711,
+            "pending": false,
+            "last_check_ms": 152.73991499998374,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 10.678906000975985,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 287.78457599946705,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "video",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 10,
+              "pid": 11676,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 58462,
+              "underruns": 0,
+              "requested_revision": 10,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": -932.0416666666666,
+            "speaker_latency_measured": false
+          },
+          "frame": 99,
+          "error": null,
+          "runtime_guard": {
+            "checks": 98,
+            "started": 11920.264053711,
+            "pending": false,
+            "last_check_ms": 152.73991499998374,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 10.678906000975985,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 818.5889590004081,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": "video",
+            "reason": "selected",
+            "player": {
+              "phase": "feeding",
+              "revision": 10,
+              "pid": 11676,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 58462,
+              "underruns": 0,
+              "requested_revision": 10,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": -932.0416666666666,
+            "speaker_latency_measured": false
+          },
+          "frame": 99,
+          "error": null,
+          "runtime_guard": {
+            "checks": 98,
+            "started": 11920.264053711,
+            "pending": false,
+            "last_check_ms": 152.73991499998374,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 10.678906000975985,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 818.5889590004081,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": null,
+            "reason": "audio_finished_before_video",
+            "player": {
+              "phase": "stopped",
+              "revision": 10,
+              "pid": 11676,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 87986,
+              "underruns": 0,
+              "requested_revision": 11,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 110,
+          "error": null,
+          "runtime_guard": {
+            "checks": 99,
+            "started": 11921.417049053,
+            "pending": false,
+            "last_check_ms": 67.75461100005487,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.25542699950165115,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 303.63720300010755,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": null,
+            "reason": "audio_finished_before_video",
+            "player": {
+              "phase": "stopped",
+              "revision": 10,
+              "pid": 11676,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 87986,
+              "underruns": 0,
+              "requested_revision": 11,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 110,
+          "error": null,
+          "runtime_guard": {
+            "checks": 99,
+            "started": 11921.417049053,
+            "pending": false,
+            "last_check_ms": 67.75461100005487,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.25542699950165115,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 303.63720300010755,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        },
+        {
+          "state": "playing",
+          "page": "video",
+          "audio": {
+            "backend": "candidate_hdmi_pcm",
+            "volume_percent": 40,
+            "kind": null,
+            "reason": "audio_finished_before_video",
+            "player": {
+              "phase": "stopped",
+              "revision": 10,
+              "pid": 11676,
+              "audible_verified": false,
+              "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+              "position_frames_estimate": 87986,
+              "underruns": 0,
+              "requested_revision": 11,
+              "worker_alive": true,
+              "errors": []
+            },
+            "video_offset_estimate_ms": null,
+            "speaker_latency_measured": false
+          },
+          "frame": 110,
+          "error": null,
+          "runtime_guard": {
+            "checks": 99,
+            "started": 11921.417049053,
+            "pending": false,
+            "last_check_ms": 67.75461100005487,
+            "maximum_check_ms": 478.932423000515,
+            "wake_delay_ms": 0.25542699950165115,
+            "maximum_wake_delay_ms": 47.59721499976877,
+            "native_tid": 10386,
+            "verification_age_ms": 303.63720300010755,
+            "pending_elapsed_ms": 0.0,
+            "thread_alive": true,
+            "error": null
+          }
+        }
+      ],
+      "feeding_seen": true,
+      "errors": []
+    }
+  ],
+  "after_music_exit": {
+    "name": "home_audio_stopped",
+    "samples": [
+      {
+        "state": "menu",
+        "page": "home",
+        "audio": {
+          "backend": "candidate_hdmi_pcm",
+          "volume_percent": 40,
+          "kind": null,
+          "reason": "page_without_audio_or_video_paused",
+          "player": {
+            "phase": "stopped",
+            "revision": 7,
+            "pid": null,
+            "audible_verified": false,
+            "requested_revision": 7,
+            "worker_alive": true,
+            "errors": []
+          },
+          "video_offset_estimate_ms": null,
+          "speaker_latency_measured": false
+        },
+        "frame": 0,
+        "error": null,
+        "runtime_guard": {
+          "checks": 91,
+          "started": 11912.331253045,
+          "pending": false,
+          "last_check_ms": 80.20703299916931,
+          "maximum_check_ms": 478.932423000515,
+          "wake_delay_ms": 2.4610060008853907,
+          "maximum_wake_delay_ms": 47.59721499976877,
+          "native_tid": 10386,
+          "verification_age_ms": 781.0328010000376,
+          "pending_elapsed_ms": 0.0,
+          "thread_alive": true,
+          "error": null
+        }
+      },
+      {
+        "state": "menu",
+        "page": "home",
+        "audio": {
+          "backend": "candidate_hdmi_pcm",
+          "volume_percent": 40,
+          "kind": null,
+          "reason": "page_without_audio_or_video_paused",
+          "player": {
+            "phase": "stopped",
+            "revision": 7,
+            "pid": null,
+            "audible_verified": false,
+            "requested_revision": 7,
+            "worker_alive": true,
+            "errors": []
+          },
+          "video_offset_estimate_ms": null,
+          "speaker_latency_measured": false
+        },
+        "frame": 0,
+        "error": null,
+        "runtime_guard": {
+          "checks": 91,
+          "started": 11912.331253045,
+          "pending": false,
+          "last_check_ms": 80.20703299916931,
+          "maximum_check_ms": 478.932423000515,
+          "wake_delay_ms": 2.4610060008853907,
+          "maximum_wake_delay_ms": 47.59721499976877,
+          "native_tid": 10386,
+          "verification_age_ms": 781.0328010000376,
+          "pending_elapsed_ms": 0.0,
+          "thread_alive": true,
+          "error": null
+        }
+      },
+      {
+        "state": "menu",
+        "page": "home",
+        "audio": {
+          "backend": "candidate_hdmi_pcm",
+          "volume_percent": 40,
+          "kind": null,
+          "reason": "page_without_audio_or_video_paused",
+          "player": {
+            "phase": "stopped",
+            "revision": 7,
+            "pid": null,
+            "audible_verified": false,
+            "requested_revision": 7,
+            "worker_alive": true,
+            "errors": []
+          },
+          "video_offset_estimate_ms": null,
+          "speaker_latency_measured": false
+        },
+        "frame": 0,
+        "error": null,
+        "runtime_guard": {
+          "checks": 92,
+          "started": 11913.411751112,
+          "pending": false,
+          "last_check_ms": 71.64652599931287,
+          "maximum_check_ms": 478.932423000515,
+          "wake_delay_ms": 0.29103400083840825,
+          "maximum_wake_delay_ms": 47.59721499976877,
+          "native_tid": 10386,
+          "verification_age_ms": 222.54687500026193,
+          "pending_elapsed_ms": 0.0,
+          "thread_alive": true,
+          "error": null
+        }
+      },
+      {
+        "state": "menu",
+        "page": "home",
+        "audio": {
+          "backend": "candidate_hdmi_pcm",
+          "volume_percent": 40,
+          "kind": null,
+          "reason": "page_without_audio_or_video_paused",
+          "player": {
+            "phase": "stopped",
+            "revision": 7,
+            "pid": null,
+            "audible_verified": false,
+            "requested_revision": 7,
+            "worker_alive": true,
+            "errors": []
+          },
+          "video_offset_estimate_ms": null,
+          "speaker_latency_measured": false
+        },
+        "frame": 0,
+        "error": null,
+        "runtime_guard": {
+          "checks": 92,
+          "started": 11913.411751112,
+          "pending": false,
+          "last_check_ms": 71.64652599931287,
+          "maximum_check_ms": 478.932423000515,
+          "wake_delay_ms": 0.29103400083840825,
+          "maximum_wake_delay_ms": 47.59721499976877,
+          "native_tid": 10386,
+          "verification_age_ms": 222.54687500026193,
+          "pending_elapsed_ms": 0.0,
+          "thread_alive": true,
+          "error": null
+        }
+      },
+      {
+        "state": "menu",
+        "page": "home",
+        "audio": {
+          "backend": "candidate_hdmi_pcm",
+          "volume_percent": 40,
+          "kind": null,
+          "reason": "page_without_audio_or_video_paused",
+          "player": {
+            "phase": "stopped",
+            "revision": 7,
+            "pid": null,
+            "audible_verified": false,
+            "requested_revision": 7,
+            "worker_alive": true,
+            "errors": []
+          },
+          "video_offset_estimate_ms": null,
+          "speaker_latency_measured": false
+        },
+        "frame": 0,
+        "error": null,
+        "runtime_guard": {
+          "checks": 92,
+          "started": 11913.411751112,
+          "pending": false,
+          "last_check_ms": 71.64652599931287,
+          "maximum_check_ms": 478.932423000515,
+          "wake_delay_ms": 0.29103400083840825,
+          "maximum_wake_delay_ms": 47.59721499976877,
+          "native_tid": 10386,
+          "verification_age_ms": 729.8784240010718,
+          "pending_elapsed_ms": 0.0,
+          "thread_alive": true,
+          "error": null
+        }
+      }
+    ],
+    "feeding_seen": false,
+    "errors": []
+  },
+  "final": {
+    "name": "home",
+    "samples": [
+      {
+        "state": "menu",
+        "page": "home",
+        "audio": {
+          "backend": "candidate_hdmi_pcm",
+          "volume_percent": 40,
+          "kind": null,
+          "reason": "page_without_audio_or_video_paused",
+          "player": {
+            "phase": "stopped",
+            "revision": 13,
+            "pid": null,
+            "audible_verified": false,
+            "requested_revision": 13,
+            "worker_alive": true,
+            "errors": []
+          },
+          "video_offset_estimate_ms": null,
+          "speaker_latency_measured": false
+        },
+        "frame": 127,
+        "error": null,
+        "runtime_guard": {
+          "checks": 101,
+          "started": 11923.653755467,
+          "pending": false,
+          "last_check_ms": 113.44058100075927,
+          "maximum_check_ms": 478.932423000515,
+          "wake_delay_ms": 1.0656579997885274,
+          "maximum_wake_delay_ms": 47.59721499976877,
+          "native_tid": 10386,
+          "verification_age_ms": 806.2521100000595,
+          "pending_elapsed_ms": 0.0,
+          "thread_alive": true,
+          "error": null
+        }
+      },
+      {
+        "state": "menu",
+        "page": "home",
+        "audio": {
+          "backend": "candidate_hdmi_pcm",
+          "volume_percent": 40,
+          "kind": null,
+          "reason": "page_without_audio_or_video_paused",
+          "player": {
+            "phase": "stopped",
+            "revision": 13,
+            "pid": null,
+            "audible_verified": false,
+            "requested_revision": 13,
+            "worker_alive": true,
+            "errors": []
+          },
+          "video_offset_estimate_ms": null,
+          "speaker_latency_measured": false
+        },
+        "frame": 127,
+        "error": null,
+        "runtime_guard": {
+          "checks": 101,
+          "started": 11923.653755467,
+          "pending": false,
+          "last_check_ms": 113.44058100075927,
+          "maximum_check_ms": 478.932423000515,
+          "wake_delay_ms": 1.0656579997885274,
+          "maximum_wake_delay_ms": 47.59721499976877,
+          "native_tid": 10386,
+          "verification_age_ms": 806.2521100000595,
+          "pending_elapsed_ms": 0.0,
+          "thread_alive": true,
+          "error": null
+        }
+      },
+      {
+        "state": "menu",
+        "page": "home",
+        "audio": {
+          "backend": "candidate_hdmi_pcm",
+          "volume_percent": 40,
+          "kind": null,
+          "reason": "page_without_audio_or_video_paused",
+          "player": {
+            "phase": "stopped",
+            "revision": 13,
+            "pid": null,
+            "audible_verified": false,
+            "requested_revision": 13,
+            "worker_alive": true,
+            "errors": []
+          },
+          "video_offset_estimate_ms": null,
+          "speaker_latency_measured": false
+        },
+        "frame": 127,
+        "error": null,
+        "runtime_guard": {
+          "checks": 102,
+          "started": 11924.767464791,
+          "pending": false,
+          "last_check_ms": 64.38013399929332,
+          "maximum_check_ms": 478.932423000515,
+          "wake_delay_ms": 0.26874300056078937,
+          "maximum_wake_delay_ms": 47.59721499976877,
+          "native_tid": 10386,
+          "verification_age_ms": 261.93683900055476,
+          "pending_elapsed_ms": 0.0,
+          "thread_alive": true,
+          "error": null
+        }
+      },
+      {
+        "state": "menu",
+        "page": "home",
+        "audio": {
+          "backend": "candidate_hdmi_pcm",
+          "volume_percent": 40,
+          "kind": null,
+          "reason": "page_without_audio_or_video_paused",
+          "player": {
+            "phase": "stopped",
+            "revision": 13,
+            "pid": null,
+            "audible_verified": false,
+            "requested_revision": 13,
+            "worker_alive": true,
+            "errors": []
+          },
+          "video_offset_estimate_ms": null,
+          "speaker_latency_measured": false
+        },
+        "frame": 127,
+        "error": null,
+        "runtime_guard": {
+          "checks": 102,
+          "started": 11924.767464791,
+          "pending": false,
+          "last_check_ms": 64.38013399929332,
+          "maximum_check_ms": 478.932423000515,
+          "wake_delay_ms": 0.26874300056078937,
+          "maximum_wake_delay_ms": 47.59721499976877,
+          "native_tid": 10386,
+          "verification_age_ms": 261.93683900055476,
+          "pending_elapsed_ms": 0.0,
+          "thread_alive": true,
+          "error": null
+        }
+      },
+      {
+        "state": "menu",
+        "page": "home",
+        "audio": {
+          "backend": "candidate_hdmi_pcm",
+          "volume_percent": 40,
+          "kind": null,
+          "reason": "page_without_audio_or_video_paused",
+          "player": {
+            "phase": "stopped",
+            "revision": 13,
+            "pid": null,
+            "audible_verified": false,
+            "requested_revision": 13,
+            "worker_alive": true,
+            "errors": []
+          },
+          "video_offset_estimate_ms": null,
+          "speaker_latency_measured": false
+        },
+        "frame": 127,
+        "error": null,
+        "runtime_guard": {
+          "checks": 102,
+          "started": 11924.767464791,
+          "pending": false,
+          "last_check_ms": 64.38013399929332,
+          "maximum_check_ms": 478.932423000515,
+          "wake_delay_ms": 0.26874300056078937,
+          "maximum_wake_delay_ms": 47.59721499976877,
+          "native_tid": 10386,
+          "verification_age_ms": 775.9221960004652,
+          "pending_elapsed_ms": 0.0,
+          "thread_alive": true,
+          "error": null
+        }
+      },
+      {
+        "state": "menu",
+        "page": "home",
+        "audio": {
+          "backend": "candidate_hdmi_pcm",
+          "volume_percent": 40,
+          "kind": null,
+          "reason": "page_without_audio_or_video_paused",
+          "player": {
+            "phase": "stopped",
+            "revision": 13,
+            "pid": null,
+            "audible_verified": false,
+            "requested_revision": 13,
+            "worker_alive": true,
+            "errors": []
+          },
+          "video_offset_estimate_ms": null,
+          "speaker_latency_measured": false
+        },
+        "frame": 127,
+        "error": null,
+        "runtime_guard": {
+          "checks": 102,
+          "started": 11924.767464791,
+          "pending": false,
+          "last_check_ms": 64.38013399929332,
+          "maximum_check_ms": 478.932423000515,
+          "wake_delay_ms": 0.26874300056078937,
+          "maximum_wake_delay_ms": 47.59721499976877,
+          "native_tid": 10386,
+          "verification_age_ms": 775.9221960004652,
+          "pending_elapsed_ms": 0.0,
+          "thread_alive": true,
+          "error": null
+        }
+      },
+      {
+        "state": "menu",
+        "page": "home",
+        "audio": {
+          "backend": "candidate_hdmi_pcm",
+          "volume_percent": 40,
+          "kind": null,
+          "reason": "page_without_audio_or_video_paused",
+          "player": {
+            "phase": "stopped",
+            "revision": 13,
+            "pid": null,
+            "audible_verified": false,
+            "requested_revision": 13,
+            "worker_alive": true,
+            "errors": []
+          },
+          "video_offset_estimate_ms": null,
+          "speaker_latency_measured": false
+        },
+        "frame": 127,
+        "error": null,
+        "runtime_guard": {
+          "checks": 103,
+          "started": 11925.83211759,
+          "pending": false,
+          "last_check_ms": 63.87930100027006,
+          "maximum_check_ms": 478.932423000515,
+          "wake_delay_ms": 0.27266500001132954,
+          "maximum_wake_delay_ms": 47.59721499976877,
+          "native_tid": 10386,
+          "verification_age_ms": 222.00387399971078,
+          "pending_elapsed_ms": 0.0,
+          "thread_alive": true,
+          "error": null
+        }
+      },
+      {
+        "state": "menu",
+        "page": "home",
+        "audio": {
+          "backend": "candidate_hdmi_pcm",
+          "volume_percent": 40,
+          "kind": null,
+          "reason": "page_without_audio_or_video_paused",
+          "player": {
+            "phase": "stopped",
+            "revision": 13,
+            "pid": null,
+            "audible_verified": false,
+            "requested_revision": 13,
+            "worker_alive": true,
+            "errors": []
+          },
+          "video_offset_estimate_ms": null,
+          "speaker_latency_measured": false
+        },
+        "frame": 127,
+        "error": null,
+        "runtime_guard": {
+          "checks": 103,
+          "started": 11925.83211759,
+          "pending": false,
+          "last_check_ms": 63.87930100027006,
+          "maximum_check_ms": 478.932423000515,
+          "wake_delay_ms": 0.27266500001132954,
+          "maximum_wake_delay_ms": 47.59721499976877,
+          "native_tid": 10386,
+          "verification_age_ms": 222.00387399971078,
+          "pending_elapsed_ms": 0.0,
+          "thread_alive": true,
+          "error": null
+        }
+      },
+      {
+        "state": "menu",
+        "page": "home",
+        "audio": {
+          "backend": "candidate_hdmi_pcm",
+          "volume_percent": 40,
+          "kind": null,
+          "reason": "page_without_audio_or_video_paused",
+          "player": {
+            "phase": "stopped",
+            "revision": 13,
+            "pid": null,
+            "audible_verified": false,
+            "requested_revision": 13,
+            "worker_alive": true,
+            "errors": []
+          },
+          "video_offset_estimate_ms": null,
+          "speaker_latency_measured": false
+        },
+        "frame": 127,
+        "error": null,
+        "runtime_guard": {
+          "checks": 103,
+          "started": 11925.83211759,
+          "pending": false,
+          "last_check_ms": 63.87930100027006,
+          "maximum_check_ms": 478.932423000515,
+          "wake_delay_ms": 0.27266500001132954,
+          "maximum_wake_delay_ms": 47.59721499976877,
+          "native_tid": 10386,
+          "verification_age_ms": 222.00387399971078,
+          "pending_elapsed_ms": 0.0,
+          "thread_alive": true,
+          "error": null
+        }
+      }
+    ],
+    "feeding_seen": false,
+    "errors": []
+  },
+  "finished": true
+}

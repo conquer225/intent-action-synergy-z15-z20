@@ -1,0 +1,10 @@
+{
+  "task": "face",
+  "source": "REPLACE with actual recording provenance; add all three people in every split",
+  "source_kind": "recorded",
+  "records": [
+    {"path": "person1/session1/frame001.png", "kind": "image", "label": 0, "group": "person1-session1", "split": "train", "roi": [120, 40, 80, 100]},
+    {"path": "person1/session2/frame001.png", "kind": "image", "label": 0, "group": "person1-session2", "split": "validation", "roi": [120, 40, 80, 100]},
+    {"path": "person1/session3/frame001.png", "kind": "image", "label": 0, "group": "person1-session3", "split": "test", "roi": [120, 40, 80, 100]}
+  ]
+}

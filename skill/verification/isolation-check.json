@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "scope": "isolated_directory_copy",
+  "directory_contains_spaces": true,
+  "original_project_workdir_used": false,
+  "python_isolated_mode": true,
+  "PYTHONPATH_removed": true,
+  "third_party_packages_needed": false,
+  "tests": 14,
+  "test_exit_code": 0,
+  "examples": [
+    {
+      "command": "python -I scripts/compare_golden.py examples/golden/reference.jsonl examples/golden/actual-pass.jsonl",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "command": "python -I scripts/compare_golden.py examples/golden/reference.jsonl examples/golden/actual-bad.jsonl",
+      "exit_code": 1,
+      "expected_exit_code": 1
+    },
+    {
+      "command": "python -I scripts/check_session_trace.py examples/session/pass.jsonl --ttl-ms 100",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "command": "python -I scripts/check_session_trace.py examples/session/bad-old-session.jsonl --ttl-ms 100",
+      "exit_code": 1,
+      "expected_exit_code": 1
+    }
+  ],
+  "tested_input_sha256": {
+    "examples/golden/actual-bad.jsonl": "cf17b92aeab7eca88f21306fc14a4930749395d9cd28ed8bded846ad2719f657",
+    "examples/golden/actual-pass.jsonl": "b7a44d3a347a944fe633c973e2570bc62e304d94acaca4262c1eb902a409ac49",
+    "examples/golden/input_le_i32.hex": "22f8b7d8ce0ec57388e063e1bb997e251b7ea7507462b90e9c90b6ac0384019b",
+    "examples/golden/model.json": "05b81ce1b90efacf3df03dfb60fdefcca3a4397df3721745271cd21a34f29413",
+    "examples/golden/reference.jsonl": "b3e096d21ffd2a0c19e08e6918c65da5b082e0219129fe4632d74e56566fdb7d",
+    "examples/session/bad-old-session.jsonl": "132f76ce83909425222ecc686c247e7c88f5d389783beccff71334b75c5fa347",
+    "examples/session/pass.jsonl": "a590782a701c23ae590ecb00b1a4539b4ede767773493c376f99820065b6e738",
+    "scripts/check_overlay.py": "27b6f75183ceb50ce56d35c2f12f2e48531299f6145c7006aee4865d6e8146f4",
+    "scripts/check_session_trace.py": "3a7e18a29f8aeb7838e06478e445154ed518e9a6a46117cf85daf8fa34d9cf53",
+    "scripts/compare_golden.py": "17b194ca47b6950c47847ffd085659dcefbdfab53c542714af2f4d7f9dfa62b3",
+    "tests/test_tools.py": "8133d0886a87d68af14b30c5fa37f5647b2479959371e753eb3b07cd4131f50f"
+  }
+}

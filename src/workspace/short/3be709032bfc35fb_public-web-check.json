@@ -1,0 +1,17 @@
+{
+  "/": {
+    "status": 200,
+    "cache": "no-store",
+    "address": "192.168.2.99"
+  },
+  "/mobile": {
+    "status": 200,
+    "cache": "no-store",
+    "address": "192.168.2.99"
+  },
+  "/mobile.js": {
+    "status": 200,
+    "cache": "no-store",
+    "address": "192.168.2.99"
+  }
+}

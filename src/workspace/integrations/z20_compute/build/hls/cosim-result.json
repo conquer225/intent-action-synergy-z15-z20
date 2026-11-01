@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "initial_exit": 1,
+  "direct_generated_commands": true,
+  "simulator_exit": 3221225477,
+  "tool_exit_clean": false,
+  "board_executed": false,
+  "transactions": 6,
+  "sources": {
+    "build.tcl": "3a01927b7c822483eb9aeb18f428e7816f847430878ec50625717ac44a773f36",
+    "mlp.cpp": "8f12284c2c821dbb79615f26bc1fc85c767f633fe8406418f42726a2fafd0a56",
+    "mlp.h": "6cc666a0f5d56864883d13d7e22b63b0023c49abeebf9647a78c012a6ac35941",
+    "test_mlp.cpp": "2adccacf3d3108625a8b69d06daf2677c2419e657c912f8586d1ef050cd37f4c"
+  }
+}

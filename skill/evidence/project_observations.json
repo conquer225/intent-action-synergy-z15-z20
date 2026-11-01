@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "project": "Z15 + Z20 integration",
+  "prepared_date": "2026-11-01",
+  "new_board_execution": false,
+  "observations": [
+    {
+      "id": "E01",
+      "title": "器件和封装身份先于板卡简称",
+      "evidence_type": [
+        "historical_board_identity",
+        "source_and_rejection_tests"
+      ],
+      "observation": "实物是 Navigator ATK-DF7010/7020P、XC7Z020 CLG400；早期新版 CLG484 候选不匹配实物。记录没有错候选实际烧入的事故。",
+      "response": "核对实物、载板资料和器件/封装；在加载前拒绝不匹配目标。",
+      "verified_effect": "原工程板型测试覆盖匹配、错封装、未知载板、错硅片及截断载荷；本包新增 bit/HWH 静态检查。",
+      "transfer": "换题保留身份合同；换板重建硬件并独立确认 DDR、引脚和时钟。",
+      "limits": "器件头与摘要匹配不确认电气或板级兼容；本次未上板。",
+      "source_paths": [
+        "integrations/z20_compute/NAVIGATOR_BOARD.md",
+        "integrations/z20_compute/report/board_20261024.md",
+        "integrations/z20_compute/z20_compute/board_target.py",
+        "integrations/z20_compute/tests/test_board_target.py",
+        ".trellis/spec/hardware/z20-compute.md"
+      ]
+    },
+    {
+      "id": "E02",
+      "title": "固件与所有固定摘要引用同步更新",
+      "evidence_type": [
+        "historical_board_failure_and_recovery",
+        "offline_installer_tests"
+      ],
+      "observation": "10/28 Z15 更新运动固件后，音频页固定的旧 bit/HWH 摘要拦截启动。",
+      "response": "现场沿用原配套事务更新两项引用并保留校验；随后把 bit/HWH、音频、媒体、启动及共存引用收敛为成对安装事务。",
+      "verified_effect": "历史记录确认修复后加载运行；新通用成对安装器仅离线验证，原 summary 的 new_paired_installer_board_executed=false。",
+      "transfer": "可信构建固定摘要；更新全体引用，保留预览、事务备份和后进先出回退。",
+      "limits": "本包的静态预检不执行生产文件更新，也不能发现应用中未登记的全部引用。",
+      "source_paths": [
+        "integrations/z20_compute/report/board_20261028/README.md",
+        "integrations/z20_compute/report/board_20261028/summary.json",
+        "integrations/z20_compute/install_motion_firmware.py",
+        "integrations/z20_compute/tests/test_motion_install.py"
+      ]
+    },
+    {
+      "id": "E03",
+      "title": "CPU 超时不解除硬件的内存所有权",
+      "evidence_type": [
+        "software_fault_injection"
+      ],
+      "observation": "驱动测试注入提交后超时及 MMIO 丢失，覆盖硬件可能仍拥有输入/输出缓冲的退出路径。",
+      "response": "HardwareNPU 进入不可继续提交状态并保留内存，确认 reset 后再释放。",
+      "verified_effect": "本次原工程两项 backend 测试通过；本包给出超时状态、停止证据和缓冲交还步骤。",
+      "transfer": "内存/MMIO 依赖可注入，超时、停止确认与释放职责分开。",
+      "limits": "来源是软件故障注入，不是新增实板 DMA 事故；静态预检不会检测运行中总线活动。",
+      "source_paths": [
+        "integrations/z20_compute/z20_compute/backend.py",
+        "integrations/z20_compute/tests/test_backend.py"
+      ]
+    },
+    {
+      "id": "E04",
+      "title": "全量整数一致与同范围计时",
+      "evidence_type": [
+        "historical_board_results",
+        "independent_arithmetic_fixture",
+        "software_regression"
+      ],
+      "observation": "历史三任务记录为 fatigue 20维、emotion 180维、sound 40维，backend=PL_z20_mlp，integer_reference_equal=true；脑电输入为 LEMON 特征回放。",
+      "response": "固定数据与量化合同，比较全部输出；PS 调用、PL 调用和提交至完成分别计时。",
+      "verified_effect": "同一声音样本历史记录 PS 约2.066 ms、PL 调用约13.177 ms、提交至完成约0.779 ms。原工程手算小向量输出[3,125,-3]的回归本次通过；本包比较器覆盖单值错误、身份变化与大整数一位差。",
+      "transfer": "更换任务后导出实际输入和完整模型摘要，以及两端原始结果。速度比使用相同范围和同输入。",
+      "limits": "旧报告缺少完整输入摘要及两份原始 INT32 输出，本次不能用新比较器重验旧逐位记录；无真人准确率或整体加速结论。",
+      "source_paths": [
+        "integrations/z20_compute/report/board_20261028/npu-three-task.json",
+        "integrations/z20_compute/report/board_20261028/README.md",
+        "integrations/z20_compute/report/eye_audio_20261028/z20-npu-task-and-recording-checks.json",
+        "integrations/z20_compute/z20_compute/npu.py",
+        "integrations/z20_compute/z20_compute/npu_check.py",
+        "integrations/z20_compute/hardware/hls/mlp.cpp",
+        "integrations/z20_compute/tests/test_npu.py"
+      ]
+    },
+    {
+      "id": "E05",
+      "title": "断电后从网络拓扑层恢复",
+      "evidence_type": [
+        "historical_board_failure_and_recovery"
+      ],
+      "observation": "Z15 断电重启后回到 AP，缺少到执行端的有效路由；其他设备可由电脑连接。",
+      "response": "确认设备与本次启动身份，复用原 join_lab 脚本切回 managed 并核对路由，另行重开眼动与检查标定。",
+      "verified_effect": "原 verify JSON 的 heartbeat.seconds=10.2、connected=true、error=null；两个机构 enabled=false。",
+      "transfer": "分层核对身份、网络、服务、输入、标定及执行端，临时入网与持久启动策略分开验证。",
+      "limits": "心跳正常只对应该观察窗口；未发送机构使能或执行机械动作。地址和凭据不在本包内提供。",
+      "source_paths": [
+        "integrations/z20_compute/report/eye_audio_20261028/README.md",
+        "integrations/z20_compute/report/eye_audio_20261028/network-reboot-z15-before.json",
+        "integrations/z20_compute/report/eye_audio_20261028/network-reboot-z15-verify.json",
+        "integrations/z20_compute/report/eye_audio_20261028/network-reboot-route-after.txt"
+      ]
+    },
+    {
+      "id": "E06",
+      "title": "独立快照、有限排队与旧结果失效",
+      "evidence_type": [
+        "source_invariant",
+        "software_fault_injection_and_regression"
+      ],
+      "observation": "环形槽重复不能判定复制无覆盖；慢任务可能跨越模式或连接，收到结果后的期限与输入本身年龄不同。",
+      "response": "比较复制前后 RingState 的写入代数等状态并用独立副本；只允许一个在执行与一个最新等待任务；以 session/epoch/sequence 和本机 TTL 清除旧结果。",
+      "verified_effect": "本次原工程 video 四项与 link 两项测试通过，覆盖复制中覆盖、慢任务、旧模式和失联清空。",
+      "transfer": "旁路不接管显示/采集缓冲，日志记录程序实际接收决定和显示状态。",
+      "limits": "本包轨迹只审计接收后的显示年龄；源端输入年龄需要另行记录，日志不全时不能推出现场正确。",
+      "source_paths": [
+        "integrations/z20_compute/z20_compute/video.py",
+        "integrations/z20_compute/z20_compute/vdma.py",
+        "integrations/z20_compute/z20_compute/link.py",
+        "integrations/z20_compute/z20_compute/runtime.py",
+        "integrations/z20_compute/z20_compute/visual_wire.py",
+        "integrations/z20_compute/tests/test_video.py",
+        "integrations/z20_compute/tests/test_link.py"
+      ]
+    },
+    {
+      "id": "E07",
+      "title": "先测绘制阻塞，再处理续租失败",
+      "evidence_type": [
+        "historical_software_reproduction",
+        "historical_board_cpu_measurement"
+      ],
+      "observation": "每次45 ms文字绘制的回归可复现启用 ACK 后页面绘制导致租约到期。",
+      "response": "缓存至多256个文字掩模，在未使能状态准备动作标签；保留原300 ms租约、注视有效性和停止规则。",
+      "verified_effect": "原报告记录新回归修复后通过；Z15 独立实例标签刷新约154.98 ms，未打开机构接口。",
+      "transfer": "界面阻塞与通信延迟分别测量；保持控制期限，以减少界面工作处理慢路径。",
+      "limits": "真人启用后的持续连接与机械动作仍需现场验收；10/30 菜单返回另有独立离线修订。",
+      "source_paths": [
+        "integrations/z20_compute/report/eye_audio_20261028/README.md",
+        "integrations/z20_compute/report/device_menu_20261030.md"
+      ]
+    },
+    {
+      "id": "E08",
+      "title": "工具环境、退出和完整构建分别取证",
+      "evidence_type": [
+        "historical_local_tool_failure",
+        "historical_completed_implementation"
+      ],
+      "observation": "srcscanner 因 RDI_LIBDIR 层级/运行库路径异常失败；空脚本也能异常退出，不能统一归因 RTL。",
+      "response": "修正私有启动环境的目录层级并保留非零退出拦截；先最小探针，再完整构建。",
+      "verified_effect": "历史报告记电脑重启后完整构建返回0，WNS=0.293 ns、WHS=0.034 ns，质量门禁通过。",
+      "transfer": "源码识别、正常退出、综合、实现、生成及上板分别登记，报告必须绑定源码与目标。",
+      "limits": "崩溃底层根因未永久确定；旧时序值和工具复测范围不能移作新设计结论。本次未运行 Vivado。",
+      "source_paths": [
+        "integrations/z20_compute/report/vivado_diagnosis_20261028.md",
+        "integrations/z20_compute/tool_environment.py",
+        "integrations/z20_compute/tests/test_vivado_environment.py",
+        "integrations/vision_demo/tests/test_build_launcher.py"
+      ]
+    }
+  ]
+}

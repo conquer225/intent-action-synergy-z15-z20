@@ -1,0 +1,7 @@
+{
+  "note": "Camera-to-world transforms use metres. Replace poses with measured or initialized poses; ICP needs overlap.",
+  "views": [
+    {"depth_npz": "view001/depth.npz", "camera_to_world": [[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]]},
+    {"depth_npz": "view002/depth.npz", "camera_to_world": [[1,0,0,0.02],[0,1,0,0],[0,0,1,0],[0,0,0,1]]}
+  ]
+}

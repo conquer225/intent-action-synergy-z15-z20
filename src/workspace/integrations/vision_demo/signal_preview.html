@@ -1,0 +1,17 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>我们意念合一 · 脑电与音乐</title><link rel="stylesheet" href="/presentation.css"></head>
+<body class="signal-showcase"><main><header><div><h1>我们意念合一</h1><p class="console-intro">脑电信号、状态识别与音乐联动</p></div><div class="actions"><button id="sound">播放音乐</button><button id="restart">重新开始</button><button id="stop" aria-pressed="false">暂停展示</button></div></header>
+<nav aria-label="分析页面"><button data-page="fatigue" aria-pressed="true">疲劳分析</button><button data-page="emotion">情绪分析</button><button data-page="music">脑电音乐联动</button><button data-page="audio">音乐音频分析</button></nav>
+<img id="screen" width="1280" height="720" alt="脑电信号与音乐处理过程"><div class="source-note"><p id="status" role="status">正在载入脑电记录</p><details><summary>数据说明</summary><p>LEMON sub-010002 真实静息脑电记录，前 120 秒建立基线，随后连续分析 180 秒；CC BY 4.0。疲劳与情绪结果由原有模型计算。<a href="https://doi.org/10.1038/sdata.2018.308">查看数据出处</a></p><p>本地器乐随分析结果选曲播放。技术实现、素材许可与验证记录见随包说明。</p></details></div><div class="quick-links"><a href="/eeg-demo">脑电处理全景</a><a href="/console">综合控制台</a><a href="/gallery">HDMI 界面</a></div></main>
+<script>
+const previewSession=Array.from(crypto.getRandomValues(new Uint8Array(16)),x=>x.toString(16).padStart(2,'0')).join('');
+let page='fatigue',track='',allowed=false,stopped=false,objectURL=null,restart=0;const audio=new Audio();audio.volume=.35;
+const screen=document.querySelector('#screen'),status=document.querySelector('#status');
+for(const b of document.querySelectorAll('[data-page]'))b.onclick=()=>{page=b.dataset.page;for(const x of document.querySelectorAll('[data-page]'))x.setAttribute('aria-pressed',String(x===b));};
+document.querySelector('#sound').onclick=()=>{allowed=true;document.querySelector('#sound').textContent='音乐已启用';if(track&&!stopped)audio.play().catch(()=>{status.textContent='点击播放音乐以启用声音';});};
+document.querySelector('#restart').onclick=()=>{audio.pause();track='';restart++;stopped=false;document.querySelector('#stop').textContent='暂停展示';document.querySelector('#stop').setAttribute('aria-pressed','false');};
+document.querySelector('#stop').onclick=()=>{stopped=!stopped;audio.pause();track='';document.querySelector('#stop').textContent=stopped?'继续展示':'暂停展示';document.querySelector('#stop').setAttribute('aria-pressed',String(stopped));};
+async function tick(){try{const q=new URLSearchParams({session:previewSession,page,restart:String(restart),paused:stopped?'1':'0',audio_position:String(audio.currentTime||0),playing:!audio.paused?'1':'0',audio_track:track});const r=await fetch('/frame?'+q);if(!r.ok)throw Error('页面读取失败，请重新载入');const m=JSON.parse(r.headers.get('X-Signal-State'));const blob=await r.blob();if(objectURL)URL.revokeObjectURL(objectURL);objectURL=URL.createObjectURL(blob);screen.src=objectURL;
+if(m.genre!==track){audio.pause();track=m.genre||'';if(track){audio.src='/music/'+track+'.wav';audio.currentTime=0;if(allowed&&!stopped)audio.play().catch(()=>{});}}
+status.textContent='LEMON 脑电记录'+(m.ended?' · 已结束':stopped?' · 已暂停':' · 分析中')+(m.genre?' · '+m.title:'');
+}catch(e){status.textContent=e.message;}setTimeout(tick,200);}tick();window.addEventListener('pagehide',()=>{audio.pause();if(objectURL)URL.revokeObjectURL(objectURL);});
+</script></body></html>

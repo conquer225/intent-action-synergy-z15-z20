@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GuardianLoop · 自由选择 SSVEP</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eef3f2;color:#183a36;font:17px/1.65 system-ui,"Microsoft YaHei",sans-serif}
+main{max-width:1060px;margin:auto;padding:28px}h1{font-size:28px;margin:12px 0}a{color:#176b66}.note{font-size:15px;color:#536864}
+.panel{background:#fff;border:1px solid #d3dfdc;border-radius:14px;padding:18px;margin:18px 0}.controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+button,select{font:inherit;padding:8px 15px;border:1px solid #8ca8a2;border-radius:7px;background:#fff;color:#183a36;cursor:pointer}button:disabled{opacity:.45;cursor:default}
+#start{background:#176b66;color:white}#stop{background:#8c3631;color:white}#status{font-size:22px;margin:0}#details{min-height:26px}
+.field{display:grid;grid-template-columns:150px 1fr 150px;grid-template-rows:140px 130px 140px;gap:16px;padding:20px;background:#dce6e3;border-radius:14px}
+.tile{display:flex;flex-direction:column;align-items:center;justify-content:center;background:#354340;color:white;border:5px solid transparent;border-radius:10px;transition:none}
+.tile.on{background:#e9eeee;color:#183a36}.tile.selected{border-color:#117e70}.tile span{font-size:26px;font-weight:600}.tile small{font-size:13px}
+#tl{grid-area:1/1}#tr{grid-area:1/3}#bl{grid-area:3/1}#br{grid-area:3/3}.center{grid-area:2/2;align-self:center;text-align:center;font-size:18px;color:#405d56}
+.warn{color:#7e3c25}#timing{font-size:14px}label{display:block;margin:12px 0}@media(max-width:600px){main{padding:14px}.field{grid-template-columns:110px 1fr 110px;gap:8px;padding:10px}.center{font-size:14px}.tile span{font-size:23px}}
+body.running main{height:100vh;height:100dvh;display:flex;flex-direction:column;padding:12px 20px}
+body.running h1,body.running .intro,body.running .setup,body.running .technical{display:none}
+body.running .panel{margin:8px 0;padding:10px 15px}body.running .field{flex:1;min-height:240px;grid-template-rows:1fr auto 1fr;padding:12px}
+body.large-targets .field{grid-template-columns:min(28vw,280px) 1fr min(28vw,280px);grid-template-rows:190px 90px 190px}
+body.running.large-targets .field{grid-template-rows:1fr auto 1fr}
+body.running .tile{height:min(20vh,140px)}body.running.large-targets .tile{height:min(28vh,220px)}body.running #bl,body.running #br{align-self:end}
+.feedback{display:flex;align-items:center;justify-content:space-between;gap:12px}
+</style></head><body><main>
+<a href="/">← 主页面</a> · <a href="/ssvep-cued">有提示测试</a> · <a href="/mi-cued">运动想象</a>
+<h1>看向四角，自由选择频率</h1>
+<p class="intro">开始后四角同时闪烁，中心和背景保持静止。想选哪个，就注视对应角；不想选择时看中心静止区。界面不会把鼠标位置或点击当作脑电答案。</p>
+<p class="note intro">固定八通道不变；识别仍只用 O1/O2。这里只显示实验候选，不控制外设。中心不是经过验证的“休息类别”，弱证据或歧义显示“未识别”；仍可能误选。8 / 14 Hz 尚待真实佩戴验证。</p>
+<section class="panel setup">
+<p class="warn">闪烁可能引起不适或光敏性发作。有光敏性癫痫／闪光诱发发作史者不要使用；出现不适立即停止。大目标增加闪烁面积，可选原尺寸；不要在驾驶或操作机械时使用。</p>
+<label><input id="consent" type="checkbox"> 我已阅读注意事项，并主动选择开始短时实验。</label>
+<label><input id="requireRaw" type="checkbox"> 同步保存八通道原始脑电（录制就绪后才闪烁）</label>
+<label><input id="studyMode" type="checkbox"> 四角独立采集：校准、确认各含四种频率＋中心休息，各两次。每段需主动开始。</label>
+<button id="studyCreate" disabled>建立采集计划 · 不闪烁</button><p id="studyStatus">未建立独立计划；普通自由选择不记录期望答案。</p>
+<div class="controls"><select id="mode" aria-label="频率布局"><option value="four">四角：8 / 10 / 12 / 14 Hz</option><option value="pair">先试 10 / 12 Hz（另两角不闪）</option></select>
+<select id="size" aria-label="刺激尺寸"><option value="large">大目标（不保证识别改善）</option><option value="standard">原尺寸</option></select>
+<button id="precheck">帧时序预检 · 不闪烁</button><button id="start" disabled>开始 · 最多 30 秒</button></div>
+<p id="timing">需在 240 Hz 屏幕上完成软件预检。此检查不能证明真实屏幕发光频率。</p>
+<p id="inputStatus">读取 O1/O2 输入状态中……</p>
+<button id="inputPrepare">准备脑电输入 · 不闪烁</button>
+<p id="inputPreparationStatus">测试前准备输入；开始闪烁仍需另行点击“开始”。</p>
+</section>
+<section class="panel feedback" aria-live="polite"><div><p id="status">已停止 · 不闪烁</p><div id="details">等待主动开始；无选择结果。</div></div><button id="stop" disabled>停止 / Esc</button></section>
+<div class="field" aria-label="四角刺激区域，中心静止">
+<div class="tile" id="tl"><span>8 Hz</span><small>左上</small></div><div class="tile" id="tr"><span>10 Hz</span><small>右上</small></div>
+<div class="center" id="gazeGuide">静止区<br>不想选择时看这里</div>
+<div class="tile" id="bl"><span>12 Hz</span><small>左下</small></div><div class="tile" id="br"><span>14 Hz</span><small>右下</small></div>
+</div>
+<details class="note technical"><summary>实验判定条件与限制</summary>候选门控：CCA ≥ 0.55、领先分差 ≥ 0.10，并连续一致覆盖两段不重叠的 2 秒窗口。这是未标定的工程策略，分数不是概率，也不是准确率。断流、质量不合格、失去帧时序或隐藏页面时撤销结果。</details>
+</main><script src="/ssvep_input_prepare.js"></script><script>
+'use strict';
+const $=id=>document.getElementById(id);
+const inputPreparation=ssvepInputPreparation('/api/ssvep-free');
+const tiles=[{id:'tl',hz:8},{id:'tr',hz:10},{id:'bl',hz:12},{id:'br',hz:14}];
+let timing=null,checking=false,run=null,epoch=0,polling=false,studyState=null;
+function studyView(s){studyState=s.study||null;
+  const v=studyState,c=v&&v.current;
+  $('studyStatus').textContent=v&&v.id?'计划 '+v.id+' · 已关闭 '+v.completed_attempts+'/'+v.total_attempts+' 段'+(c?' · '+(c.phase==='calibration'?'校准采集':'独立确认')+'，下一目标 '+(c.requested_hz?c.requested_hz+' Hz':'中心静止区（四角仍闪烁）'):' · 采集结束，尚未拟合或验证新门限'):'未建立独立计划；普通自由选择不记录期望答案。';
+}
+function inputView(s){const i=s.input||{},names={ready:'已就绪',warmup:'热身',signal_invalid:'质量不合格',no_data:'无及时数据',suspended:'任务未启用'};
+  const reason={page_task_suspended:'请点“准备脑电输入”，或进入 HDMI 方向页；不是计算耗时',input_backlog:'输入积压',input_expired:'数据过期',packet_timeout:'断流，等待恢复；恢复后重新热身',waiting_for_cyton:'等待 Cyton 开机并拨到 PC；无数据不代表休息',ssvep_reader_queue_gap:'旁路丢包，重新热身',nonfinite_or_adc_rail:'ADC 饱和',startup:'刚启动'};
+  $('inputStatus').textContent='O1/O2 输入：'+(names[i.state]||'不可用')+(i.age_seconds==null?'':' · 输入年龄 '+Math.round(i.age_seconds*1000)+' ms')+(i.ready?'':' · '+(reason[i.reason]||i.reason||'等待数据'));
+  if(i.state==='warmup')$('inputStatus').textContent+=' · '+i.warmup_samples+'/'+i.required_samples+' 样本';
+  const channels=(i.quality||{}).channels||[];for(const c of channels){
+    if((c.hard_reasons||[]).includes('filtered_amplitude_over_100uv'))$('inputStatus').textContent+=' · '+c.channel+' 滤波幅值 '+c.filtered_p99_uv.toFixed(1)+' µV > 100 µV';
+    else if((c.hard_reasons||[]).length)$('inputStatus').textContent+=' · '+c.channel+' '+c.hard_reasons.join(',');}
+  return i;}
+function staticTiles(){for(const t of tiles)$(t.id).classList.remove('on','selected');}
+function refreshControls(){const busy=!!run||checking;$('start').disabled=busy||!$('consent').checked||!timing||performance.now()-timing.at>120000;
+  if($('studyMode').checked&&(!studyState||!studyState.id||studyState.state==='complete'))$('start').disabled=true;
+  $('studyCreate').disabled=busy||!$('consent').checked||!!(studyState&&studyState.id&&studyState.state!=='complete');
+  $('stop').disabled=!run&&!inputPreparation.active;$('mode').disabled=busy||$('studyMode').checked;$('size').disabled=busy;$('precheck').disabled=busy;
+  $('requireRaw').disabled=busy||$('studyMode').checked;$('studyMode').disabled=busy;}
+function render(s){const input=inputView(s);studyView(s);if(!run||s.id!==run.id)return;for(const t of tiles)$(t.id).classList.toggle('selected',s.accepted===true&&s.result===t.hz);
+  $('status').textContent=s.accepted?'稳定候选：'+s.result+' Hz':'未识别 / 等待可信证据';
+  const reasons={waiting_for_display:'等待显示开始',collecting_post_display_window:'等待完整脑电窗口',waiting_for_display_and_complete_eeg_window:'正在收集刺激后的脑电',
+    collecting_nonoverlapping_confirmation:'候选出现，继续确认',stable_candidate_unvalidated:'候选已稳定，实际识别效果待验证',
+    no_selection_insufficient_or_ambiguous_evidence:'当前证据较弱或存在歧义',no_fresh_quality_passed_window:'脑电质量不足或数据已中断',
+    no_fresh_eeg:'等待新鲜脑电',window_discontinuity:'数据不连续，重新确认',display_timing_unconfirmed:'正在确认显示时序'};
+  let detail=(reasons[s.reason]||'等待有效数据');
+  if(!input.ready)detail+=' · '+$('inputStatus').textContent;
+  else if(input.top_score!=null&&input.margin!=null)detail+=' · 未确认最高候选 '+input.frequency_hz+' Hz，CCA '+input.top_score.toFixed(3)+' / ≥'+s.min_score+'，领先分差 '+input.margin.toFixed(3)+' / ≥'+s.min_margin;
+  const failures=(s.decision||{}).failures||[],labels={score_below_minimum:'CCA 未达门限',margin_below_minimum:'频率分差不足',inactive_frequency:'最高分是未闪烁频率，拒绝',winner_mismatch:'候选数值不一致'};
+  if(failures.length)detail+=' · '+failures.map(f=>labels[f]||f).join('；');
+  if(!s.frame_ok)detail+=' · 显示时序尚未通过';
+  if(s.evidence_windows)detail+=' · 证据 '+s.evidence_windows+'/2 段非重叠窗口';
+  $('details').textContent=detail+' · 仅实验候选';
+  if(!['active','awaiting_presentation'].includes(s.state))stop('板端已结束会话');}
+async function api(payload){const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),1200);
+  try{const response=await fetch('/api/ssvep-free',payload?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:controller.signal}:{cache:'no-store',signal:controller.signal});
+    const s=await response.json();if(!response.ok)throw Error(s.error||'接口不可用');return s;}finally{clearTimeout(timer);}}
+function stop(reason='手动停止'){const old=run;run=null;epoch++;inputPreparation.stop();if(old){cancelAnimationFrame(old.raf);clearInterval(old.heartbeatTimer);clearTimeout(old.deadline);
+    if(old.id)api({action:'stop',id:old.id}).catch(()=>{});
+    if(old.rawRequested)api({action:'record_cancel'}).catch(()=>{});}
+  staticTiles();document.body.classList.remove('running');$('status').textContent='已停止 · 不闪烁';$('details').textContent=reason+'；无选择结果。';refreshControls();}
+async function prepareRaw(r){r.rawRequested=true;
+  let s=await api({action:'record_start',consent:true,frequencies:r.frequencies,...(r.studyId?{study_id:r.studyId}:{})});
+  const deadline=performance.now()+12000;
+  while(run===r&&!document.hidden&&$('consent').checked){studyView(s);
+    const state=(s.recording_control||{}).state;
+    if(state==='ready'){r.gaze=(s.study||{}).current;return;}
+    if(state==='error'||state==='complete'||performance.now()>deadline)throw Error((s.recording_control||{}).error||'原始录制准备失败');
+    $('status').textContent='准备原始录制 · 不闪烁';
+    await new Promise(resolve=>setTimeout(resolve,250));s=await api({action:'record_status'});}
+  api({action:'record_cancel'}).catch(()=>{});throw Error('录制准备已取消');}
+function onAt(hz,frame,elapsed){return hz===14?Math.floor(elapsed*hz/500)%2===0:Math.floor(frame/(120/hz))%2===0;}
+function frame(ts,token){const r=run;if(!r||r.token!==token)return;
+  if(document.hidden||!$('consent').checked){stop('页面隐藏或取消确认');return;}
+  if(r.onset===null){r.onset=ts;r.previous=ts;r.frames=0;
+    api({action:'presented',id:r.id,browser_onset_ms:ts,browser_send_ms:performance.now()}).then(s=>{if(run===r)render(s);}).catch(()=>{if(run===r)stop('呈现确认失败');});}
+  else{const gap=ts-r.previous;if(gap>8||gap<=0){stop('显示帧间隔异常，请重新预检');return;}r.maxGap=Math.max(r.maxGap,gap);r.frames++;r.previous=ts;}
+  for(const t of tiles){const on=r.frequencies.includes(t.hz)&&onAt(t.hz,r.frames,ts-r.onset);
+    if(r.lastOn[t.hz]!==undefined&&r.lastOn[t.hz]!==on)r.transitions[t.hz]++;
+    if(r.lastOn[t.hz]!==on)$(t.id).classList.toggle('on',on);r.lastOn[t.hz]=on;}
+  r.raf=requestAnimationFrame(next=>frame(next,token));}
+async function heartbeat(r){if(run!==r||r.onset===null||r.hbBusy)return;const duration=performance.now()-r.onset;if(duration<=0||r.frames<1)return;
+  const rates={};for(const hz of r.frequencies)rates[String(hz)]=r.transitions[hz]*500/duration;
+  r.hbBusy=true;try{const s=await api({action:'heartbeat',id:r.id,frame_count:r.frames,duration_ms:duration,max_gap_ms:r.maxGap,display_hz:rates});if(run===r)render(s);}
+  catch(_){if(run===r)stop('显示心跳失败');}finally{r.hbBusy=false;}}
+async function start(){refreshControls();if($('start').disabled||document.hidden)return;
+  const token=++epoch,r={token,id:null,onset:null,raf:null,frames:0,maxGap:0,lastOn:{},transitions:{8:0,10:0,12:0,14:0},frequencies:$('mode').value==='four'?[8,10,12,14]:[10,12],studyId:$('studyMode').checked&&studyState?studyState.id:null};run=r;refreshControls();
+  try{const raw=$('requireRaw').checked||!!r.studyId;if(raw)await prepareRaw(r);
+    if(run!==r||document.hidden)return;
+    const s=await api({action:'start',consent:true,frequencies:r.frequencies,require_raw_recording:raw});
+    if(run!==r){api({action:'stop',id:s.id}).catch(()=>{});return;}r.id=s.id;render(s);document.body.classList.add('running');window.scrollTo(0,0);
+    const positions={8:'左上 8 Hz',10:'右上 10 Hz',12:'左下 12 Hz',14:'右下 14 Hz',0:'中心静止区'};
+    $('gazeGuide').textContent=r.gaze?'本段请看：'+positions[r.gaze.requested_hz]+'（标签只用于事后分析）':'静止区 · 不想选择时看这里';
+    r.heartbeatTimer=setInterval(()=>heartbeat(r),400);r.deadline=setTimeout(()=>{if(run===r)stop(r.studyId?'10 秒计划采集结束':'30 秒短时实验结束');},r.studyId?10000:29500);
+    r.raf=requestAnimationFrame(ts=>frame(ts,token));}
+  catch(error){if(run===r)stop('未启动：'+error.message);}}
+function precheck(){if(run||checking||document.hidden)return;inputPreparation.start();checking=true;timing=null;refreshControls();$('timing').textContent='软件帧时序检查中，不闪烁…';
+  const gaps=[];let previous=null;function tick(ts){if(document.hidden){checking=false;$('timing').textContent='预检取消：页面被隐藏';refreshControls();return;}
+    if(previous!==null)gaps.push(ts-previous);previous=ts;if(gaps.length<720){requestAnimationFrame(tick);return;}
+    checking=false;const sorted=gaps.slice().sort((a,b)=>a-b),duration=gaps.reduce((a,b)=>a+b,0),hz=gaps.length*1000/duration,p95=sorted[Math.floor(sorted.length*.95)],late=gaps.filter(g=>g>6.25).length;
+    const ok=hz>=235&&hz<=245&&p95<=6&&late<=3;timing=ok?{at:performance.now(),hz}:null;
+    $('timing').textContent=`${ok?'预检通过':'预检未通过'} · 软件回调 ${hz.toFixed(2)} Hz，p95 ${p95.toFixed(2)} ms，迟帧 ${late}/720。不是光学实测。`;refreshControls();}requestAnimationFrame(tick);}
+$('precheck').onclick=precheck;$('start').onclick=start;$('stop').onclick=()=>stop();$('consent').onchange=()=>{if(run&&!$('consent').checked)stop('取消确认');refreshControls();};
+$('studyMode').onchange=()=>{if($('studyMode').checked){$('mode').value='four';$('requireRaw').checked=true;}refreshControls();};
+$('studyCreate').onclick=async()=>{if(run||!$('consent').checked)return;try{studyView(await api({action:'study_create',consent:true}));refreshControls();}catch(error){$('studyStatus').textContent='未建立：'+error.message;}};
+$('size').onchange=()=>{if(!run)document.body.classList.toggle('large-targets',$('size').value==='large');};$('size').onchange();
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stop('页面隐藏');});
+document.addEventListener('keydown',event=>{if(event.key==='Escape')stop();});
+window.addEventListener('pagehide',()=>{const old=run;stop('离开页面');if(old)for(const payload of [...(old.id?[{action:'stop',id:old.id}]:[]),...(old.rawRequested?[{action:'record_cancel'}]:[])])fetch('/api/ssvep-free',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),keepalive:true}).catch(()=>{});});
+setInterval(async()=>{refreshControls();if(polling)return;const r=run;polling=true;try{const s=await api();if(!r){inputView(s);studyView(s);}else if(run===r&&r.id)render(s);}catch(_){if(r&&run===r)stop('状态接口失联');else $('inputStatus').textContent='输入接口不可用；不沿用旧结果。';}finally{polling=false;}},250);
+staticTiles();refreshControls();
+</script></body></html>

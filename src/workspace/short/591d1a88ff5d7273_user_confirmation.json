@@ -1,0 +1,20 @@
+{
+  "date_local": "2026-10-16",
+  "source": "direct_user_reply",
+  "question": "有声统一界面已恢复。刚才自动检查依次播放了‘我想喝水’‘我需要帮助’、轻音乐和你上传的短视频声音：哪些听到了？音乐或视频有没有明显断音、声画不同步？",
+  "answer_verbatim": "听到了  同步",
+  "interpretation": {
+    "installed_unified_ui_audio_heard": true,
+    "user_reported_video_synchronised": true,
+    "scope": "Installed UI acceptance: two Chinese phrases, Carefree music, and the existing uploaded clip with a prepared audio track.",
+    "not_proven": [
+      "Instrument-measured optical/acoustic synchronisation or a numerical latency bound",
+      "All future uploaded videos automatically receive prepared audio",
+      "Videos without source audio gain an audio track",
+      "Eye tracking or SSVEP control qualified with the audio PL"
+    ]
+  },
+  "default_volume_percent": 40,
+  "installation_directory": "/home/xilinx/gl-hdmi-audio-installed-20261016-2jBKz1",
+  "backend_reports_preserved_without_rewriting_audible_verified": true
+}

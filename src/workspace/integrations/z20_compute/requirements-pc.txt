@@ -1,0 +1,5 @@
+# PC calibration / local ICP environment verified on CPython 3.11.
+numpy==1.26.4
+scipy==1.17.1
+opencv-python==4.11.0.86
+open3d==0.20.0

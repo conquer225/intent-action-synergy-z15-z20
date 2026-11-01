@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#126657">
+<title>GuardianLoop · 手机监控</title>
+<style>
+:root{color-scheme:light;--ink:#18372f;--muted:#576f66;--line:#d8e5de;--green:#126657}
+*{box-sizing:border-box}body{margin:0;background:#eff5f1;color:var(--ink);font:16px/1.55 system-ui,sans-serif}
+main{max-width:760px;margin:auto;padding:20px 16px calc(24px + env(safe-area-inset-bottom))}
+h1{font-size:1.5rem;margin:0}h2{font-size:1.1rem;margin:0 0 12px}p{margin:8px 0}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px}header small{color:var(--muted)}
+.card{background:white;border:1px solid var(--line);border-radius:18px;padding:18px;margin:14px 0}
+.tasks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tasks .card{margin:0;display:flex;flex-direction:column}
+.value{font-size:1.65rem;font-weight:700;overflow-wrap:anywhere}.note{font-size:.88rem;color:var(--muted)}
+.detail{min-height:2.8em}.badge{display:inline-block;border-radius:20px;padding:4px 10px;background:#e7eee9;font-size:.85rem}
+.warning{color:#914200}.channels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:12px}
+.channel{text-align:center;padding:8px 3px;border:1px solid var(--line);border-radius:10px}.channel.good{background:#e2f4e9}.channel.bad{background:#fce9e4}
+.channel small{display:block;font-size:.75rem}a{color:var(--green);overflow-wrap:anywhere}
+.button,button{display:flex;justify-content:center;align-items:center;min-height:48px;border-radius:12px;border:1px solid #9db9ac;padding:10px 14px;color:var(--green);background:white;font:inherit;text-decoration:none;cursor:pointer}
+.tasks .button{margin-top:auto}.links{display:flex;gap:10px;flex-wrap:wrap}button{white-space:nowrap}
+details summary{cursor:pointer;min-height:44px;padding:10px 0}
+@media(max-width:440px){.tasks{grid-template-columns:1fr}.detail{min-height:0}main{padding:16px 12px}.value{font-size:1.5rem}}
+</style>
+</head><body><main>
+<header><div><h1>GuardianLoop</h1><small>手机监控 · Z15 本地计算</small></div><button id="refresh" type="button">刷新</button></header>
+<section class="card" aria-label="连接与信号状态"><span id="connection" class="badge" role="status">连接中</span>
+<p id="device">请连接 GuardianLoop-Z15 热点。</p><p id="quality" class="note">等待信号质量与校准信息</p>
+<div class="channels" id="channels" aria-label="固定八通道质量"></div>
+<p id="lastUpdate" class="note">尚未收到实时状态</p></section>
+<div class="tasks">
+<section class="card"><h2>心情参考（模型估计）</h2><div id="emotion" class="value">等待数据</div>
+<p id="emotionDetail" class="detail note">正向／中性／负向为模型结果的展示归类，非真实情绪诊断。</p>
+<p class="note">只显示质量合格的实验结果；不是你的识别准确率。</p></section>
+<section class="card"><h2>疲劳估计</h2><div id="fatigue" class="value">等待数据</div>
+<p id="fatigueDetail" class="detail note">等待连续数据、质量检查和校准。</p>
+<p class="note">辅助观察，不能替代休息判断或安全报警。</p></section>
+<section class="card"><h2>SSVEP 频率观察</h2><div id="ssvep" class="value">等待数据</div>
+<p id="ssvepDetail" class="detail note">仅读取 O1/O2 的被动频率候选，非注视选择结论。</p>
+<p class="note">手机版暂不提供闪烁刺激；手机刷新时序尚未适配。</p></section>
+<section class="card"><h2>左右手运动想象</h2><div id="mi" class="value">等待数据</div>
+<p id="miDetail" class="detail note">有提示二分类，休息时禁用推理。</p>
+<a class="button" href="/mi-cued">开始运动想象 · 虚拟手</a>
+<p class="note">实验模型；只操作虚拟手，不连接真实外设。</p></section>
+</div>
+<section class="card"><h2>手机使用说明</h2>
+<p>连接 <b>GuardianLoop-Z15</b> Wi-Fi，即使提示无互联网也保持连接。Z15 和 Cyton 负责采集、计算；手机负责显示和提示。</p>
+<p class="note">本页约每秒读取状态，不上传脑电到云端、不保存到手机。切到后台或锁屏后暂停监控、隐藏结果；回来后重新获取。保持浏览器在前台。</p>
+<details><summary>接线、模型与版本说明</summary><p class="note">固定八通道：F3、F4、C3、C4、T7、T8、O1、O2。参考 SRB2，偏置 BIAS。模型、滤波、门控和 PL 不因手机版而改变；显示稳定不等于模型更准确。</p><p id="release" class="note">版本待核对</p></details>
+<nav class="links"><a class="button" href="/">完整工程页面</a><a class="button" href="/mobile">手机首页</a></nav>
+</section>
+<noscript><p>需要启用浏览器 JavaScript 才能更新状态。</p></noscript>
+</main><script src="/mobile.js"></script></body></html>

@@ -1,0 +1,11 @@
+<section aria-labelledby="replayTitle">
+<h2 id="replayTitle">已有记录回放 · 不需要佩戴</h2>
+<p class="badge">没有接入实时 Cyton，也不连接实体灵巧手。你的当前想象不会改变这份已记录数据。</p>
+<p>模型：共享 RMS 八通道 EEGNet；仍是未正式上线的候选。质量检查保留物理幅值，不因归一化放宽门限。</p>
+<button id="replayStart">从头开始回放</button>
+<button id="replayStop">停止回放并撤销控制</button>
+<p id="replayStatus">读取回放状态</p>
+<p id="modelHash" class="muted"></p>
+<p class="muted">先开始回放，等待输入变为 ready，再勾选“驱动虚拟手”并选择左／右提示。
+这里提示只定位测试窗口，不能作为台架记录的真实左右手标签；一致或不一致都不计准确率。回放结束会自动撤销结果，不自动循环。</p>
+</section>

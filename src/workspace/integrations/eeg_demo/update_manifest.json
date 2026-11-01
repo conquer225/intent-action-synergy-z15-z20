@@ -1,0 +1,203 @@
+{
+  "version": 1,
+  "source_archive_sha256": "2daa0483e2499e0fa4389f5108b1c8fd8ad0d9b09694eb8e934f3d43b0171983",
+  "previous_eye_delivery": "GuardianLoop_Eye_C3_20261018.zip",
+  "brain_manifest_before": "f26fa30b19e110ec18e800a1779a06b2e003dcf48fb1dfddc214df368f4f4b26",
+  "guard_before": "5e2e0a52e021b96d616b5eaf6cc07a1fc66e3bfbb8d4e74ae97ce8c335f8575a",
+  "files": [
+    {
+      "group": "media",
+      "name": "media_player.py",
+      "source": "runtime/media_player.py",
+      "before": [
+        "3f5d0553a2e46ab3dc31c3482878832d388f1516f56cfd215179a4f3fdad0db2",
+        "f37be8c0bdb5fe235e7cd4a67259a5376dc07b6dc0dea130935cf54ee16e49b2"
+      ],
+      "after": "f37be8c0bdb5fe235e7cd4a67259a5376dc07b6dc0dea130935cf54ee16e49b2"
+    },
+    {
+      "group": "media",
+      "name": "system_hdmi.py",
+      "source": "runtime/system_hdmi.py",
+      "before": [
+        "4cdf7ed38753d819f4f5d2e7ad5650cfa24529292dfa479fe184d6403b772e5a",
+        "39db7b339ab9cc6083022695d996bd0ad8f53cf7063a5d2637f6b6e5239b0433",
+        "1f541150e90eda7abe1e84eea57d3a347918084a65f795829a559fa8fefce527",
+        "902c0bb0c99c171ca6ec1796ecb476dab24a9d6ee4f50f1a7141c06de618f2a8"
+      ],
+      "after": "ecdb4035970eaedecd18da599ba19f1cde274a166e1090116ba3068446cb40a6"
+    },
+    {
+      "group": "media",
+      "name": "system_runtime/guardianloop_system/eye_devices.py",
+      "source": "runtime/system_runtime/guardianloop_system/eye_devices.py",
+      "before": [
+        null,
+        "1048825ba3ad9a01f4941b86cbed75a11f02ee10b7bd21a378fa2a9bfc0880d7",
+        "ffdb0805b97bb509cec4b7cc09270fb28bc70910790a20e21e1b679723258527"
+      ],
+      "after": "2c125e3fbf94712005c977277a75782e07138286bac79c7f6f226aab6b427a04"
+    },
+    {
+      "group": "media",
+      "name": "system_runtime/guardianloop_system/device_link.py",
+      "source": "runtime/system_runtime/guardianloop_system/device_link.py",
+      "before": [
+        null,
+        "abcac1a6df78dfb86a4c83555738c27cd4f7c9af282bfa1e73ffa77de5b22dab",
+        "251d35c0396266b8cb5fbd02629d5e1b53c73d7281b3897be4360ecaba993f09"
+      ],
+      "after": "405cd0d19862aeba7c1251cee26ba739abfc269e5d1969bef4643885c34232a0"
+    },
+    {
+      "group": "media",
+      "name": "system_runtime/guardianloop_system/c3_client.py",
+      "source": "runtime/system_runtime/guardianloop_system/c3_client.py",
+      "before": [
+        null,
+        "1685b7c8773cfc064646f9bc232352aac63ace5250b89fa772871e35912d5aed"
+      ],
+      "after": "1685b7c8773cfc064646f9bc232352aac63ace5250b89fa772871e35912d5aed"
+    },
+    {
+      "group": "media",
+      "name": "media_server.py",
+      "source": "runtime/media_server.py",
+      "before": [
+        "c5397d98b20a956707ccf2ec32d8314f8ff038e61a1980466e72f2428834ffcf",
+        "1df641d9d7454a2258277f984a33db465aeb75eaa10bc9bd6061bf99edeadc30"
+      ],
+      "after": "a3b791224d55cb0c9ddf786db08ea7efce22be8a630ea25dc8a0f72605659762"
+    },
+    {
+      "group": "media",
+      "name": "system_mobile.html",
+      "source": "runtime/system_mobile.html",
+      "before": [
+        "ebb0a33524c66fb6d376b411607d8b13df64b3de71d13a2b4dfe5deab22b3237",
+        "47325a44677a876cddfdf28043ff7e5a25f916b6bbde97acccb82bbe14baa3fe"
+      ],
+      "after": "c82c7a3f5d86705f9a9054b3a09a19bc98a07d2a17a0abfdfd41fc95ccde22a0"
+    },
+    {
+      "group": "media",
+      "name": "system_mobile.js",
+      "source": "runtime/system_mobile.js",
+      "before": [
+        "9b35c724510f9de3736697e9b312d4e6a7d1aa9e0cb318295b5a2bdccb933ae5",
+        "59c89caf03393f9c415ef9bb9967de7380ed9a1ac7a56d71a150b028a13a22ab"
+      ],
+      "after": "6b207ca60f02f4338f8b2ff1ac66397f566258a7c5b700f8b28d1702d22ffe5d"
+    },
+    {
+      "group": "media",
+      "name": "eeg_demo_bridge.py",
+      "source": "runtime/eeg_demo_bridge.py",
+      "before": null,
+      "after": "31ae19457e31812aec0c5b116419234fcf3913dbb4270166c3d315b348778e57"
+    },
+    {
+      "group": "media",
+      "name": "eeg_demo.html",
+      "source": "web/eeg_demo.html",
+      "before": [
+        null,
+        "b65fca182fec1e234a6b577389303ed9042b8d0d48967c8145c672fac53a850f"
+      ],
+      "after": "68b775c31f5f70ae9f3102626b13b2c5db165461175d5a8b3d3a530457f0d1cb"
+    },
+    {
+      "group": "media",
+      "name": "eeg_demo.css",
+      "source": "web/eeg_demo.css",
+      "before": [
+        null,
+        "5119883ddb26585148e1e3e292244d21a99888fb34f16f2eb3f1b43a4f92cd0c"
+      ],
+      "after": "8068f02f08518f3ca006c2dd0275dafe0c640c1c78385b3f8838f827e91593db"
+    },
+    {
+      "group": "media",
+      "name": "eeg_demo.js",
+      "source": "web/eeg_demo.js",
+      "before": [
+        null,
+        "cf5b8ad42ebad26ced3970772fc15e8231c7c12f241aa0d7dcb6290f0ae86597"
+      ],
+      "after": "d928c47af8b5b800b350be860236bd6d4763c5e0371ec89d8b4e7584d681f5bc"
+    },
+    {
+      "group": "media",
+      "name": "eeg_demo_core.js",
+      "source": "web/eeg_demo_core.js",
+      "before": [
+        null,
+        "70c91e5b6a3eec74ba03258359445715f93f1368962368ee0319976b4be92b78"
+      ],
+      "after": "64982cf9bc83349b1b5c57d547a33a6931c294a4e5e011d2a63bd594bb0c8eea"
+    },
+    {
+      "group": "brain",
+      "name": "cyton_covariance.py",
+      "source": "brain_runtime/cyton_covariance.py",
+      "before": "3ac75c9b1dee4453a76b3f4fc585e31994e556a02e9e096583558034ff7e7463",
+      "after": "21652e9b39f80fe21ffc35b01197bac841f89b4200f610b48130b787696d9dab"
+    },
+    {
+      "group": "brain",
+      "name": "cyton_fatigue.py",
+      "source": "brain_runtime/cyton_fatigue.py",
+      "before": "439b3a1771c7b1f99043dccc23157b326d2e17508e2e6bf471419da3396a5755",
+      "after": "9ae53b86cc33c431e48ef5b7f278d8756d1e5294c30b041b08f6640b81533837"
+    },
+    {
+      "group": "brain",
+      "name": "cyton_guardianloop.py",
+      "source": "brain_runtime/cyton_guardianloop.py",
+      "before": "9865d4441cdb0ec0dcaa4557a74ea9eea663767a03b19bba90dea35b72f44454",
+      "after": "01efa812274f5df38dd21e6db91bb9b0777f17758c27598eaf2d7c5d8a1ed9c6"
+    },
+    {
+      "group": "brain",
+      "name": "primary_window.py",
+      "source": "brain_runtime/primary_window.py",
+      "before": "7efb57cf4ad0f97717eb1f90ab6ec4561aea0485e3a795d31d93b36ec0d4d516",
+      "after": "c5e4edd76f125f6042f4de6dbe6638f36f2394d091eef0fad81b430de8da5065"
+    },
+    {
+      "group": "brain",
+      "name": "processing_diagnostics.py",
+      "source": "brain_runtime/processing_diagnostics.py",
+      "before": null,
+      "after": "4a69c35e87de48943cdf6c12f9ff0833faa17024141c013eb231e7c7b399061f"
+    },
+    {
+      "group": "media",
+      "name": "presentation_theme.py",
+      "source": "runtime/presentation_theme.py",
+      "before": null,
+      "after": "6cedf221672f6197b7b77bbd5e0a681e32b60e5c480540a9009af17d9c373175"
+    },
+    {
+      "group": "media",
+      "name": "presentation_eye.py",
+      "source": "runtime/presentation_eye.py",
+      "before": null,
+      "after": "2ae7476b87398a0342dc02cf7a111087a698e164921e5fa2c50e25851f0ca13b"
+    },
+    {
+      "group": "media",
+      "name": "presentation.css",
+      "source": "runtime/presentation.css",
+      "before": null,
+      "after": "56844b9ea9fe59b73b463600309092b1484b4144b0a6814b5cfc5d701997283c"
+    },
+    {
+      "group": "media",
+      "name": "eeg_recording.json",
+      "source": "runtime/eeg_recording.json",
+      "before": null,
+      "after": "f10a40a4061e34b35ca2d33acb34298416f64b239614af70c30d6d4916dee0c7"
+    }
+  ]
+}

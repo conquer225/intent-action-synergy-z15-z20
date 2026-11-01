@@ -1,0 +1,19 @@
+{"tests": 12, "failures": 0, "errors": 0, "skipped": 0}
+
+test_worked_dense_relu_rounding_and_saturation (test_npu.NpuTests.test_worked_dense_relu_rounding_and_saturation) ... ok
+test_done_reads_result_and_timeout_retains_dma_ownership (test_backend.BackendTests.test_done_reads_result_and_timeout_retains_dma_ownership) ... ok
+test_lost_mmio_after_start_preserves_memory_and_requires_reset (test_backend.BackendTests.test_lost_mmio_after_start_preserves_memory_and_requires_reset) ... ok
+test_matching_package_and_silicon_are_accepted_with_payload_location (test_board_target.BoardTargetTests.test_matching_package_and_silicon_are_accepted_with_payload_location) ... ok
+test_navigator_rejects_new_z20_package_before_programming (test_board_target.BoardTargetTests.test_navigator_rejects_new_z20_package_before_programming) ... ok
+test_unknown_carrier_wrong_silicon_and_truncated_payload_are_rejected (test_board_target.BoardTargetTests.test_unknown_carrier_wrong_silicon_and_truncated_payload_are_rejected) ... ok
+test_disconnect_expiry_and_reordered_results_do_not_leave_a_label (test_link.LinkTests.test_disconnect_expiry_and_reordered_results_do_not_leave_a_label) ... ok
+test_socket_peer_sends_only_bounded_latest_backlog_and_reports_eof (test_link.LinkTests.test_socket_peer_sends_only_bounded_latest_backlog_and_reports_eof) ... ok
+test_mode_change_discards_inflight_results (test_video.VideoTests.test_mode_change_discards_inflight_results) ... ok
+test_result_age_is_measured_from_input_not_completion (test_video.VideoTests.test_result_age_is_measured_from_input_not_completion) ... ok
+test_slow_analysis_drops_old_frames_and_never_owns_capture (test_video.VideoTests.test_slow_analysis_drops_old_frames_and_never_owns_capture) ... ok
+test_snapshot_discards_a_buffer_overwritten_during_copy (test_video.VideoTests.test_snapshot_discards_a_buffer_overwritten_during_copy) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.067s
+
+OK

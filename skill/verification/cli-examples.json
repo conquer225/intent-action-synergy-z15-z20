@@ -1,0 +1,84 @@
+{
+  "scope": "synthetic_fixtures",
+  "checks": [
+    {
+      "command": "python scripts/compare_golden.py examples/golden/reference.jsonl examples/golden/actual-pass.jsonl",
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "report": {
+        "passed": true,
+        "scope": "offline_output_comparison",
+        "board_executed": false,
+        "compared_cases": 1,
+        "compared_values": 2,
+        "atol": 0.0,
+        "rtol": 0.0,
+        "actual_backends": [
+          "synthetic_adapter_fixture"
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "python scripts/compare_golden.py examples/golden/reference.jsonl examples/golden/actual-bad.jsonl",
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "report": {
+        "passed": false,
+        "scope": "offline_output_comparison",
+        "board_executed": false,
+        "compared_cases": 1,
+        "compared_values": 2,
+        "atol": 0.0,
+        "rtol": 0.0,
+        "actual_backends": [
+          "synthetic_adapter_fixture"
+        ],
+        "errors": [
+          {
+            "case_id": "affine-2x2",
+            "kind": "value",
+            "index": 1,
+            "expected": 8,
+            "actual": 7
+          }
+        ]
+      }
+    },
+    {
+      "command": "python scripts/check_session_trace.py examples/session/pass.jsonl --ttl-ms 100",
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "report": {
+        "passed": true,
+        "scope": "offline_observed_session_trace",
+        "board_executed": false,
+        "ttl_ms": 100.0,
+        "events": 14,
+        "display_checks": 5,
+        "accepted_results": 2,
+        "errors": []
+      }
+    },
+    {
+      "command": "python scripts/check_session_trace.py examples/session/bad-old-session.jsonl --ttl-ms 100",
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "report": {
+        "passed": false,
+        "scope": "offline_observed_session_trace",
+        "board_executed": false,
+        "ttl_ms": 100.0,
+        "events": 14,
+        "display_checks": 5,
+        "accepted_results": 2,
+        "errors": [
+          {
+            "line": 9,
+            "kind": "accepted_old_session"
+          }
+        ]
+      }
+    }
+  ]
+}

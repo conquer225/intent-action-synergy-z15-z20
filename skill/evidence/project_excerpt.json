@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "scope": "Selected historical values, not newly executed board results",
+  "redaction": "Only listed JSON pointers were copied; private addresses, MACs and configuration omitted",
+  "sources": [
+    {
+      "source_path": "integrations/z20_compute/report/board_20261028/summary.json",
+      "source_sha256": "75919ff1dcb52cb80a097018fab6bb7f699fc5d41dfaab23f99652240d699248",
+      "selected_values": [
+        {
+          "json_pointer": "/complete_system_acceptance",
+          "value": false
+        },
+        {
+          "json_pointer": "/z15_firmware_installed_and_loaded",
+          "value": true
+        },
+        {
+          "json_pointer": "/npu_tasks_integer_equal",
+          "value": [
+            "fatigue",
+            "emotion",
+            "sound"
+          ]
+        },
+        {
+          "json_pointer": "/npu_eeg_source",
+          "value": "recorded LEMON classifier features"
+        },
+        {
+          "json_pointer": "/npu_end_to_end_speedup_established",
+          "value": false
+        },
+        {
+          "json_pointer": "/real_gaze_verified",
+          "value": false
+        },
+        {
+          "json_pointer": "/live_eeg_verified",
+          "value": false
+        },
+        {
+          "json_pointer": "/mechanical_motion_tested",
+          "value": false
+        },
+        {
+          "json_pointer": "/new_paired_installer_board_executed",
+          "value": false
+        }
+      ]
+    },
+    {
+      "source_path": "integrations/z20_compute/report/board_20261028/npu-three-task.json",
+      "source_sha256": "57eae1b6c62fffc7f2de9beec93522f84d58f9faddf3920a972ef5e78d31f871",
+      "selected_values": [
+        {
+          "json_pointer": "/board_executed",
+          "value": true
+        },
+        {
+          "json_pointer": "/passed",
+          "value": true
+        },
+        {
+          "json_pointer": "/tests/0/task",
+          "value": "fatigue"
+        },
+        {
+          "json_pointer": "/tests/0/source",
+          "value": "recorded:LEMON_classifier_features"
+        },
+        {
+          "json_pointer": "/tests/0/backend",
+          "value": "PL_z20_mlp"
+        },
+        {
+          "json_pointer": "/tests/0/feature_count",
+          "value": 20
+        },
+        {
+          "json_pointer": "/tests/0/integer_reference_equal",
+          "value": true
+        },
+        {
+          "json_pointer": "/tests/0/scores",
+          "value": [
+            2.78515625,
+            -0.046875,
+            -4.76953125
+          ]
+        },
+        {
+          "json_pointer": "/tests/1/task",
+          "value": "emotion"
+        },
+        {
+          "json_pointer": "/tests/1/source",
+          "value": "recorded:LEMON_classifier_features"
+        },
+        {
+          "json_pointer": "/tests/1/backend",
+          "value": "PL_z20_mlp"
+        },
+        {
+          "json_pointer": "/tests/1/feature_count",
+          "value": 180
+        },
+        {
+          "json_pointer": "/tests/1/integer_reference_equal",
+          "value": true
+        },
+        {
+          "json_pointer": "/tests/1/scores",
+          "value": [
+            -2.90673828125,
+            -1.6103515625,
+            -1.2666015625
+          ]
+        },
+        {
+          "json_pointer": "/tests/2/task",
+          "value": "sound"
+        },
+        {
+          "json_pointer": "/tests/2/source",
+          "value": "recorded:pcm/clip-0036.wav"
+        },
+        {
+          "json_pointer": "/tests/2/backend",
+          "value": "PL_z20_mlp"
+        },
+        {
+          "json_pointer": "/tests/2/feature_count",
+          "value": 40
+        },
+        {
+          "json_pointer": "/tests/2/integer_reference_equal",
+          "value": true
+        },
+        {
+          "json_pointer": "/tests/2/scores",
+          "value": [
+            0.71875,
+            -7.3984375,
+            -2.6376953125
+          ]
+        }
+      ]
+    },
+    {
+      "source_path": "integrations/z20_compute/report/eye_audio_20261028/network-reboot-z15-verify.json",
+      "source_sha256": "6a8f74ad2ee041131074ee1bca3ffbd4d24217986e864a33454dba07356233ee",
+      "selected_values": [
+        {
+          "json_pointer": "/heartbeat/seconds",
+          "value": 10.2
+        },
+        {
+          "json_pointer": "/heartbeat/connected",
+          "value": true
+        },
+        {
+          "json_pointer": "/heartbeat/error",
+          "value": null
+        },
+        {
+          "json_pointer": "/heartbeat/status/pendulum/enabled",
+          "value": false
+        },
+        {
+          "json_pointer": "/heartbeat/status/hand/enabled",
+          "value": false
+        }
+      ]
+    }
+  ]
+}

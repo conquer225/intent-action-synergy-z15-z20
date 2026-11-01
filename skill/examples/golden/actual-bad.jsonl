@@ -1,0 +1,1 @@
+{"case_id": "affine-2x2", "source": "synthetic:hand-calculated-affine", "input_sha256": "7c039a3f7e41f389a828a440c8011656b0b6c0f3da1cca834adb1be3428ca80d", "model_sha256": "05b81ce1b90efacf3df03dfb60fdefcca3a4397df3721745271cd21a34f29413", "quantization_id": "int32-affine-no-scaling-flat-v1", "backend": "synthetic_adapter_fixture", "values": [4, 7]}

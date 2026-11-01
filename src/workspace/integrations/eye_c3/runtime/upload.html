@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Z15 视频上传测试</title><style>
+body{font:17px system-ui,sans-serif;line-height:1.6;background:#f2f5f8;color:#182333;max-width:650px;margin:auto;padding:24px 18px}
+section{background:white;padding:20px;border-radius:16px;margin:16px 0}h1{font-size:25px}button{font:inherit;padding:13px 20px;border:0;border-radius:10px;background:#125bcb;color:white;margin-top:16px}button:disabled{background:#718298}input{max-width:100%;font:inherit}progress{width:100%;height:24px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px system-ui}.note{color:#586577}#state{font-weight:600}
+</style></head><body><h1>手机 → Z15 视频上传</h1>
+<p>选一个手机里的普通MP4，先验证传输和板端解码。无需安装App，不会录屏或扫描其他文件。</p>
+<section><label for="file">视频文件（建议先选较短的720P，最多512MB）</label><br>
+<input id="file" type="file" accept=".mp4,video/mp4"><br><button id="send">上传并测试解码</button>
+<p id="state">等待选文件</p><progress id="progress" value="0" max="100"></progress><pre id="detail"></pre></section>
+<section><h2>本轮文件</h2><pre id="files">正在读取…</pre></section>
+<p class="note">请保持页面前台和热点开启，完成后再锁屏。上传校验通过不等于全片正常播放；解码只是内存测试，ARZOPA/HDMI暂未接入。不自动覆盖或删除旧素材。</p>
+<script>
+const key=location.hash.slice(1),state=document.getElementById('state'),detail=document.getElementById('detail'),progress=document.getElementById('progress'),button=document.getElementById('send');
+const table=new Uint32Array(256);for(let i=0;i<256;i++){let c=i;for(let j=0;j<8;j++)c=(c&1)?0xedb88320^(c>>>1):c>>>1;table[i]=c>>>0;}
+async function crcFile(file){let crc=0xffffffff;for(let offset=0;offset<file.size;offset+=524288){const data=new Uint8Array(await file.slice(offset,offset+524288).arrayBuffer());for(const byte of data)crc=table[(crc^byte)&255]^(crc>>>8);progress.value=Math.min(100,(offset+data.length)*100/file.size);}return ((crc^0xffffffff)>>>0).toString(16).padStart(8,'0');}
+async function refresh(){try{const response=await fetch('/status',{headers:{'X-Media-Key':key},cache:'no-store'});const data=await response.json();if(!response.ok)throw Error(data.error||'状态读取失败');document.getElementById('files').textContent=data.files.length?data.files.map(item=>{const d=item.decode;return item.name+'\n上传校验：通过；'+(item.bytes/1048576).toFixed(1)+' MB\n解码：'+({queued:'排队中',running:'测试中',passed:'已解出视频帧（非HDMI）',failed:'未通过'}[item.decode_state]||item.decode_state)+(d?'\n'+d.width+'×'+d.height+'，'+d.frames+'帧；'+(d.complete?'该片已读到结束':'未验证全片'):'')+(item.decode_error?'\n'+item.decode_error:'');}).join('\n\n'):'尚无上传完成的文件。';}catch(error){document.getElementById('files').textContent=error.message;}}
+button.onclick=async()=>{const file=document.getElementById('file').files[0];if(!key){state.textContent='请使用本轮带访问码的完整链接。';return;}if(!file||!file.name.toLowerCase().endsWith('.mp4')||file.size>536870912){state.textContent='请选择不超过512MB的普通MP4。';return;}button.disabled=true;detail.textContent='';try{state.textContent='计算文件校验码…';const crc=await crcFile(file);progress.value=0;state.textContent='上传中，请保持前台…';await new Promise((resolve,reject)=>{const xhr=new XMLHttpRequest();xhr.upload.onprogress=event=>{if(event.lengthComputable){progress.value=event.loaded*100/event.total;detail.textContent=(event.loaded/1048576).toFixed(1)+' / '+(event.total/1048576).toFixed(1)+' MB';}};xhr.open('POST','/upload');xhr.timeout=600000;xhr.setRequestHeader('X-Media-Key',key);xhr.setRequestHeader('X-File-Name',encodeURIComponent(file.name));xhr.setRequestHeader('X-File-CRC32',crc);xhr.setRequestHeader('Content-Type','video/mp4');xhr.onload=()=>{let result;try{result=JSON.parse(xhr.responseText);}catch(error){reject(Error('接收端没有返回有效结果。'));return;}if(xhr.status!==201){reject(Error(result.error||'上传失败'));return;}state.textContent='上传与校验通过，正在测试解码。';detail.textContent='已存入板端独立目录。SHA256：\n'+result.sha256;resolve();};xhr.onerror=()=>reject(Error('连接中断；未完成文件不会进入可用列表。'));xhr.ontimeout=()=>reject(Error('上传超时，请选择更短视频后重试。'));xhr.send(file);});await refresh();}catch(error){state.textContent=error.message;}finally{button.disabled=false;}};
+refresh();setInterval(refresh,2000);
+</script></body></html>

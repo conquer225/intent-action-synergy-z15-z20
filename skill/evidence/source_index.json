@@ -1,0 +1,436 @@
+{
+  "schema_version": 1,
+  "root_convention": "paths relative to the original engineering root; not relative to this portable package",
+  "generated_date": "2026-11-01",
+  "purpose": "Selected provenance inputs, not a full-project inventory or proof of complete review",
+  "entries": [
+    {
+      "path": ".trellis/spec/hardware/z20-compute.md",
+      "sha256": "bbffcbda995535daca487942cf98916bc77ae9654dd12a28f6bc8cba42c8848c",
+      "bytes": 32000,
+      "observations": [
+        "E01"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "cd213da7d8b04c051f1631e27684ae67e7a698a00105895ec6c9448ee81937af",
+      "bytes": 2239,
+      "observations": [],
+      "role": "工程工作规则",
+      "bundled": false
+    },
+    {
+      "path": "README.md",
+      "sha256": "b2554a3747931ed1cdea8e571c1bdf03c072cc6c00fc3e4290933b5a5de2d055",
+      "bytes": 8314,
+      "observations": [],
+      "role": "根工程入口与历史范围",
+      "bundled": false
+    },
+    {
+      "path": "docs/architecture.md",
+      "sha256": "336d2aac658c4c446444667ae57e270cd50258583f2a00840f47b7ae966ece48",
+      "bytes": 4125,
+      "observations": [],
+      "role": "历史架构与接口合同",
+      "bundled": false
+    },
+    {
+      "path": "docs/status.md",
+      "sha256": "914d0dff9a45fb5cfe5ce1e69ea4d0d0472931fc55e994c3c3ab7f987f27112e",
+      "bytes": 23107,
+      "observations": [],
+      "role": "状态入口，结合后续双板记录阅读",
+      "bundled": false
+    },
+    {
+      "path": "docs/z20_dual_board_upgrade_20261022.md",
+      "sha256": "c049990d657269fc9cc1ecd3df57a748e9fc0a9af14f2540642e87a7de7089fb",
+      "bytes": 30125,
+      "observations": [],
+      "role": "双板需求与职责",
+      "bundled": false
+    },
+    {
+      "path": "integrations/vision_demo/tests/test_build_launcher.py",
+      "sha256": "32d338f21b0e50602b1322c4e66c25b3d3ad880d9e0887e1e8a6f872d65ea4fd",
+      "bytes": 1821,
+      "observations": [
+        "E08"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/GLOSSARY.md",
+      "sha256": "d3a40e834a5b41389bf5da7645ebec054a1ee575b3282f04c502395451121a1c",
+      "bytes": 7347,
+      "observations": [],
+      "role": "联动术语",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/NAVIGATOR_BOARD.md",
+      "sha256": "0b997a6a0c2d20e39561b60acb9646f19745c8db74a8287f500c3bd23f2a795e",
+      "bytes": 6088,
+      "observations": [
+        "E01"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/README.md",
+      "sha256": "eeba409c1b978604057b0ee96d971dce6a330a25fd2760a3f50db6539bdf042a",
+      "bytes": 12024,
+      "observations": [],
+      "role": "Z20 主线入口",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/artifacts/z15-motion-firmware-candidate-20261028.zip",
+      "sha256": "28571bbf2a362caacbdae310a9248ef59cd1eead82c8b2b9929e01d5c5dcdac7",
+      "bytes": 633687,
+      "observations": [],
+      "role": "真实归档 bit/HWH 静态验证输入，二进制不随包复制",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/hardware/hls/mlp.cpp",
+      "sha256": "8f12284c2c821dbb79615f26bc1fc85c767f633fe8406418f42726a2fafd0a56",
+      "bytes": 2651,
+      "observations": [
+        "E04"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/install_motion_firmware.py",
+      "sha256": "99ae32e1665cfac661698df1fd407305c7f4ef57b92b771249aea0a977bcc7db",
+      "bytes": 4567,
+      "observations": [
+        "E02"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/report/board_20261024.md",
+      "sha256": "141158ebe54ae373086996fc5e2e3c8bcc76ffae6a165ffef78b16d7c4508e99",
+      "bytes": 6140,
+      "observations": [
+        "E01"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/report/board_20261028/README.md",
+      "sha256": "dafb72019d65a9d521096311b89cae6034267ab8e1bc855498f0d3344234c9ae",
+      "bytes": 6018,
+      "observations": [
+        "E02",
+        "E04"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/report/board_20261028/npu-three-task.json",
+      "sha256": "57eae1b6c62fffc7f2de9beec93522f84d58f9faddf3920a972ef5e78d31f871",
+      "bytes": 1423,
+      "observations": [
+        "E04"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/report/board_20261028/summary.json",
+      "sha256": "75919ff1dcb52cb80a097018fab6bb7f699fc5d41dfaab23f99652240d699248",
+      "bytes": 1286,
+      "observations": [
+        "E02"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/report/device_menu_20261030.md",
+      "sha256": "6384670380047cc1021945aa8798acffce9e9099216abd0216733c59b3df8a11",
+      "bytes": 5656,
+      "observations": [
+        "E07"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/report/eye_audio_20261028/README.md",
+      "sha256": "76e0ba71c5406b6b151af32bde29bb5870af5411abdce1387482071a7cf7dcbd",
+      "bytes": 20996,
+      "observations": [
+        "E05",
+        "E07"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/report/eye_audio_20261028/network-reboot-route-after.txt",
+      "sha256": "b63a8db3923e299184e1441e5b994a25ede6120d29e08730b165aba2d5494fe3",
+      "bytes": 212,
+      "observations": [
+        "E05"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/report/eye_audio_20261028/network-reboot-z15-before.json",
+      "sha256": "3faaeadc4ca2c1c6ea0fe964e0c7005401a445f9abd1abc31bde4e3509c82524",
+      "bytes": 5195,
+      "observations": [
+        "E05"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/report/eye_audio_20261028/network-reboot-z15-verify.json",
+      "sha256": "6a8f74ad2ee041131074ee1bca3ffbd4d24217986e864a33454dba07356233ee",
+      "bytes": 1175,
+      "observations": [
+        "E05"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/report/eye_audio_20261028/z20-npu-task-and-recording-checks.json",
+      "sha256": "454b70f67888dd3c79c178250e35ee580c09e2902b22a6cd238fc4a1bc349bcb",
+      "bytes": 4048,
+      "observations": [
+        "E04"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/report/vivado_diagnosis_20261028.md",
+      "sha256": "1697f03671cbb07ccfbbb182a0919f4c344dd7b49c22ce44806e49742b0815c0",
+      "bytes": 5606,
+      "observations": [
+        "E08"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/tests/test_backend.py",
+      "sha256": "fb0befc0cf31793f9be70100524db16a43f52ea51062a34f334cac9a9f36f9c1",
+      "bytes": 3146,
+      "observations": [
+        "E03"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/tests/test_board_target.py",
+      "sha256": "2b019fc5a31078f5e6fe9a69aa38a05767b6a369b1d6dcde86147e3b2d7c89e3",
+      "bytes": 1833,
+      "observations": [
+        "E01"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/tests/test_link.py",
+      "sha256": "46365680f6746c6c25be55fb235a3bad3921c77420e921b15295e0bf91b324d7",
+      "bytes": 2045,
+      "observations": [
+        "E06"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/tests/test_motion_install.py",
+      "sha256": "20f7a6917ee11047af091c0b94272c722f3ec41bf8a043ab4bf60d2a275ea001",
+      "bytes": 4585,
+      "observations": [
+        "E02"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/tests/test_npu.py",
+      "sha256": "fbd5dae58693923c24356548ea7dc89ff563621bc7a63ce43ee5e097e144db83",
+      "bytes": 903,
+      "observations": [
+        "E04"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/tests/test_video.py",
+      "sha256": "0861c93a7a2ede6f242e6f482ed536701007585d37382b25e590862f051df32a",
+      "bytes": 3038,
+      "observations": [
+        "E06"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/tests/test_vivado_environment.py",
+      "sha256": "56fcbf0b59edec67d4af81ba20587bfe13a107dfe332d82b698a490c8dbd8b33",
+      "bytes": 1076,
+      "observations": [
+        "E08"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/tool_environment.py",
+      "sha256": "005d595d838bea1084711368d742e3c370cdecee99b47d0a3f3b4c5120adf396",
+      "bytes": 5963,
+      "observations": [
+        "E08"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/z20_compute/backend.py",
+      "sha256": "5b22c8b9ba6df7ec4d13413b0b1e9039d43b92ca6c5f6e39f70618b3cd24fa01",
+      "bytes": 4024,
+      "observations": [
+        "E03"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/z20_compute/bitstream.py",
+      "sha256": "8f4b58a35e9e6bbbb54f6af6f0f1b7a669c8e837db4ba2615b66530f4503b875",
+      "bytes": 1162,
+      "observations": [],
+      "role": "原工程 FPGA Manager 载荷处理",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/z20_compute/board_target.py",
+      "sha256": "d27ede19b87d1cccf6c52cd4c663f9d47680fbab98a1c9f77875cd79fdbaa3c4",
+      "bytes": 1928,
+      "observations": [
+        "E01"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/z20_compute/link.py",
+      "sha256": "2a62720f283674ccbaa1b422830bd0509d17e56651a4a58e07590dd997cae531",
+      "bytes": 6343,
+      "observations": [
+        "E06"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/z20_compute/npu.py",
+      "sha256": "f14187ffd4c5cd031ea2b8fd54b08c82f10c758e94604008c4c3f2edf1cb6ade",
+      "bytes": 1796,
+      "observations": [
+        "E04"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/z20_compute/npu_check.py",
+      "sha256": "e315abbee2974eee9c6d06b183ca5b113aebd27350730bb437b8d560fbf8e1f5",
+      "bytes": 3863,
+      "observations": [
+        "E04"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/z20_compute/protocol.py",
+      "sha256": "c81083697573305a7bc7246238a21a9de848768479e09d8bc6a6a78f15d03c90",
+      "bytes": 7648,
+      "observations": [],
+      "role": "既有线上协议",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/z20_compute/runtime.py",
+      "sha256": "57090cd799bd93cb3a5dbee813609cfd1486a052e75c5cc78888838aa3697fa7",
+      "bytes": 10902,
+      "observations": [
+        "E06"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/z20_compute/vdma.py",
+      "sha256": "9a3c75b159c90ad3b03e2f1ec3223697ffd8b0b9f2f090b08dacca08a46147c9",
+      "bytes": 1646,
+      "observations": [
+        "E06"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/z20_compute/video.py",
+      "sha256": "3925f09d19d94b5159a54da245ff8cab3a7e776d2bf5c9b28163e39cfd126ca4",
+      "bytes": 4743,
+      "observations": [
+        "E06"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/z20_compute/visual_wire.py",
+      "sha256": "bfac96028bf29130ad6665f7d5f73eaa1d77dadb3a87bdcb258907ba4caa0e06",
+      "bytes": 3208,
+      "observations": [
+        "E06"
+      ],
+      "role": "支撑工程观察与方法来源",
+      "bundled": false
+    },
+    {
+      "path": "integrations/z20_compute/z20_compute/z15_client.py",
+      "sha256": "5f8b44b6e5c9ee8403a23fcf6d83936542b012b6cfcad0d7e44d111ce02ed408",
+      "bytes": 2593,
+      "observations": [],
+      "role": "Z15 客户端和结果路径",
+      "bundled": false
+    },
+    {
+      "path": "multimodal/README.md",
+      "sha256": "34745f609bf575d7a78647a57d4d69b0597dae81499ae6476a6023aeab0251cf",
+      "bytes": 8582,
+      "observations": [],
+      "role": "既有控制主线、资源与退出职责",
+      "bundled": false
+    }
+  ]
+}

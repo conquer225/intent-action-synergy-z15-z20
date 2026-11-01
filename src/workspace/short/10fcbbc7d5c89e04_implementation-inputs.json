@@ -1,0 +1,32 @@
+{
+  "part": "xc7z015clg485-2",
+  "sources": {
+    "D:\\ican\\codex_project\\brain_eye_coexist\\candidate\\eye\\overlay\\eye_wifi.hwh": "5dcfe537c6793f5b18b47550f73078ab8d73500888e585037a707c8be1ebacef",
+    "D:\\ican\\\u3010\u6b63\u70b9\u539f\u5b50\u3011Z15 ZYNQ7015\u5f00\u53d1\u677f\u8d44\u6599\u76d8\uff08A\u76d8\uff09\\4_Source_Code\\3_Embedded_Linux\\vivado_prj\\Z15_ZYNQ\\ip_repo\\DVI_TX\\ip\\src\\serializer_10_to_1.v": "bb6b2a217a9061bb25a9f70e3f34d52dfe2d2855c1a8fcfb25f8a042868f63cd",
+    "D:\\ican\\\u3010\u6b63\u70b9\u539f\u5b50\u3011Z15 ZYNQ7015\u5f00\u53d1\u677f\u8d44\u6599\u76d8\uff08A\u76d8\uff09\\4_Source_Code\\5_High_Level_Synthesis\\ZYNQ_7015\\5_ov5640_rgb2gray\\ov5640_rgb2gray_ip_test\\ov5640_rgb2gray_ip_test.srcs\\constrs_1\\new\\pin.xdc": "7d7153d49e3186a406f256498bca86f8c4d03cf9d4e93c6105bb0831bd5f4081",
+    "D:\\ican\\\u3010\u6b63\u70b9\u539f\u5b50\u3011Z15 ZYNQ7015\u5f00\u53d1\u677f\u8d44\u6599\u76d8\uff08A\u76d8\uff09\\4_Source_Code\\3_Embedded_Linux\\vivado_prj\\Z15_ZYNQ\\Z15_ZYNQ.srcs\\constrs_1\\system.xdc": "1f6754daab952e2a95b0c9651b467d2222033f961626cd135f09a3476de3df4a",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\rtl\\audio_sample_clock.sv": "a9068b400ef5d7c4d620362f5a9c8d01828eced0d4576a48403c51749794618f",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\rtl\\audio_sample_tick.sv": "35417b8aa77807e1a55e0872c736f2fac39778a492d35ea68e90ed5425475548",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\rtl\\display_status.sv": "70164ea3a2cba8036c7410acf1732263fc48cfd2e028e9d32a2866344e65a7a8",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\rtl\\hdmi_audio_tx.sv": "39f25ae28935f14a756b6ae67e7552b90a575a5db6449a951734b596ba8eeef9",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\rtl\\hdmi_external_video.sv": "6557910a06f4a0bf98bf11ddfdc012ae79515544dee92e81b8ba1be3b7c4aa99",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\rtl\\pcm_buffer.sv": "76b0f33a613dfe04ee742e756f04e5fd792bf50a0e656bba6535f1276bc405a3",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\third_party\\hdmi\\src\\audio_clock_regeneration_packet.sv": "06aee8018b6abe9f285bdc519ce34c1613e716207225a6abfb41083a058ccb47",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\third_party\\hdmi\\src\\audio_info_frame.sv": "67e2b1a5a91a5411e717e563d360879be782b344b3ce511f91755b9c4b261457",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\third_party\\hdmi\\src\\audio_sample_packet.sv": "364081e1a8ca5d90774aefed565346c1591e30384a44b91b2a0d003765b343be",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\third_party\\hdmi\\src\\auxiliary_video_information_info_frame.sv": "ad549402b46d6b824d8a2cffe35b96943add581d4d5dc266a5ea33cd161b5d99",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\third_party\\hdmi\\src\\hdmi.sv": "4ffb2f117e0113a0236fd32ef7ee0b9002badf426a2564a2f10660ddc5d407c6",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\third_party\\hdmi\\src\\packet_assembler.sv": "0b31287e145d59d9b053e354c6b7b145f546bb33b2e099165d0113bd00f79e63",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\third_party\\hdmi\\src\\packet_picker.sv": "ed9ad128e5a57b25b190997b41233b283ed9c33d7063e6183a04b5c63c5921b0",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\third_party\\hdmi\\src\\serializer.sv": "4803e8a4eaf201b61f1beca13c813478f154cc42db5fa8f8a1a03b61ee7f0fd2",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\third_party\\hdmi\\src\\source_product_description_info_frame.sv": "1b35d31aafda97caac8afd6335f6e62bc290ec65a8a0570f206ac7d9395c2951",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\third_party\\hdmi\\src\\tmds_channel.sv": "ca606c6facebf0cc4a4a0310c9d4e1ca6196919d6565177957d83dcf574cd8f1",
+    "D:\\ican\\\u3010\u6b63\u70b9\u539f\u5b50\u3011Z15 ZYNQ7015\u5f00\u53d1\u677f\u8d44\u6599\u76d8\uff08A\u76d8\uff09\\4_Source_Code\\3_Embedded_Linux\\vivado_prj\\Z15_ZYNQ\\ip_repo\\ov5640_cap_data\\SRC\\ov5640_capture_data.v": "1aaa337635ab8583d979bab18bc51b9d23c2a1a75a5ff152ad90af7a60a8e83c",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\create_display.tcl": "ca4b27221edb7af6b57db486a9fc84450600f24fdce74e9b381f1ee577ef9951",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\implement_display.tcl": "e00feba522d44276fea688e96be84a142d48f1504f71a74a5d002bf612a54fc0",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\rebuild_display.py": "23e125f3b3538454479d99571f36bb02c14729e0ee0b542db0a4ed98a9f6a47f",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\output\\full_11\\legacy_contract.tcl": "98442f3b70f81eb3f4e90857df3238889a88fdbdd378d95b975ea30249f10c35",
+    "D:\\ican\\codex_project\\z15_hdmi_audio\\output\\full_11\\pins.xdc": "3d6d271af39c4c2f1c430e68b73ab28a3b28eb774350e64f67842a1efcba89ed"
+  },
+  "board_loading_authorized": false
+}

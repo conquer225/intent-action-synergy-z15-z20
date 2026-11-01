@@ -1,0 +1,10 @@
+/* Integrated coexistence BD only: pf_dma at 0x40410000, pf_control at
+ * 0x41200000. The legacy axi_dma_0 remains at 0x40400000 and must retain
+ * its original owner. Do not enable this node with any other bitstream. */
+guardianloop_filter_dma_owner: dma-owner@40410000 {
+	compatible = "guardianloop,z15-filter-dma-owner-v1";
+	reg = <0x40410000 0x00010000>, <0x41200000 0x00010000>;
+	reg-names = "dma", "control";
+	guardianloop,abi-version = <1>;
+	status = "disabled";
+};

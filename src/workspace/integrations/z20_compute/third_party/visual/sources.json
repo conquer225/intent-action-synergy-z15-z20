@@ -1,0 +1,100 @@
+{
+  "files": [
+    {
+      "path": "fluid/script.js",
+      "url": "https://raw.githubusercontent.com/PavelDoGreat/WebGL-Fluid-Simulation/master/script.js",
+      "sha256": "291d86de38ea23b8fb63d1879afeea77e9a4556900bbd67e13bc1d5ea007ce4e",
+      "bytes": 51849
+    },
+    {
+      "path": "fluid/dat.gui.min.js",
+      "url": "https://raw.githubusercontent.com/PavelDoGreat/WebGL-Fluid-Simulation/master/dat.gui.min.js",
+      "sha256": "27976ca8ac2e125de97163455131890e8686ed2afc2007cd5524080b7d53ef7b",
+      "bytes": 50149
+    },
+    {
+      "path": "fluid/LDR_LLL1_0.png",
+      "url": "https://raw.githubusercontent.com/PavelDoGreat/WebGL-Fluid-Simulation/master/LDR_LLL1_0.png",
+      "sha256": "140c55bd97c21b9b22008d7054b492333fec67fbfc1a1b266e5b0209b647eed4",
+      "bytes": 7115
+    },
+    {
+      "path": "fluid/LICENSE",
+      "url": "https://raw.githubusercontent.com/PavelDoGreat/WebGL-Fluid-Simulation/master/LICENSE",
+      "sha256": "1be448ae1212de2bee77b4cf851ab0acea0a7f7f32d21cd73095dd94dc173f66",
+      "bytes": 1072
+    },
+    {
+      "path": "fluid/README.md",
+      "url": "https://raw.githubusercontent.com/PavelDoGreat/WebGL-Fluid-Simulation/master/README.md",
+      "sha256": "096bf377c0e1a093caf0719239eb8607f2b8b8a1a9392a561a50eae1e9e98234",
+      "bytes": 433
+    },
+    {
+      "path": "spectrum/app.js",
+      "url": "https://raw.githubusercontent.com/conwayjw97/3D-Spectrogram/main/app.js",
+      "sha256": "5ee2669a63ac9e16a7a6258cb45c89409b017824f981b65c0e2609870d0c150f",
+      "bytes": 24225
+    },
+    {
+      "path": "spectrum/audio.js",
+      "url": "https://raw.githubusercontent.com/conwayjw97/3D-Spectrogram/main/audio.js",
+      "sha256": "81e974d32414b5e7782ffe3def74e385852b8d0a7cec4951dcf55e5e5bce736b",
+      "bytes": 2884
+    },
+    {
+      "path": "spectrum/ui.js",
+      "url": "https://raw.githubusercontent.com/conwayjw97/3D-Spectrogram/main/ui.js",
+      "sha256": "065e5643b2f0857ba5055df29911b5f5c768b67ebe84e194d567cb14bda5712f",
+      "bytes": 11861
+    },
+    {
+      "path": "spectrum/shaders.js",
+      "url": "https://raw.githubusercontent.com/conwayjw97/3D-Spectrogram/main/shaders.js",
+      "sha256": "f7c4e7fa8e3e67eb254449b10a815d935aea28b443c41ca04c3f4744a2dff0fd",
+      "bytes": 1106
+    },
+    {
+      "path": "spectrum/colours.js",
+      "url": "https://raw.githubusercontent.com/conwayjw97/3D-Spectrogram/main/colours.js",
+      "sha256": "eff703c2ebc8693b3026e8a4709289836c3a142bb1da135c055539c774b75d00",
+      "bytes": 2300
+    },
+    {
+      "path": "spectrum/index.html",
+      "url": "https://raw.githubusercontent.com/conwayjw97/3D-Spectrogram/main/index.html",
+      "sha256": "bf19cd654fa0b52b8764aa29c49fc1d76411756f4f6aa59fc5a0c44dc829147a",
+      "bytes": 6785
+    },
+    {
+      "path": "spectrum/LICENSE",
+      "url": "https://raw.githubusercontent.com/conwayjw97/3D-Spectrogram/main/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149
+    },
+    {
+      "path": "spectrum/README.md",
+      "url": "https://raw.githubusercontent.com/conwayjw97/3D-Spectrogram/main/README.md",
+      "sha256": "4b8f9308262dea0f239dc004699a1be7de95b02f8887d9f93ae2eca7b8eb4d1e",
+      "bytes": 3213
+    },
+    {
+      "path": "three/build/three.module.js",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r155/build/three.module.js",
+      "sha256": "6c3a6299b7ae2eb8f3a9ae83f05cf50d6b3ba58931c34033a8abfac6bcf4acba",
+      "bytes": 1225243
+    },
+    {
+      "path": "three/examples/jsm/controls/OrbitControls.js",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r155/examples/jsm/controls/OrbitControls.js",
+      "sha256": "730bea31f9141d0778cdf092ccd1b2a74cf30822b7264244431f8df1782d89de",
+      "bytes": 28753
+    },
+    {
+      "path": "three/LICENSE",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r155/LICENSE",
+      "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d",
+      "bytes": 1081
+    }
+  ]
+}

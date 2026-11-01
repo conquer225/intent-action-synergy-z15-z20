@@ -1,0 +1,13 @@
+{
+  "source_hwh": "D:\\ican\\codex_project\\brain_eye_coexist\\candidate\\eye\\overlay\\eye_wifi.hwh",
+  "hwh_sha256": "5dcfe537c6793f5b18b47550f73078ab8d73500888e585037a707c8be1ebacef",
+  "part": "xc7z015clg485-2",
+  "candidate_audio_address": "0x43c20000",
+  "board_loaded": false,
+  "bitstream_generated": false,
+  "scope": "isolated reconstruction; no runtime modification",
+  "constraint_sources": {
+    "D:\\ican\\\u3010\u6b63\u70b9\u539f\u5b50\u3011Z15 ZYNQ7015\u5f00\u53d1\u677f\u8d44\u6599\u76d8\uff08A\u76d8\uff09\\4_Source_Code\\5_High_Level_Synthesis\\ZYNQ_7015\\5_ov5640_rgb2gray\\ov5640_rgb2gray_ip_test\\ov5640_rgb2gray_ip_test.srcs\\constrs_1\\new\\pin.xdc": "7d7153d49e3186a406f256498bca86f8c4d03cf9d4e93c6105bb0831bd5f4081",
+    "D:\\ican\\\u3010\u6b63\u70b9\u539f\u5b50\u3011Z15 ZYNQ7015\u5f00\u53d1\u677f\u8d44\u6599\u76d8\uff08A\u76d8\uff09\\4_Source_Code\\3_Embedded_Linux\\vivado_prj\\Z15_ZYNQ\\Z15_ZYNQ.srcs\\constrs_1\\system.xdc": "1f6754daab952e2a95b0c9651b467d2222033f961626cd135f09a3476de3df4a"
+  }
+}

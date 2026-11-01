@@ -1,0 +1,17 @@
+{
+  "board_executed": false,
+  "boot_image_complete": false,
+  "files": {
+    "z20-video-npu-candidate.dts": "f9198096e276393ed1a2ca2ee65047e9512f5e29df58e127d65bb16d37388c93",
+    "bin/z20-video-npu-candidate.dtb": "26b86dc795df9d453315eb60a1b10ef34a0f3da784a82ac6cd7fc9f41ba90934",
+    "bin/z20_integer_selftest": "d002a464fa41f23ddebcb655e28259dc820a79a082ab583c632817628047e904"
+  },
+  "source": "official Linux variant 4 PS device tree; obsolete PL nodes removed; candidate NPU/UIO, u-dma-buf and EMIO i2c-gpio nodes added",
+  "known_missing": [
+    "matching modern Python numerical userspace",
+    "u-dma-buf module built for supplied kernel",
+    "CONFIG_I2C_GPIO kernel support",
+    "video ownership, VDMA setup, coherent frame generation observer",
+    "implemented matching FPGA image"
+  ]
+}

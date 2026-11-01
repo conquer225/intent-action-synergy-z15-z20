@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "scope": "HWH structural/parameter contract only; not board/timing/audio verification",
+  "hwh_sha256": "e7c3bcb9024393fba331f6b0c9b85b4a488832555c06309142703b308819767d",
+  "original_hwh_sha256": "5dcfe537c6793f5b18b47550f73078ab8d73500888e585037a707c8be1ebacef",
+  "addresses": {
+    "axi_vdma_0": "0x43000000",
+    "axi_vdma_1": "0x43010000",
+    "live_osd_0": "0x43c00000",
+    "v_tc_0": "0x43c10000",
+    "pcm_buffer_0": "0x43c20000"
+  },
+  "candidate_clocks_mhz": [
+    75.0,
+    375.0,
+    150.0
+  ]
+}

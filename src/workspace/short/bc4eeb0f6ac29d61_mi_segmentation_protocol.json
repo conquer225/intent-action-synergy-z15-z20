@@ -1,0 +1,36 @@
+{
+  "protocol_id": "cho2017_fixed8_source_local_SR_20261001",
+  "scope": "One predeclared training30 exploratory comparison after the previous model search; not independent confirmation",
+  "baseline_run": "output/mi_model_comparison_20261001",
+  "baseline_method": "C2_EEGNet_SMALL",
+  "baseline_results_sha256": "57dd68ce1d29db5cda32d5bb9d5decaea715255a85b590dfedb1bf95d7df24ee",
+  "candidate_method": "EEGNet_SOURCE_SR",
+  "hypothesis": "Same-person same-class source-only segmentation/reconstruction improves cross-person EEGNet BA without changing inference architecture",
+  "channels": ["F3","F4","C3","C4","T7","T8","O1","O2"],
+  "seeds": [42,43,44],
+  "unchanged": "Reuse checked baseline waveforms,6080 original30 trials,26fit/3sourceval/1target folds,8-30Hz causal completed2s input,source-only scaling,2226 parameter EEGNet,Adam,max200 epochs,patience20,source-val mean-person BA selection,4280 common scored trials,all author flags",
+  "augmentation": {
+    "temporal_segments": 8,
+    "boundaries": [0,62,125,187,250,312,375,437,500],
+    "synthetic_per_real": 1,
+    "donor_scope": "same fitting person and same class as the real batch anchor; all eight electrodes copied together; same temporal slot; with replacement",
+    "rng": "separate Torch device generator seed=training_seed+100000",
+    "validation_or_target_donors": false,
+    "refilter_after_join": false,
+    "caveat": "joins may create discontinuities; borrowed mechanism not exact CTNet reproduction; 2s500 samples and1x synthetic vs author's4s1000 and3x; same max epochs/update batches but twice examples per batch,thus higher training cost"
+  },
+  "bootstrap": {"seed":20261001,"draws":10000,"paired_interval":0.95,"comparison_count_this_round":1},
+  "continuation_gate": {"mean_ba_at_least":0.60,"paired_gain_at_least":0.01,"paired_ci_lower_greater_than":0.0},
+  "falsification": "If candidate fails the frozen gain/CI gate, retain unaugmented EEGNet rather than increase augmentation after observing scores",
+  "literature": [
+    "https://github.com/snailpt/CTNet",
+    "https://github.com/snailpt/CTNet/blob/main/main_subject_specific.py",
+    "https://github.com/snailpt/TCANet/blob/main/LOSO_TCANet.ipynb"
+  ],
+  "label_boundary": "Cho2017 imagery is sequential index/middle/ring/little-thumb opposition; labels only left vs right hand; no single-finger or continuous kinematics labels",
+  "confirmation_eeg_read": false,
+  "former_development_eeg_read": false,
+  "board_accessed": false,
+  "control_enabled": false,
+  "promotion_gate_passed": false
+}

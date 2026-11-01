@@ -1,0 +1,59 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GuardianLoop 综合系统原型</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#13171b;color:#f1f3f2;font:18px system-ui;line-height:1.5}header,footer{padding:18px 28px}.notice{color:#d5e6ac}h1{font-size:30px;margin:0 0 10px}button{font:inherit;cursor:pointer;background:#20282d;border:1px solid #657276;color:inherit;border-radius:10px;padding:14px}button:disabled{opacity:.45;cursor:default}main{max-width:1280px;margin:auto}#zones{display:grid;grid-template-columns:1fr 1.8fr 1fr;gap:20px;padding:15px 28px;min-height:400px}.zone{font-size:28px;display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:0}.video{background:#080a0c;min-height:390px;border-radius:10px;display:grid;place-content:center;text-align:center;padding:20px}.video small{font-size:17px;color:#b7c1c4}#corners{display:none;grid-template-columns:1fr 1fr;gap:18px;padding:15px 28px}.corner{min-height:110px;font-size:24px}.row{display:flex;flex-wrap:wrap;gap:10px}.status{color:#b7c1c4;font-size:17px}details{border-top:1px solid #445056;margin:18px 28px;padding-top:16px}.alerts{padding:0 28px;color:#ffbfa1}#error{color:#ffbfa1}#recent{font-size:15px;color:#b7c1c4}@media(max-width:650px){#zones{gap:8px;padding:12px;grid-template-columns:1fr 1.4fr 1fr;min-height:280px}.zone{font-size:19px;padding:8px}.video{min-height:270px}.corner{font-size:18px}header,footer{padding:15px}}
+</style>
+<style>
+/* Match the existing eye classifier's three equal horizontal regions. */
+#zones{grid-template-columns:repeat(3,1fr)}
+#error:empty{display:none}
+@media(min-width:900px){header{padding:12px 28px}header p{margin:6px 0}h1{font-size:28px;margin-bottom:6px}footer{padding:8px 28px}footer p{margin:6px 0}#zones{min-height:340px}.video{min-height:310px}.corner{min-height:90px}details{margin:10px 28px;padding-top:10px}}
+@media(max-width:650px){#zones{grid-template-columns:repeat(3,1fr)}}
+</style>
+<main><header><h1 id="title">GuardianLoop 综合系统</h1><div class="notice">交互原型 · 所有输入均为手动模拟 · 静音 · 不连接轮椅</div><p class="status">最终目标：ARM 负责识别与仲裁，PL 负责 HDMI/确定性加速，ESP32 负责本地运动保护。</p><div id="status"></div><div id="monitors" class="status"></div><p id="error" role="alert"></p></header>
+<div id="alerts" class="alerts"></div><div id="corners"></div><div id="zones"></div>
+<footer><p id="action"></p><p class="status">新页面先留阅读时间；看视频中央不触发按钮。真实眼控将沿用约 1.4 秒停留确认与移开后重触发。</p></footer>
+<details open><summary>手动模拟输入（不代表脑电／眼控结果）</summary><p>确认页面阅读完成后，可点击左、中、右选区验证跳转。方向区不闪烁，本轮没有 SSVEP 光学测试。</p><div class="row"><button data-action="arm">启用虚拟方向</button><button data-action="lost">模拟断流 / 停止</button><button data-action="mi" data-value="right">模拟一次右手确认</button><button data-action="mi" data-value="neutral">模拟回到中性（重新准备）</button><button data-action="mi" data-value="left">模拟左手</button></div><p>退出规则：右手 → 可信中性间隔 → 另一独立右手；8 秒内完成。没有自动把左右手二分类的低分当作“休息”。</p><div class="row"><button data-action="gameemo">模拟无聊类心情参考</button><button data-action="mood">本人确认情绪不佳</button><button data-action="fatigue">模拟疲劳候选警示</button><button data-action="ack" data-value="fatigue">确认疲劳警示</button></div><p class="status">心情参考是实验性模型估计，可提示选歌，不自动播放；疲劳警示也不是医疗诊断。速度仅是目标档位，当前硬件未验证调速。歌曲、表达均不发声。</p><p id="recent"></p></details></main>
+<script>
+const key=location.hash.slice(1);let page=-1,refreshing=false;
+async function api(path,body){const r=await fetch(path,{method:body?'POST':'GET',headers:{'X-Preview-Key':key,...(body?{'Content-Type':'application/json'}:{})},body:body?JSON.stringify(body):undefined,cache:'no-store'});const d=await r.json();if(!r.ok)throw Error(d.error||'请求失败');return d;}
+async function send(action,value){try{document.querySelector('#error').textContent='';render(await api('/api/action',{action,...(value===undefined?{}:{value})}));}catch(e){document.querySelector('#error').textContent=e.message;}}
+function render(s){
+  document.querySelector('#title').textContent=s.title;
+  document.querySelector('#status').textContent='虚拟方向：'+s.direction+' · 目标档位 '+s.speed_level+'/3（非 km/h） · '+(s.reading?'阅读中，暂不接受选择':'可模拟选择')+' · '+(s.mi_first_confirmed?'等待第二次独立右手':'退出待机');
+  const monitors=s.monitor_labels||{};
+  document.querySelector('#monitors').textContent='心情参考（模型估计）：'+(monitors.emotion?.label||'未接入')+' · 疲劳候选：'+(monitors.fatigue?.label||'未接入');
+  document.querySelector('#alerts').textContent=Object.values(s.alerts).join('；');
+  document.querySelector('#action').textContent=s.last_action;
+  document.querySelector('#recent').textContent=s.events.slice(-4).map(e=>e.action).join(' → ');
+  const zones=document.querySelector('#zones');
+  zones.replaceChildren();zones.style.minHeight=s.page==='drive'?'110px':'340px';
+  for(let i=0;i<3;i++){
+    if(s.page==='video'&&i===1){
+      const v=document.createElement('div');v.className='video';
+      const title=document.createElement('div');title.textContent='视频 '+(s.video_index+1)+' / 10';
+      const hint=document.createElement('small');hint.textContent='中央观看区 · 原型未接实际视频';v.append(title,hint);
+      if(s.rating){const t=document.createElement('small');t.textContent='本条评价：'+s.rating;v.append(t);}
+      zones.append(v);
+    }else{
+      const b=document.createElement('button');b.className='zone';b.textContent=s.labels[i];
+      b.disabled=s.reading||!s.labels[i];b.onclick=()=>send('choose',i);zones.append(b);
+    }
+  }
+  const corners=document.querySelector('#corners');corners.replaceChildren();
+  corners.style.display=s.page==='drive'?'grid':'none';
+  if(s.page==='drive'){
+    for(const [hz,label]of[[8,'前进'],[10,'后退'],[12,'左转'],[14,'右转']]){
+      const b=document.createElement('button');b.className='corner';
+      b.textContent=hz+' Hz · '+label+'（模拟，不闪）';b.disabled=s.reading||!s.direction_armed;
+      b.onclick=()=>send('ssvep',hz);corners.append(b);
+    }
+  }
+  if(page!==s.page_id){
+    page=s.page_id;const presentedId=page;
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{if(page===presentedId)send('presented',presentedId);}));
+  }
+}
+async function refresh(){if(refreshing)return;refreshing=true;try{render(await api('/api/state'));}catch(e){document.querySelector('#error').textContent=e.message;}finally{refreshing=false;}}
+document.querySelectorAll('[data-action]').forEach(b=>b.onclick=()=>send(b.dataset.action,b.dataset.value));refresh();setInterval(refresh,250);
+</script></html>

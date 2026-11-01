@@ -1,0 +1,7 @@
+/*ps_eye_platform*/
+the_ROM_image:
+{
+  [bootloader]<ps_eye_platform/boot/fsbl.elf>
+   <bitstream> 
+  <elf>
+}

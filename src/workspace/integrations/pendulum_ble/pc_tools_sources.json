@@ -1,0 +1,8 @@
+{
+  "source": "D:/emg_mpu_pendulum/tools",
+  "sha256": {
+    "pc_client.py": "1685b7c8773cfc064646f9bc232352aac63ace5250b89fa772871e35912d5aed",
+    "pc_gui.py": "3e04b5b3c02b9f66855ba8e9bb404674fa4064dd5794721da0a6247a74718e97",
+    "mock_server.py": "f9a516d45e03708419b90581eec1d43bd6b2c80ed0e5d8cfcd9448682b4894e5"
+  }
+}

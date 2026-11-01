@@ -1,0 +1,26 @@
+{
+  "protocol_id": "ssvep-worn-raw-sync-diagnostic-20261002",
+  "purpose": "Explain 12 Hz candidate errors and verify producer-owned window matching; not a population accuracy study",
+  "fixed_cap": ["F3", "F4", "C3", "C4", "T7", "T8", "O1", "O2"],
+  "classifier_channels": ["O1", "O2"],
+  "requested_targets_hz": [10, 0, 12, 0, 10, 12],
+  "presentation_limit_seconds": 8,
+  "between_trials_minimum_seconds": 15,
+  "requested_display_hz": 240,
+  "display_timing_check_required": true,
+  "optical_onset_measured": false,
+  "raw_recording_required": true,
+  "raw_recording_max_seconds": 600,
+  "cue_target_is_not_verified_neural_response": true,
+  "rest_is_protocol_no_control_not_validated_rest_classifier": true,
+  "preserve_aborts_quality_rejections_and_all_attempts": true,
+  "primary_checks": [
+    "raw row/sequence/flag/index/receive-time counts agree",
+    "recording ID and boot ID link raw data with each cue event",
+    "candidate windows are processed without browser-poll gaps",
+    "compare 10/12 Hz and harmonic responses against the non-flickering rest segments"
+  ],
+  "alignment_limitation": "USB receive timestamps and browser presentation receipts; no ADC hardware trigger or optical onset measurement",
+  "models_channels_filters_quality_thresholds_unchanged": true,
+  "control_enabled": false
+}

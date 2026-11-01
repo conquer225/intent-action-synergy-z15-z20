@@ -1,0 +1,17 @@
+{
+  "id": "mi-live-scale-followup-20261003",
+  "created_after": "Completed first diagnostic falsified top-1%-energy domination (5.4189%). No first-protocol result or rule is replaced.",
+  "hypothesis": "Reducing only the amplitude of frozen source-validation waveforms drives this checkpoint towards its left-biased zero response, and shorter source-like filter warm-up does not explain the live logits.",
+  "scope": "Bounded counterfactual diagnosis; no new accuracy scoring, fitting, board changes or chosen live gain",
+  "source_people": [18,25,44],
+  "excluded_source_target": 1,
+  "fixed_channels": ["F3","F4","C3","C4","T7","T8","O1","O2"],
+  "source_amplitude_factors": [0,0.03125,0.0625,0.125,0.25,1],
+  "source_reference_example": {"person":32,"original_order":140,"selection":"Median-energy fitting trial already frozen by first diagnostic"},
+  "reference_ablation": "Compare same original trial selected-eight CAR versus all64 EEG CAR; apply identical source preprocessing after reference, without changing any stored cache or model",
+  "live_filter_warmups_s": [2.5,7],
+  "falsification": "If source-validation output left rate does not increase with compression, do not attribute one-sided predictions to amplitude sensitivity. Do not assert a physical unit conversion from a BioSemi BDF specification to this author MAT export.",
+  "source_raw_unit_status": "MAT has no explicit physical-unit tag; project and MOABB currently interpret values as microvolts. Record numerical amplitude gap separately from unresolved physical scaling.",
+  "no_live_parameter_selected": true,
+  "board_accessed": false
+}

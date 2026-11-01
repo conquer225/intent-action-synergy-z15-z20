@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "audio_device": "default",
+  "speech": [
+    {
+      "label": "我需要喝水",
+      "path": "speech/01.wav"
+    },
+    {
+      "label": "我需要吃东西",
+      "path": "speech/02.wav"
+    },
+    {
+      "label": "我需要上厕所",
+      "path": "speech/03.wav"
+    },
+    {
+      "label": "请帮我调整姿势",
+      "path": "speech/04.wav"
+    },
+    {
+      "label": "是的",
+      "path": "speech/05.wav"
+    },
+    {
+      "label": "不是",
+      "path": "speech/06.wav"
+    }
+  ],
+  "music": [
+    {
+      "label": "贝多芬 · 艾格蒙特序曲",
+      "path": "music/01.wav"
+    },
+    {
+      "label": "巴赫 · 哥德堡变奏曲：咏叹调",
+      "path": "music/02.wav"
+    },
+    {
+      "label": "格里格 · 晨景",
+      "path": "music/03.wav"
+    }
+  ],
+  "videos": [
+    {
+      "label": "小奶猫",
+      "path": "videos/01",
+      "fps": 10,
+      "frames": 175
+    },
+    {
+      "label": "小狗",
+      "path": "videos/02",
+      "fps": 10,
+      "frames": 102
+    }
+  ]
+}

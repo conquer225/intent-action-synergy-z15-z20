@@ -1,0 +1,136 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+async function main(){
+ const nodes=new Map(),calls=[],handlers={};
+ const element=()=>({textContent:'',children:[],value:0,files:[],append(...a){this.children.push(...a);},replaceChildren(){this.children=[];},pause(){},load(){},removeAttribute(name){delete this[name];}});
+ const controls=['home','eye_start','eye_stop','stop','force_stop','fatigue_warning'].map(action=>({...element(),dataset:{action}}));
+ const filters=['all','好','厌倦'].map(filter=>({...element(),dataset:{filter}}));
+ const wheelchairControls=['forward','backward','left','right','stop','ssvep'].map(wheelchair=>({...element(),dataset:{wheelchair}}));
+ let failure=false;
+ const payload={brain:{state:'no_data',fatigue:{valid:false},emotion:{valid:false}},player:{state:'inactive'},videos:[
+  {id:'a',name:'<img onerror=bad>',rating:'好',prepared:true,downloadable:true},
+  {id:'b',name:'B',rating:'厌倦',prepared:false,downloadable:false}]};
+ const scope={location:{hash:'#test-key',hostname:'192.168.43.6'},window:{addEventListener(kind,fn){handlers[kind]=fn;}},document:{
+  getElementById(id){if(!nodes.has(id))nodes.set(id,element());return nodes.get(id);},
+  querySelectorAll(s){return s==='[data-action]'?controls:s==='[data-wheelchair]'?wheelchairControls:filters;},createElement:element,
+  addEventListener(kind,fn){handlers[kind]=fn;}},
+  fetch:async(url,options)=>{calls.push({url,options});if(failure)throw Error('offline');const body=options.body?JSON.parse(options.body):null;return {ok:true,json:async()=>body?.action==='wheelchair_manual'?{command_id:'phone-1',control_epoch:'next-epoch'}:payload,headers:{get(){return '10';}},blob:async()=>new Blob(['test-video'])};},
+  URL:{createObjectURL(){return 'blob:test';},revokeObjectURL(){}},
+  confirm(){return false;},setInterval(){},setTimeout(){},clearTimeout(){},AbortController,Uint32Array,Uint8Array,Blob};
+ vm.createContext(scope);vm.runInContext(fs.readFileSync(__dirname+'/system_mobile.js','utf8'),scope);
+ await new Promise(setImmediate);await vm.runInContext('refresh()',scope);
+ assert.match(nodes.get('brain').textContent,/脑电记录分析/);
+ assert.equal(nodes.get('audioVolume').disabled,true);
+ payload.player={state:'menu',audio_output:true,audio:{volume_percent:40,player:{phase:'feeding'}}};
+ await vm.runInContext('refresh()',scope);
+ assert.equal(nodes.get('audioVolume').disabled,false);
+ assert.match(nodes.get('audioStatus').textContent,/正在送出音频.*40%/);
+ nodes.get('audioVolume').value='25';nodes.get('audioVolume').oninput();
+ assert.equal(nodes.get('audioVolumeValue').textContent,'25%');
+ await nodes.get('audioVolume').onchange();
+ assert.deepEqual(JSON.parse(calls.filter(c=>c.options.method==='POST').at(-1).options.body),{action:'volume',value:25});
+ payload.player={state:'inactive'};await vm.runInContext('refresh()',scope);
+ assert.equal(nodes.get('audioVolume').disabled,true);
+ assert.match(nodes.get('audioStatus').textContent,/音频未启用/);
+ payload.wheelchair={state:'offline',direction:'stop'};await vm.runInContext('refresh()',scope);
+ assert.match(nodes.get('wheelchair').textContent,/离线.*停止.*GPIO 状态未核实/);
+ assert.equal(wheelchairControls[0].disabled,true);assert.equal(wheelchairControls[4].disabled,false);
+ payload.wheelchair={state:'permit_required',direction:'stop'};await vm.runInContext('refresh()',scope);
+ assert.match(nodes.get('wheelchair').textContent,/本机台架许可/);
+ assert.equal(wheelchairControls[0].disabled,false);
+ await wheelchairControls[0].onclick();assert.deepEqual(JSON.parse(calls.filter(c=>c.options.method==='POST').at(-1).options.body),{action:'wheelchair_manual',value:'forward'});
+ await wheelchairControls[4].onclick();assert.deepEqual(JSON.parse(calls.filter(c=>c.options.method==='POST').at(-1).options.body),{action:'wheelchair_manual',value:'stop'});
+ payload.wheelchair={state:'permit_required',direction:'stop',command_id:'phone-1',control_mode:'manual',reason:'local_permit_required'};
+ await vm.runInContext('refresh()',scope);assert.match(nodes.get('manualReceipt').textContent,/未执行方向.*电机禁用/);
+ payload.wheelchair={state:'permit_required',direction:'stop',motor_gpio_enabled:true,physical_output_enabled:true};
+ await vm.runInContext('refresh()',scope);assert.match(nodes.get('wheelchair').textContent,/GPIO 已启用/);
+ assert.match(nodes.get('motorProfile').textContent,/点方向后持续执行/);assert.doesNotMatch(nodes.get('wheelchair').textContent,/GPIO 禁用/);
+ payload.wheelchair={state:'permit_required',direction:'stop',command_id:'phone-1',control_mode:'manual',reason:'local_permit_required'};
+ scope.document.hidden=true;handlers.visibilitychange();await new Promise(setImmediate);
+ assert.deepEqual(JSON.parse(calls.filter(c=>c.options.method==='POST').at(-1).options.body),{action:'wheelchair_manual',value:'stop'});scope.document.hidden=false;
+ assert.equal(nodes.get('brainDetails').href,'/eeg-demo#test-key');
+ assert.equal(nodes.get('startEye').disabled,true);
+ payload.player={state:'menu',system:{eye:{state:'positioning',tracking:['左眼 90%','右眼 88%']}}};await vm.runInContext('refresh()',scope);
+ assert.match(nodes.get('startEye').textContent,/位置已就绪/);assert.equal(nodes.get('startEye').disabled,false);
+ assert.match(nodes.get('eyeTracking').textContent,/左眼 90%.*右眼 88%/);
+ payload.player.system.eye.state='collect';await vm.runInContext('refresh()',scope);assert.equal(nodes.get('startEye').disabled,true);
+ payload.player.system.eye={};payload.eye_device={state:'maintenance',pid:'0102'};
+ await vm.runInContext('refresh()',scope);assert.equal(nodes.get('startEye').disabled,true);assert.match(nodes.get('eye').textContent,/维护模式 0102/);
+ payload.eye_device={state:'missing'};await vm.runInContext('refresh()',scope);assert.match(nodes.get('eye').textContent,/USB 未识别/);
+ payload.eye_device={state:'runtime',pid:'0124'};await vm.runInContext('refresh()',scope);assert.equal(nodes.get('startEye').disabled,false);
+ payload.player={state:'inactive'};await vm.runInContext('refresh()',scope);assert.match(nodes.get('startDisplay').textContent,/启动/);
+ assert.equal(nodes.get('hdmiCandidate').hidden,true);assert.equal(nodes.get('startHdmi').disabled,true);
+ payload.hdmi_candidate_available=true;payload.player={state:'menu',system:{page:'drive',stimulus_enabled:false}};
+ payload.hdmi_preflight={ready:true,reason:'就绪',raw_recording_supported:true};nodes.get('hdmiRecord').checked=true;
+ nodes.get('hdmiConsent').checked=false;await vm.runInContext('refresh()',scope);
+ assert.equal(nodes.get('hdmiCandidate').hidden,false);assert.equal(nodes.get('startHdmi').disabled,true);
+ nodes.get('hdmiConsent').checked=true;nodes.get('hdmiConsent').onchange();
+ assert.equal(nodes.get('startHdmi').disabled,false);await nodes.get('startHdmi').onclick();
+ assert.deepEqual(JSON.parse(calls.filter(c=>c.options.method==='POST').at(-1).options.body),{action:'hdmi_start',value:{consent:true,record:true}});
+ payload.hdmi_preflight={ready:false,reason:'脑电未就绪'};await vm.runInContext('refresh()',scope);
+ assert.equal(nodes.get('startHdmi').disabled,true);assert.match(nodes.get('preflight').textContent,/脑电未就绪/);
+ payload.player.command_receipt={id:'latest',state:'rejected',reason:'录制未就绪'};await vm.runInContext('refresh()',scope);
+ assert.match(nodes.get('commandReceipt').textContent,/未执行.*录制未就绪/);
+ calls.length=0;payload.hdmi_candidate_available=false;payload.player={state:'inactive'};
+ payload.brain={state:'live',fatigue:{valid:true,level:0,calibration_current:15},emotion:{valid:true,label:'boring'}};
+ await vm.runInContext('refresh()',scope);
+ assert.match(nodes.get('brain').textContent,/心情参考（模型估计）：中性情绪/);assert.match(nodes.get('brain').textContent,/疲劳：正常/);
+ for(const [label,expected] of Object.entries({boring:'中性情绪',calm:'中性情绪',horror:'负向情绪',funny:'正向情绪'})) {
+  payload.brain.emotion={valid:true,class_name:label};await vm.runInContext('refresh()',scope);
+  assert.ok(nodes.get('brain').textContent.includes(expected));assert.equal(payload.brain.emotion.class_name,label);
+ }
+ payload.brain={state:'no_data',fatigue:{valid:false},emotion:{valid:false}};
+ await vm.runInContext('refresh()',scope);
+ assert.doesNotMatch(nodes.get('brain').textContent,/中性情绪|正向情绪|负向情绪/);assert.match(nodes.get('brain').textContent,/脑电记录分析/);
+ payload.brain.fatigue={valid:false,calibration_retained:true,calibration_current:15,calibration_total:15};
+ await vm.runInContext('refresh()',scope);assert.match(nodes.get('brain').textContent,/基线已保留/);assert.match(nodes.get('brain').textContent,/15\/15/);
+ assert.doesNotMatch(nodes.get('brain').textContent,/疲劳：正常/);
+ assert.equal(nodes.get('videos').children[0].children[0].textContent,'<img onerror=bad> · 好');
+ filters[1].onclick();assert.equal(nodes.get('videos').children.length,1);
+ for(const b of controls)await b.onclick();
+ assert.deepEqual(calls.filter(c=>c.options.method==='POST').map(c=>JSON.parse(c.options.body).action),['home','eye_start','eye_stop','stop','wheelchair_manual','force_stop','fatigue_warning']);
+ payload.player={state:'menu',system:{page:'fatigue_alert',alerts:{fatigue:'locked'},fatigue_ack_ready:false,fatigue_ack_reason:'等待正常',labels:['主页','确认','暂停']}};
+ await vm.runInContext('refresh()',scope);
+ assert.equal(nodes.get('fatigueWarning').hidden,false);assert.equal(nodes.get('ackFatigue').disabled,true);
+ assert.equal(nodes.get('choices').children[1].disabled,true);
+ payload.player.system.fatigue_ack_ready=true;await vm.runInContext('refresh()',scope);
+ assert.equal(nodes.get('ackFatigue').disabled,false);await nodes.get('ackFatigue').onclick();
+ assert.deepEqual(JSON.parse(calls.filter(c=>c.options.method==='POST').at(-1).options.body),{action:'ack',value:'fatigue'});
+ let prevented=false;handlers.keydown({key:'Escape',repeat:false,preventDefault(){prevented=true;}});
+ await new Promise(setImmediate);assert.equal(prevented,true);
+ assert.equal(JSON.parse(calls.filter(c=>c.options.method==='POST').at(-1).options.body).action,'force_stop');
+ payload.player.system={page:'home',force_stopped:true,direction:'stop',last_action:'人工强制停止'};
+ await vm.runInContext('refresh()',scope);assert.match(nodes.get('stopReceipt').textContent,/停止回执/);
+ await vm.runInContext('watch(current.videos[0])',scope);
+ assert.equal(nodes.get('phoneWatch').hidden,false);assert.equal(nodes.get('phoneVideo').muted,true);
+ assert.equal(nodes.get('phoneVideo').src,'blob:test');assert.equal(nodes.get('phoneTitle').textContent,'<img onerror=bad>');
+ nodes.get('phoneVideo').onloadedmetadata();assert.match(nodes.get('phoneStatus').textContent,/已就绪/);
+ nodes.get('phoneVideo').onerror();assert.match(nodes.get('phoneStatus').textContent,/无法播放/);
+ await vm.runInContext('refresh()',scope);assert.match(nodes.get('phoneStatus').textContent,/无法播放/);
+ const before=calls.length;await vm.runInContext('watch({id:"big",bytes:134217729})',scope);
+ assert.equal(calls.length,before);assert.match(nodes.get('error').textContent,/128MB/);
+ vm.runInContext('closeWatch()',scope);assert.equal(nodes.get('phoneWatch').hidden,true);
+ assert.equal(nodes.get('phoneStatus').textContent,'');nodes.get('phoneVideo').onerror();assert.equal(nodes.get('phoneStatus').textContent,'');
+ assert(calls.every(c=>c.options.headers['X-Media-Key']==='test-key'));
+ payload.wheelchair={state:'stopped',direction:'stop',motor_gpio_enabled:true};payload.wheelchair_control_epoch='epoch';
+ await vm.runInContext('refresh()',scope);await wheelchairControls[0].onclick();
+ assert.deepEqual(JSON.parse(calls.filter(c=>c.options.method==='POST').at(-1).options.body),{action:'wheelchair_manual',value:{direction:'forward',epoch:'epoch'}});
+ await vm.runInContext('manualHeartbeat()',scope);
+ assert.deepEqual(JSON.parse(calls.filter(c=>c.options.method==='POST').at(-1).options.body),{action:'wheelchair_heartbeat',value:'phone-1'});
+ handlers.pagehide();await new Promise(setImmediate);
+ assert.equal(vm.runInContext('manualCommand',scope),null);
+ assert.deepEqual(JSON.parse(calls.filter(c=>c.options.method==='POST').at(-1).options.body),{action:'wheelchair_manual',value:'stop'});
+ assert.equal(calls.filter(c=>c.options.method==='POST').at(-1).options.keepalive,true);
+ const count=calls.length;await vm.runInContext('manualHeartbeat()',scope);assert.equal(calls.length,count);
+ await wheelchairControls[0].onclick();
+ failure=true;await vm.runInContext('refresh()',scope);
+ assert.equal(vm.runInContext('manualCommand',scope),null);
+ assert.match(nodes.get('page').textContent,/旧方向/);assert.equal(nodes.get('choices').children.length,0);
+ assert.match(nodes.get('stopReceipt').textContent,/不能确认停止/);assert.equal(nodes.get('ackFatigue').disabled,true);
+ assert.equal(nodes.get('startHdmi').disabled,true);
+ assert.equal(nodes.get('audioVolume').disabled,true);
+ assert.match(nodes.get('audioStatus').textContent,/连接中断/);
+ assert.equal(wheelchairControls[0].disabled,true);assert.match(nodes.get('manualReceipt').textContent,/不能确认/);
+ scope.testFile=new Blob(['123456789']);assert.equal(await vm.runInContext('crcFile(testFile)',scope),'cbf43926');
+ console.log('SYSTEM_MOBILE_TESTS_PASSED favorites, text-only filenames, private-key actions, silent preview/quota, stale revocation, CRC');
+}
+main().catch(e=>{console.error(e);process.exitCode=1;});

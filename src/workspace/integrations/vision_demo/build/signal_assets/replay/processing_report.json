@@ -1,0 +1,17 @@
+{
+  "windows": 105,
+  "fatigue_valid": 78,
+  "emotion_valid": 79,
+  "model_hashes": {
+    "cyton_fatigue_overlap4.json": "18dd9908e01f4dd28e8ca1d7d20e3d207e51be779e76bfa4524b6857a36606a6",
+    "gameemo_covariance_svm.npz": "e379f2ba4569b63bf3cd85985a7936eb56bb38798473640a5657b9da4d107155"
+  },
+  "runtime_hashes": {
+    "primary_window.py": "c5e4edd76f125f6042f4de6dbe6638f36f2394d091eef0fad81b430de8da5065",
+    "cyton_sqi.py": "c3e02bce5a283138e8c3f8edda51d49a45f0078c4a8ff6409c723f9cf12631a8",
+    "cyton_fatigue.py": "9ae53b86cc33c431e48ef5b7f278d8756d1e5294c30b041b08f6640b81533837",
+    "cyton_covariance.py": "21652e9b39f80fe21ffc35b01197bac841f89b4200f610b48130b787696d9dab",
+    "processing_diagnostics.py": "4a69c35e87de48943cdf6c12f9ff0833faa17024141c013eb231e7c7b399061f"
+  },
+  "physical_devices": false
+}

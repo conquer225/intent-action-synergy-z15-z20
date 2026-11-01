@@ -1,0 +1,28 @@
+{
+  "fixture": true,
+  "operation": "integer_affine",
+  "input_shape": [
+    2
+  ],
+  "input_dtype": "int32",
+  "input_byte_order": "little",
+  "weights_by_output": [
+    [
+      2,
+      -1
+    ],
+    [
+      1,
+      3
+    ]
+  ],
+  "bias": [
+    0,
+    -1
+  ],
+  "accumulator": "signed int32; this fixture cannot overflow",
+  "output_layout": "flat output-index order",
+  "scaling": "none",
+  "rounding": "none",
+  "saturation": "none"
+}

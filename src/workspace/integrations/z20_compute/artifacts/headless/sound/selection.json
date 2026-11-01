@@ -1,0 +1,8 @@
+{
+  "criterion": "validation balanced accuracy; no test-derived hyperparameter sweep",
+  "old_version": "ec889c3d975c1601215025f2",
+  "old_validation_balanced_accuracy": 0.3649193548387097,
+  "new_version": "bcb91d05575221a77767cff1",
+  "new_validation_balanced_accuracy": 0.625,
+  "test_report_retained": "grouped_training.json"
+}

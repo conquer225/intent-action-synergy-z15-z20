@@ -1,0 +1,13 @@
+{
+  "confirmation_date": "2026-10-16",
+  "timezone": "Asia/Shanghai",
+  "user_statement": "两句都听清了",
+  "scope": "ARZOPA internal speaker; leveled need_water and need_help; digital volume 40%; each played twice",
+  "speech_audible_verified_by_user": true,
+  "music_audible_verified_by_user": false,
+  "video_audible_verified_by_user": false,
+  "unified_ui_integration_verified": false,
+  "original_homepage_restored": true,
+  "acquisition_restarted": false,
+  "motors_commanded": false
+}

@@ -1,0 +1,11 @@
+{
+  "font": "msyh.ttc",
+  "sizes": [
+    20,
+    28,
+    40
+  ],
+  "characters": 392,
+  "source_sha256": "8473ad606b5583ff4e4e1f739bb6224db07a06e89a8d1879a8c9236fe506be07",
+  "atlas_sha256": "ef3375f72bcba305c88ed42ddfce9b3d7aeba537772dfdbf2d17a7cd3bbd49ec"
+}

@@ -1,0 +1,16 @@
+{
+  "passed": false,
+  "c_simulation_passed": true,
+  "synthesis_passed": true,
+  "ip_generated": true,
+  "process_exit_clean": false,
+  "exit_code": 1,
+  "packaging_exit_code": 3221225477,
+  "scope": "HLS C simulation/synthesis/IP export only; no board implementation or test",
+  "sources": {
+    "build.tcl": "3a01927b7c822483eb9aeb18f428e7816f847430878ec50625717ac44a773f36",
+    "mlp.cpp": "8f12284c2c821dbb79615f26bc1fc85c767f633fe8406418f42726a2fafd0a56",
+    "mlp.h": "6cc666a0f5d56864883d13d7e22b63b0023c49abeebf9647a78c012a6ac35941",
+    "test_mlp.cpp": "2adccacf3d3108625a8b69d06daf2677c2419e657c912f8586d1ef050cd37f4c"
+  }
+}

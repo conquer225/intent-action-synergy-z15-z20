@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "python_files_compiled": 4,
+  "python38_syntax_parse_passed": true,
+  "runtime_versions_exercised": [
+    "3.14.7"
+  ],
+  "source_hashes_verified": 45,
+  "excerpt_values_verified": 34,
+  "golden_input_and_model_hashes_verified": true
+}

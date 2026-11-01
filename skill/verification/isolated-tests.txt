@@ -1,0 +1,19 @@
+test_disconnect_or_invalid_result_clears_current_display (test_tools.ToolTests.test_disconnect_or_invalid_result_clears_current_display) ... ok
+test_display_rejects_boolean_in_place_of_epoch_or_sequence (test_tools.ToolTests.test_display_rejects_boolean_in_place_of_epoch_or_sequence) ... ok
+test_golden_handles_case_order_and_float_tolerance_without_rounding_int64 (test_tools.ToolTests.test_golden_handles_case_order_and_float_tolerance_without_rounding_int64) ... ok
+test_golden_rejects_altered_input_model_or_a_single_integer (test_tools.ToolTests.test_golden_rejects_altered_input_model_or_a_single_integer) ... ok
+test_golden_rejects_empty_duplicate_nonfinite_and_missing_cases (test_tools.ToolTests.test_golden_rejects_empty_duplicate_nonfinite_and_missing_cases) ... ok
+test_heartbeat_does_not_make_an_expired_result_fresh (test_tools.ToolTests.test_heartbeat_does_not_make_an_expired_result_fresh) ... ok
+test_hwh_package_is_checked_even_when_its_new_hash_matches (test_tools.ToolTests.test_hwh_package_is_checked_even_when_its_new_hash_matches) ... ok
+test_matching_overlay_passes_static_check_without_claiming_board_execution (test_tools.ToolTests.test_matching_overlay_passes_static_check_without_claiming_board_execution) ... ok
+test_overlay_rejects_path_escape_and_truncated_header_even_with_matching_hash (test_tools.ToolTests.test_overlay_rejects_path_escape_and_truncated_header_even_with_matching_hash) ... ok
+test_same_input_golden_output_matches_every_integer (test_tools.ToolTests.test_same_input_golden_output_matches_every_integer) ... ok
+test_session_audit_detects_old_session_old_mode_and_duplicate_acceptance (test_tools.ToolTests.test_session_audit_detects_old_session_old_mode_and_duplicate_acceptance) ... ok
+test_trace_clock_regression_is_an_input_error (test_tools.ToolTests.test_trace_clock_regression_is_an_input_error) ... ok
+test_valid_trace_rejects_old_mode_and_clears_display_before_reconnect (test_tools.ToolTests.test_valid_trace_rejects_old_mode_and_clears_display_before_reconnect) ... ok
+test_wrong_package_corrupted_file_and_missing_ip_are_rejected (test_tools.ToolTests.test_wrong_package_corrupted_file_and_missing_ip_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 6.908s
+
+OK

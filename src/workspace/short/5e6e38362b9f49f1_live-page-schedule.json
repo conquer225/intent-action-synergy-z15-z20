@@ -1,0 +1,1 @@
+{"observations": [{"page": "video", "ssvep_reason": "page_task_suspended", "valid": false}, {"page": "drive", "ssvep_reason": "page_task_resumed", "valid": false}, {"page": "video", "ssvep_reason": "page_task_suspended", "valid": false}], "clean_exit_restores_standalone": true, "seed_remains_paused": true, "actual_HDMI_display_tested": false, "physical_output_enabled": false}

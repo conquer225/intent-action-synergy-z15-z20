@@ -1,0 +1,10 @@
+{
+  "additionalFiles": "..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..,..\\..",
+  "builtInLibrariesFolders": "C:\\Users\\conquer\\AppData\\Local\\Arduino15\\libraries",
+  "compiler.optimization_flags": "-Os",
+  "customBuildProperties": "compiler.cpp.extra_flags=-DMULTICONTROL_AUTO_START=0,build.warn_data_percentage=75",
+  "fqbn": "esp32:esp32:esp32s3:CDCOnBoot=cdc,USBMode=hwcdc",
+  "hardwareFolders": "c:\\Users\\conquer\\AppData\\Local\\Arduino15\\packages",
+  "otherLibrariesFolders": "c:\\Users\\conquer\\Documents\\Arduino\\libraries",
+  "sketchLocation": "D:\\emg_mpu_pendulum\\esp32\\MultiControlS3"
+}

@@ -1,0 +1,80 @@
+{
+  "sd01": {
+    "audio_present": false,
+    "audio_output": false,
+    "source": "/home/xilinx/gl-hdmi-live-20261008-ea117349/assets/sd01/portrait-source.avi",
+    "source_sha256": "6b149c7ffe66f04877000a38eaf1d9b43184eadf432814cae31f4caa69e5cf6c",
+    "video_seconds": 17.5,
+    "audio_played": false,
+    "PL_loaded": false,
+    "ready": false,
+    "reason": "source_has_no_audio_track"
+  },
+  "sd02": {
+    "audio_present": false,
+    "audio_output": false,
+    "source": "/home/xilinx/gl-hdmi-live-20261008-ea117349/assets/sd02/portrait-source.avi",
+    "source_sha256": "2382702ed4568e5cf59e9582300bdae0b01fd28dcc570b4b27a9d994648c2685",
+    "video_seconds": 10.2,
+    "audio_played": false,
+    "PL_loaded": false,
+    "ready": false,
+    "reason": "source_has_no_audio_track"
+  },
+  "afbb05f8cef54ef9a7ddadbf2613b0e6": {
+    "audio_present": false,
+    "audio_output": false,
+    "source": "/home/xilinx/gl-file-video-405b53cb4d/uploads/afbb05f8cef54ef9a7ddadbf2613b0e6.mp4",
+    "source_sha256": "b05033b137d6d065de445df1563c283e61852dd95f81d61490f31d5a26c0f43e",
+    "video_seconds": 6.0,
+    "audio_played": false,
+    "PL_loaded": false,
+    "ready": false,
+    "reason": "source_has_no_audio_track"
+  },
+  "d87609d9be1c4738ba9dc378438d9935": {
+    "audio_present": true,
+    "audio_output": false,
+    "format": "pcm_s16le",
+    "sample_rate": 48000,
+    "channels": 2,
+    "samples": 129024,
+    "decoded_frames": 126,
+    "duration_seconds": 2.688,
+    "first_pts_seconds": 0.0,
+    "timestamp_discontinuities": 0,
+    "wall_seconds": 0.194713,
+    "source": "/home/xilinx/gl-file-video-405b53cb4d/uploads/d87609d9be1c4738ba9dc378438d9935.mp4",
+    "source_sha256": "3fe1eacc6f3472327359dcb667e44fea59f099b5dd1e223eded48efccca43434",
+    "video_seconds": 2.75,
+    "audio_played": false,
+    "PL_loaded": false,
+    "level": {
+      "source": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935-decoded.wav",
+      "target": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+      "before": {
+        "frames": 129024,
+        "peak": 924,
+        "rms": 166.40926657924197,
+        "peak_dbfs": -30.995559274792225,
+        "rms_dbfs": -45.88544856873273
+      },
+      "after": {
+        "frames": 129024,
+        "peak": 12881,
+        "rms": 2319.7951029321166,
+        "peak_dbfs": -8.110007094582595,
+        "rms_dbfs": -23.000006153063225
+      },
+      "gain_db": 22.885448568732727,
+      "source_sha256": "16e5de83622862e0b6f2a57027b3bc26a2e375d87a924ff68b0756cbb532f9eb",
+      "target_sha256": "820fc0fa87682a25e06b125989c33c921863095342800a2fb47aa8ab85cbd37d",
+      "hardware_opened": false,
+      "perceived_loudness_verified": false
+    },
+    "ready": true,
+    "path": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+    "sha256": "820fc0fa87682a25e06b125989c33c921863095342800a2fb47aa8ab85cbd37d",
+    "av_duration_difference_s": -0.06199999999999983
+  }
+}

@@ -1,0 +1,568 @@
+{
+  "basis": "2026-10-16 installed boot pins, matched by actual file hash",
+  "live_board_checked": false,
+  "matched": [
+    {
+      "board_path": "/etc/udev/rules.d/70-guardianloop-eyechip-power.rules",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\70-guardianloop-eyechip-power.rules",
+      "expected_sha256": "d7a0f71f3cd2293cd7fff1f243b394a259ef8f3b6c0a2715962756affedf3d66",
+      "package_path": "latest_saved_runtime/rootfs/etc/udev/rules.d/70-guardianloop-eyechip-power.rules"
+    },
+    {
+      "board_path": "/etc/udev/rules.d/99-guardianloop-cyton-identity.rules",
+      "source": "D:\\ican\\codex_project\\pynq_guardianloop\\99-guardianloop-cyton-identity.rules",
+      "expected_sha256": "11a29d48ca9d1ca66022c86d34813cd9efccc6c8b037f0cf80b35a0ab616f5e0",
+      "package_path": "latest_saved_runtime/rootfs/etc/udev/rules.d/99-guardianloop-cyton-identity.rules"
+    },
+    {
+      "board_path": "/home/xilinx/brain_eye_coexist_20261005/eye/src/coexist_guard.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\cyton_reconnect_20261013\\payload\\05-coexist_guard.py",
+      "expected_sha256": "5e2e0a52e021b96d616b5eaf6cc07a1fc66e3bfbb8d4e74ae97ce8c335f8575a",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/brain_eye_coexist_20261005/eye/src/coexist_guard.py"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-audio-installed-20261016-2jBKz1/guardianloop_display_audio.bit",
+      "source": "D:\\ican\\codex_project\\z15_hdmi_audio\\output\\full_11\\candidate\\guardianloop_display_audio.bit",
+      "expected_sha256": "ef60c903c519efb7b4eb5dbcadca1594208f5049207e1a92e422b918dbaae2f6",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-audio-installed-20261016-2jBKz1/guardianloop_display_audio.bit"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-audio-installed-20261016-2jBKz1/guardianloop_display_audio.hwh",
+      "source": "D:\\ican\\codex_project\\z15_hdmi_audio\\output\\full_11\\candidate\\guardianloop_display_audio.hwh",
+      "expected_sha256": "e7c3bcb9024393fba331f6b0c9b85b4a488832555c06309142703b308819767d",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-audio-installed-20261016-2jBKz1/guardianloop_display_audio.hwh"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/audio_session.py",
+      "source": "D:\\ican\\codex_project\\z15_hdmi_audio\\audio_session.py",
+      "expected_sha256": "bf419f8a93af02828b0d49e7d6ee2662f27da8f672c9dd2aff6c9f1d619e6714",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-live-20261008-ea117349/audio_session.py"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/frame_fitter.so",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\hdmi_bgr_install_20261010\\active-backup\\frame_fitter.so",
+      "expected_sha256": "68085bd0b802550dda2e6610270e8ee1beb79d914a3e78637f2db326a6688021",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-live-20261008-ea117349/frame_fitter.so"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/hdmi_boot.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\hdmi_boot.py",
+      "expected_sha256": "b5e0a26a89bf911a6e3cb3a86b8e0ef14b24bb57304ccf6605c40ec46766c136",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-live-20261008-ea117349/hdmi_boot.py"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/hdmi_live_entry.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\hdmi_live_entry.py",
+      "expected_sha256": "56b4270fbc8195fe7677c481ad878ee39ece6f6fbac038462860971068b02a4d",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-live-20261008-ea117349/hdmi_live_entry.py"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/hdmi_live_session.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\hdmi_live_session.py",
+      "expected_sha256": "91abe1976eeca441fe27a2dd7d672517352278c8b364916148315eefd4f37d9f",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-live-20261008-ea117349/hdmi_live_session.py"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/hdmi_stimulus.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\hdmi_stimulus.py",
+      "expected_sha256": "605b0d1cf9fd973f56e709d0d4d99f2a6639cb95cba9a2e3add473e8802630ba",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-live-20261008-ea117349/hdmi_stimulus.py"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/media_player.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\media_player.py",
+      "expected_sha256": "3f5d0553a2e46ab3dc31c3482878832d388f1516f56cfd215179a4f3fdad0db2",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-live-20261008-ea117349/media_player.py"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/media_server.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\media_server.py",
+      "expected_sha256": "c5397d98b20a956707ccf2ec32d8314f8ff038e61a1980466e72f2428834ffcf",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-live-20261008-ea117349/media_server.py"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/native_scan.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\native_scan.py",
+      "expected_sha256": "2c4730c3ef3bbc7a424229b60b29da58a9241653c49118d3a4ac85c792185356",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-live-20261008-ea117349/native_scan.py"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/page_audio.py",
+      "source": "D:\\ican\\codex_project\\z15_hdmi_audio\\page_audio.py",
+      "expected_sha256": "2a0b6d77ae1e911930be0d185532868e5b3b920e8032e9e9f3f80eba8cd7fe5e",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-live-20261008-ea117349/page_audio.py"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/prewear.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\prewear.py",
+      "expected_sha256": "799f30e93238b24d9f113f2084a8f04a8dec386bed2945b699e6d3dde2a691c1",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-live-20261008-ea117349/prewear.py"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/system_hdmi.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\system_hdmi.py",
+      "expected_sha256": "4cdf7ed38753d819f4f5d2e7ad5650cfa24529292dfa479fe184d6403b772e5a",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-live-20261008-ea117349/system_hdmi.py"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/system_mobile.html",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\system_mobile.html",
+      "expected_sha256": "ebb0a33524c66fb6d376b411607d8b13df64b3de71d13a2b4dfe5deab22b3237",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-live-20261008-ea117349/system_mobile.html"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/system_mobile.js",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\system_mobile.js",
+      "expected_sha256": "9b35c724510f9de3736697e9b312d4e6a7d1aa9e0cb318295b5a2bdccb933ae5",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-live-20261008-ea117349/system_mobile.js"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/system_runtime/guardianloop_system/live_inputs.py",
+      "source": "D:\\ican\\codex_project\\guardianloop_system\\live_inputs.py",
+      "expected_sha256": "909c779b5efc94887b3aaaf0579746ce4a8e40877eb463595705931b66707e1d",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-live-20261008-ea117349/system_runtime/guardianloop_system/live_inputs.py"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/system_runtime/wheelchair_ssvep/bench_network_bridge.py",
+      "source": "D:\\ican\\codex_project\\wheelchair_ssvep\\bench_network_bridge.py",
+      "expected_sha256": "80f97fb31373492ffc0afc393b9e1c3f6716e9898dcf81a5665caf96ed42aa08",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-live-20261008-ea117349/system_runtime/wheelchair_ssvep/bench_network_bridge.py"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/wheelchair_link.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\wheelchair_link.py",
+      "expected_sha256": "41e09ce3e54dbdcdd3cf64527f3cf445e7693cb92d176e359cb8db23fd22c2c8",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-live-20261008-ea117349/wheelchair_link.py"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-software-20261008-6797e092/runtime/ssvep_cue_runtime.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\hdmi_replay_goal_20261013\\verified-ssvep_cue_runtime.py",
+      "expected_sha256": "78efb8e1211369dbc58886b7244d5f40783ad19484d070da885ed8b3525bc9e5",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-software-20261008-6797e092/runtime/ssvep_cue_runtime.py"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-software-20261008-6797e092/runtime/ssvep_free.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\hdmi_replay_goal_20261013\\reference-ssvep_free.py",
+      "expected_sha256": "40d3c8cea920101dc84c411909be0d421eb30f45a77227e55a0a781b7d646384",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-software-20261008-6797e092/runtime/ssvep_free.py"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-software-20261008-6797e092/runtime/ssvep_hdmi.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\hdmi_replay_goal_20261013\\reference-ssvep_hdmi.py",
+      "expected_sha256": "39baf3e4c380d10b0fa93116f0ddf26d05de52799fd3161d84476ee0e4afa68c",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/gl-hdmi-software-20261008-6797e092/runtime/ssvep_hdmi.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/async_primary.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\cyton_boot_configuration_20261012\\before-async_primary.py",
+      "expected_sha256": "f38e2e4da5623fb2a59be19cde59a346c5b1f634a3fd370f23a1cf873f006498",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/async_primary.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/async_seed_candidate.py",
+      "source": "D:\\ican\\codex_project\\output\\handoff_source_audit_20261008_0007\\projects\\codex_project\\pynq_guardianloop\\async_seed_candidate.py",
+      "expected_sha256": "b42836114e59ab562031ad2ae159a08797d220f3cb948f002ea710da9c643710",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/async_seed_candidate.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/calibration_session.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\calibration_recovery_20261008\\payload\\02-calibration_session.py",
+      "expected_sha256": "12f7849a3f0e4a8c9bb87c60fe87e2e3fe63d17fe389b1fbca1723b6dc6c8e5c",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/calibration_session.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/cyton_covariance.py",
+      "source": "D:\\ican\\codex_project\\output\\handoff_source_audit_20261008_0007\\projects\\codex_project\\pynq_guardianloop\\cyton_covariance.py",
+      "expected_sha256": "3ac75c9b1dee4453a76b3f4fc585e31994e556a02e9e096583558034ff7e7463",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/cyton_covariance.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/cyton_fatigue.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\calibration_recovery_20261008\\payload\\01-cyton_fatigue.py",
+      "expected_sha256": "439b3a1771c7b1f99043dccc23157b326d2e17508e2e6bf471419da3396a5755",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/cyton_fatigue.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/cyton_fatigue_overlap4.json",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\cyton_fatigue_overlap4.json",
+      "expected_sha256": "18dd9908e01f4dd28e8ca1d7d20e3d207e51be779e76bfa4524b6857a36606a6",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/cyton_fatigue_overlap4.json"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/cyton_guardianloop.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\cyton_reconnect_20261013\\payload\\03-cyton_guardianloop.py",
+      "expected_sha256": "9865d4441cdb0ec0dcaa4557a74ea9eea663767a03b19bba90dea35b72f44454",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/cyton_guardianloop.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/cyton_reader_sink.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\input_repair_20261011\\payload\\01-cyton_reader_sink.py",
+      "expected_sha256": "706d215ee9e01e9bfb2754adda0e384461a3b754732616b5e1de715d44255829",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/cyton_reader_sink.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/cyton_sqi.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\input_repair_20261011\\payload\\02-cyton_sqi.py",
+      "expected_sha256": "c3e02bce5a283138e8c3f8edda51d49a45f0078c4a8ff6409c723f9cf12631a8",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/cyton_sqi.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/cyton_trial_recorder.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\prewear_hardening_20261008\\payload\\03-cyton_trial_recorder.py",
+      "expected_sha256": "29c721930b1b26526a23012413ae0b904cd64f0372ff9872dc8d05ea5346ade7",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/cyton_trial_recorder.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/experimental_eegnet.npz",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\experimental_eegnet.npz",
+      "expected_sha256": "178ad7c177adde6fdc939969a40bf25d9e0802d6b230b9127063f14c8402d7e6",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/experimental_eegnet.npz"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/experimental_rms_eegnet.npz",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\experimental_rms_eegnet.npz",
+      "expected_sha256": "363daf3b68da6e80495319052447ec83e06b9e3e327a1bd0ff9e6023a5b54221",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/experimental_rms_eegnet.npz"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/gameemo_covariance_svm.npz",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\gameemo_covariance_svm.npz",
+      "expected_sha256": "e379f2ba4569b63bf3cd85985a7936eb56bb38798473640a5657b9da4d107155",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/gameemo_covariance_svm.npz"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_acquisition.py",
+      "source": "D:\\ican\\codex_project\\pynq_guardianloop\\guardianloop_acquisition.py",
+      "expected_sha256": "40737762e64ae015be496d2f88f1d11fa220d8847e03407f51662046593c7935",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_acquisition.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_pynq.bit",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\guardianloop_pynq.bit",
+      "expected_sha256": "c39b891704471a712fb7be3591841af1dd6791387957b873b11450c99eca41ca",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_pynq.bit"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_pynq.hwh",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\guardianloop_pynq.hwh",
+      "expected_sha256": "2ab7ffa36398be4eee20d90512c7f1c6d29a7066c9d1bf0683a3bcad2501f92b",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_pynq.hwh"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_pynq.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\guardianloop_pynq.py",
+      "expected_sha256": "9ec1f7a8d56c8e2e75ed9b90095881b23551b375a1c80393472caaba981ab9d1",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_pynq.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_startup.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\guardianloop_startup.py",
+      "expected_sha256": "61630c7aa4d231e574e921a39d853c25e55d51ee9bfb62d7fda35de3c148de03",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_startup.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_web.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\cyton_boot_configuration_20261012\\before-guardianloop_web.py",
+      "expected_sha256": "9bac945729a011c506c70228d049b3362104fe849d2500da7d28ece0f1a397c3",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_web.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_acquisition.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\input_repair_20261011\\candidate\\mi_acquisition.py",
+      "expected_sha256": "796063481367ab6e75a948d509543fa8926f6373d2933e662f6befd3c2a989f9",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_acquisition.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_cued.html",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\mi_cued.html",
+      "expected_sha256": "b373e0943ffa5dacdd587355291935cb87b8edab0ab3e320819179e0b6590696",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_cued.html"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_cued.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\mi_cued.py",
+      "expected_sha256": "6aae23e3c4e00d66d583365b15743d8a994b41044f21c979850bc96926193fe3",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_cued.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_cued_server.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\mi_cued_server.py",
+      "expected_sha256": "852661194e574d889130bad6a876f337ac2a84b34e0ae6070a3ddbead833f333",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_cued_server.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_eegnet_portable.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\mi_eegnet_portable.py",
+      "expected_sha256": "c220761ed1b20b76b483c3eb8d46f79f287f17200fa3e5c45350de967c5986d0",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_eegnet_portable.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_eegnet_rms.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\mi_eegnet_rms.py",
+      "expected_sha256": "fb2ff5451ed36c89239508111d47959b9739b41619f36aed91a522ac9e0a935f",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_eegnet_rms.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_features.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\mi_features.py",
+      "expected_sha256": "3688195f63ac5e2bad4547136d851d26aed47f587903dadd8d808fc2b2453faa",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_features.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_rms_live_virtual.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\mi_rms_live_virtual.py",
+      "expected_sha256": "84ce148937a388ef8ff9fad2778d451c3c9b68a35dc1a8e1cb9745c1457a237b",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_rms_live_virtual.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_service_config.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\mi_service_config.py",
+      "expected_sha256": "a6bdd3e2e1bf707745ca645fba4b55692a32d956f794ad9efc35674f7479fbfa",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_service_config.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_web_bridge.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\mi_web_bridge.py",
+      "expected_sha256": "d11ee02a4afa01950d38570476cd4c0bc7b78dccfcb898590f80dbdaf2f91380",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_web_bridge.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_window_rms.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\mi_window_rms.py",
+      "expected_sha256": "3eb2252f4607086e8ed32d3fe4ab31998438cb057436c75b1af59ba8cdd652f1",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/mi_window_rms.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/mobile.html",
+      "source": "D:\\ican\\codex_project\\output\\handoff_source_audit_20261008_0007\\projects\\codex_project\\pynq_guardianloop\\mobile.html",
+      "expected_sha256": "e6ceab9370dbb6f45142cc9429f896a71e2a420d597b92682f7f53142cbc34a8",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/mobile.html"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/mobile.js",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\cyton_boot_configuration_20261012\\before-mobile.js",
+      "expected_sha256": "e212e8e8b6c692fa3ec0711c9b1014a1fb7c4f26aefa20babfda1726ac784493",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/mobile.js"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/page_policy.py",
+      "source": "D:\\ican\\codex_project\\guardianloop_system\\page_policy.py",
+      "expected_sha256": "667631ce9cc670e04b31031212efc91bfa850114dfd74c2470aac4c4d63a1eb9",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/page_policy.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/pl_causal_filter.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\pl_causal_filter.py",
+      "expected_sha256": "1bf51cdb121f63294215f886d821ae0373a56cafef2125e3f49a18df7b1aa18b",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/pl_causal_filter.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/primary_window.py",
+      "source": "D:\\ican\\codex_project\\pynq_guardianloop\\primary_window.py",
+      "expected_sha256": "7efb57cf4ad0f97717eb1f90ab6ec4561aea0485e3a795d31d93b36ec0d4d516",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/primary_window.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/release_manifest.json",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\cyton_reconnect_20261013\\payload\\04-release_manifest.json",
+      "expected_sha256": "f26fa30b19e110ec18e800a1779a06b2e003dcf48fb1dfddc214df368f4f4b26",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/release_manifest.json"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/seed_gate_policy.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\seed_gate_policy.py",
+      "expected_sha256": "b8029403a31a0d43ce5b099b227400b6f34b395f421e9408219759554907a0a4",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/seed_gate_policy.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/seed_quality_runtime.py",
+      "source": "D:\\ican\\codex_project\\output\\handoff_source_audit_20261008_0007\\projects\\codex_project\\pynq_guardianloop\\seed_quality_runtime.py",
+      "expected_sha256": "7556e61c40300fd1257a71d112442e8c92a8e105017a98b8c3d1c8ca0cade31b",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/seed_quality_runtime.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/seed_replay_check.py",
+      "source": "D:\\ican\\codex_project\\output\\handoff_source_audit_20261008_0007\\projects\\codex_project\\pynq_guardianloop\\seed_replay_check.py",
+      "expected_sha256": "fb76320b156c68ce2934be23e3111ee5f8586d97746c7af3be61b5160ac3bb64",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/seed_replay_check.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/seed_shadow.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\seed_shadow.py",
+      "expected_sha256": "0e8c341fb0ddba7dd3dc5dfc9262a36a17c8e8a4e2653364848aa17a9f9f79fb",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/seed_shadow.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/seed_shadow_policy.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\seed_shadow_policy.py",
+      "expected_sha256": "2493640bbc5df91bf1545b7edbee79586af3bbf0ddf33b6b1ff2d4c1d2450c83",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/seed_shadow_policy.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/seed_shadow_weights.npz",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\seed_shadow_weights.npz",
+      "expected_sha256": "efc86603148130f3bd25deb0f853fb02fb753b25f4256ee01ed58a12e6b75dca",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/seed_shadow_weights.npz"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_acquisition.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\input_repair_20261011\\payload\\04-ssvep_acquisition.py",
+      "expected_sha256": "da105230de7041a0103d88abd3e40c32f47cdfb829fc6deaf355df4c8c360caa",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_acquisition.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_candidate_sos.npy",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\ssvep_candidate_sos.npy",
+      "expected_sha256": "bf074f6175e694ed869621ae897aac88cf5164cd1684a32c463c5d407b3b180c",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_candidate_sos.npy"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_causal_protocol.json",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\ssvep_causal_protocol.json",
+      "expected_sha256": "2a23f3ce2c6497cca416c0f31c044c496d16197cf2bd63cdc9fbb43cb3c26d0f",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_causal_protocol.json"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_core.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\ssvep_core.py",
+      "expected_sha256": "a1a57465c97608ce6ff84b6261a29ef46fc626bec676eb5af1fd4fd0a67c012c",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_core.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_cue_runtime.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\hdmi_replay_goal_20261013\\verified-ssvep_cue_runtime.py",
+      "expected_sha256": "78efb8e1211369dbc58886b7244d5f40783ad19484d070da885ed8b3525bc9e5",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_cue_runtime.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_cued.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\ssvep_cued.py",
+      "expected_sha256": "7ce915e4889649fa727c62c7792da1e4ba7acaa799748dc7bc0311432ba633f5",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_cued.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_free.html",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\input_repair_20261011\\payload\\08-ssvep_free.html",
+      "expected_sha256": "f75f2ab5ae5d3e202edcb8dcc321c8f04b4ace44f17294829a50c60cec2b4977",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_free.html"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_free.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\hdmi_replay_goal_20261013\\reference-ssvep_free.py",
+      "expected_sha256": "40d3c8cea920101dc84c411909be0d421eb30f45a77227e55a0a781b7d646384",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_free.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_hdmi.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\hdmi_replay_goal_20261013\\reference-ssvep_hdmi.py",
+      "expected_sha256": "39baf3e4c380d10b0fa93116f0ddf26d05de52799fd3161d84476ee0e4afa68c",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_hdmi.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_input_prepare.js",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\input_repair_20261011\\payload\\09-ssvep_input_prepare.js",
+      "expected_sha256": "ff594f0e2cb39a8f097bfe119614eeccd7a94b21837d17aa3ea1b711e0b754fa",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_input_prepare.js"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_recording.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\prewear_hardening_20261008\\payload\\02-ssvep_recording.py",
+      "expected_sha256": "9278144fef1b5eb698abf1adb7e6b3ebd242251beb9bffd0938ff5d71a0b4a64",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_recording.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_shadow.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\ssvep_shadow.py",
+      "expected_sha256": "490be63357dab77e3b67388f5a8b1cca8476a0defcf9585b781978a639613b92",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_shadow.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_stream.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\ssvep_stream.py",
+      "expected_sha256": "61351b4831b92f64faaa6f9a68225a63a5f21145adbba974ff8099bd35214189",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_stream.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_study.py",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\output\\snapshot_20261005_03\\brain\\ssvep_study.py",
+      "expected_sha256": "30c87452b440ef7d06fef45cbcba66a9d03d4d5fe58a9218089f48b5a332ffd0",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/ssvep_study.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/telemetry_json.py",
+      "source": "D:\\ican\\codex_project\\pynq_guardianloop\\telemetry_json.py",
+      "expected_sha256": "98285c15aea909d408d5b57f38de6c391b8026b6983fd54e0e352f948b4e4a9f",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/telemetry_json.py"
+    },
+    {
+      "board_path": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/wear_session.py",
+      "source": "D:\\ican\\codex_project\\phone_video_upload\\output\\prewear_hardening_20261008\\payload\\01-wear_session.py",
+      "expected_sha256": "49f10f8b10c8f4a3fb058921300585a27ebf3209587c8416d6266f3b843560bb",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/jupyter_notebooks/guardianloop_pynq/wear_session.py"
+    },
+    {
+      "board_path": "/home/xilinx/tobii_z15/overlay/eye_wifi.bit",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\candidate\\eye\\overlay\\eye_wifi.bit",
+      "expected_sha256": "8b52892466a1b4d025c5c693a951727ae6215e57ca3e5fa0dedaa2a1d510d50f",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/tobii_z15/overlay/eye_wifi.bit"
+    },
+    {
+      "board_path": "/home/xilinx/tobii_z15/overlay/eye_wifi.hwh",
+      "source": "D:\\ican\\codex_project\\brain_eye_coexist\\candidate\\eye\\overlay\\eye_wifi.hwh",
+      "expected_sha256": "5dcfe537c6793f5b18b47550f73078ab8d73500888e585037a707c8be1ebacef",
+      "package_path": "latest_saved_runtime/rootfs/home/xilinx/tobii_z15/overlay/eye_wifi.hwh"
+    }
+  ],
+  "missing": [
+    {
+      "board_path": "/etc/systemd/system/guardianloop-cyton.service.d/60-primary-worker.conf",
+      "expected_sha256": "874f1a272ab155fa11d2bc4077b9dbf4eb97638a9993c55e53984d331e1cec83"
+    },
+    {
+      "board_path": "/etc/systemd/system/guardianloop-hdmi-entry.service.d/10-after-boot.conf",
+      "expected_sha256": "bfe4104e1ae69ead2f06b6370034094ebf11fa4a48029e050206d4919f0eb3af"
+    },
+    {
+      "board_path": "/home/xilinx/gl-audio-20261016-2DNzVe/carefree_48k.wav",
+      "expected_sha256": "4d582429eefecc3d89c0c96cab6405b43141304f5991d0ae21bef12b80a67835"
+    },
+    {
+      "board_path": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_help_48k.wav",
+      "expected_sha256": "8d7381b55c341b8ff1eff45c4f64b9f872bd1b8e44ee94393180052109863b32"
+    },
+    {
+      "board_path": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_water_48k.wav",
+      "expected_sha256": "bc6d71045fd967959ff317bdfa653eb1b2033dd7be6d88c3283eeac88ccdda77"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/libguardianloop_scan.so",
+      "expected_sha256": "c43866c005586cb891312099bbf29301f8cd015e5841021943ac6fc3a4e404c4"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/media_state.json",
+      "expected_sha256": "be83ab97a51e9120c82c462b65f9729f71609e9bd3e8f477b5a5be1c70498513"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/menu-shells-portrait-live.npz",
+      "expected_sha256": "f5c36341b74088ecac19aac73cadf9def5b17598c5ea4ece6d82830737c45307"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-live-20261008-ea117349/system_runtime/guardianloop_system/core.py",
+      "expected_sha256": "2e95f38939f1173ce98247bae0bed610bd75a25efb7345abc5cd3bdf535a156c"
+    },
+    {
+      "board_path": "/home/xilinx/gl-hdmi-software-20261008-6797e092/phone_video_upload/libguardianloop_scan.so",
+      "expected_sha256": "a3bd7664768405b212b8713fd0d79ab0a8c2634e497f5cc35a0f72087100c7fb"
+    },
+    {
+      "board_path": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+      "expected_sha256": "820fc0fa87682a25e06b125989c33c921863095342800a2fb47aa8ab85cbd37d"
+    },
+    {
+      "board_path": "/home/xilinx/gl-pcm-player-20261016-TA9R7U/pcm_player",
+      "expected_sha256": "36809ed09748340b056947e209fc5c45a4af4ebe71d0964a0a8de2644d0559d0"
+    }
+  ],
+  "status": "partial",
+  "note": "Not an atomic current board snapshot. Sanitized text has new hashes; do not deploy old pins blindly."
+}

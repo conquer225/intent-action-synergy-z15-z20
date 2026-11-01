@@ -1,0 +1,15 @@
+{
+  "extends": "ssvep_wearable_protocol.json",
+  "study": "O1/O2-only calibration-free SSVEP independent holdout",
+  "subject_ids": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
+  "candidate_subsets": {
+    "4-frequency-spaced": [0, 1, 2, 11]
+  },
+  "holdout_notes": [
+    "Subjects 11-30 were not used in the 1-10 pilot or to select method parameters.",
+    "The secondary four-frequency task uses 9.25, 11.25, 13.25, and 14.75 Hz, selected by spacing, not observed pilot accuracy.",
+    "The 12-class endpoint remains primary and must not be replaced by the easier four-class endpoint.",
+    "No training, personalization, or quality threshold is fitted on holdout subjects.",
+    "Both wet and dry electrodes and both 1 s and 2 s windows are reported regardless of outcome."
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "checkpoint": "D:\\ican\\整理\\2026计设\\2026039959-02 素材与源码\\2026039959-素材源码\\ViFormerNet\\route_b_8ch_model.pth",
+  "channels": [
+    "FT7",
+    "FT8",
+    "CP1",
+    "CP2",
+    "P1",
+    "PZ",
+    "PO3",
+    "O1"
+  ],
+  "input_shape": [
+    1,
+    8,
+    5
+  ],
+  "parameters": 432988,
+  "fp32_parameter_bytes": 1731952,
+  "checkpoint_bytes": 1828433,
+  "torchscript_bytes": 1777032,
+  "torchscript_max_abs_error": 0.0,
+  "desktop_cpu": {
+    "median_ms": 3.8383000000000003,
+    "p95_ms": 4.67922,
+    "mean_ms": 3.5004133333333334
+  },
+  "cuda_available": true,
+  "desktop_gpu": {
+    "median_ms": 6.4982,
+    "p95_ms": 8.208825000000001,
+    "mean_ms": 6.705327333333333
+  },
+  "gpu_name": "NVIDIA GeForce RTX 4060 Laptop GPU"
+}

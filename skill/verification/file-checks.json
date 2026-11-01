@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "method": "Python stdlib file-level inspection of actual delivered contents",
+  "utf8_text_files": 44,
+  "markdown_files": 17,
+  "local_links_checked": 64,
+  "json_files_parsed": 13,
+  "jsonl_rows_parsed": 31,
+  "unexpected_binary_or_cache_files": false,
+  "privacy_literal_scan": "no IPv4 or MAC literals; source excerpts selected rather than copied in full",
+  "isolated_run_inputs_unchanged": true,
+  "observation_sources_all_indexed": true,
+  "errors": [],
+  "sha256_manifest_excludes_itself": true,
+  "tracked_diff_whitespace_check_passed": true
+}

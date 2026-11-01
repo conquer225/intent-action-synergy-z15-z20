@@ -1,0 +1,25 @@
+/include/ "z20-video-npu-candidate.dts"
+
+/ {
+ model = "ALIENTEK Z20 continuous stereo with passive frame observer";
+ /delete-node/ cam0-i2c;
+ /delete-node/ cam1-i2c;
+ /delete-node/ udmabuf0;
+ /delete-node/ udmabuf1;
+ reserved-memory {
+  #address-cells = <1>;
+  #size-cells = <1>;
+  ranges;
+  video_ring: video@1000000 {
+   reg = <0x01000000 0x007e9000>;
+   no-map;
+  };
+ };
+ video-observer@43c20000 {
+  compatible = "generic-uio";
+  linux,uio-name = "z20-video-observer";
+  reg = <0x43c20000 0x10000>, <0x01000000 0x007e9000>;
+  reg-names = "observer", "frame-ring";
+  status = "okay";
+ };
+};

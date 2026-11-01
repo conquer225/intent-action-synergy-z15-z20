@@ -1,0 +1,32 @@
+{
+  "session": "play-fb31f2d0",
+  "checks": [
+    {
+      "wall_s": 40.40699999999924,
+      "new_frames": 778,
+      "buffering_polls": 0,
+      "brain": {
+        "connected": true,
+        "state": "no_data",
+        "fatigue": {
+          "valid": false,
+          "level": "unknown",
+          "state": "no_data"
+        },
+        "emotion": {
+          "valid": false,
+          "state": "no_data"
+        },
+        "source": "live_board_api",
+        "updated_monotonic": 62353.721991939,
+        "transport_error": null,
+        "physical_output_enabled": false
+      },
+      "eye": {}
+    },
+    {
+      "controlled_stop": true,
+      "original_restored": true
+    }
+  ]
+}

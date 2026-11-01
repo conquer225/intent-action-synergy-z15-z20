@@ -1,0 +1,220 @@
+{
+  "installed": true,
+  "player": {
+    "state": "menu",
+    "silent": false,
+    "frame": 0,
+    "session_id": "play-85593c12",
+    "audio_output": true,
+    "audio": {
+      "backend": "candidate_hdmi_pcm",
+      "volume_percent": 40,
+      "kind": null,
+      "reason": "page_without_audio_or_video_paused",
+      "player": {
+        "phase": "idle",
+        "revision": 0,
+        "pid": null,
+        "audible_verified": false,
+        "requested_revision": 0,
+        "worker_alive": true,
+        "errors": []
+      },
+      "video_offset_estimate_ms": null,
+      "speaker_latency_measured": false
+    },
+    "user_controlled": true,
+    "command_receipt": null,
+    "system": {
+      "page": "home",
+      "page_id": 1,
+      "title": "GuardianLoop \u7efc\u5408\u7cfb\u7edf",
+      "labels": [
+        "\u901f\u5ea6\u4e0e\u65b9\u5411",
+        "\u4ea4\u6d41\u8868\u8fbe",
+        "\u591a\u5a92\u4f53"
+      ],
+      "reading": false,
+      "direction": "stop",
+      "direction_armed": false,
+      "speed_level": 1,
+      "selected_frequency": null,
+      "force_stopped": false,
+      "fatigue_ack_ready": false,
+      "fatigue_ack_reason": "\u7b49\u5f85\u65b0\u9c9c\u4e14\u8d28\u91cf\u5408\u683c\u7684\u6b63\u5e38\u75b2\u52b3\u7ed3\u679c\uff0c\u65b9\u5411\u4fdd\u6301\u9501\u5b9a",
+      "direction_idle_remaining_s": null,
+      "direction_idle_enabled": false,
+      "speed_unit": "virtual_level_not_kmh",
+      "video_index": 1,
+      "rating": null,
+      "song_index": 0,
+      "phrase": null,
+      "alerts": {},
+      "monitor_labels": {},
+      "mi_first_confirmed": false,
+      "mi_neutral_rearmed": false,
+      "mi_pair_timeout_s": 8.0,
+      "last_action": "\u5207\u6362\u754c\u9762",
+      "last_selection": null,
+      "exited": false,
+      "events": [
+        {
+          "action": "\u64a4\u9500\u65b9\u5411",
+          "monotonic": 11808.277537228,
+          "reason": "page_transition",
+          "physical_output_enabled": false
+        },
+        {
+          "action": "\u5207\u6362\u754c\u9762",
+          "monotonic": 11808.277537228,
+          "page": "home"
+        }
+      ],
+      "mode": "live_readonly_hdmi",
+      "audio_output": false,
+      "physical_output_enabled": false,
+      "live_eeg_connected": false,
+      "live_gaze_connected": false,
+      "stimulus_enabled": false,
+      "hardware_speed_supported": false,
+      "brain_api_connected": true,
+      "primary_monitoring_always_enabled": true,
+      "optional_task_schedule": "page_lease",
+      "brain": {
+        "connected": true,
+        "state": "no_data",
+        "acquisition_available": true,
+        "fatigue": {
+          "valid": false,
+          "level": "unknown",
+          "state": "no_data"
+        },
+        "emotion": {
+          "valid": false,
+          "state": "no_data"
+        },
+        "source": "live_board_api",
+        "updated_monotonic": 11816.026522244,
+        "transport_error": null,
+        "ssvep_hdmi": {
+          "policy": "ssvep-hdmi-experimental-v1",
+          "control_enabled": false,
+          "production_eligible": false,
+          "observation_mode": "producer_callbacks",
+          "confidence_validated": false,
+          "idle_classifier_validated": false,
+          "display_verified_optically": false,
+          "min_score": 0.55,
+          "min_margin": 0.1,
+          "confirmation": "two_nonoverlapping_2s_windows_with_continuous_agreement",
+          "source": "live",
+          "state_owner": "acquisition",
+          "state": "idle",
+          "result": null,
+          "accepted": false,
+          "frame_ok": false,
+          "display_backend": "hdmi_scan",
+          "display_page_id": null,
+          "display_timing": {
+            "ready": false
+          },
+          "input": {
+            "ready": false,
+            "state": "suspended",
+            "reason": "page_task_suspended",
+            "age_seconds": null,
+            "warmup_samples": 0,
+            "required_samples": 660,
+            "quality": null,
+            "scores": null,
+            "frequency_hz": null,
+            "input_transport": "bounded_serial_reader_tap",
+            "preparation": {
+              "supported": true,
+              "active": false,
+              "token": null
+            }
+          },
+          "raw_recording_supported": true,
+          "raw_recording": null,
+          "recording_control": {
+            "state": "idle",
+            "owned_trial_id": null,
+            "error": null,
+            "auto_stop_seconds": 45
+          }
+        },
+        "physical_output_enabled": false
+      },
+      "eye": {},
+      "video_id": "sd02",
+      "video_name": "\u5c0f\u72d7\uff08SD\u7ad6\u7248\uff09",
+      "mi_exit_enabled": false,
+      "eye_only": false,
+      "hdmi_fixed_brightness_diagnostic": false,
+      "hdmi_stimulus": {
+        "active": false,
+        "session_id": null,
+        "page_id": null,
+        "display_only": false,
+        "preparing": false,
+        "raw_recording": null,
+        "recording_control": null,
+        "decision_reason": null,
+        "error": null,
+        "timing": null,
+        "report_diagnostics": {
+          "count": 0,
+          "max_http_ms": 0.0,
+          "max_queue_age_ms": 0.0
+        },
+        "native_result": null,
+        "votes": {
+          "mode": "window_plurality_test_only",
+          "counts": {
+            "8": 0,
+            "10": 0,
+            "12": 0,
+            "14": 0
+          },
+          "unique_windows": 0,
+          "plurality_hz": null,
+          "plurality_share": null,
+          "selected_hz": null,
+          "physical_output_enabled": false,
+          "idle_discrimination": false
+        },
+        "physical_output_enabled": false,
+        "display_verified_optically": false
+      }
+    },
+    "page": "home",
+    "task_schedule": {
+      "filter_quality": true,
+      "emotion": true,
+      "fatigue": true,
+      "mi_virtual": true,
+      "ssvep_candidate": false,
+      "seed_candidate": false
+    },
+    "runtime_guard": {
+      "checks": 3,
+      "started": 11815.705547621,
+      "pending": false,
+      "last_check_ms": 158.3971619984368,
+      "maximum_check_ms": 232.47201800040784,
+      "wake_delay_ms": 11.33287599986943,
+      "maximum_wake_delay_ms": 13.793746000374085,
+      "native_tid": 10386,
+      "verification_age_ms": 646.0553740016621,
+      "pending_elapsed_ms": 0.0,
+      "thread_alive": true,
+      "error": null
+    },
+    "updated_monotonic": 11816.511817899
+  },
+  "display_overlay": "/home/xilinx/gl-hdmi-audio-installed-20261016-2jBKz1/guardianloop_display_audio.bit",
+  "acquisition_pid": 13373,
+  "motors_commanded": false,
+  "boot_image_modified": false
+}

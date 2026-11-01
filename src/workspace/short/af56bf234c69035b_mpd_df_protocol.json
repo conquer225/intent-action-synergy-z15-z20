@@ -1,0 +1,22 @@
+{
+  "protocol_id": "mpddf_fixed_cap_4v8_binary_loso_v1",
+  "status": "predeclared_before_model_fitting",
+  "question": "Do the four additional physically matched Cyton channels F3/F4/C3/C4 improve participant-independent fatigue-vs-wakefulness recognition beyond T7/T8/O1/O2?",
+  "hypothesis": "Fixed eight-channel DE features improve mean participant macro-F1 over the four-channel overlap under identical preprocessing and splits.",
+  "falsification": "A paired participant bootstrap 95% confidence interval for eight-minus-four mean macro-F1 includes zero, or the gain is below 0.02.",
+  "dataset": "MPD-DF raw EEG and physician annotations; Figshare article 28455737",
+  "physical_eight": ["F3", "F4", "C3", "C4", "T7", "T8", "O1", "O2"],
+  "four": ["T7", "T8", "O1", "O2"],
+  "target": "binary wakefulness (published label 0) versus fatigue/sleep (published labels 1-4); published artifact/abnormal labels excluded",
+  "label_limitations": "Labels are physician interpretations of EEG, not independent PERCLOS or subjective reports. This experiment cannot be compared numerically with SEED-VIG PERCLOS regression.",
+  "window": "non-overlapping 8 s, 250 Hz after resampling; reject windows crossing any annotation boundary; first 15 windows of each participant for unlabeled calibration only",
+  "preprocessing": "continuous 500-to-250 Hz resample; continuous 50 Hz Q5 notch and 1-45 Hz 4th-order bandpass; five continuous 4th-order DE bands 1-4,4-8,8-14,14-31,31-50 Hz; per-subject first-120-s mean/std calibration; causal EMA alpha 0.25",
+  "split": "50 participant-grouped leave-one-subject-out folds; complete recordings and all their windows stay together",
+  "model": "LogisticRegression C=0.3, class_weight=balanced, max_iter=400, fixed random_state=0; identical hyperparameters and fitting budget in both feature sets",
+  "reference_baseline": "training-fold majority-class constant",
+  "primary_metric": "mean participant macro-F1 with fixed classes [wake, fatigue] and zero_division=0",
+  "secondary_metrics": ["participant balanced accuracy when both classes are present", "pooled balanced accuracy", "pooled macro-F1", "per-participant support", "paired participant bootstrap 95% CI"],
+  "decision_rule": "Consider eight-channel deployment only if paired CI lower bound > 0 and mean macro-F1 gain >= 0.02; otherwise retain four-channel prototype. Deployment still requires Cyton numerical-parity and quality-gate validation.",
+  "seed": 20260925,
+  "note": "Exploratory model-selection experiment; no current-wearer accuracy or PL acceleration claim."
+}

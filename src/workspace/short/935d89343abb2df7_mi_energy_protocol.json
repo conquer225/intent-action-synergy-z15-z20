@@ -1,0 +1,139 @@
+{
+  "id": "cho2017_fixed8_energy_source_diagnostic_20261002",
+  "scope": "Bounded exploratory source-fit/source-validation energy-retention diagnostic only; no new outer-target scoring, independent confirmation or deployment",
+  "original_run": "output/mi_model_comparison_20261001",
+  "baseline_run": "output/mi_time_frequency_source_diagnostic_20261002",
+  "baseline_feature_cache": "output/mi_logcov_sourceonly_20261002/log_features.npy",
+  "participants": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    11,
+    14,
+    18,
+    20,
+    23,
+    24,
+    25,
+    26,
+    28,
+    29,
+    31,
+    32,
+    34,
+    35,
+    39,
+    40,
+    41,
+    43,
+    44,
+    46,
+    47,
+    50,
+    52
+  ],
+  "channels": [
+    "F3",
+    "F4",
+    "C3",
+    "C4",
+    "T7",
+    "T8",
+    "O1",
+    "O2"
+  ],
+  "input_sha256": {
+    "output/mi_model_comparison_20261001/waveforms.npy": "48cc8fff3b5ecc8d9119ae142ba347329d31c614843aa29574c3ee1f55a68d94",
+    "output/mi_model_comparison_20261001/statistics.npz": "1297ade4b4fca09f0fc2fd9449736b1b074a239e14b302ee7a471878478d423b",
+    "output/mi_model_comparison_20261001/fold_manifest.json": "1b56f068d8ac6db25047279dc427c0a90c037e72f47585387ec628ece095c2e4",
+    "output/mi_model_comparison_20261001/trial_manifest.json": "ef3b34464ba1c24268e59aca52f3303174ea418b3376ba051f1da0eccd213750",
+    "output/mi_model_comparison_20261001/protocol.json": "df69155e0347357701abc8c5bdd3e48fefa0793adc78e57dacbdf91ae1d3d6c7",
+    "output/mi_logcov_sourceonly_20261002/log_features.npy": "5aa25e0b92ba7bbb9091ee38911b3a38ee1bb498991b79d61c62ad1a17249adc",
+    "output/mi_time_frequency_source_diagnostic_20261002/source_freeze.json": "04bf3a35798cc715d09c126eae70a0d947906d5f87378e9add89f7ce07b58209",
+    "output/mi_time_frequency_source_diagnostic_20261002/lock.json": "fb76df475433abefea7320f956dc5ea248066221d316adc9f27ade021a49e0d0",
+    "output/mi_time_frequency_source_diagnostic_20261002/results.json": "0dce1073a469b96c516d0661fb7b3a0fd81343a4e680a0ef21de09b9480840b5",
+    "output/mi_time_frequency_source_diagnostic_20261002/verification.json": "bcd4e2a1c45ac7a6241edf442e9f3757d643288cb6e5e181cc38527c160cc236",
+    "output/mi_time_frequency_source_diagnostic_20261002/integer_count_audit.json": "b213b1f8a4b365732716056451a2578d8af43956de4fc23a44e838fa7879c09b"
+  },
+  "methods": [
+    "NORMALIZED",
+    "NORMALIZED_ENERGY",
+    "ABSOLUTE"
+  ],
+  "dimensions": {
+    "NORMALIZED": 36,
+    "NORMALIZED_ENERGY": 37,
+    "ABSOLUTE": 36
+  },
+  "feature": "S=unbiased temporal covariance of original8x500 CAR8-30Hz wave; t=trace(S), u=ln(t) in original cache squared-amplitude units. N=weighted upper triangle log(S/t+0.05*I/8) from old cache. NORMALIZED=N; NORMALIZED_ENERGY=[N,u]; ABSOLUTE=N+u*weighted upper triangle I=log(S+0.05*t*I/8). No cue baseline, rereference, new raw signal or filter.",
+  "normalization": "Independent StandardScaler for each condition fitted only26source people; factor1 allconditions. Original36columns unchanged in NORMALIZED_ENERGY; adds one source-standardized log energy coordinate. Source squared norm36/37/36; coefficient37/38/37, not identical capacity/regularization geometry.",
+  "classifier": {
+    "C": 0.1,
+    "solver": "lbfgs",
+    "tol": 1e-10,
+    "max_iter": 1000,
+    "fit_intercept": true,
+    "class_weight": null,
+    "warm_start": false
+  },
+  "budget": "Exactly60new deterministic fits (30folds x2) plus30byte-identical WHOLE baseline states;90states frozen before validation. FixedC0.1, no units/strength/C/gamma/window/grid/seed search.",
+  "hypothesis": "Explicit total log energy alongside normalized spatial shape improves mean source-validation BA under the same fixed source-only linear classifier.",
+  "falsification": "If primary gate fails, stop energy-retention recipe; secondary ABSOLUTE may not replace primary. End this diagnostic branch, no additional methods this turn.",
+  "primary_candidate": "NORMALIZED_ENERGY",
+  "primary_reference": "NORMALIZED",
+  "secondary_comparisons": [
+    [
+      "ABSOLUTE",
+      "NORMALIZED"
+    ],
+    [
+      "NORMALIZED_ENERGY",
+      "ABSOLUTE"
+    ]
+  ],
+  "direction_gate": {
+    "gain_at_least": 0.02,
+    "descriptive_paired_lower_greater_than": 0,
+    "lowest7_mean_drop_at_most": 0.01
+  },
+  "bootstrap": {
+    "seed": 20261002,
+    "draws": 10000,
+    "coverage": 0.95,
+    "unit": "28uniquevalidationpeople afterappearanceaveraging",
+    "limitation": "Exploratory repeatedsourcevalidation andoverlappingfits;descriptiveintervalnotindependentconfirmation"
+  },
+  "source_fit_metrics": "Descriptive mean26sourcepersonBA for eachfold, thenequal30foldmean;notselectionornewgeneralization",
+  "aggregation": "Same26fit/3val/ownouterexcluded; original30cachealltrials.28validationpeople,14/28absent,90appearances,1-7perperson. Averageeachpersonappearances thenequal28;deterministic models no randomseeds.",
+  "bad_trial_policy": "Keep6080originaltrials and515authorflags;keep5680uniquevalidationtrials and510flags;no person/trial deletion orimputation",
+  "verification": {
+    "feature_rtol": 5e-9,
+    "feature_atol": 5e-9,
+    "coefficient_rtol": 0.0005,
+    "coefficient_atol": 0.00002,
+    "score_rtol": 0.0002,
+    "score_atol": 0.0002,
+    "classes_exact": true,
+    "independent": "Schur logm of raw and normalized regularized covariances all6080waveforms, independentnp.cov/trace versusvarianceSum;90independenttrust-exact analytic solutions with predeclared existing Newton residualrefinement, gradient<=1e-6; all54840validationclassesexact"
+  },
+  "identity_probes": "All6080waves factor2 amplitude produces logtrace+ln4, absolute diagonals+ln4, shapeinvariant; rawlog identity checked independently. SyntheticDC/permutationinvariance, sourceonlystats, unitrescaleabsorbedbytrainmean, illfinite/flatrefused. Mathscaleinvariance is not evidenceof MI usefulness.",
+  "limitations": [
+    "Originalcacheunits preserved, not verified absolute Cyton physical calibration; commonunitchange absorbedby source fittedStandardScaler, subjectorhardwaregaincanstillconfoundenergy",
+    "No baseline relativeERD, no sample order recovery or new preprocessing",
+    "primaryadds1featureand1coefficient;ABSOLUTE mixesenergywithshape and changesregularization geometry",
+    "Originalsourcevalidationpreviouslyexposed; no new blind12confirmation",
+    "No improvementcanuniquelyprove energycausalormodelaccurateonthedevice"
+  ],
+  "raw_mat_read": false,
+  "other22_people_eeg_read": false,
+  "outer_target_scored": false,
+  "target_person_labels_for_adaptation": false,
+  "board_accessed": false,
+  "arm_exported": false,
+  "control_enabled": false,
+  "novelty_claim": false
+}

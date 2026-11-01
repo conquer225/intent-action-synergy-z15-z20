@@ -1,0 +1,14 @@
+{
+  "remote": "/home/xilinx/gl-media-20261007-314e8796",
+  "prefix": "gl-media-20261007-314e8796",
+  "original_overlay": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_pynq.bit",
+  "display_overlay": "/home/xilinx/tobii_z15/overlay/eye_wifi.bit",
+  "eye_root": "/home/xilinx/brain_eye_coexist_20261005/eye",
+  "release_id": "guardianloop-fixed8-mobile-web-20261003",
+  "hardware_hashes": {
+    "/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_pynq.bit": "c39b891704471a712fb7be3591841af1dd6791387957b873b11450c99eca41ca",
+    "/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_pynq.hwh": "2ab7ffa36398be4eee20d90512c7f1c6d29a7066c9d1bf0683a3bcad2501f92b",
+    "/home/xilinx/tobii_z15/overlay/eye_wifi.bit": "8b52892466a1b4d025c5c693a951727ae6215e57ca3e5fa0dedaa2a1d510d50f",
+    "/home/xilinx/tobii_z15/overlay/eye_wifi.hwh": "5dcfe537c6793f5b18b47550f73078ab8d73500888e585037a707c8be1ebacef"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "binary_sha256": "fea58012b5c7738239269b53278ed461216c9fa2ad75b37b84cff234fec26388",
+  "compiler": "Z15 gcc -Wall -Wextra -Werror",
+  "source_sha256": "e0d059e9339420883e28fdb9fbf74e19cc2d49d7808d454685e755b2756e8489",
+  "protocol_sha256": "a796c08f676399e22efc6426c273938f56a12e6189b6977b45f0bb7dfc16650c"
+}

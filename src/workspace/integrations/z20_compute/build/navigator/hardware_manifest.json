@@ -1,0 +1,31 @@
+{
+  "target": {
+    "target": "navigator-7020-clg400",
+    "part": "7z020clg400",
+    "payload_offset": 110,
+    "payload_size": 4045564
+  },
+  "board_programmed": false,
+  "tool_runs": [
+    {
+      "step": "prepare_impl",
+      "exit_code": 3221225477,
+      "required_steps_completed": true
+    },
+    {
+      "step": "implementation",
+      "exit_code": 3221225477,
+      "required_steps_completed": true
+    },
+    {
+      "step": "export",
+      "exit_code": 3221225477,
+      "required_steps_completed": true
+    }
+  ],
+  "files": {
+    "system_wrapper.bit": "9fa76f382d7f7c3b3174b20a657187d34924e7fbc55f7ca0d803b859ee7ef62b",
+    "navigator_stereo_npu.xsa": "914ab627bdc0ffed532f51b4e870a8d33345157befe6dba4aad04e65b6b9544f",
+    "system_wrapper_routed.dcp": "537e1046aa26cc637681fb181fff31cd9ff5192fabaa926bf465d94a2028c1df"
+  }
+}

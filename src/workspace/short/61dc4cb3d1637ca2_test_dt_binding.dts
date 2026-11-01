@@ -1,0 +1,13 @@
+/dts-v1/;
+/* Syntax fixture, NOT a board device tree: no PS, clock or boot nodes. */
+/ {
+	#address-cells = <1>;
+	#size-cells = <1>;
+	amba {
+		compatible = "simple-bus";
+		#address-cells = <1>;
+		#size-cells = <1>;
+		ranges;
+		/include/ "candidate_static_node.dtsi"
+	};
+};

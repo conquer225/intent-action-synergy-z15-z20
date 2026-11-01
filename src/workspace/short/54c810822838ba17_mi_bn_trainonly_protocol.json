@@ -1,0 +1,53 @@
+{
+  "id": "fixed8_trainonly_BN_diagnosis_20261002",
+  "scope": "Repeated original30 exploratory mechanism check; targets already exposed; not independent confirmation, cross-day or live Cyton evidence",
+  "prior_run": "output/mi_person_transfer_diagnostic_20261002",
+  "prior_results_sha256": "4bf18e9be08d2fcae35c03f9b9928b7aa39e3bb5fb5d1781de27583c4f8f79e8",
+  "participants": [1,2,3,4,5,7,8,11,14,18,20,23,24,25,26,28,29,31,32,34,35,39,40,41,43,44,46,47,50,52],
+  "channels": ["F3","F4","C3","C4","T7","T8","O1","O2"],
+  "seeds": [42,43,44],
+  "methods": ["CROSS_ORIGINAL","CROSS_SOURCE_BN","PERSON_ONLY","PERSON_BN","CROSS_MATCHED80","MATCHED80_BN"],
+  "recalibration": {
+    "helper": "mi_crossfield_stability.recalibrate_bn",
+    "batch_size": 256,
+    "order": "ascending frozen global trial indices; one pass only",
+    "device": "cuda:0",
+    "precision": "FP32, no AMP or TF32",
+    "rule": "Reset BN buffers; momentum=None cumulative equal-batch running moments; BN training mode with all Dropout in eval; restore momentum, then all eval",
+    "allowed_changes": ["running_mean","running_var","num_batches_tracked"],
+    "not_exact_population_moments": "Batch moments have equal batch weights, including a shorter final batch; downstream BN observes batch-normalized upstream activations. Same helper as prior source-BN control, not a new exact global-statistics method."
+  },
+  "fit_inputs": {
+    "CROSS_SOURCE_BN": "All trials of the original fold26 source-fit people only; neither target nor3 source-validation people",
+    "PERSON_BN": "Own frozen first80 fitting trials only; not next40 validation or later test",
+    "MATCHED80_BN": "Exact old frozen80 matched fitting indices only; not40 matched validation or target"
+  },
+  "unchanged": "All learned weights including BN affine,dense,biases; source channel means/scales; checkpoint epochs; filters,window,montage; original folds; old80 sample draws",
+  "new_gradient_training": false,
+  "labels_used_for_recalibration": false,
+  "target_test_order_at_least": 120,
+  "unique_test_trials": 2480,
+  "predictions_per_method": 7440,
+  "new_calibrated_objects": 270,
+  "old_source_bn_effect_known": "Prior source-BN-only control had63.83to64.27% on a different earlier test start; this round is exploratory, not a first unseen source-BN hypothesis",
+  "primary_comparisons": [
+    {"candidate":"CROSS_SOURCE_BN","reference":"CROSS_ORIGINAL","gain_at_least":0.01,"interpretation":"Source-only mean improvement of at least1pp with adjusted lower>0 supports continuing this development candidate, not promotion or independent generalization"},
+    {"candidate":"PERSON_BN","reference":"PERSON_ONLY","gain_at_least":0.03,"interpretation":"Personal gain of at least3pp with adjusted lower>0 supports a material small-budget normalization effect, not zero-label cross-person improvement"}
+  ],
+  "secondary_comparisons": [
+    {"candidate":"MATCHED80_BN","reference":"CROSS_MATCHED80"},
+    {"candidate":"PERSON_BN","reference":"CROSS_ORIGINAL"}
+  ],
+  "bootstrap": {"draws":10000,"seed":20261002,"primary_interval":0.975,"secondary_interval":0.95},
+  "primary_metric": "Mean30 person BA after mean3 seeds per person; no best-seed choice or prediction ensemble",
+  "selection": "Freeze all270 calibrated states before any new later-trial forward; no validation-based BN selection, repeats or batch-size tuning",
+  "cpu_verification": "Rebuild all270 BN states with train-only CPU inputs; exact learned tensors/scalers; BN buffers rtol2e-5 atol2e-6; CPU all44640 predictions classes exact and scores rtol2e-5 atol2e-5",
+  "author_flags": "All6080 identities and515 flags retained; common later2480 includes198 flagged trials; no clean-only selection",
+  "personal_exception": "Personal fitting and test are different chronological blocks in one parent session; diagnostic exception, not cross-day or participant-independent evidence",
+  "confirmation_eeg_read": false,
+  "former_development_eeg_read": false,
+  "raw_mat_read": false,
+  "board_accessed": false,
+  "deployment_authorized": false,
+  "control_enabled": false
+}

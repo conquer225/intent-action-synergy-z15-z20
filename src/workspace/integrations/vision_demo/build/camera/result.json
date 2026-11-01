@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "exit_code": 0,
+  "sources": {
+    "integrations\\vision_demo\\native\\camera_capture.c": "ab4cc4b6306ad1a5c8704e4c427d8c7ab0cf2bf8b91b8b7e45c1ea02857e0d84",
+    "ps_eye_net\\src\\app\\emio_sccb_cfg\\emio_sccb_cfg.c": "70a6a237a5f915daab3285c2a17c333e763540917b33c41f6def10bef1226734",
+    "ps_eye_net\\src\\app\\ov5640\\ov5640_init.c": "9188fa3ec6b4a2ce574876c6d035f25dd3f35f75a79d6eea62660c3e051b72df",
+    "ps_eye_net\\linux\\driver\\xgpiops.c": "21c678a3f8c77ef48540316ae1ea0b37a8f4cc5aee4ed38c93077357fb261b1f",
+    "ps_eye_net\\linux\\driver\\xgpiops_g.c": "6eab041862e2aa378bd55b58e45a6577c45cc341c7cb6bd7e2d34585431fbdc9",
+    "ps_eye_net\\linux\\driver\\xgpiops_sinit.c": "169aa4331e3ee9f190406b3799e2e347d4c4a5c65abe80c99e69dbb1d23b7c09"
+  },
+  "library_sha256": "7c81ec50051770cbbf30a01707e517e9883a9a60928478d8292295b388e474b6"
+}

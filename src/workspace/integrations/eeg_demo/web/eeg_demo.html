@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>我们意念合一 · 脑电信号分析</title><link rel="stylesheet" href="/presentation.css"><link rel="stylesheet" href="/eeg_demo.css"></head>
+<body>
+<main id="app">
+ <header class="masthead">
+  <div class="identity"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 25V15l14-8 14 8v10l-14 8zM6 15l14 8 14-8M20 23v10"/><circle cx="20" cy="7" r="3"/><circle cx="6" cy="25" r="3"/><circle cx="34" cy="25" r="3"/></svg><div><a id="consoleLink" href="/">我们意念合一</a><span>脑电信号分析</span></div></div>
+  <div class="connection"><span id="liveDot" class="dot"></span><span id="source">LEMON 脑电记录</span><span class="divider"></span><span id="clock">--:--:--</span></div>
+  <div class="header-actions"><button id="presentation" aria-pressed="false">展示模式</button><button id="fullscreen">全屏 <span aria-hidden="true">⤢</span></button></div>
+ </header>
+ <div class="intro"><h1>从脑电信号，到状态识别<span class="title-rule"></span></h1><p>8 通道信号 <span>→</span> 连续滤波 <span>→</span> 特征提取 <span>→</span> 双路识别</p></div>
+ <div id="message" class="notice" role="status" hidden></div>
+ <div class="workspace">
+  <section class="input-panel panel" aria-labelledby="signalTitle">
+   <div class="panel-heading"><h2 id="signalTitle">八通道信号</h2><span class="technical">8 通道</span></div>
+   <div class="acquisition">
+    <svg id="montage" viewBox="0 0 250 130" aria-label="固定八通道位置示意"><path class="head" d="M109 14l16-9 16 9c46 5 73 36 71 64-1 29-37 48-87 48S39 107 38 78c-2-28 25-59 71-64zM38 62l-8-1v24l10-1M211 62l9-1v24l-10-1"/><g id="electrodes"></g></svg>
+    <dl class="signal-stats"><div><dt>采样频率</dt><dd>250 <small>Hz</small></dd></div><div><dt>显示频率</dt><dd><span id="displayRate">--</span> <small>Hz</small></dd></div><div><dt>有效通道</dt><dd><span id="usable">--</span><small> / 8</small></dd></div><div><dt>窗口序号</dt><dd><span id="dataAge">--</span></dd></div></dl>
+   </div>
+   <div class="wave-tools"><div class="legend"><span class="legend-raw">原始</span><span class="legend-filtered">滤波后</span></div><label><span id="waveScale">±5 μV</span><select id="amplitude" aria-label="波形幅度范围"><option value="100">±100 μV</option><option value="250">±250 μV</option><option value="50">±50 μV</option></select></label></div>
+   <div class="wave-field"><canvas id="waveform" aria-label="八通道原始与滤波脑电波形"></canvas><div id="waveEmpty" class="wave-empty"><span class="empty-mark">∿</span><strong>正在载入脑电记录</strong><span>波形与特征同步呈现</span></div></div>
+   <div class="wave-footer"><span id="sampleInfo">固定帽位 · F3 / F4 / C3 / C4 / T7 / T8 / O1 / O2</span><span>时间 →</span></div>
+  </section>
+  <section class="process-panel panel" aria-labelledby="processTitle">
+   <div class="panel-heading"><h2 id="processTitle">处理路径</h2><span class="technical">滤波与特征</span></div>
+   <div class="filter-stage"><div class="stage-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 17h5l3-9 5 17 5-17 3 9h5"/></svg></div><div><h3>连续滤波</h3><p>50 Hz 陷波 · 1–45 Hz 带通</p><span id="filterStatus">等待输入</span></div></div>
+   <svg class="branch-lines" viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true"><path d="M150 0v15H75v25M150 15h75v25"/><circle id="processPulse" cx="150" cy="15" r="3"/></svg>
+   <div class="feature-block fatigue-feature"><div class="feature-title"><h3>频段特征热力图</h3><span>20 维</span></div><div class="window-row"><span>疲劳窗口 · 8 s</span><span id="fatigueWindow">等待数据</span></div><progress id="fatigueProgress" max="2000" value="0" aria-label="疲劳窗口样本进度"></progress><canvas id="deFeatures" aria-label="四通道五频段特征热力图热力图"></canvas><div class="feature-meta"><span>δ　θ　α　β　γ</span><span id="deRange">暂无特征</span></div></div>
+   <div class="feature-block emotion-feature"><div class="feature-title"><h3>协方差热力图</h3><span>105 维</span></div><div class="window-row"><span>情绪窗口 · 12 s</span><span id="emotionWindow">等待数据</span></div><progress id="emotionProgress" max="3000" value="0" aria-label="情绪窗口样本进度"></progress><canvas id="covFeatures" aria-label="五个频带各二十一项对数协方差特征"></canvas><div class="feature-meta"><span>5 频带 × 21 项</span><span id="covRange">暂无特征</span></div></div>
+   <div class="process-foot"><span id="processingState">特征将在模型实际计算后呈现</span><details><summary>查看处理细节</summary><p>情绪：F3/F4/T7/T8/O1/O2，五频带对数协方差 → SVM。疲劳：T7/T8/O1/O2，五频段特征热力图 → HGB。显示通道均值和特征矩阵，数值来自当前处理窗口。</p><p id="windowBounds">窗口范围：等待数据</p></details></div>
+  </section>
+  <section class="result-panel panel" aria-labelledby="resultTitle">
+   <div class="panel-heading"><h2 id="resultTitle">识别状态</h2><span id="resultFresh" class="technical">等待结果</span></div>
+   <article class="result fatigue-result"><div class="result-label"><span>疲劳状态</span><span class="model-label">DE → HGB</span></div><div class="result-main"><strong id="fatigueState">等待数据</strong><span id="fatigueScore">--<small> / 1</small></span></div><div class="score-track"><i id="scoreFill"></i><span style="left:35%"></span><span style="left:70%"></span></div><div class="score-labels"><span>正常</span><span>轻度</span><span>严重</span></div><p id="fatigueDetail">等待完整窗口与质量检查</p></article>
+   <article class="result emotion-result"><div class="result-label"><span>情绪状态</span><span class="model-label">LOG-COV → SVM</span></div><div class="emotion-state"><svg id="emotionGlyph" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28"/><path d="M21 25h1m20 0h1M21 42h22"/></svg><strong id="emotionState">等待数据</strong></div><div class="emotion-options"><span data-emotion="negative">负向</span><span data-emotion="neutral">中性</span><span data-emotion="positive">正向</span></div><p id="emotionDetail">等待完整窗口与质量检查</p></article>
+   <div class="quality-block"><div class="quality-heading"><h3>信号质量与基线</h3><span id="calibration">-- / 15</span></div><div id="qualityChannels" class="quality-channels"></div><p id="qualityNote">分析基线</p></div>
+   <p class="scope-note"></p>
+  </section>
+ </div>
+ <section class="history-panel" aria-label="近期状态变化"><div class="history-heading"><h2>近期变化</h2><span>按实际结果更新时间记录</span></div><div id="history" class="history"><div class="history-empty">新的窗口结果会依次出现在这里</div></div></section>
+ <footer class="transport"><div class="mode-switch" role="group" aria-label="数据模式"><button id="liveMode" class="selected" aria-pressed="true">采集设置</button><button id="replayMode" aria-pressed="false">记录分析</button></div><div class="record-controls"><button id="record">开始记录</button><button id="export" disabled>导出</button><label class="file-button" for="import">导入记录<input id="import" type="file" accept=".json,application/json"></label><button id="play" hidden>播放</button></div><label class="scrubber" id="scrubberWrap" hidden><input id="scrubber" type="range" min="0" max="1" value="0" aria-label="记录分析时间轴"><span id="replayTime">00:00 / 00:00</span></label><span id="recordStatus"></span><button id="exitPresentation" hidden>退出展示模式</button><details class="data-source"><summary>数据说明</summary><p>LEMON sub-010002 公开真实静息脑电记录，120 秒基线与 180 秒分析段。CC BY 4.0；原有疲劳、情绪模型处理结果。<a href="https://doi.org/10.1038/sdata.2018.308">数据出处</a></p></details></footer>
+</main><script src="/eeg_demo_core.js"></script><script src="/eeg_demo.js"></script>
+</body></html>

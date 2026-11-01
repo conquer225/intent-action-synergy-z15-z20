@@ -1,0 +1,567 @@
+{
+  "scope": "offline fixed-point emulation on a recorded, not necessarily SQI-accepted trace",
+  "trace": "D:\\ican\\codex_project\\eeg_apps_z15\\output\\pl_integrated_candidate_20260929\\recorded_input.npz",
+  "trace_sha256": "e263590f40edbf4581b106cc202b092b7855e68f1f3febf40bd8bc7b2bf1f255",
+  "model_sha256": "e379f2ba4569b63bf3cd85985a7936eb56bb38798473640a5657b9da4d107155",
+  "channels": [
+    "F3",
+    "F4",
+    "T7",
+    "T8",
+    "O1",
+    "O2"
+  ],
+  "bands_hz": [
+    [
+      1,
+      4
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      8,
+      13
+    ],
+    [
+      13,
+      30
+    ],
+    [
+      30,
+      43
+    ]
+  ],
+  "window_samples": 3000,
+  "hop_samples": 2000,
+  "quantization": "signed 16-bit round-to-nearest; no silent clipping; 48-bit PL accumulators",
+  "modes": {
+    "q4": {
+      "total_windows": 9,
+      "nonoverflow_windows": 9,
+      "overflow_samples_total": 0,
+      "feature_max_abs_error": 0.00405327994275817,
+      "pair_score_max_abs_error": 0.0008000659822986478,
+      "label_mismatches": 0,
+      "window_details": [
+        {
+          "end_sample": 3000,
+          "overflow_samples": 0,
+          "scales": [
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "feature_max_abs_error": 7.393348763568008e-05,
+          "pair_score_max_abs_error": 6.221556603236422e-11,
+          "label_match": true
+        },
+        {
+          "end_sample": 5000,
+          "overflow_samples": 0,
+          "scales": [
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "feature_max_abs_error": 0.003754518419587516,
+          "pair_score_max_abs_error": 0.0005637226393702122,
+          "label_match": true
+        },
+        {
+          "end_sample": 7000,
+          "overflow_samples": 0,
+          "scales": [
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "feature_max_abs_error": 0.00405327994275817,
+          "pair_score_max_abs_error": 0.0006432365132003071,
+          "label_match": true
+        },
+        {
+          "end_sample": 9000,
+          "overflow_samples": 0,
+          "scales": [
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "feature_max_abs_error": 0.0014052668783701705,
+          "pair_score_max_abs_error": 7.289386868025716e-05,
+          "label_match": true
+        },
+        {
+          "end_sample": 11000,
+          "overflow_samples": 0,
+          "scales": [
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "feature_max_abs_error": 0.001306944120082587,
+          "pair_score_max_abs_error": 3.265295616960984e-05,
+          "label_match": true
+        },
+        {
+          "end_sample": 13000,
+          "overflow_samples": 0,
+          "scales": [
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "feature_max_abs_error": 0.0026425119673234576,
+          "pair_score_max_abs_error": 0.0008000659822986478,
+          "label_match": true
+        },
+        {
+          "end_sample": 15000,
+          "overflow_samples": 0,
+          "scales": [
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "feature_max_abs_error": 0.0024697700531750577,
+          "pair_score_max_abs_error": 0.0005068966407231201,
+          "label_match": true
+        },
+        {
+          "end_sample": 17000,
+          "overflow_samples": 0,
+          "scales": [
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "feature_max_abs_error": 0.002395191891902737,
+          "pair_score_max_abs_error": 0.0003753345765247218,
+          "label_match": true
+        },
+        {
+          "end_sample": 19000,
+          "overflow_samples": 0,
+          "scales": [
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "feature_max_abs_error": 0.003071782493322406,
+          "pair_score_max_abs_error": 0.0004332543310692216,
+          "label_match": true
+        }
+      ]
+    },
+    "q16": {
+      "total_windows": 9,
+      "nonoverflow_windows": 6,
+      "overflow_samples_total": 125,
+      "feature_max_abs_error": 0.0006477285935582167,
+      "pair_score_max_abs_error": 0.0001180597940155792,
+      "label_mismatches": 0,
+      "window_details": [
+        {
+          "end_sample": 3000,
+          "overflow_samples": 107,
+          "scales": [
+            16,
+            16,
+            16,
+            16,
+            16
+          ]
+        },
+        {
+          "end_sample": 5000,
+          "overflow_samples": 0,
+          "scales": [
+            16,
+            16,
+            16,
+            16,
+            16
+          ],
+          "feature_max_abs_error": 0.0005391770008356112,
+          "pair_score_max_abs_error": 5.051548670564898e-05,
+          "label_match": true
+        },
+        {
+          "end_sample": 7000,
+          "overflow_samples": 0,
+          "scales": [
+            16,
+            16,
+            16,
+            16,
+            16
+          ],
+          "feature_max_abs_error": 0.000621958558370661,
+          "pair_score_max_abs_error": 0.0001180597940155792,
+          "label_match": true
+        },
+        {
+          "end_sample": 9000,
+          "overflow_samples": 9,
+          "scales": [
+            16,
+            16,
+            16,
+            16,
+            16
+          ]
+        },
+        {
+          "end_sample": 11000,
+          "overflow_samples": 9,
+          "scales": [
+            16,
+            16,
+            16,
+            16,
+            16
+          ]
+        },
+        {
+          "end_sample": 13000,
+          "overflow_samples": 0,
+          "scales": [
+            16,
+            16,
+            16,
+            16,
+            16
+          ],
+          "feature_max_abs_error": 0.00041689639990016847,
+          "pair_score_max_abs_error": 7.057962256418193e-05,
+          "label_match": true
+        },
+        {
+          "end_sample": 15000,
+          "overflow_samples": 0,
+          "scales": [
+            16,
+            16,
+            16,
+            16,
+            16
+          ],
+          "feature_max_abs_error": 0.0004473851756818803,
+          "pair_score_max_abs_error": 3.6442538881686914e-05,
+          "label_match": true
+        },
+        {
+          "end_sample": 17000,
+          "overflow_samples": 0,
+          "scales": [
+            16,
+            16,
+            16,
+            16,
+            16
+          ],
+          "feature_max_abs_error": 0.0005870579574085433,
+          "pair_score_max_abs_error": 3.6902254328730066e-05,
+          "label_match": true
+        },
+        {
+          "end_sample": 19000,
+          "overflow_samples": 0,
+          "scales": [
+            16,
+            16,
+            16,
+            16,
+            16
+          ],
+          "feature_max_abs_error": 0.0006477285935582167,
+          "pair_score_max_abs_error": 5.258375645933455e-05,
+          "label_match": true
+        }
+      ]
+    },
+    "q64": {
+      "total_windows": 9,
+      "nonoverflow_windows": 6,
+      "overflow_samples_total": 2487,
+      "feature_max_abs_error": 0.0001901896952526405,
+      "pair_score_max_abs_error": 6.625623358047505e-05,
+      "label_mismatches": 0,
+      "window_details": [
+        {
+          "end_sample": 3000,
+          "overflow_samples": 1946,
+          "scales": [
+            64,
+            64,
+            64,
+            64,
+            64
+          ]
+        },
+        {
+          "end_sample": 5000,
+          "overflow_samples": 0,
+          "scales": [
+            64,
+            64,
+            64,
+            64,
+            64
+          ],
+          "feature_max_abs_error": 0.0001278773972235303,
+          "pair_score_max_abs_error": 6.625623358047505e-05,
+          "label_match": true
+        },
+        {
+          "end_sample": 7000,
+          "overflow_samples": 0,
+          "scales": [
+            64,
+            64,
+            64,
+            64,
+            64
+          ],
+          "feature_max_abs_error": 0.00017849428877043244,
+          "pair_score_max_abs_error": 4.5535706975741164e-05,
+          "label_match": true
+        },
+        {
+          "end_sample": 9000,
+          "overflow_samples": 270,
+          "scales": [
+            64,
+            64,
+            64,
+            64,
+            64
+          ]
+        },
+        {
+          "end_sample": 11000,
+          "overflow_samples": 271,
+          "scales": [
+            64,
+            64,
+            64,
+            64,
+            64
+          ]
+        },
+        {
+          "end_sample": 13000,
+          "overflow_samples": 0,
+          "scales": [
+            64,
+            64,
+            64,
+            64,
+            64
+          ],
+          "feature_max_abs_error": 0.0001901896952526405,
+          "pair_score_max_abs_error": 2.6824268996250566e-05,
+          "label_match": true
+        },
+        {
+          "end_sample": 15000,
+          "overflow_samples": 0,
+          "scales": [
+            64,
+            64,
+            64,
+            64,
+            64
+          ],
+          "feature_max_abs_error": 8.283495860428314e-05,
+          "pair_score_max_abs_error": 1.0008561350360878e-05,
+          "label_match": true
+        },
+        {
+          "end_sample": 17000,
+          "overflow_samples": 0,
+          "scales": [
+            64,
+            64,
+            64,
+            64,
+            64
+          ],
+          "feature_max_abs_error": 0.00015812729535014114,
+          "pair_score_max_abs_error": 1.158467056150414e-05,
+          "label_match": true
+        },
+        {
+          "end_sample": 19000,
+          "overflow_samples": 0,
+          "scales": [
+            64,
+            64,
+            64,
+            64,
+            64
+          ],
+          "feature_max_abs_error": 0.0001354510641804474,
+          "pair_score_max_abs_error": 2.7439675097440386e-05,
+          "label_match": true
+        }
+      ]
+    },
+    "adaptive_exploratory": {
+      "total_windows": 9,
+      "nonoverflow_windows": 9,
+      "overflow_samples_total": 0,
+      "feature_max_abs_error": 7.393348763568008e-05,
+      "pair_score_max_abs_error": 7.18876498950749e-06,
+      "label_mismatches": 0,
+      "window_details": [
+        {
+          "end_sample": 3000,
+          "overflow_samples": 0,
+          "scales": [
+            8,
+            16,
+            8,
+            4,
+            4
+          ],
+          "feature_max_abs_error": 7.393348763568008e-05,
+          "pair_score_max_abs_error": 3.12722070461291e-11,
+          "label_match": true
+        },
+        {
+          "end_sample": 5000,
+          "overflow_samples": 0,
+          "scales": [
+            64,
+            512,
+            512,
+            512,
+            1024
+          ],
+          "feature_max_abs_error": 1.758699441199371e-05,
+          "pair_score_max_abs_error": 7.18876498950749e-06,
+          "label_match": true
+        },
+        {
+          "end_sample": 7000,
+          "overflow_samples": 0,
+          "scales": [
+            512,
+            1024,
+            1024,
+            512,
+            1024
+          ],
+          "feature_max_abs_error": 1.322825471322675e-05,
+          "pair_score_max_abs_error": 2.734978421514711e-06,
+          "label_match": true
+        },
+        {
+          "end_sample": 9000,
+          "overflow_samples": 0,
+          "scales": [
+            8,
+            32,
+            32,
+            64,
+            256
+          ],
+          "feature_max_abs_error": 4.089927157374662e-05,
+          "pair_score_max_abs_error": 2.9930672478251097e-06,
+          "label_match": true
+        },
+        {
+          "end_sample": 11000,
+          "overflow_samples": 0,
+          "scales": [
+            8,
+            32,
+            32,
+            64,
+            256
+          ],
+          "feature_max_abs_error": 4.4316794139798166e-05,
+          "pair_score_max_abs_error": 3.031125206387486e-06,
+          "label_match": true
+        },
+        {
+          "end_sample": 13000,
+          "overflow_samples": 0,
+          "scales": [
+            256,
+            256,
+            512,
+            512,
+            512
+          ],
+          "feature_max_abs_error": 1.711604932175259e-05,
+          "pair_score_max_abs_error": 2.413907795428827e-06,
+          "label_match": true
+        },
+        {
+          "end_sample": 15000,
+          "overflow_samples": 0,
+          "scales": [
+            256,
+            256,
+            1024,
+            512,
+            512
+          ],
+          "feature_max_abs_error": 1.9755222276152118e-05,
+          "pair_score_max_abs_error": 2.72388610511598e-06,
+          "label_match": true
+        },
+        {
+          "end_sample": 17000,
+          "overflow_samples": 0,
+          "scales": [
+            256,
+            512,
+            1024,
+            256,
+            512
+          ],
+          "feature_max_abs_error": 2.3758896521730577e-05,
+          "pair_score_max_abs_error": 2.1910607825859074e-06,
+          "label_match": true
+        },
+        {
+          "end_sample": 19000,
+          "overflow_samples": 0,
+          "scales": [
+            512,
+            1024,
+            1024,
+            512,
+            1024
+          ],
+          "feature_max_abs_error": 9.129516988726216e-06,
+          "pair_score_max_abs_error": 1.5663531929277497e-06,
+          "label_match": true
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "board_name": null,
+  "board_revision": null,
+  "device": null,
+  "package": null,
+  "speed_grade": null,
+  "schematic_revision": null,
+  "identity_evidence": [],
+  "boot_image_sha256": null,
+  "deployment_path": "pynq-bit-hwh",
+  "pynq_version": null,
+  "kernel_version": null,
+  "python_version": null,
+  "vivado_version": null,
+  "driver_and_ip_versions": {},
+  "pl_owner": null,
+  "display_owner": null,
+  "dma_stop_evidence": null,
+  "rollback_entry": null
+}

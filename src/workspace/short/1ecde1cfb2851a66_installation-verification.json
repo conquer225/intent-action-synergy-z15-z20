@@ -1,0 +1,25 @@
+{
+  "release_id": "guardianloop-fixed8-load-relief-20261007",
+  "manifest_sha": "49790364ad4a1c50e5a609e71dd7a1bd529106d209cc85f7a6171694b7670002",
+  "verified_files": 50,
+  "pl": "/home/xilinx/jupyter_notebooks/guardianloop_pynq/guardianloop_pynq.bit",
+  "services": "MainPID=23531\nNRestarts=0\nId=guardianloop-cyton.service\nActiveState=active\n\nMainPID=669\nNRestarts=0\nId=guardianloop-web.service\nActiveState=active\n",
+  "admission": {
+    "brain_release": "guardianloop-fixed8-load-relief-20261007",
+    "brain_pid": 23531,
+    "boot_id": "8f136697-cbea-4b20-a74f-c899978d7f3a",
+    "brain_backend": "arm",
+    "pl_role": "eye_hdmi",
+    "brain_services_stopped": false,
+    "physical_control": false
+  },
+  "seed_paused": true,
+  "shells": 10,
+  "cached_menu_constructor_ms": 1806.3311180012533,
+  "primary_state": "invalid",
+  "primary_valid": false,
+  "primary_reason": "STREAM_STARTING",
+  "models_changed": false,
+  "physical_output_enabled": false,
+  "live_HDMI_acceptance": false
+}

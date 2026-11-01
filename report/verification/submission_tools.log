@@ -1,0 +1,14 @@
+{"tests": 7, "failures": 0, "errors": 0, "skipped": 0}
+
+test_hash_failure_rejects_before_creating_output (test_restore_workspace.RestoreTests.test_hash_failure_rejects_before_creating_output) ... ok
+test_path_escape_and_existing_target_are_rejected_without_overwrite (test_restore_workspace.RestoreTests.test_path_escape_and_existing_target_are_rejected_without_overwrite) ... ok
+test_restores_original_case_and_exact_bytes_into_a_new_workspace (test_restore_workspace.RestoreTests.test_restores_original_case_and_exact_bytes_into_a_new_workspace) ... ok
+test_changed_or_unlisted_payload_fails (test_verify_package.PackageChecks.test_changed_or_unlisted_payload_fails) ... ok
+test_complete_delivery_passes_without_board_access (test_verify_package.PackageChecks.test_complete_delivery_passes_without_board_access) ... ok
+test_git_checkout_metadata_preserves_package_verification (test_verify_package.PackageChecks.test_git_checkout_metadata_preserves_package_verification) ... ok
+test_hash_valid_long_member_is_rejected_for_windows_zip (test_verify_package.PackageChecks.test_hash_valid_long_member_is_rejected_for_windows_zip) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.599s
+
+OK

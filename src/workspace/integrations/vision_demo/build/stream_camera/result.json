@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "exit_code": 0,
+  "sources": {
+    "integrations\\vision_demo\\native\\autonomous_capture.c": "61bcb8aa3fd0a914057cd9898cdef0ccde4111c83e17015f6ea9d51f6f3d889d",
+    "ps_eye_net\\src\\app\\emio_sccb_cfg\\emio_sccb_cfg.c": "70a6a237a5f915daab3285c2a17c333e763540917b33c41f6def10bef1226734",
+    "ps_eye_net\\src\\app\\ov5640\\ov5640_init.c": "9188fa3ec6b4a2ce574876c6d035f25dd3f35f75a79d6eea62660c3e051b72df",
+    "ps_eye_net\\linux\\driver\\xgpiops.c": "21c678a3f8c77ef48540316ae1ea0b37a8f4cc5aee4ed38c93077357fb261b1f",
+    "ps_eye_net\\linux\\driver\\xgpiops_g.c": "6eab041862e2aa378bd55b58e45a6577c45cc341c7cb6bd7e2d34585431fbdc9",
+    "ps_eye_net\\linux\\driver\\xgpiops_sinit.c": "169aa4331e3ee9f190406b3799e2e347d4c4a5c65abe80c99e69dbb1d23b7c09",
+    "integrations\\vision_demo\\native\\gpio_scope.h": "caef18fa1c243a354863180b73c416fbb73a9d47302cfb31d06aa276369d4ded",
+    "integrations\\vision_demo\\native\\stream_ring.h": "8a9f8d52ededaf60004f23441a3bf7b3ad3ff165e5547cb4835d68525cb1aa4b"
+  },
+  "library_sha256": "f9abdfeb8a2c52bc9c7a9e4174cc3a3b38ba17e4bc0aa2ae2d740619643f0a75"
+}

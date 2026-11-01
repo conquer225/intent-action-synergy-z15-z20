@@ -1,0 +1,18 @@
+{
+  "format": "z20-mlp-v1",
+  "task": "sound",
+  "version": "bcb91d05575221a77767cff1",
+  "preprocessor": "pcm16k-fft1024-band20-meanstd-v1",
+  "labels": [
+    "clap",
+    "whistle",
+    "knock"
+  ],
+  "hidden_shift": 9,
+  "input_scale": 0.03125,
+  "score_scale": 0.0009765625,
+  "minimum_margin": 0.0,
+  "source": "ESC-50 clap/wood knock and documented human Freesound CC0 whistles; source-recording groups",
+  "source_kind": "public",
+  "weights_sha256": "ed3659868958b5e771cab576b6400bf7034cdd1ab4f36af12126d55c1e485a85"
+}

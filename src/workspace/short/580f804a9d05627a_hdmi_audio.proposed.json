@@ -1,0 +1,27 @@
+{
+  "volume_percent": 40,
+  "player": {
+    "path": "/home/xilinx/gl-pcm-player-20261016-TA9R7U/pcm_player",
+    "sha256": "36809ed09748340b056947e209fc5c45a4af4ebe71d0964a0a8de2644d0559d0"
+  },
+  "phrases": {
+    "0": {
+      "path": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_water_48k.wav",
+      "sha256": "bc6d71045fd967959ff317bdfa653eb1b2033dd7be6d88c3283eeac88ccdda77"
+    },
+    "2": {
+      "path": "/home/xilinx/gl-audio-level-20261016-DMoJIj/need_help_48k.wav",
+      "sha256": "8d7381b55c341b8ff1eff45c4f64b9f872bd1b8e44ee94393180052109863b32"
+    }
+  },
+  "music": {
+    "path": "/home/xilinx/gl-audio-level-20261016-DMoJIj/carefree_48k.wav",
+    "sha256": "4d582429eefecc3d89c0c96cab6405b43141304f5991d0ae21bef12b80a67835"
+  },
+  "videos": {
+    "d87609d9be1c4738ba9dc378438d9935": {
+      "path": "/home/xilinx/gl-library-audio-20261016-xHlVhe/assets/d87609d9be1c4738ba9dc378438d9935.wav",
+      "sha256": "820fc0fa87682a25e06b125989c33c921863095342800a2fb47aa8ab85cbd37d"
+    }
+  }
+}

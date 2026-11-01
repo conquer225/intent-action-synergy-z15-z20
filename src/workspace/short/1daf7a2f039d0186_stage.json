@@ -1,0 +1,8 @@
+{
+  "remote": "/home/xilinx/gl-library-audio-20261016-xHlVhe",
+  "sources": {
+    "level_audio.py": "5eb982e1fe2f39da3ecb2db6d5ca81d11e6e8f8e6b6b167cee49bd6836ad875a",
+    "prepare_library_audio.py": "fb71b9e409fea04ed815ac5fcbe16e3ca223b596785cc9474e425f646e4984d7"
+  },
+  "hardware_opened": false
+}

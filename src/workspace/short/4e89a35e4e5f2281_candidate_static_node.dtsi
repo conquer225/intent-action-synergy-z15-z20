@@ -1,0 +1,13 @@
+/* ISOLATED TEMPLATE ONLY. Include under /amba in a future boot-time Z15 DTS
+ * solely with the matching candidate bit/HWH. Do not apply to the live board,
+ * a running DT overlay, or the existing one-directional PYNQ Overlay.
+ * The custom compatible gives this owner exclusive DMA register control;
+ * do not add a second xlnx,axi-dma node for the same 0x40400000 region. */
+guardianloop_dma_owner: dma-owner@40400000 {
+	compatible = "guardianloop,z15-filter-dma-owner-v1";
+	reg = <0x40400000 0x00010000>, <0x41200000 0x00010000>;
+	reg-names = "dma", "control";
+	guardianloop,abi-version = <1>;
+	/* Explicitly enable only after matching bit/HWH and boot ordering review. */
+	status = "disabled";
+};

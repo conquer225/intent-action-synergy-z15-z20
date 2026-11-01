@@ -1,0 +1,473 @@
+{
+  "scope": "staged only; no module built or loaded",
+  "native_tools_sha256": "d009b7514e0af6b7b2d35a241014159e3b860c19689ae5c69a1a8239cce42f90",
+  "sources": [
+    {
+      "url": "https://archive.debian.org/debian/dists/buster/main/binary-armhf/Packages.xz",
+      "file": "Packages-armhf.xz",
+      "sha256": "b6dd3b4e38ad90b4d30330b27892761100d1c64439a4e3f7a384d3ec35cc110c",
+      "bytes": 7705604
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/b/bc/bc_1.07.1-2+b1_armhf.deb",
+      "file": "bc_1.07.1-2+b1_armhf.deb",
+      "sha256": "e63f1022435c98473028d4632e923686b19b94a5da1c7ecb006920ba8f006386",
+      "bytes": 104124,
+      "package": "bc",
+      "version": "1.07.1-2+b1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/b/binutils/binutils_2.31.1-16_armhf.deb",
+      "file": "binutils_2.31.1-16_armhf.deb",
+      "sha256": "718481c274d08d649bdd1255463e743f27d22835bab877be6ced44e2ac9332cc",
+      "bytes": 56740,
+      "package": "binutils",
+      "version": "2.31.1-16"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/b/binutils/binutils-arm-linux-gnueabihf_2.31.1-16_armhf.deb",
+      "file": "binutils-arm-linux-gnueabihf_2.31.1-16_armhf.deb",
+      "sha256": "0504469d9059f5327656f51db872f07460333ea67bda559f71fb8f246e92837b",
+      "bytes": 2101324,
+      "package": "binutils-arm-linux-gnueabihf",
+      "version": "2.31.1-16"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/b/binutils/binutils-common_2.31.1-16_armhf.deb",
+      "file": "binutils-common_2.31.1-16_armhf.deb",
+      "sha256": "20e32d4ae65519e3adedef12d086ff0771fa15201656cb2631ad28d53896aceb",
+      "bytes": 2073408,
+      "package": "binutils-common",
+      "version": "2.31.1-16"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/b/bison/bison_3.3.2.dfsg-1_armhf.deb",
+      "file": "bison_3.3.2.dfsg-1_armhf.deb",
+      "sha256": "6c17cdc3440f29663f3f2150f4057210a223e2798a3a9042f417e86d522ee4ae",
+      "bytes": 847828,
+      "package": "bison",
+      "version": "2:3.3.2.dfsg-1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/g/gcc-8/cpp-8_8.3.0-6_armhf.deb",
+      "file": "cpp-8_8.3.0-6_armhf.deb",
+      "sha256": "50bb420849444bff01764f03afde81af1fce6e3a84c4d484f49c1329666b0cbc",
+      "bytes": 6789924,
+      "package": "cpp-8",
+      "version": "8.3.0-6"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/f/flex/flex_2.6.4-6.2_armhf.deb",
+      "file": "flex_2.6.4-6.2_armhf.deb",
+      "sha256": "6f110119f81798cf7695b7818aa0c3e43f1d4c034f1780d3c00b65d45f224865",
+      "bytes": 438360,
+      "package": "flex",
+      "version": "2.6.4-6.2"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/g/gcc-8/gcc-8_8.3.0-6_armhf.deb",
+      "file": "gcc-8_8.3.0-6_armhf.deb",
+      "sha256": "d2c5f9ff4ed952f546e9c64781db25e24eb9f1e85c00832222f365370ab74b88",
+      "bytes": 7228860,
+      "package": "gcc-8",
+      "version": "8.3.0-6"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/g/gcc-8/gcc-8-base_8.3.0-6_armhf.deb",
+      "file": "gcc-8-base_8.3.0-6_armhf.deb",
+      "sha256": "69fdbaf7dc4fe5afb1f9c4242f207688b6aa3e8fe53af9be7a2118cd69852e57",
+      "bytes": 190532,
+      "package": "gcc-8-base",
+      "version": "8.3.0-6"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/g/gcc-8/libasan5_8.3.0-6_armhf.deb",
+      "file": "libasan5_8.3.0-6_armhf.deb",
+      "sha256": "517a54264446cdd8d225056c70f720473e066331a0e757cf1195269546893e98",
+      "bytes": 335872,
+      "package": "libasan5",
+      "version": "8.3.0-6"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/g/gcc-8/libatomic1_8.3.0-6_armhf.deb",
+      "file": "libatomic1_8.3.0-6_armhf.deb",
+      "sha256": "32d47b666843a69cd2ef760b7d2dc0c16c9c81660be3555ab322eca3af979d81",
+      "bytes": 6740,
+      "package": "libatomic1",
+      "version": "8.3.0-6"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/b/binutils/libbinutils_2.31.1-16_armhf.deb",
+      "file": "libbinutils_2.31.1-16_armhf.deb",
+      "sha256": "c28787c61cd61138e4b75ee75a3ce137b1dd8e4cb8390b157b2f6e0c7ad7e65e",
+      "bytes": 302168,
+      "package": "libbinutils",
+      "version": "2.31.1-16"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/b/bison/libbison-dev_3.3.2.dfsg-1_armhf.deb",
+      "file": "libbison-dev_3.3.2.dfsg-1_armhf.deb",
+      "sha256": "61f7cdf424ea5a7572b3ab9b38ba681cae2132886ae93c78e081352e303d5cc8",
+      "bytes": 499552,
+      "package": "libbison-dev",
+      "version": "2:3.3.2.dfsg-1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/u/util-linux/libblkid1_2.33.1-0.1_armhf.deb",
+      "file": "libblkid1_2.33.1-0.1_armhf.deb",
+      "sha256": "3c5a3be9cdb4ef34fc0f1392bbe49fa6603e6f928b7a39bca87a52885d9b42a3",
+      "bytes": 179384,
+      "package": "libblkid1",
+      "version": "2.33.1-0.1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/b/bzip2/libbz2-1.0_1.0.6-9.2~deb10u1_armhf.deb",
+      "file": "libbz2-1.0_1.0.6-9.2~deb10u1_armhf.deb",
+      "sha256": "4401482dad1f11e370b0d47078b0eef74593d3b12badd8d4277a1c448ab2de15",
+      "bytes": 43616,
+      "package": "libbz2-1.0",
+      "version": "1.0.6-9.2~deb10u1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/g/glibc/libc-dev-bin_2.28-10+deb10u1_armhf.deb",
+      "file": "libc-dev-bin_2.28-10+deb10u1_armhf.deb",
+      "sha256": "8ea30b4b756ac7fc6d2a41ddc45ce254a4eefcb22e18ad3c15fca1c8c66c557f",
+      "bytes": 267320,
+      "package": "libc-dev-bin",
+      "version": "2.28-10+deb10u1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/g/glibc/libc6_2.28-10+deb10u1_armhf.deb",
+      "file": "libc6_2.28-10+deb10u1_armhf.deb",
+      "sha256": "c10a2ee12efdb773c1c626ed318f0d74108fce0aa11d66350b1c23ddbc8d5711",
+      "bytes": 2387108,
+      "package": "libc6",
+      "version": "2.28-10+deb10u1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/g/glibc/libc6-dev_2.28-10+deb10u1_armhf.deb",
+      "file": "libc6-dev_2.28-10+deb10u1_armhf.deb",
+      "sha256": "1fa45a3bfd60b4c27751ab8d4be159984a035560127866648c8708c237b75fec",
+      "bytes": 2149588,
+      "package": "libc6-dev",
+      "version": "2.28-10+deb10u1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/g/gcc-8/libcc1-0_8.3.0-6_armhf.deb",
+      "file": "libcc1-0_8.3.0-6_armhf.deb",
+      "sha256": "7f2949d22721b614729a2b7f1aea4dd4602a70de04d0a78aaa2b9de789678511",
+      "bytes": 38908,
+      "package": "libcc1-0",
+      "version": "8.3.0-6"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/d/db5.3/libdb5.3_5.3.28+dfsg1-0.5_armhf.deb",
+      "file": "libdb5.3_5.3.28+dfsg1-0.5_armhf.deb",
+      "sha256": "d34c3f927b13c17550313dd314cb064b66846279afd032574bff16aab62f0697",
+      "bytes": 596656,
+      "package": "libdb5.3",
+      "version": "5.3.28+dfsg1-0.5"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/d/dpkg/libdpkg-perl_1.19.8_all.deb",
+      "file": "libdpkg-perl_1.19.8_all.deb",
+      "sha256": "b445d9aa60b06e5424e17653091684b2928e828bdad2743dd85240f1824c4a8b",
+      "bytes": 1415464,
+      "package": "libdpkg-perl",
+      "version": "1.19.8"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/libf/libffi/libffi6_3.2.1-9_armhf.deb",
+      "file": "libffi6_3.2.1-9_armhf.deb",
+      "sha256": "420723ea7f56f2e9dfa20f683117a9e6f5ec9336b88c3ef5a7f69622ab815872",
+      "bytes": 18852,
+      "package": "libffi6",
+      "version": "3.2.1-9"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/f/flex/libfl2_2.6.4-6.2_armhf.deb",
+      "file": "libfl2_2.6.4-6.2_armhf.deb",
+      "sha256": "c6e8c1a7cfd2e4cc549eebe4d2b92237c03ca716144b99dbabcfa3a256d2b053",
+      "bytes": 102828,
+      "package": "libfl2",
+      "version": "2.6.4-6.2"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/g/gcc-8/libgcc-8-dev_8.3.0-6_armhf.deb",
+      "file": "libgcc-8-dev_8.3.0-6_armhf.deb",
+      "sha256": "a777364c62385597dd1c4064bbea81d6d445f1a7965d9d61880e1b39b9fc3ba0",
+      "bytes": 611552,
+      "package": "libgcc-8-dev",
+      "version": "8.3.0-6"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/g/gcc-8/libgcc1_8.3.0-6_armhf.deb",
+      "file": "libgcc1_8.3.0-6_armhf.deb",
+      "sha256": "2303bab1cc54099a8de5ced6601c10d4abedc62d3c12addc097f03cba1355d2d",
+      "bytes": 37160,
+      "package": "libgcc1",
+      "version": "1:8.3.0-6"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/g/gdbm/libgdbm-compat4_1.18.1-4_armhf.deb",
+      "file": "libgdbm-compat4_1.18.1-4_armhf.deb",
+      "sha256": "dac9aaa2eb8697008e2b22e5738872b975ae73e6fc936da0d0db3c6f5e3a7346",
+      "bytes": 43728,
+      "package": "libgdbm-compat4",
+      "version": "1.18.1-4"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/g/gdbm/libgdbm6_1.18.1-4_armhf.deb",
+      "file": "libgdbm6_1.18.1-4_armhf.deb",
+      "sha256": "da2fd9dbeab182c26e1babc1c002d30d422ac308778e2ae7914e5685e7f41b43",
+      "bytes": 61380,
+      "package": "libgdbm6",
+      "version": "1.18.1-4"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/g/glib2.0/libglib2.0-0_2.58.3-2+deb10u3_armhf.deb",
+      "file": "libglib2.0-0_2.58.3-2+deb10u3_armhf.deb",
+      "sha256": "6f5fad608614e25f54a301b63dfd3677b566b132df7d74dfca103863fd15c8e8",
+      "bytes": 1101740,
+      "package": "libglib2.0-0",
+      "version": "2.58.3-2+deb10u3"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/g/gmp/libgmp10_6.1.2+dfsg-4+deb10u1_armhf.deb",
+      "file": "libgmp10_6.1.2+dfsg-4+deb10u1_armhf.deb",
+      "sha256": "2016e90ef0c05d207360625b2e013ae872db190d7e7055e198027ee6bfd43254",
+      "bytes": 204708,
+      "package": "libgmp10",
+      "version": "2:6.1.2+dfsg-4+deb10u1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/g/gcc-8/libgomp1_8.3.0-6_armhf.deb",
+      "file": "libgomp1_8.3.0-6_armhf.deb",
+      "sha256": "0ee637d20d92fb217def838cf7a0591f05384dced5f5ec9885f93b61931f1522",
+      "bytes": 64768,
+      "package": "libgomp1",
+      "version": "8.3.0-6"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/i/isl/libisl19_0.20-2_armhf.deb",
+      "file": "libisl19_0.20-2_armhf.deb",
+      "sha256": "0507b63a31f0b2cfb2205fa543427879a1e94f90ae763b24cef373b3175a354f",
+      "bytes": 454568,
+      "package": "libisl19",
+      "version": "0.20-2"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/x/xz-utils/liblzma5_5.2.4-1+deb10u1_armhf.deb",
+      "file": "liblzma5_5.2.4-1+deb10u1_armhf.deb",
+      "sha256": "37af727c1714977551fba83c38e2123b2363680fbae24d78c9747b9bc8325be9",
+      "bytes": 144780,
+      "package": "liblzma5",
+      "version": "5.2.4-1+deb10u1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/u/util-linux/libmount1_2.33.1-0.1_armhf.deb",
+      "file": "libmount1_2.33.1-0.1_armhf.deb",
+      "sha256": "6f8d0b5eba9ccc07f5c15dac8051efeb8c7ba87bd40e479f222919f3606f7c38",
+      "bytes": 190812,
+      "package": "libmount1",
+      "version": "2.33.1-0.1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/m/mpclib3/libmpc3_1.1.0-1_armhf.deb",
+      "file": "libmpc3_1.1.0-1_armhf.deb",
+      "sha256": "ee00a8e9c8919f6fd68b7fa5eab4a00f3e321077292dae82713e53304abf852f",
+      "bytes": 33756,
+      "package": "libmpc3",
+      "version": "1.1.0-1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/m/mpfr4/libmpfr6_4.0.2-1_armhf.deb",
+      "file": "libmpfr6_4.0.2-1_armhf.deb",
+      "sha256": "9b3b0cbe7ff646f5f68f3c8b410317dff8a79e6eb6c9031633c886e8ec7b5184",
+      "bytes": 730888,
+      "package": "libmpfr6",
+      "version": "4.0.2-1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/n/ncurses/libncurses6_6.1+20181013-2+deb10u2_armhf.deb",
+      "file": "libncurses6_6.1+20181013-2+deb10u2_armhf.deb",
+      "sha256": "3b42e59806a913cafcefc29925d1479d3fba03293cb5c672b30400b3680f8616",
+      "bytes": 79804,
+      "package": "libncurses6",
+      "version": "6.1+20181013-2+deb10u2"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/p/pcre3/libpcre3_8.39-12_armhf.deb",
+      "file": "libpcre3_8.39-12_armhf.deb",
+      "sha256": "b237eca92ca771514e4659af62b91bab520b24319f4896d796bdaa0e113eb5e6",
+      "bytes": 316884,
+      "package": "libpcre3",
+      "version": "2:8.39-12"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/p/perl/libperl5.28_5.28.1-6+deb10u1_armhf.deb",
+      "file": "libperl5.28_5.28.1-6+deb10u1_armhf.deb",
+      "sha256": "aceb8d9a8e8d6234ee7c1f1ab699e3d847417da6804445346cff18b524132bdf",
+      "bytes": 3207016,
+      "package": "libperl5.28",
+      "version": "5.28.1-6+deb10u1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/r/readline/libreadline7_7.0-5_armhf.deb",
+      "file": "libreadline7_7.0-5_armhf.deb",
+      "sha256": "de3aa01b6ecfa5b57e5011e400abddf9174056588c21b42189b497e65a67d983",
+      "bytes": 130832,
+      "package": "libreadline7",
+      "version": "7.0-5"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/libs/libselinux/libselinux1_2.8-1+b1_armhf.deb",
+      "file": "libselinux1_2.8-1+b1_armhf.deb",
+      "sha256": "6710d31f542d1226f322a92f1b1963d592b8d310e7c06f912591b4dbc7d50178",
+      "bytes": 77448,
+      "package": "libselinux1",
+      "version": "2.8-1+b1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/libs/libsigsegv/libsigsegv2_2.12-2_armhf.deb",
+      "file": "libsigsegv2_2.12-2_armhf.deb",
+      "sha256": "c160124c057af9560d72b1c36c031c7397d6bf0df46d3908dafb4a5d86f84cba",
+      "bytes": 32072,
+      "package": "libsigsegv2",
+      "version": "2.12-2"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/o/openssl/libssl-dev_1.1.1n-0+deb10u3_armhf.deb",
+      "file": "libssl-dev_1.1.1n-0+deb10u3_armhf.deb",
+      "sha256": "58785728ed78564b866717621d5662a2fde625c2788a2287161a84b4c6a47168",
+      "bytes": 1607988,
+      "package": "libssl-dev",
+      "version": "1.1.1n-0+deb10u3"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/o/openssl/libssl1.1_1.1.1n-0+deb10u3_armhf.deb",
+      "file": "libssl1.1_1.1.1n-0+deb10u3_armhf.deb",
+      "sha256": "f24b7c099c32b4a84ba4a3955b8f61637aca4fd7e30d848858776ec128d9ffac",
+      "bytes": 1310248,
+      "package": "libssl1.1",
+      "version": "1.1.1n-0+deb10u3"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/g/gcc-8/libstdc++6_8.3.0-6_armhf.deb",
+      "file": "libstdc++6_8.3.0-6_armhf.deb",
+      "sha256": "2a22648689ca745554599a818f01241605b2548540d62026116cb07a15df8d09",
+      "bytes": 338100,
+      "package": "libstdc++6",
+      "version": "8.3.0-6"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/n/ncurses/libtinfo6_6.1+20181013-2+deb10u2_armhf.deb",
+      "file": "libtinfo6_6.1+20181013-2+deb10u2_armhf.deb",
+      "sha256": "5bb6e9c2dab2309dcd0f0d9d9990f21404032c1082a9bd2b127e13e085592f72",
+      "bytes": 312000,
+      "package": "libtinfo6",
+      "version": "6.1+20181013-2+deb10u2"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/g/gcc-8/libubsan1_8.3.0-6_armhf.deb",
+      "file": "libubsan1_8.3.0-6_armhf.deb",
+      "sha256": "b0a8e714a58b1a646ddddf5c064456733b7e15c318d429cc184a68c42af3c13a",
+      "bytes": 103444,
+      "package": "libubsan1",
+      "version": "8.3.0-6"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/u/util-linux/libuuid1_2.33.1-0.1_armhf.deb",
+      "file": "libuuid1_2.33.1-0.1_armhf.deb",
+      "sha256": "4bde8f620a8a1e818223ed702478afa836d5bb119a4750bc6795ab67b8cb3589",
+      "bytes": 77484,
+      "package": "libuuid1",
+      "version": "2.33.1-0.1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/libz/libzstd/libzstd1_1.3.8+dfsg-3+deb10u2_armhf.deb",
+      "file": "libzstd1_1.3.8+dfsg-3+deb10u2_armhf.deb",
+      "sha256": "e3acbac5f15b54f0d3ff99323c84c48a13476c76b3bd3aa297d331c9721b6fcd",
+      "bytes": 204816,
+      "package": "libzstd1",
+      "version": "1.3.8+dfsg-3+deb10u2"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/l/linux/linux-libc-dev_4.19.249-2_armhf.deb",
+      "file": "linux-libc-dev_4.19.249-2_armhf.deb",
+      "sha256": "28a25c62bd59f43ec6ae57e314e9af2326e775b1281e05478e40e830fed1003e",
+      "bytes": 1512736,
+      "package": "linux-libc-dev",
+      "version": "4.19.249-2"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/m/m4/m4_1.4.18-2_armhf.deb",
+      "file": "m4_1.4.18-2_armhf.deb",
+      "sha256": "667dab1e0b558ac471ba7e3f5a8b25951be9e9ce20256de6872594ce6eddb422",
+      "bytes": 190328,
+      "package": "m4",
+      "version": "1.4.18-2"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/m/make-dfsg/make_4.2.1-1.2_armhf.deb",
+      "file": "make_4.2.1-1.2_armhf.deb",
+      "sha256": "0b71ad8de1a995fecceea89f833a6a1cf970d1cf00a597b0a5e286fa7305ba9d",
+      "bytes": 327468,
+      "package": "make",
+      "version": "4.2.1-1.2"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/p/perl/perl_5.28.1-6+deb10u1_armhf.deb",
+      "file": "perl_5.28.1-6+deb10u1_armhf.deb",
+      "sha256": "fc610bd3769318580110b7c1a056214d47dbfccbfc82381a8563638c90f0e9a1",
+      "bytes": 203868,
+      "package": "perl",
+      "version": "5.28.1-6+deb10u1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/p/perl/perl-base_5.28.1-6+deb10u1_armhf.deb",
+      "file": "perl-base_5.28.1-6+deb10u1_armhf.deb",
+      "sha256": "e74ef211a025c42e22bfd958ad72a4b57af1091bf269d37ac87e7fb574ad16b4",
+      "bytes": 1399816,
+      "package": "perl-base",
+      "version": "5.28.1-6+deb10u1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/p/perl/perl-modules-5.28_5.28.1-6+deb10u1_all.deb",
+      "file": "perl-modules-5.28_5.28.1-6+deb10u1_all.deb",
+      "sha256": "61c00b6f4c7a242aa6aefdc07012747607cd9c6c5392c1dcd087ce27031dd1dd",
+      "bytes": 2873388,
+      "package": "perl-modules-5.28",
+      "version": "5.28.1-6+deb10u1"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/p/pkg-config/pkg-config_0.29-6_armhf.deb",
+      "file": "pkg-config_0.29-6_armhf.deb",
+      "sha256": "b390b6a3085510a6de8984d861d71133715b7462c02609eb7eda169afa6b2eb2",
+      "bytes": 60724,
+      "package": "pkg-config",
+      "version": "0.29-6"
+    },
+    {
+      "url": "https://archive.debian.org/debian/pool/main/z/zlib/zlib1g_1.2.11.dfsg-1+deb10u1_armhf.deb",
+      "file": "zlib1g_1.2.11.dfsg-1+deb10u1_armhf.deb",
+      "sha256": "40eeb7d7595d7fdc3673699de0229d07a05678632dc9540e0e4d68fa18107689",
+      "bytes": 85072,
+      "package": "zlib1g",
+      "version": "1:1.2.11.dfsg-1+deb10u1"
+    },
+    {
+      "url": "https://codeload.github.com/Xilinx/linux-xlnx/tar.gz/refs/tags/xilinx-v2020.2",
+      "file": "linux-xilinx-v2020.2.tar.gz",
+      "sha256": "65586b3c24bca96f02c6312896042d0e14174f2615e5ac40ada4d08f5380f5e9",
+      "bytes": 173574938
+    },
+    {
+      "url": "https://codeload.github.com/wirenboard/rtl8733bu/tar.gz/2d9048be60759206b8db5e2370420333ef0b8478",
+      "file": "rtl8733bu.tar.gz",
+      "sha256": "f47c43ddbddd2c15e0b20bd210ff1e89f07d9f89b09f9619542296f35eff601d",
+      "bytes": 3508720,
+      "commit": "2d9048be60759206b8db5e2370420333ef0b8478"
+    }
+  ]
+}

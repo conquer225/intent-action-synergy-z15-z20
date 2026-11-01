@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "checks": {
+    "fluid_visible_pixels": true,
+    "fluid_action_count": true,
+    "real_spectrum_history": true,
+    "silent": true,
+    "recorded_npu_input": true,
+    "software_marked": true,
+    "recorded_depth": true,
+    "received_frames": true,
+    "memory_display_frames": true,
+    "no_external_requests": true,
+    "browser_errors": true
+  },
+  "browser_errors": [],
+  "accepted_frames": 243,
+  "memory_display_frames": 233,
+  "elapsed_seconds": 31.889999999999873,
+  "physical_wifi": false,
+  "physical_pl": false,
+  "physical_hdmi": false,
+  "input": "existing recorded PCM; optional previously recorded camera image",
+  "soak": null
+}

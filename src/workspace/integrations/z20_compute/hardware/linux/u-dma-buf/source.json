@@ -1,0 +1,37 @@
+{
+  "repository": "https://github.com/ikwzm/udmabuf",
+  "commit": "c7b41f9f1992e5b786d315f41c7814af4d508db9",
+  "license": "BSD-2-Clause",
+  "files": [
+    {
+      "path": "u-dma-buf.c",
+      "url": "https://raw.githubusercontent.com/ikwzm/udmabuf/c7b41f9f1992e5b786d315f41c7814af4d508db9/u-dma-buf.c",
+      "sha256": "445cf060e31d0ace3d31b33221f8f5d230c5e7782d7c371b082cc55ffa479f08"
+    },
+    {
+      "path": "u-dma-buf-ioctl.h",
+      "url": "https://raw.githubusercontent.com/ikwzm/udmabuf/c7b41f9f1992e5b786d315f41c7814af4d508db9/u-dma-buf-ioctl.h",
+      "sha256": "ab72fc6913bcf3c537427507753ad7cff34650c35d5181fc21bf8f03843ea52a"
+    },
+    {
+      "path": "Makefile",
+      "url": "https://raw.githubusercontent.com/ikwzm/udmabuf/c7b41f9f1992e5b786d315f41c7814af4d508db9/Makefile",
+      "sha256": "5aa2d145e283783f455d37c3ac2d41f301843442c12bf66580b04bf61a33da6b"
+    },
+    {
+      "path": "Kconfig",
+      "url": "https://raw.githubusercontent.com/ikwzm/udmabuf/c7b41f9f1992e5b786d315f41c7814af4d508db9/Kconfig",
+      "sha256": "b41760199f6b1e72ccd16d6c863ec239eafd8bdea70d47ad9d6982365a507d49"
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/ikwzm/udmabuf/c7b41f9f1992e5b786d315f41c7814af4d508db9/LICENSE",
+      "sha256": "1040ce70911ec299e8de64d4affcfcaccb393313e935be5c82c9b25782b8bb06"
+    },
+    {
+      "path": "Readme.md",
+      "url": "https://raw.githubusercontent.com/ikwzm/udmabuf/c7b41f9f1992e5b786d315f41c7814af4d508db9/Readme.md",
+      "sha256": "5723517984ea69bcd5ebcedb0dc1a7e2fe46ff45a810c942d94bc53b770d2cf4"
+    }
+  ]
+}

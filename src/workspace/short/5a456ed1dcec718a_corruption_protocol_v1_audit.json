@@ -1,0 +1,509 @@
+{
+  "protocol_version": "guardianloop-structured-feature-corruption-v1",
+  "domain": "SEED-VIG differential-entropy features",
+  "feature_shape": [
+    20355,
+    8,
+    5
+  ],
+  "channels": [
+    "FT7",
+    "FT8",
+    "CP1",
+    "CP2",
+    "P1",
+    "P2",
+    "O1",
+    "O2"
+  ],
+  "bands": [
+    "delta",
+    "theta",
+    "alpha",
+    "beta",
+    "gamma"
+  ],
+  "source_sha256": "9e31038a063e7a126aa1debceb0be385b78d8670c87e6c1a4eae763b002a272a",
+  "episode": {
+    "start": 500,
+    "length": 4000
+  },
+  "checks": {
+    "all_finite": true,
+    "soft_severity_effect_is_strictly_increasing": {
+      "broadband_noise": true,
+      "mains_noise": true,
+      "drift": true,
+      "burst": true
+    }
+  },
+  "results": [
+    {
+      "kind": "dropout",
+      "severity": 0.33,
+      "channels": [
+        1,
+        6
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": true,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 8000,
+      "changed_fraction": 0.04912797838368951,
+      "global_mean_abs_feature_delta": 0.1233269065440457,
+      "changed_mean_abs_feature_delta": 2.51031918270405,
+      "changed_p95_abs_feature_delta": 3.529930923523991,
+      "max_abs_feature_delta": 7.284654031403919,
+      "mean_quality": 0.950872004032135,
+      "output_sha256": "a0e8bf0eae10f4db429016d0f343a3beda2376cd6717591d401704329f2b82fa"
+    },
+    {
+      "kind": "dropout",
+      "severity": 0.66,
+      "channels": [
+        1,
+        6
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": true,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 8000,
+      "changed_fraction": 0.04912797838368951,
+      "global_mean_abs_feature_delta": 0.1233269065440457,
+      "changed_mean_abs_feature_delta": 2.51031918270405,
+      "changed_p95_abs_feature_delta": 3.529930923523991,
+      "max_abs_feature_delta": 7.284654031403919,
+      "mean_quality": 0.950872004032135,
+      "output_sha256": "a0e8bf0eae10f4db429016d0f343a3beda2376cd6717591d401704329f2b82fa"
+    },
+    {
+      "kind": "dropout",
+      "severity": 1.0,
+      "channels": [
+        1,
+        6
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": true,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 8000,
+      "changed_fraction": 0.04912797838368951,
+      "global_mean_abs_feature_delta": 0.1233269065440457,
+      "changed_mean_abs_feature_delta": 2.51031918270405,
+      "changed_p95_abs_feature_delta": 3.529930923523991,
+      "max_abs_feature_delta": 7.284654031403919,
+      "mean_quality": 0.950872004032135,
+      "output_sha256": "a0e8bf0eae10f4db429016d0f343a3beda2376cd6717591d401704329f2b82fa"
+    },
+    {
+      "kind": "flatline",
+      "severity": 0.33,
+      "channels": [
+        1,
+        6
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": true,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 8000,
+      "changed_fraction": 0.04912797838368951,
+      "global_mean_abs_feature_delta": 0.0665547486885052,
+      "changed_mean_abs_feature_delta": 1.354721909554523,
+      "changed_p95_abs_feature_delta": 2.811161761150753,
+      "max_abs_feature_delta": 6.289981833273427,
+      "mean_quality": 0.9533284306526184,
+      "output_sha256": "5e662bcc48757b830898f0c8a64d135479f5052bf1520071775ddec561a601c8"
+    },
+    {
+      "kind": "flatline",
+      "severity": 0.66,
+      "channels": [
+        1,
+        6
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": true,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 8000,
+      "changed_fraction": 0.04912797838368951,
+      "global_mean_abs_feature_delta": 0.0665547486885052,
+      "changed_mean_abs_feature_delta": 1.354721909554523,
+      "changed_p95_abs_feature_delta": 2.811161761150753,
+      "max_abs_feature_delta": 6.289981833273427,
+      "mean_quality": 0.9533284306526184,
+      "output_sha256": "5e662bcc48757b830898f0c8a64d135479f5052bf1520071775ddec561a601c8"
+    },
+    {
+      "kind": "flatline",
+      "severity": 1.0,
+      "channels": [
+        1,
+        6
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": true,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 8000,
+      "changed_fraction": 0.04912797838368951,
+      "global_mean_abs_feature_delta": 0.0665547486885052,
+      "changed_mean_abs_feature_delta": 1.354721909554523,
+      "changed_p95_abs_feature_delta": 2.811161761150753,
+      "max_abs_feature_delta": 6.289981833273427,
+      "mean_quality": 0.9533284306526184,
+      "output_sha256": "5e662bcc48757b830898f0c8a64d135479f5052bf1520071775ddec561a601c8"
+    },
+    {
+      "kind": "broadband_noise",
+      "severity": 0.33,
+      "channels": [
+        1,
+        6
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": true,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 8000,
+      "changed_fraction": 0.04912797838368951,
+      "global_mean_abs_feature_delta": 0.028183632753803724,
+      "changed_mean_abs_feature_delta": 0.5736778447036748,
+      "changed_p95_abs_feature_delta": 1.10769427906989,
+      "max_abs_feature_delta": 5.741680345073734,
+      "mean_quality": 0.9738884568214417,
+      "output_sha256": "0fc345ca05a516fc45b9c2290593fc47cda5ded26874a1b824805296cf9464d9"
+    },
+    {
+      "kind": "broadband_noise",
+      "severity": 0.66,
+      "channels": [
+        1,
+        6
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": true,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 8000,
+      "changed_fraction": 0.04912797838368951,
+      "global_mean_abs_feature_delta": 0.045761308523931954,
+      "changed_mean_abs_feature_delta": 0.9314714350046348,
+      "changed_p95_abs_feature_delta": 1.8084094135584108,
+      "max_abs_feature_delta": 9.72006678600747,
+      "mean_quality": 0.9649717807769775,
+      "output_sha256": "9fa07becc6087b8fb86528bc7d780fc796ca2ac6f42ea4cc8505cf71a888229e"
+    },
+    {
+      "kind": "broadband_noise",
+      "severity": 1.0,
+      "channels": [
+        1,
+        6
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": true,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 8000,
+      "changed_fraction": 0.04912797838368951,
+      "global_mean_abs_feature_delta": 0.06387298225847901,
+      "changed_mean_abs_feature_delta": 1.3001345538713402,
+      "changed_p95_abs_feature_delta": 2.5322446744234712,
+      "max_abs_feature_delta": 13.819010391817983,
+      "mean_quality": 0.955784797668457,
+      "output_sha256": "cf0ce15a12ac2d25a7ff67116044322b3a4c8234baf3536efb3d77028b232364"
+    },
+    {
+      "kind": "mains_noise",
+      "severity": 0.33,
+      "channels": [
+        1,
+        6
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": true,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 8000,
+      "changed_fraction": 0.04912797838368951,
+      "global_mean_abs_feature_delta": 0.012138721486295965,
+      "changed_mean_abs_feature_delta": 0.24708367585355437,
+      "changed_p95_abs_feature_delta": 1.37879017698173,
+      "max_abs_feature_delta": 1.3787901769817301,
+      "mean_quality": 0.9779906868934631,
+      "output_sha256": "430b278c43d567ec0fa73118002458f58019c9a532301ff07b685b17a73b70d1"
+    },
+    {
+      "kind": "mains_noise",
+      "severity": 0.66,
+      "channels": [
+        1,
+        6
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": true,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 8000,
+      "changed_fraction": 0.04912797838368951,
+      "global_mean_abs_feature_delta": 0.01904523543539539,
+      "changed_mean_abs_feature_delta": 0.3876657672874732,
+      "changed_p95_abs_feature_delta": 2.1632742431954726,
+      "max_abs_feature_delta": 2.163274243195473,
+      "mean_quality": 0.9682633280754089,
+      "output_sha256": "0e33dd3f884da4c0b7490eecc34c331754b5f94209e1e29f593f5b2e19d48d94"
+    },
+    {
+      "kind": "mains_noise",
+      "severity": 1.0,
+      "channels": [
+        1,
+        6
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": true,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 8000,
+      "changed_fraction": 0.04912797838368951,
+      "global_mean_abs_feature_delta": 0.026161037685982685,
+      "changed_mean_abs_feature_delta": 0.5325079220981775,
+      "changed_p95_abs_feature_delta": 2.9715305538399353,
+      "max_abs_feature_delta": 2.9715305538399357,
+      "mean_quality": 0.9582412242889404,
+      "output_sha256": "8673026975998a19fa3845179ed57eb58edee2811b990e9b5252361c3fa7a23b"
+    },
+    {
+      "kind": "drift",
+      "severity": 0.33,
+      "channels": [
+        1,
+        6
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": true,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 8000,
+      "changed_fraction": 0.04912797838368951,
+      "global_mean_abs_feature_delta": 0.012605471635281338,
+      "changed_mean_abs_feature_delta": 0.2565843751361516,
+      "changed_p95_abs_feature_delta": 0.64934849442211,
+      "max_abs_feature_delta": 1.1459994393068342,
+      "mean_quality": 0.9804470539093018,
+      "output_sha256": "107c4cd2a9376308a1cdab95f9c18513a6c8584210c57e04db44ddf17f4bddd7"
+    },
+    {
+      "kind": "drift",
+      "severity": 0.66,
+      "channels": [
+        1,
+        6
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": true,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 8000,
+      "changed_fraction": 0.04912797838368951,
+      "global_mean_abs_feature_delta": 0.02079764904376833,
+      "changed_mean_abs_feature_delta": 0.4233361462859044,
+      "changed_p95_abs_feature_delta": 1.0713539711034374,
+      "max_abs_feature_delta": 1.8907736919854552,
+      "mean_quality": 0.9707196950912476,
+      "output_sha256": "8c52e0137939eaeb4b5c915accae45b007698a9b9ca7d98b536ec7d8bf57551f"
+    },
+    {
+      "kind": "drift",
+      "severity": 1.0,
+      "channels": [
+        1,
+        6
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": true,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 8000,
+      "changed_fraction": 0.04912797838368951,
+      "global_mean_abs_feature_delta": 0.029238074252512503,
+      "changed_mean_abs_feature_delta": 0.595141001409892,
+      "changed_p95_abs_feature_delta": 1.5061474925326834,
+      "max_abs_feature_delta": 2.658116861411912,
+      "mean_quality": 0.960697591304779,
+      "output_sha256": "be10e8b988e996a0861ba119eb9c615dbc60677ea8d326d08f9b9d494e3e5618"
+    },
+    {
+      "kind": "burst",
+      "severity": 0.33,
+      "channels": [
+        1,
+        6
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": true,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 1192,
+      "changed_fraction": 0.007320068779169737,
+      "global_mean_abs_feature_delta": 0.00827448530513716,
+      "changed_mean_abs_feature_delta": 1.130383546215214,
+      "changed_p95_abs_feature_delta": 3.416292321350423,
+      "max_abs_feature_delta": 112.75019858922245,
+      "mean_quality": 0.9945172667503357,
+      "output_sha256": "2a13ed19f5a035b1fd97b5dbe3585606ad4437bf48bc50dd9871563e2642a6b9"
+    },
+    {
+      "kind": "burst",
+      "severity": 0.66,
+      "channels": [
+        1,
+        6
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": true,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 1984,
+      "changed_fraction": 0.012183738639155,
+      "global_mean_abs_feature_delta": 0.021053152384426232,
+      "changed_mean_abs_feature_delta": 1.7279714386491773,
+      "changed_p95_abs_feature_delta": 5.247298182677446,
+      "max_abs_feature_delta": 173.18011941082426,
+      "mean_quality": 0.9896681308746338,
+      "output_sha256": "aa904ce2523724b653a8f5b964c0eb9e0dc69f1a4292d400121d9477ba4f2e02"
+    },
+    {
+      "kind": "burst",
+      "severity": 1.0,
+      "channels": [
+        1,
+        6
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": true,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 2800,
+      "changed_fraction": 0.01719479243429133,
+      "global_mean_abs_feature_delta": 0.04066029790834298,
+      "changed_mean_abs_feature_delta": 2.364686754069489,
+      "changed_p95_abs_feature_delta": 7.258726453022335,
+      "max_abs_feature_delta": 206.30632964409676,
+      "mean_quality": 0.9836649298667908,
+      "output_sha256": "abad5e09c2774b03e4e35bd76f13aaf8155ad9a73e235d1a6485beed7a86ee63"
+    },
+    {
+      "kind": "channel_swap",
+      "severity": 0.33,
+      "channels": [
+        0,
+        1
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": false,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 8000,
+      "changed_fraction": 0.04912797838368951,
+      "global_mean_abs_feature_delta": 0.009384730753231199,
+      "changed_mean_abs_feature_delta": 0.19102619448202104,
+      "changed_p95_abs_feature_delta": 0.6007946513163168,
+      "max_abs_feature_delta": 1.8705358103837324,
+      "mean_quality": 1.0,
+      "output_sha256": "f2272ff287a984c50ecca01055a64640593b0e7d2cc0686f3155d12bfe17752a"
+    },
+    {
+      "kind": "channel_swap",
+      "severity": 0.66,
+      "channels": [
+        0,
+        1
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": false,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 8000,
+      "changed_fraction": 0.04912797838368951,
+      "global_mean_abs_feature_delta": 0.009384730753231199,
+      "changed_mean_abs_feature_delta": 0.19102619448202104,
+      "changed_p95_abs_feature_delta": 0.6007946513163168,
+      "max_abs_feature_delta": 1.8705358103837324,
+      "mean_quality": 1.0,
+      "output_sha256": "f2272ff287a984c50ecca01055a64640593b0e7d2cc0686f3155d12bfe17752a"
+    },
+    {
+      "kind": "channel_swap",
+      "severity": 1.0,
+      "channels": [
+        0,
+        1
+      ],
+      "start": 500,
+      "end": 4500,
+      "seed": 20260919,
+      "training_allowed": false,
+      "quality_semantics": "synthetic 0=unusable, 1=nominal",
+      "finite": true,
+      "changed_channel_windows": 8000,
+      "changed_fraction": 0.04912797838368951,
+      "global_mean_abs_feature_delta": 0.009384730753231199,
+      "changed_mean_abs_feature_delta": 0.19102619448202104,
+      "changed_p95_abs_feature_delta": 0.6007946513163168,
+      "max_abs_feature_delta": 1.8705358103837324,
+      "mean_quality": 1.0,
+      "output_sha256": "f2272ff287a984c50ecca01055a64640593b0e7d2cc0686f3155d12bfe17752a"
+    }
+  ],
+  "notes": [
+    "Microvolt thresholds are not applied directly to DE features.",
+    "All magnitudes except dropout/flatline/swap use per-recording robust scale.",
+    "channel_swap is evaluation-only because electrically valid signals may have wrong identities."
+  ]
+}

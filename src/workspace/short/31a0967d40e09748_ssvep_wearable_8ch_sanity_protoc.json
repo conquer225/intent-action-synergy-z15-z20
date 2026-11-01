@@ -1,0 +1,7 @@
+{
+  "extends": "ssvep_wearable_holdout_protocol.json",
+  "study": "Dataset eight-occipital-channel algorithm sanity check; NOT the Cyton montage",
+  "channels_zero_based": [0, 1, 2, 3, 4, 5, 6, 7],
+  "channel_names": ["POz", "PO3", "PO4", "PO5", "PO6", "Oz", "O1", "O2"],
+  "sanity_warning": "This analysis uses six electrodes that are absent from the fixed Cyton montage. It tests preprocessing/code only and cannot be quoted as fixed-cap accuracy."
+}
