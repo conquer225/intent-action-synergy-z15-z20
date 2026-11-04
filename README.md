@@ -54,7 +54,4 @@ python -X utf8 -B sim/run_checks.py --workspace C:/work/intent_action_runtime --
 - `integrations/pendulum_ble`、`multimodal/firmware`：既有外设通信和嵌入式源码。
 
 ## 当前状态
-
-历史工程已有真实板端运行与分项动作记录，当前 10/30 菜单修订属于待实板验收的候选。脑电共享核的现有展示包含录制特征，空间页面使用电脑相对深度；整数参考一致不能作为独立分类准确率，相对深度不能作为米制测距结果。范围见[当前状态](report/current_status.md)。
-
 源码、数据和依赖按各自声明保留版权；本次公开未给全部源码重新指定统一许可证。来源和许可范围见[第三方说明](report/third_party.md)。
