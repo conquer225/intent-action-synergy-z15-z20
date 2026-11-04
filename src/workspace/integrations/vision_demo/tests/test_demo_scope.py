@@ -23,6 +23,7 @@ class DemoScopeTests(unittest.TestCase):
     def test_brain_only_runtime_never_constructs_audio_resources(self):
         from vision_demo.signal_runtime import SignalRuntime
         with patch('vision_demo.signal_runtime.PublicReplay'), \
+             patch('eeg_demo_bridge.DemoBridge'), \
              patch('vision_demo.signal_runtime.SignalSource'), \
              patch('vision_demo.signal_runtime.SignalPresenter'), \
              patch('vision_demo.signal_runtime.PLAudioFFT', side_effect=AssertionError('FFT created')), \

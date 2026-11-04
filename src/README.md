@@ -1,6 +1,6 @@
 # 源码说明
 
-`workspace/` 保留 4744 个公开源码、测试和配置文件的原始字节。路径按英文规范化；过长路径放入 `workspace/short/`。完整的原路径、存储位置、字节数与 SHA256 在[来源清单](../report/source_manifest.json)。
+`workspace/` 以 4744 个公开源码、测试和配置文件为基线。路径按英文规范化；过长路径放入 `workspace/short/`。完整的原路径、存储位置、当前字节数与 SHA256 在[来源清单](../report/source_manifest.json)。本次修改文件同时保留基线摘要与修订说明。
 
 在仓库根目录执行 `python -X utf8 -B build/restore_workspace.py --output C:/work/intent_action_runtime`，再到恢复出的原目录阅读和运行程序。恢复目标必须尚不存在且位于仓库外。
 

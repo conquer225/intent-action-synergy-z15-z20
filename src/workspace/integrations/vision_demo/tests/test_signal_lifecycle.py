@@ -1,10 +1,17 @@
-import tempfile,unittest,sys,types
+import tempfile,unittest,sys,types,json,hashlib
 from pathlib import Path
 from unittest.mock import patch
 from types import SimpleNamespace
 from vision_demo.signal_runtime import SignalRuntime
 class LifecycleTests(unittest.TestCase):
- def test_default_recording_page_switch_never_restarts_source_and_old_audio_blocks_music(self):
+ def assets(self):
+  temporary=tempfile.TemporaryDirectory();self.addCleanup(temporary.cleanup)
+  assets=Path(temporary.name);(assets/'music').mkdir()
+  raw=b'PCM session test payload';(assets/'music/fixture.wav').write_bytes(raw)
+  track=dict(path='fixture.wav',sha256=hashlib.sha256(raw).hexdigest(),title='fixture')
+  (assets/'music/catalog.json').write_text(json.dumps(dict(tracks={key:track for key in ('calm','steady','bright')})),encoding='utf-8')
+  return assets
+ def test_default_live_page_switch_preserves_source_and_old_audio_blocks_music(self):
   class Bridge:
    def snapshot(self):return dict(stale=True,reason='not connected')
    def close(self):pass
@@ -21,9 +28,8 @@ class LifecycleTests(unittest.TestCase):
    def close(self):pass
   module=types.ModuleType('eeg_demo_bridge');module.DemoBridge=Bridge
   audio=types.ModuleType('audio_session');audio.PcmSession=Session
-  # Runtime assets live next to installed module; use actual package asset content through Path redirection.
-  assets=Path(__file__).resolve().parents[1]/'build/signal_assets'
-  if not assets.exists():self.skipTest('Prepared assets unavailable')
+  # Deterministic assets exercise lifecycle without distributing recordings.
+  assets=self.assets()
   import vision_demo.signal_runtime as runtime
   class Folder:
    def resolve(self):return self
@@ -36,15 +42,14 @@ class LifecycleTests(unittest.TestCase):
    with patch.object(s.music,'update',wraps=s.music.update) as update:
     self.assertEqual([s.next() for _ in range(4)],['fatigue','emotion','music','audio'])
     s.service(100);self.assertFalse(update.called)
-    s.service(100.05);self.assertAlmostEqual(s.frame['position_seconds'],.05,places=6)
+    s.service(100.05);self.assertEqual(s.frame['origin'],'live');self.assertFalse(s.frame['ok'])
     self.assertFalse(update.called);s.output_ready=True;s.service(101);self.assertEqual(update.call_count,1)
-   self.assertEqual(s.source.mode,'replay');s.leave();self.assertFalse(s.pages.music_armed);s.close()
+   self.assertEqual(s.source.mode,'live');s.leave();self.assertFalse(s.pages.music_armed);s.close()
 
  def test_invalid_fft_never_starts_bridge_or_pcm_threads(self):
   import vision_demo.signal_runtime as runtime
   from unittest.mock import Mock
-  assets=Path(__file__).resolve().parents[1]/'build/signal_assets'
-  if not assets.exists():self.skipTest('Prepared assets unavailable')
+  assets=self.assets()
   class Folder:
    def resolve(self):return self
    @property

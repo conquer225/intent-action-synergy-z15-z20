@@ -28,11 +28,10 @@ class VisualPipeline:
 
     def audio_loop(self):
         p=self.pipeline
-        manifest=json.loads((p.sound_root/'manifest.json').read_text(encoding='utf-8'))
-        rows=[next(r for r in manifest['windows'] if r['class_id']==label) for label in range(3)]
+        rows=None
         previous=None;spectrum=None;features=None;window_id=None;last_sequence=-1;submitted_cycle=-1
         history=deque(maxlen=40)
-        eeg_records=None;eeg_key=None;external_key=None;frozen_sound=None
+        external_key=None;frozen_sound=None
         while not p.stopped.is_set():
             view=self.state.snapshot();now=time.monotonic()
             if view['menu'] or view['mode'] not in ('spectrum','npu'):
@@ -43,22 +42,10 @@ class VisualPipeline:
                 if live.get('origin')=='network' and live.get('features'):
                     self.state.publish('npu',dict(live,event='completed',task=task),epoch=view['epoch'])
                 else:
-                    if eeg_records is None:
-                        path=p.sound_root.parent/'lemon_features.json'
-                        eeg_records=json.loads(path.read_text(encoding='utf-8'))['records'] if path.exists() else []
-                    eeg_rows=[r for r in eeg_records if r['task']==task]
-                    key=(view['epoch'],task,int(now//6))
-                    if eeg_rows and key!=eeg_key:
-                        row=eeg_rows[key[-1]%len(eeg_rows)];eeg_key=key
-                        wid='visual-eeg:%d:%s:%d'%key
-                        p.runtime.submit_local(task,row['features'],feature_version=PREPROCESSORS[task],
-                            window_id=wid,source='recorded:LEMON_classifier_features')
-                    result=p.runtime.status().get(task,{})
-                    trace=dict(result,task=task,event='completed' if result.get('window_id')==('visual-eeg:%d:%s:%d'%key) else 'submitted')
-                    if trace['event']=='submitted':
-                        trace.update(valid=False,class_id=None,scores=None,features=[],quantized_features=[],timing=None,
-                            window_id='visual-eeg:%d:%s:%d'%key,source='recorded:LEMON_classifier_features',integer_reference_equal=None)
-                    if not eeg_rows:trace.update(valid=False,state='source_unavailable',event=None)
+                    trace=dict(task=task,valid=False,state='waiting_for_live_eeg',event=None,
+                        source='live:Z15',reason='等待 Z15 实时脑电特征',class_id=None,scores=None,
+                        features=[],quantized_features=[],timing=None,window_id=None,
+                        integer_reference_equal=None)
                     self.state.publish('npu',trace,epoch=view['epoch'])
                 p.stopped.wait(.05);continue
             incoming=view.get('sound_input') if view['mode']=='npu' else None
@@ -74,6 +61,9 @@ class VisualPipeline:
                     frozen_sound=dict(result,event='completed',task='sound',frozen=True)
                 trace=frozen_sound or dict(task='sound',source=incoming['source'],window_id=incoming['window_id'],valid=False,event='submitted')
                 self.state.publish('npu',trace,epoch=view['epoch']);p.stopped.wait(.05);continue
+            if rows is None:
+                manifest=json.loads((p.sound_root/'manifest.json').read_text(encoding='utf-8'))
+                rows=[next(r for r in manifest['windows'] if r['class_id']==label) for label in range(3)]
             key=(view['epoch'],view.get('sound_sample_index',0) if view['mode']=='npu' else view['sample_index'])
             if key!=previous:
                 row=rows[key[1]];path=p.sound_root/row['file']

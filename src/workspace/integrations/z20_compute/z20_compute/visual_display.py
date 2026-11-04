@@ -50,7 +50,7 @@ class DemoDisplay:
                     if task==('fatigue','emotion','sound')[i]:frame[148:151,x:x+350]=ACCENT
                 text('输入',40,177,28);text('Z20 分类计算',455,177,28);text('本次结果',875,177,28)
                 source=trace.get('source','')
-                origin='电脑麦克风 · 一秒录音' if source=='live:pc_microphone' else '导入音频文件' if source=='recorded:pc_wav' else '脑电特征记录回放' if 'LEMON' in source else '登记录音回放' if source.startswith('recorded:') else '等待数据输入'
+                origin='电脑麦克风 · 一秒录音' if source=='live:pc_microphone' else 'Z15 实时脑电' if source.startswith('live:Z15') else '导入音频文件' if source=='recorded:pc_wav' else '脑电特征记录回放' if 'LEMON' in source else '登记录音回放' if source.startswith('recorded:') else '等待数据输入'
                 text(origin,40,227,20,MUTED)
                 text('窗口 '+str(trace.get('window_id','等待采集'))[-30:],40,478,20,MUTED)
                 features=trace.get('quantized_features',[])

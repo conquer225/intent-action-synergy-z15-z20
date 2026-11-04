@@ -4,7 +4,9 @@
 
 `test_verify_package.py` 检查完整交付通过、摘要被改、未登记文件、非法文件名及超出 Windows ZIP 路径预算时拒绝。交付工具共 7 项测试，含多个故障子用例。
 
-`run_checks.py` 对已还原工程执行选定的 12 项软件测试，并复跑本包 14 项技能测试和 7 项交付工具测试。软件故障注入、本机 socketpair 和合成位流均不登记为板卡测试。命令和当前结果保存在[检查记录](../report/verification/README.md)。
+`test_live_eeg_entry.py` 与 `test_live_eeg_npu.py` 新增 8 项实时入口行为测试，覆盖无回放素材时启动、接收波形、页面连续性、过期清除、手动来源切换和 Z20 实时特征等待。
+
+`run_checks.py` 对已还原工程执行选定的 12 项软件测试，并复跑本包 14 项技能测试和 15 项入口及交付工具测试，共 41 项。软件故障注入、本机 socketpair 和合成位流均按软件结果记录。原检查见[检查记录](../report/verification/README.md)，本次扩展至 160 项的回归见[实时 EEG 与 MI 检查](../report/verification/eeg_live_mi.json)。
 
 原 RTL/HLS 测试台在恢复后的 `sim/`、`integrations/vision_demo/tests`、`integrations/z20_compute/hardware/hls` 及各模块测试目录。历史 C 仿真、综合、RTL 数值核对和完整回归报告随源码保留；本次整理没有重新运行 Vivado/XSim/HLS。
 

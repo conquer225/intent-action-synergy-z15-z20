@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source": "Selected public source files from the verified Z15 + Z20 submission snapshot",
   "date": "2026-11-01",
-  "source_bytes_modified": false,
-  "purpose": "Original paths/case and bytes are restored with build/restore_workspace.py",
+  "source_bytes_modified": true,
+  "purpose": "Restore original paths/case and current content; revised entries retain the 2026-11-01 snapshot identity",
   "entries": [
     {
       "runtime_path": "DESIGN.md",
@@ -12332,8 +12332,12 @@
     {
       "runtime_path": "integrations/vision_demo/SIGNALS.md",
       "package_path": "src/workspace/integrations/vision_demo/signals.md",
-      "sha256": "8069b84c88926a0da3b7900e5f0e9faf8fdcc9e7e7e3cbf551100bda3fc560a1",
-      "bytes": 9109
+      "sha256": "424eb2c455d8814439aad38ec7ec3403732325575e3d49ea8cd910f991fb8b13",
+      "bytes": 9397,
+      "snapshot_sha256": "8069b84c88926a0da3b7900e5f0e9faf8fdcc9e7e7e3cbf551100bda3fc560a1",
+      "snapshot_bytes": 9109,
+      "revision_date": "2026-11-05",
+      "revision_reason": "Identify the newer live entry before historical presentation notes"
     },
     {
       "runtime_path": "integrations/vision_demo/USER_GUIDE.md",
@@ -12740,8 +12744,12 @@
     {
       "runtime_path": "integrations/vision_demo/select_signal_source.py",
       "package_path": "src/workspace/integrations/vision_demo/select_signal_source.py",
-      "sha256": "63e492e419a85faeb410ded211aba1103f090aeba5585683cd944a77c903ccd5",
-      "bytes": 761
+      "sha256": "8fcaccf6a3aa4065ce6b9f98f6ff53b064cee78dd960064cf23c3f2293725161",
+      "bytes": 888,
+      "snapshot_sha256": "63e492e419a85faeb410ded211aba1103f090aeba5585683cd944a77c903ccd5",
+      "snapshot_bytes": 761,
+      "revision_date": "2026-11-05",
+      "revision_reason": "Accept live source without requiring replay assets"
     },
     {
       "runtime_path": "integrations/vision_demo/signal_brain_preview.html",
@@ -12794,8 +12802,12 @@
     {
       "runtime_path": "integrations/vision_demo/tests/test_demo_scope.py",
       "package_path": "src/workspace/integrations/vision_demo/tests/test_demo_scope.py",
-      "sha256": "9ddc17c95198aad2d43a164be7e4dcbbdc03ae76c9283d3824579ea0e7b2e2e0",
-      "bytes": 1783
+      "sha256": "84c890830780e507b013dbb41ded2120c763b84a545305787b2b9ef9173b84ab",
+      "bytes": 1835,
+      "snapshot_sha256": "9ddc17c95198aad2d43a164be7e4dcbbdc03ae76c9283d3824579ea0e7b2e2e0",
+      "snapshot_bytes": 1783,
+      "revision_date": "2026-11-05",
+      "revision_reason": "Isolate the existing bridge in the scope test"
     },
     {
       "runtime_path": "integrations/vision_demo/tests/test_elf_compat.py",
@@ -12896,8 +12908,12 @@
     {
       "runtime_path": "integrations/vision_demo/tests/test_signal_lifecycle.py",
       "package_path": "src/workspace/integrations/vision_demo/tests/test_signal_lifecycle.py",
-      "sha256": "0bdf3a96e75e17877aa64577320cf5e8a84fffa3b0df5c364d37027da307bbce",
-      "bytes": 3344
+      "sha256": "dde4d18652119a56acd91173adaf74fba2c3bb8f89c62cdc2c81f16ee66514ee",
+      "bytes": 3571,
+      "snapshot_sha256": "0bdf3a96e75e17877aa64577320cf5e8a84fffa3b0df5c364d37027da307bbce",
+      "snapshot_bytes": 3344,
+      "revision_date": "2026-11-05",
+      "revision_reason": "Verify live source lifecycle with deterministic local assets"
     },
     {
       "runtime_path": "integrations/vision_demo/tests/test_signal_music.py",
@@ -13076,8 +13092,12 @@
     {
       "runtime_path": "integrations/vision_demo/vision_demo/signal_runtime.py",
       "package_path": "src/workspace/integrations/vision_demo/vision_demo/signal_runtime.py",
-      "sha256": "6864dae6ed034684878de75c619d613f1e0d132d5056ffad29052ed5956d44ec",
-      "bytes": 5257
+      "sha256": "79a8b462aeab3eebd987c179a147a44bd593c9abc1f1f8f483480ef0247ea5ff",
+      "bytes": 5475,
+      "snapshot_sha256": "6864dae6ed034684878de75c619d613f1e0d132d5056ffad29052ed5956d44ec",
+      "snapshot_bytes": 5257,
+      "revision_date": "2026-11-05",
+      "revision_reason": "Default live bridge and explicit lazy recording selection"
     },
     {
       "runtime_path": "integrations/vision_demo/vision_demo/signal_source.py",
@@ -15776,8 +15796,12 @@
     {
       "runtime_path": "integrations/z20_compute/z20_compute/visual_display.py",
       "package_path": "src/workspace/integrations/z20_compute/z20_compute/visual_display.py",
-      "sha256": "66a395949aeca6645b1c479642f1eb7292339cb02e4305d75b4801e126fd6ece",
-      "bytes": 6008
+      "sha256": "7a279ec3393260e071d8ff7584679249bc8ba0062fa8cc49cf5cc5d6490b9f82",
+      "bytes": 6065,
+      "snapshot_sha256": "66a395949aeca6645b1c479642f1eb7292339cb02e4305d75b4801e126fd6ece",
+      "snapshot_bytes": 6008,
+      "revision_date": "2026-11-05",
+      "revision_reason": "Name the live Z15 EEG source in the NPU page"
     },
     {
       "runtime_path": "integrations/z20_compute/z20_compute/visual_host.py",
@@ -15794,8 +15818,12 @@
     {
       "runtime_path": "integrations/z20_compute/z20_compute/visual_pipeline.py",
       "package_path": "src/workspace/integrations/z20_compute/z20_compute/visual_pipeline.py",
-      "sha256": "9e3daa5da98c82f0422306c2e261f54f909a012188d5cff51e9af898efb64369",
-      "bytes": 9223
+      "sha256": "f430c459202f5d107cf592862f958e7fed9259f79011bb94b7341ef9cc7d3fb0",
+      "bytes": 8257,
+      "snapshot_sha256": "9e3daa5da98c82f0422306c2e261f54f909a012188d5cff51e9af898efb64369",
+      "snapshot_bytes": 9223,
+      "revision_date": "2026-11-05",
+      "revision_reason": "Wait for received EEG features instead of automatic recording fallback"
     },
     {
       "runtime_path": "integrations/z20_compute/z20_compute/visual_profile.py",
@@ -28479,7 +28507,9 @@
     "archive_root": "intent_action_synergy",
     "max_archive_member_characters": 120,
     "compacted_source_files": 2335,
-    "runtime_paths_and_source_bytes_unchanged": true
+    "runtime_paths_and_source_bytes_unchanged": true,
+    "scope": "Initial 2026-11-01 filename compaction; current content revisions are recorded per entry"
   },
-  "publication_scope": "Source code and tests; binary/runtime assets, historical run records and external vendor SDKs are indexed separately."
+  "publication_scope": "Source code and tests; binary/runtime assets, historical run records and external vendor SDKs are indexed separately.",
+  "revision_date": "2026-11-05"
 }

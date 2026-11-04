@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-05",
+  "passed": true,
+  "scope": "offline software and protocol verification",
+  "board_executed": false,
+  "total_tests": 160,
+  "results": [
+    {
+      "name": "submission",
+      "exit_code": 0,
+      "seconds": 4.108,
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "skill",
+      "exit_code": 0,
+      "seconds": 7.25,
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "mi_stream_and_trials",
+      "exit_code": 0,
+      "seconds": 13.268,
+      "tests": 78,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "live_bridge",
+      "exit_code": 0,
+      "seconds": 0.374,
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "signal_lifecycle",
+      "exit_code": 0,
+      "seconds": 0.777,
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "z20_compute_and_links",
+      "exit_code": 0,
+      "seconds": 1.502,
+      "tests": 37,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "changed_source_sha256": {
+    "integrations/vision_demo/select_signal_source.py": "8fcaccf6a3aa4065ce6b9f98f6ff53b064cee78dd960064cf23c3f2293725161",
+    "integrations/vision_demo/tests/test_demo_scope.py": "84c890830780e507b013dbb41ded2120c763b84a545305787b2b9ef9173b84ab",
+    "integrations/vision_demo/tests/test_signal_lifecycle.py": "dde4d18652119a56acd91173adaf74fba2c3bb8f89c62cdc2c81f16ee66514ee",
+    "integrations/vision_demo/vision_demo/signal_runtime.py": "79a8b462aeab3eebd987c179a147a44bd593c9abc1f1f8f483480ef0247ea5ff",
+    "integrations/z20_compute/z20_compute/visual_display.py": "7a279ec3393260e071d8ff7584679249bc8ba0062fa8cc49cf5cc5d6490b9f82",
+    "integrations/z20_compute/z20_compute/visual_pipeline.py": "f430c459202f5d107cf592862f958e7fed9259f79011bb94b7341ef9cc7d3fb0"
+  },
+  "new_tests_sha256": {
+    "sim/test_live_eeg_entry.py": "46fb3c3a3d84a069b5e703a9f7685f18254ec493a7bf8b13dd7351ab6e6087a9",
+    "sim/test_live_eeg_npu.py": "77c11cdde9a22c7b3a8ce200c961d1faee4838a1076d7c1b201f97952a1948c8"
+  }
+}

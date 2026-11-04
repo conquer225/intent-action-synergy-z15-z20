@@ -25,15 +25,17 @@ class MusicLink:
 
 class SignalRuntime:
  def __init__(self,overlay,config):
+  from eeg_demo_bridge import DemoBridge
   folder=Path(__file__).resolve().parent
   self.pages=SignalPages(config.get('enabled_signal_pages',PAGES))
   self.output_ready=False;self.active=False;self.frame=empty_eeg();self.presenter=SignalPresenter(config.get('font'),enabled_pages=self.pages.enabled_pages)
-  # Validate static dependencies before starting either polling or playback threads.
-  replay=PublicReplay(folder/'replay');self.selection=folder/'source_selection.json'
-  self.token=self._read_selection().get('request_id');self.replay_started=False;self.last_poll=-float('inf');self.cached_audio=None;self.error=None
-  self.source=SignalSource(None,replay)
+  # Live EEG uses the existing acquisition service; recordings load only on request.
+  self.replay_folder=folder/'replay';self.selection=folder/'source_selection.json'
+  self.token=self._read_selection().get('request_id');self.last_poll=-float('inf');self.cached_audio=None;self.error=None
+  self.source=SignalSource(None)
   self.session=self.analysis=self.music=None
-  if not set(self.pages.enabled_pages)&{'music','audio'}:return
+  if not set(self.pages.enabled_pages)&{'music','audio'}:
+   self.source.bridge=DemoBridge();return
   from audio_session import PcmSession
   catalog=json.loads((folder/'music/catalog.json').read_text(encoding='utf-8'));tracks={}
   for key,row in catalog['tracks'].items():
@@ -47,11 +49,14 @@ class SignalRuntime:
    except Exception:self.session.close();raise
   except Exception:self.source.close();raise
   self.music=MusicLink(self.session,tracks)
+  try:self.source.bridge=DemoBridge()
+  except Exception:
+   self.analysis.close();self.session.close();raise
  def _read_selection(self):
   try:
    if self.selection.stat().st_size>2048:raise ValueError('Source request too large')
    row=json.loads(self.selection.read_text(encoding='utf-8'))
-   if row.get('mode')!='replay' or not isinstance(row.get('request_id'),str):raise ValueError('Invalid source request')
+   if row.get('mode') not in ('live','replay') or not isinstance(row.get('request_id'),str):raise ValueError('Invalid source request')
    return row
   except FileNotFoundError:return {}
  def next(self):
@@ -60,14 +65,15 @@ class SignalRuntime:
   return page
  def service(self,now):
   if not self.active:return
-  if not self.replay_started:
-   self.source.restart_replay(now);self.replay_started=True
   if now-self.last_poll>=.04:
    try:
     row=self._read_selection()
     if row and row['request_id']!=self.token:
+     if row['mode']=='replay':
+      if self.source.replay is None:self.source.replay=PublicReplay(self.replay_folder)
+      self.source.restart_replay(now)
+     else:self.source.select('live',now)
      self.token=row['request_id']
-     self.source.restart_replay(now)
     self.error=None
    except (ValueError,OSError) as exc:self.error=str(exc)
    self.frame=normalize_eeg(self.source.snapshot(now));
@@ -88,7 +94,7 @@ class SignalRuntime:
   np.copyto(buffer,rgb[...,::-1]);buffer.flush()
  def leave(self):
   if self.music:self.music.close()
-  self.pages.leave();self.active=False;self.replay_started=False;self.source.select('live',time.monotonic());self.frame=empty_eeg();self.cached_audio=None
+  self.pages.leave();self.active=False;self.source.select('live',time.monotonic());self.frame=empty_eeg();self.cached_audio=None
   self.presenter.history=[];self.presenter.last_key=None
  def close(self):
   self.leave()

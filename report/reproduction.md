@@ -7,7 +7,7 @@
 ```sh
 python -X utf8 -B build/verify_package.py
 python -X utf8 -B build/restore_workspace.py --output C:/work/intent_action_runtime
-python -m pip install "numpy>=1.24"
+python -m pip install "numpy>=1.24" scipy pillow
 python -X utf8 -B sim/run_checks.py --workspace C:/work/intent_action_runtime --output C:/work/intent_action_checks
 ```
 

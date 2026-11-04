@@ -1,5 +1,7 @@
 # 我们意念合一：PL_KEY1 脑电与音乐演示
 
+2026-11-05 实时入口修订：公开版 `SignalRuntime` 默认连接已有实时脑电服务，录制数据通过 `select_signal_source.py replay` 显式选择。当前说明见公开仓库 `report/eeg_live_mi.md`；以下保留 2026-10 展示版的素材、固件与安装记录。
+
 当前完整包为 `GuardianLoop_Submission_20261025.zip`，已合并后续板端修复。使用、安装与回退优先阅读 [修复合并版说明](RELEASE_20261025.md)；下文保留各历史修订当时的状态。
 
 ## 2026-10-20 热力图修订
