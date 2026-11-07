@@ -1,0 +1,12 @@
+{
+  "scope": "Vivado_2023.1_post_synthesis_original_system_plus_extension",
+  "kernel_ip": "z15_fbcsp",
+  "extension_control_address": "0x83c50000",
+  "clock": "FCLK2_100MHz_GP1_HP2",
+  "build_tcl_sha256": "e4bbc2570b6ee1339a8e78f29e70ab3fc3cf01f9fc34482fa0a04060c4d187c7",
+  "integration_tcl_sha256": "3a59f29bc9d83763cedd78b393040164f2ccd9d178ee30041633027a097781d6",
+  "original_ports_and_control_addresses_preserved": true,
+  "baseline_entry": "hdmi_audio.xpr",
+  "baseline_entry_sha256": "b452946e1e16f248d029cc8cee9d6325760574c72bf212dcf368968f9f7fb024",
+  "platform_driver_sha256": "5932073a2ee3b8eab80d773730bc60dc9480116dfef84ed13f520ae48df3bc01"
+}

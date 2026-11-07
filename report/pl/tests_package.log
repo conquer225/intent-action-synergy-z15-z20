@@ -1,0 +1,54 @@
+PL_MI_STATUS: {"valid": false, "label": null, "class_id": null, "reason": "backend_unavailable", "error": "ValueError: missing integrated IP", "source": "live:Cyton", "backend": "PL_filterbank_CSP_SVM", "control_enabled": false, "updated_at": 1794039286.7343774}
+{"tests": 46, "failures": 0, "errors": 0, "skipped": 0}
+
+test_live_starts_without_any_recorded_assets_and_waits_for_receiver (test_live_eeg_entry.LiveEntryTests.test_live_starts_without_any_recorded_assets_and_waits_for_receiver) ... ok
+test_local_source_command_accepts_live_without_replay_materials (test_live_eeg_entry.LiveEntryTests.test_local_source_command_accepts_live_without_replay_materials) ... ok
+test_missing_requested_recording_keeps_live_available (test_live_eeg_entry.LiveEntryTests.test_missing_requested_recording_keeps_live_available) ... ok
+test_only_explicit_replay_request_loads_recording_and_live_can_resume (test_live_eeg_entry.LiveEntryTests.test_only_explicit_replay_request_loads_recording_and_live_can_resume) ... ok
+test_received_live_samples_survive_page_change_and_expiry_clears_results (test_live_eeg_entry.LiveEntryTests.test_received_live_samples_survive_page_change_and_expiry_clears_results) ... ok
+test_absent_or_old_local_recording_shows_waiting_with_cleared_results (test_live_eeg_npu.LiveNPUEntryTests.test_absent_or_old_local_recording_shows_waiting_with_cleared_results) ... ok
+test_live_eeg_does_not_require_recorded_audio_assets (test_live_eeg_npu.LiveNPUEntryTests.test_live_eeg_does_not_require_recorded_audio_assets) ... ok
+test_received_live_inference_reaches_both_eeg_pages_without_audio_assets (test_live_eeg_npu.LiveNPUEntryTests.test_received_live_inference_reaches_both_eeg_pages_without_audio_assets) ... ok
+test_addresses_cache_and_owned_output (test_pl_driver.DriverContract.test_addresses_cache_and_owned_output) ... ok
+test_hwh_metadata_selects_only_the_matching_z15_control_aperture (test_pl_driver.DriverContract.test_hwh_metadata_selects_only_the_matching_z15_control_aperture) ... ok
+test_unresolved_timeout_retains_memory_until_reset (test_pl_driver.DriverContract.test_unresolved_timeout_retains_memory_until_reset) ... ok
+test_csp_log_variance_and_svm_worked_example (test_pl_eeg.EEGBehavior.test_csp_log_variance_and_svm_worked_example) ... ok
+test_model_round_trip_and_rejects_incompatible_channels (test_pl_eeg.EEGBehavior.test_model_round_trip_and_rejects_incompatible_channels) ... ok
+test_silence_has_no_valid_classification (test_pl_eeg.EEGBehavior.test_silence_has_no_valid_classification) ... ok
+test_sliding_windows_use_only_new_samples_and_reset (test_pl_eeg.EEGBehavior.test_sliding_windows_use_only_new_samples_and_reset) ... ok
+test_logarithm_powers_and_mantissa_error (test_pl_fixed.FixedPointContract.test_logarithm_powers_and_mantissa_error) ... ok
+test_population_variance_preserves_fractional_mean (test_pl_fixed.FixedPointContract.test_population_variance_preserves_fractional_mean) ... ok
+test_symmetric_rounding_and_stage_saturation (test_pl_fixed.FixedPointContract.test_symmetric_rounding_and_stage_saturation) ... ok
+test_eeg_driver_reaches_kernel_without_losing_windows (test_pl_hls.HLSMemoryContract.test_eeg_driver_reaches_kernel_without_losing_windows) ... ok
+test_map_driver_and_observation_camera_reach_the_kernel (test_pl_hls.HLSMemoryContract.test_map_driver_and_observation_camera_reach_the_kernel) ... ok
+test_point_cloud_depth_clipping_and_trajectory_pixels (test_pl_hls.HLSMemoryContract.test_point_cloud_depth_clipping_and_trajectory_pixels) ... ok
+test_three_band_stream_and_window_hops (test_pl_hls.HLSMemoryContract.test_three_band_stream_and_window_hops) ... ok
+test_worked_csp_case (test_pl_hls.HLSMemoryContract.test_worked_csp_case) ... ok
+test_new_windows_and_sequence_gap_withdrawal (test_pl_live.EEGComparisonContract.test_new_windows_and_sequence_gap_withdrawal) ... ok
+test_optional_hardware_start_failure_publishes_status_and_returns (test_pl_live.EEGComparisonContract.test_optional_hardware_start_failure_publishes_status_and_returns) ... ok
+test_saturation_withdraws_then_rebuilds_a_clean_window (test_pl_live.EEGComparisonContract.test_saturation_withdraws_then_rebuilds_a_clean_window) ... ok
+test_stale_input_is_rejected_before_inference (test_pl_live.EEGComparisonContract.test_stale_input_is_rejected_before_inference) ... ok
+test_stream_reset_restarts_window_without_blocking_acquisition (test_pl_live.EEGComparisonContract.test_stream_reset_restarts_window_without_blocking_acquisition) ... ok
+test_depth_test_and_reject_behind_camera (test_pl_map.MapRaster.test_depth_test_and_reject_behind_camera) ... ok
+test_projected_point_and_bounded_trajectory (test_pl_map.MapRaster.test_projected_point_and_bounded_trajectory) ... ok
+test_scene_preserves_units_and_rejects_nonfinite_coordinates (test_pl_map.MapRaster.test_scene_preserves_units_and_rejects_nonfinite_coordinates) ... ok
+test_exported_integer_model_separates_held_out_trial_patterns (test_pl_training.ModelTraining.test_exported_integer_model_separates_held_out_trial_patterns) ... ok
+test_existing_fusion_manifest_supplies_world_points_and_pose_trajectory (test_pl_visual.GeometryModeContract.test_existing_fusion_manifest_supplies_world_points_and_pose_trajectory) ... ok
+test_explicit_switch_rejects_old_frames_and_restores_original (test_pl_visual.GeometryModeContract.test_explicit_switch_rejects_old_frames_and_restores_original) ... ok
+test_four_mode_pipeline_displays_map_pixels_then_original_jpeg (test_pl_visual.GeometryModeContract.test_four_mode_pipeline_displays_map_pixels_then_original_jpeg) ... ok
+test_geometry_envelope_round_trip_and_invalid_payload (test_pl_visual.GeometryModeContract.test_geometry_envelope_round_trip_and_invalid_payload) ... ok
+test_live_host_reuses_cloud_when_switching_renderers_over_sockets (test_pl_visual.GeometryModeContract.test_live_host_reuses_cloud_when_switching_renderers_over_sockets) ... ok
+test_stereo_cloud_is_bounded_and_returns_to_original_display (test_pl_visual.GeometryModeContract.test_stereo_cloud_is_bounded_and_returns_to_original_display) ... ok
+test_unavailable_hardware_preserves_original_backend (test_pl_visual.GeometryModeContract.test_unavailable_hardware_preserves_original_backend) ... ok
+test_hash_failure_rejects_before_creating_output (test_restore_workspace.RestoreTests.test_hash_failure_rejects_before_creating_output) ... ok
+test_path_escape_and_existing_target_are_rejected_without_overwrite (test_restore_workspace.RestoreTests.test_path_escape_and_existing_target_are_rejected_without_overwrite) ... ok
+test_restores_original_case_and_exact_bytes_into_a_new_workspace (test_restore_workspace.RestoreTests.test_restores_original_case_and_exact_bytes_into_a_new_workspace) ... ok
+test_changed_or_unlisted_payload_fails (test_verify_package.PackageChecks.test_changed_or_unlisted_payload_fails) ... ok
+test_complete_delivery_passes_without_board_access (test_verify_package.PackageChecks.test_complete_delivery_passes_without_board_access) ... ok
+test_git_checkout_metadata_preserves_package_verification (test_verify_package.PackageChecks.test_git_checkout_metadata_preserves_package_verification) ... ok
+test_hash_valid_long_member_is_rejected_for_windows_zip (test_verify_package.PackageChecks.test_hash_valid_long_member_is_rejected_for_windows_zip) ... ok
+
+----------------------------------------------------------------------
+Ran 46 tests in 5.178s
+
+OK

@@ -1,0 +1,106 @@
+{
+  "date": "2026-11-07",
+  "selected_suite_passed": true,
+  "scope": "software_protocol_numerical_and_packaging_regression",
+  "total_cases": 192,
+  "passed_cases": 191,
+  "skipped_cases": 1,
+  "skip_details": [
+    {
+      "test": "test_mi_tap_batch.MITapBatchTests.test_short_serial_read_flushes_tap_without_waiting_for_next_read",
+      "reason": "Serial reader uses Linux fork; host is Windows"
+    }
+  ],
+  "groups": [
+    {
+      "name": "z20_regression",
+      "exit_code": 0,
+      "duration_seconds": 0.5989613999990979,
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "portable_skill",
+      "exit_code": 0,
+      "duration_seconds": 5.916389599999093,
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "submission_tools",
+      "exit_code": 0,
+      "duration_seconds": 7.983151899999939,
+      "tests": 46,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "eeg",
+      "patterns": [
+        "test_mi_acquisition.py",
+        "test_mi_cued.py",
+        "test_mi_formal_entry.py",
+        "test_mi_reader_tap.py",
+        "test_mi_tap_batch.py",
+        "test_mi_rms_live_virtual.py"
+      ],
+      "exit_code": 0,
+      "seconds": 12.138799800000925,
+      "tests": 73,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1
+    },
+    {
+      "name": "visual",
+      "patterns": [
+        "test_visual_audio.py",
+        "test_visual_classification.py",
+        "test_visual_client.py",
+        "test_visual_demo.py",
+        "test_visual_eye.py",
+        "test_visual_host.py",
+        "test_visual_release.py",
+        "test_visual_rendering.py",
+        "test_visual_server.py",
+        "test_visual_startup.py",
+        "test_visual_wire.py",
+        "test_headless_pipeline.py",
+        "test_headless_inputs.py",
+        "test_linux.py",
+        "test_stereo_live.py",
+        "test_headless_preview.py"
+      ],
+      "exit_code": 0,
+      "seconds": 11.794128400000773,
+      "tests": 47,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "legacy_baseline_probe": {
+    "baseline_commit": "d19b786",
+    "module": "test_visual_offline.py",
+    "cases": 2,
+    "baseline_failures": 1,
+    "baseline_errors": 1,
+    "candidate_failures": 1,
+    "candidate_errors": 1,
+    "cause": "Legacy recorded-input expectations differ from the existing live EEG display default. Same failures reproduced with original VisualPipeline and identical pinned assets."
+  },
+  "ui": {
+    "eeg_status": "1280x720_page_with_actual_integer_fixture",
+    "map_status": [
+      "1280x720",
+      "390x844"
+    ],
+    "narrow_controls": "all_five_buttons_within_viewport_after_wrapping",
+    "detector": "incumbent cream palette advisory retained to match original display theme"
+  }
+}

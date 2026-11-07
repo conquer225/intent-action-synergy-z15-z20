@@ -1,0 +1,125 @@
+{"tests": 73, "failures": 0, "errors": 0, "skipped": 1}
+
+test_batch_and_exact_counter_stream (test_mi_acquisition.AdapterTests.test_batch_and_exact_counter_stream) ... ok
+test_close_stops_worker_even_if_withdrawal_log_fails (test_mi_acquisition.AdapterTests.test_close_stops_worker_even_if_withdrawal_log_fails) ... ok
+test_concurrent_reset_never_splits_row_counter_stamp_batch (test_mi_acquisition.AdapterTests.test_concurrent_reset_never_splits_row_counter_stamp_batch) ... ok
+test_counts_scale_matches_per_packet_microvolt_path (test_mi_acquisition.AdapterTests.test_counts_scale_matches_per_packet_microvolt_path) ... ok
+test_error_is_visible_and_does_not_escape_to_primary (test_mi_acquisition.AdapterTests.test_error_is_visible_and_does_not_escape_to_primary) ... ok
+test_future_timestamp_refused (test_mi_acquisition.AdapterTests.test_future_timestamp_refused) ... ok
+test_gain_change_clears_partial_batch_and_old_candidate (test_mi_acquisition.AdapterTests.test_gain_change_clears_partial_batch_and_old_candidate) ... ok
+test_gap_withdraws_and_new_data_rewarms (test_mi_acquisition.AdapterTests.test_gap_withdraws_and_new_data_rewarms) ... ok
+test_hard_quality_matches_full_sqi_including_boundaries (test_mi_acquisition.AdapterTests.test_hard_quality_matches_full_sqi_including_boundaries) ... ok
+test_invalid_gain_rejected (test_mi_acquisition.AdapterTests.test_invalid_gain_rejected) ... ok
+test_malformed_clears_partial_batch (test_mi_acquisition.AdapterTests.test_malformed_clears_partial_batch) ... ok
+test_nonfinite_batch_is_rejected_before_filter_and_model (test_mi_acquisition.AdapterTests.test_nonfinite_batch_is_rejected_before_filter_and_model) ... ok
+test_oldest_timestamp_stale_is_rejected (test_mi_acquisition.AdapterTests.test_oldest_timestamp_stale_is_rejected) ... ok
+test_partial_stall_is_not_filled_with_old_samples (test_mi_acquisition.AdapterTests.test_partial_stall_is_not_filled_with_old_samples) ... ok
+test_queue_full_clears_without_unbounded_growth (test_mi_acquisition.AdapterTests.test_queue_full_clears_without_unbounded_growth) ... ok
+test_reset_reuses_coefficients_with_fresh_instance_numerical_parity (test_mi_acquisition.AdapterTests.test_reset_reuses_coefficients_with_fresh_instance_numerical_parity) ... ok
+test_wrong_physical_layout_rejected_before_loading (test_mi_acquisition.AdapterTests.test_wrong_physical_layout_rejected_before_loading) ... ok
+test_entry_api_and_no_result_injection (test_mi_acquisition.EntryTests.test_entry_api_and_no_result_injection) ... ok
+test_old_task_status_is_hidden (test_mi_acquisition.EntryTests.test_old_task_status_is_hidden) ... ok
+test_slow_incomplete_http_connection_times_out_then_recovers (test_mi_acquisition.EntryTests.test_slow_incomplete_http_connection_times_out_then_recovers) ... ok
+test_task_summary_retains_state_not_waveforms_and_marks_source (test_mi_acquisition.EntryTests.test_task_summary_retains_state_not_waveforms_and_marks_source) ... ok
+test_trusted_worker_pipe_transmits_exact_data_and_withdrawal (test_mi_acquisition.EntryTests.test_trusted_worker_pipe_transmits_exact_data_and_withdrawal) ... ok
+test_worker_disconnect_never_returns_old_candidate (test_mi_acquisition.EntryTests.test_worker_disconnect_never_returns_old_candidate) ... ok
+test_worker_timeout_closes_pipe_and_clears_results (test_mi_acquisition.EntryTests.test_worker_timeout_closes_pipe_and_clears_results) ... ok
+test_audit_failure_is_not_a_valid_prediction (test_mi_cued.CuedTests.test_audit_failure_is_not_a_valid_prediction) ... ok
+test_bad_internal_sequences (test_mi_cued.CuedTests.test_bad_internal_sequences) ... ok
+test_bad_quality_after_result_revokes (test_mi_cued.CuedTests.test_bad_quality_after_result_revokes) ... ok
+test_block_size_does_not_change_continuous_filters (test_mi_cued.CuedTests.test_block_size_does_not_change_continuous_filters) ... ok
+test_disconnect_resets_and_requires_new_warmup (test_mi_cued.CuedTests.test_disconnect_resets_and_requires_new_warmup) ... ok
+test_idle_and_rest_do_not_call_model (test_mi_cued.CuedTests.test_idle_and_rest_do_not_call_model) ... ok
+test_invalid_shape_nan_and_sequence_type_withdraw (test_mi_cued.CuedTests.test_invalid_shape_nan_and_sequence_type_withdraw) ... ok
+test_late_batch_and_future_clock_refused (test_mi_cued.CuedTests.test_late_batch_and_future_clock_refused) ... ok
+test_log_has_labeled_source_and_revocation (test_mi_cued.CuedTests.test_log_has_labeled_source_and_revocation) ... ok
+test_missing_model_and_warmup_refused (test_mi_cued.CuedTests.test_missing_model_and_warmup_refused) ... ok
+test_old_token_target_timestamps_and_duplicate_start_rejected (test_mi_cued.CuedTests.test_old_token_target_timestamps_and_duplicate_start_rejected) ... ok
+test_one_complete_window_only_and_not_forced_to_cue (test_mi_cued.CuedTests.test_one_complete_window_only_and_not_forced_to_cue) ... ok
+test_quality_flatline_and_excess_amplitude_rejected (test_mi_cued.CuedTests.test_quality_flatline_and_excess_amplitude_rejected) ... ok
+test_replay_never_disguised_as_live (test_mi_cued.CuedTests.test_replay_never_disguised_as_live) ... ok
+test_sequence_duplicate_and_skip_withdraw (test_mi_cued.CuedTests.test_sequence_duplicate_and_skip_withdraw) ... ok
+test_stale_result_heartbeat_and_trial_timeout (test_mi_cued.CuedTests.test_stale_result_heartbeat_and_trial_timeout) ... ok
+test_stop_and_page_hidden_withdraw (test_mi_cued.CuedTests.test_stop_and_page_hidden_withdraw) ... ok
+test_terminal_heartbeat_reports_reason_without_reactivating (test_mi_cued.CuedTests.test_terminal_heartbeat_reports_reason_without_reactivating) ... ok
+test_cross_origin_unknown_feed_and_bad_object_refused (test_mi_cued.HTTPTests.test_cross_origin_unknown_feed_and_bad_object_refused) ... ok
+test_page_status_and_model_unavailable (test_mi_cued.HTTPTests.test_page_status_and_model_unavailable) ... ok
+test_backend_command_rejection_has_no_old_result (test_mi_formal_entry.BridgeTests.test_backend_command_rejection_has_no_old_result) ... ok
+test_bad_config_fail_closed_without_backend (test_mi_formal_entry.BridgeTests.test_bad_config_fail_closed_without_backend) ... ok
+test_foreign_source_control_and_nonfinite_payload_rejected (test_mi_formal_entry.BridgeTests.test_foreign_source_control_and_nonfinite_payload_rejected) ... ----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 63763)
+Traceback (most recent call last):
+  File "C:\Users\conquer\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\conquer\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\conquer\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "C:\Users\conquer\AppData\Local\Programs\Python\Python314\Lib\http\server.py", line 500, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\conquer\AppData\Local\Programs\Python\Python314\Lib\http\server.py", line 488, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "C:\work\intent_runtime_pl_final\integrations\eeg_demo\brain_runtime\mi_cued_server.py", line 64, in do_GET
+    self.reply(200, session.snapshot())
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\intent_runtime_pl_final\integrations\eeg_demo\brain_runtime\mi_cued_server.py", line 48, in reply
+    body = (json.dumps(payload, ensure_ascii=False, allow_nan=False).encode('utf-8')
+            ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\conquer\AppData\Local\Programs\Python\Python314\Lib\json\__init__.py", line 242, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "C:\Users\conquer\AppData\Local\Programs\Python\Python314\Lib\json\encoder.py", line 202, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\conquer\AppData\Local\Programs\Python\Python314\Lib\json\encoder.py", line 263, in iterencode
+    return _iterencode(o, 0)
+ValueError: Out of range float values are not JSON compliant: nan
+when serializing list item 0
+when serializing dict item 'logits'
+when serializing dict item 'result'
+----------------------------------------
+ok
+test_formal_page_keeps_experimental_boundary (test_mi_formal_entry.BridgeTests.test_formal_page_keeps_experimental_boundary) ... ok
+test_off_never_queries_a_running_backend (test_mi_formal_entry.BridgeTests.test_off_never_queries_a_running_backend) ... ok
+test_other_model_or_personal_head_is_not_proxied (test_mi_formal_entry.BridgeTests.test_other_model_or_personal_head_is_not_proxied) ... ok
+test_real_http_get_post_and_no_cache_after_loss (test_mi_formal_entry.BridgeTests.test_real_http_get_post_and_no_cache_after_loss) ... ok
+test_absent_is_off_and_off_does_not_read_model (test_mi_formal_entry.ConfigTests.test_absent_is_off_and_off_does_not_read_model) ... ok
+test_cli_cannot_bypass_off_switch (test_mi_formal_entry.ConfigTests.test_cli_cannot_bypass_off_switch) ... ok
+test_enabled_is_fixed_live_endpoint_and_verified_weights (test_mi_formal_entry.ConfigTests.test_enabled_is_fixed_live_endpoint_and_verified_weights) ... ok
+test_malformed_or_non_boolean_config_rejected (test_mi_formal_entry.ConfigTests.test_malformed_or_non_boolean_config_rejected) ... ok
+test_boot_report_does_not_claim_new_arm_version_checked (test_mi_formal_entry.FormalHTTPTests.test_boot_report_does_not_claim_new_arm_version_checked) ... ok
+test_disabled_endpoints_and_origin_body_guards (test_mi_formal_entry.FormalHTTPTests.test_disabled_endpoints_and_origin_body_guards) ... 127.0.0.1 - - [07/Nov/2026 16:14:47] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 16:14:47] "GET /mi-cued HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 16:14:47] "GET /api/mi-cue HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 16:14:47] "POST /api/mi-cue HTTP/1.1" 403 -
+127.0.0.1 - - [07/Nov/2026 16:14:47] "POST /api/mi-cue HTTP/1.1" 403 -
+127.0.0.1 - - [07/Nov/2026 16:14:47] "POST /api/mi-cue HTTP/1.1" 400 -
+127.0.0.1 - - [07/Nov/2026 16:14:47] "POST /api/mi-cue HTTP/1.1" 400 -
+127.0.0.1 - - [07/Nov/2026 16:14:47] "POST /api/mi-cue HTTP/1.1" 409 -
+127.0.0.1 - - [07/Nov/2026 16:14:47] "GET /api/status HTTP/1.1" 200 -
+ok
+test_decoder_error_withdraws_and_stops_forwarder (test_mi_reader_tap.ReaderTapTests.test_decoder_error_withdraws_and_stops_forwarder) ... ok
+test_filter_values_equal_original_adapter (test_mi_reader_tap.ReaderTapTests.test_filter_values_equal_original_adapter) ... ok
+test_forwarder_preserves_receive_time_counts_and_gain (test_mi_reader_tap.ReaderTapTests.test_forwarder_preserves_receive_time_counts_and_gain) ... ok
+test_full_tap_drops_without_blocking_and_keeps_loss_ordinal (test_mi_reader_tap.ReaderTapTests.test_full_tap_drops_without_blocking_and_keeps_loss_ordinal) ... ok
+test_candidate_rejects_foreign_and_unconnected_modes_before_spawn (test_mi_tap_batch.MITapBatchTests.test_candidate_rejects_foreign_and_unconnected_modes_before_spawn) ... ok
+test_forwarder_preserves_gain_time_flags_and_checks_gap_within_group (test_mi_tap_batch.MITapBatchTests.test_forwarder_preserves_gain_time_flags_and_checks_gap_within_group) ... ok
+test_group_payload_is_owned_and_short_group_flushes (test_mi_tap_batch.MITapBatchTests.test_group_payload_is_owned_and_short_group_flushes) ... ok
+test_idle_trial_inference_and_bad_quality_equal_single_packet_adapter (test_mi_tap_batch.MITapBatchTests.test_idle_trial_inference_and_bad_quality_equal_single_packet_adapter) ... ok
+test_overflow_is_nonblocking_and_ordinal_exposes_whole_group_loss (test_mi_tap_batch.MITapBatchTests.test_overflow_is_nonblocking_and_ordinal_exposes_whole_group_loss) ... ok
+test_short_serial_read_flushes_tap_without_waiting_for_next_read (test_mi_tap_batch.MITapBatchTests.test_short_serial_read_flushes_tap_without_waiting_for_next_read) ... skipped 'Serial reader uses Linux fork'
+test_no_data_warmup_and_bad_quality_cannot_arm (test_mi_rms_live_virtual.RMSLiveVirtualTests.test_no_data_warmup_and_bad_quality_cannot_arm) ... ok
+test_observation_default_and_rest_manual (test_mi_rms_live_virtual.RMSLiveVirtualTests.test_observation_default_and_rest_manual) ... ok
+test_opposite_cue_uses_model_and_once_then_disconnect_withdraws (test_mi_rms_live_virtual.RMSLiveVirtualTests.test_opposite_cue_uses_model_and_once_then_disconnect_withdraws) ... ok
+test_private_page_uses_existing_safe_controller (test_mi_rms_live_virtual.RMSLiveVirtualTests.test_private_page_uses_existing_safe_controller) ... ok
+test_stale_quality_and_forced_answer_refused (test_mi_rms_live_virtual.RMSLiveVirtualTests.test_stale_quality_and_forced_answer_refused) ... ok
+test_wrong_checksum_refused (test_mi_rms_live_virtual.RMSLiveVirtualTests.test_wrong_checksum_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 73 tests in 8.755s
+
+OK (skipped=1)

@@ -1,0 +1,8 @@
+{
+  "part": "xc7z015clg485-2",
+  "kernel": "eeg",
+  "scope": "original_project",
+  "implemented": false,
+  "additive_integration": true,
+  "preserved_original_control_address": true
+}

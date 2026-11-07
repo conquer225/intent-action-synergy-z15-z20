@@ -1,0 +1,18 @@
+{
+  "top": "z20_map",
+  "part": "xc7z020clg400-2",
+  "source_sha256": {
+    "map.cpp": "3c6dc6452ab71b10d2ac761e0987ba7db486e8c643512fdf07843f0bfdfd422b",
+    "map_tb.cpp": "7de27ce7c39b1532389d4645d83b7d464d34358b236aaa1300bdb5c4a41f2a97",
+    "map_vectors.h": "4ab6269128e1b6ae4feb6908bf1680c982685ce3c84ac92e52e6c0a21480ab1e"
+  },
+  "cosim": true,
+  "resources": {
+    "BRAM_18K": "14",
+    "DSP": "42",
+    "FF": "11314",
+    "LUT": "14251",
+    "URAM": "0"
+  },
+  "report": "C:\\work\\intent_pl_map_20261107_final\\kernel\\solution\\syn\\report\\z20_map_csynth.xml"
+}

@@ -1,31 +1,43 @@
 # 意动协同：Z15 与 Z20 多模态感知交互控制台
 
-意动协同是一套把脑电感知、运动想象、眼动交互、FPGA 运算和外设控制组织到同一操作流程中的双 Zynq 系统。使用者通过眼动选择页面、表达需求和操作设备；系统实时接收八通道脑电，提供疲劳、情绪分析与左右手运动想象交互。Z15 负责人的输入与执行控制，Z20 负责辅助计算、相机采集与第二显示屏，电脑参与视觉渲染与相对深度计算。
+意动协同把实时脑电、左右手运动想象、眼动交互与三维环境感知组织成一套双 Zynq 多模态交互系统。Z15 的可编程逻辑完成“滤波器组 → CSP → 窗口方差 → 对数特征 → SVM”整条脑电识别路径；Z20 的可编程逻辑接管点云投影、深度遮挡与轨迹绘制。使用者通过原有眼控界面表达需求、操作灵巧手与倒立摆，双屏同步呈现人的状态和环境信息。
 
 作品面向 2026 年全国大学生嵌入式芯片与系统设计竞赛 FPGA 创新设计赛道，AMD 自主选题初级组。硬件为正点原子 Z15（XC7Z015 CLG485）与领航者 Z20（XC7Z020 CLG400），开发工具基线为 Vivado / Vitis HLS 2023.1。
+
+| 实时脑电输入 | Z15 PL 运动想象 | Z20 PL 空间绘制 |
+| --- | --- | --- |
+| 8 通道 · 250 Hz · 同一采集源 | 3 频带 · 6 个 CSP 分量 · 定点 SVM | 1280×720 · 65,536 点 · 1,024 轨迹点接口 |
+
+![地图核输出的三个观察方向](report/media/pl_map.gif)
+
+上图来自本工程 HLS C++ 地图核：21,600 个彩色点和 80 个轨迹点生成三个 720p 观察方向，三帧与独立整数参考逐像素一致。配套 [RTL 联合仿真、资源与接口说明](report/pl_accel.md)记录脑电、点云及系统接入的完整实现。
 
 ## 作品能做什么
 
 | 功能 | 使用流程与实现 |
 | --- | --- |
 | 实时脑电感知 | OpenBCI Cyton 以 250 Hz 采集固定八通道 EEG，经 USB 接收器进入 Z15。原采集服务完成解包、滤波、信号质量检查与分析，脑电页显示实时波形、特征和状态。 |
-| 左右手运动想象 | 使用 F3/F4/C3/C4/T7/T8/O1/O2 八通道，按照提示完成左右手运动想象试次。现有固定八通道 RMS EEGNet 输出左右手候选，网页虚拟手按识别结果分步张开或闭合。 |
+| 双路径运动想象 | 原 ARM RMS EEGNet 完成提示试次与虚拟手交互；Z15 PL 新增滤波器组、CSP、方差/对数和线性 SVM，连续发布左右手结果、特征、分数及模型身份。 |
 | 眼动操作 | 复用眼动标定、三区选择与停留确认，完成菜单导航、交流表达、多媒体选择及设备操作；页面呈现、确认和动作回执保持对应。 |
 | 灵巧手与倒立摆 | Z15 经原 Wi-Fi / S3 执行链连接灵巧手与倒立摆。工程包含灵巧手开合、倒立摆方向与启停、蓝牙及射频通信、连接状态和执行反馈。 |
 | 多任务 FPGA 运算 | Z20 部署可更换权重和输入维度的共享整数 MLP 核，承担疲劳、情绪、声音等三分类任务的辅助推理，并与软件整数参考逐项比对。 |
+| PL 地图与轨迹绘制 | 已有建模点云进入 Z20，硬件完成 Q16 变换、透视投影、裁剪、深度测试及轨迹光栅化，经原 HDMI 所有者显示；空间页可切换原有显示和 PL 绘制。 |
+| 已知位姿建模复用 | 复用原双目点云与 `camera_to_world` 融合清单，将世界坐标点云和相机轨迹送入同一绘制接口；相对深度来源保留自身坐标单位。 |
 | 双屏感知展示 | Z15 保持交互与控制界面，Z20 显示流体、三维声谱、NPU 运算和空间感知页面。相机画面、推理结果、电脑渲染与交互事件通过双板协议关联。 |
 
-运动想象当前对应提示试次识别与虚拟手交互，实物机构由已有眼控执行链操作。两条输入路径共用系统界面，各自保留清楚的结果与动作来源。
+运动想象试次、PL 连续识别与眼控执行各自保留结果和动作来源。新增计算支路与原交互并行接入，原显示作为默认模式，空间页提供明确的后端切换。
 
 ## 双 Zynq 如何协同
 
 ```mermaid
 flowchart LR
     EEG["Cyton 八通道脑电 · 250 Hz"] --> Z15["Z15 · 人的输入与交互"]
+    Z15 --> FBCSP["Z15 PL · 滤波器组 / CSP / 方差 / log2 / SVM"]
     EYE["眼动输入"] --> Z15
     Z15 --> MI["左右手运动想象与虚拟手"]
     Z15 <-->|"脑电特征 / 运算结果 / 模式状态"| Z20["Z20 · FPGA 运算与环境感知"]
     CAM["双目相机"] --> Z20
+    Z20 --> MAP["Z20 PL · 点云投影 / 深度遮挡 / 轨迹"]
     Z15 --> SCREEN1["交互与设备操作屏"]
     Z20 --> SCREEN2["运算与感知展示屏"]
     Z20 <-->|"图像与渲染帧"| PC["电脑 · 视觉渲染与相对深度"]
@@ -36,10 +48,10 @@ flowchart LR
 
 | 节点 | 具体职责 |
 | --- | --- |
-| Z15 ARM / Linux | 实时脑电接收、滤波与质量检查，运动想象推理，眼动菜单、设备会话和双板通信。 |
-| Z15 PL | 相机与连续显示数据通路、像素处理、音频 FFT 等硬件模块，按对应固件版本使用。 |
+| Z15 ARM / Linux | Cyton 接收、质量检查、原 EEGNet 试次与虚拟手，PL 参数及结果管理、眼动菜单、设备会话和双板通信。 |
+| Z15 PL | 三频带多通道滤波、CSP、滑窗方差、定点 log2、SVM；整机继续包含相机、连续显示、像素处理和音频 FFT 模块。 |
 | Z20 ARM / Linux | 相机与显示管理、特征与模型管理、PL 结果读取、双板消息及电脑画面接入。 |
-| Z20 PL | 共享 INT8 MLP、双目视频数据通路、VDMA 帧状态观测与相关硬件接口。 |
+| Z20 PL | 共享 INT8 MLP、双目视频、VDMA 帧状态观测，以及可切换的点云/地图/轨迹绘制核。 |
 | 电脑与外设控制器 | 电脑计算视觉效果与相对深度；S3、STM32 及手端控制器承接原设备通信和动作反馈。 |
 
 ## 实时 EEG 与运动想象
@@ -54,6 +66,7 @@ flowchart LR
 Cyton → USB 接收器 → Z15 原采集服务
                     ├─ 滤波 / 信号质量 / 疲劳与情绪分析
                     ├─ 已启用的运动想象试次分支 → /mi-cued → 虚拟手
+                    ├─ 新增 PL 支路 → 滤波器组 / CSP / 特征 / SVM → 状态与比较记录
                     └─ 只读状态与波形 → 疲劳 / 情绪展示页
 ```
 
@@ -65,7 +78,9 @@ Cyton → USB 接收器 → Z15 原采集服务
 
 启用虚拟手交互后，左手结果对应张开一步，右手结果对应闭合一步，每步改变 20% 开合位置。每个试次对应一次结果和一次动作；界面同时显示数据质量、试次状态、模型结果与虚拟手位置。采集断流、序号间断、试次超时及页面离开都进入对应的撤销流程。
 
-本次参考[脑电运动想象识别项目](https://github.com/Xsingh-Luo/fpga_eeg_rehab)梳理左右手想象、运动相关节律和提示试次的展示方式。本工程采用自身已有的八通道 RMS EEGNet 路线；参考项目采用 CSP / SVM，算法与实现分别保留各自来源。
+Z15 PL 路线参考[脑电运动想象识别项目](https://github.com/Xsingh-Luo/fpga_eeg_rehab)的处理顺序，采用独立的八通道定点实现与模型合同：8–16、16–24、24–32 Hz 三频带，每带两级 SOS 与两个 CSP 分量，500 点滑窗、125 点步长，六项特征送入线性 SVM。训练器完成 CSP、训练集特征选择、标准化折叠和定点导出；Python 参考与 HLS 核共享量化约定。
+
+实时接入沿用单一串口读者，以独立有界队列分送新样本。序号缺口、重连、过期输入和饱和会撤销旧结果并重建窗口；模型 SHA256、窗口计数、特征与分类分数随结果记录。详细实现及启动参数见 [PL 脑电与地图说明](report/pl_accel.md)。
 
 MI 的[采集适配](src/workspace/integrations/eeg_demo/brain_runtime/mi_acquisition.py)、[试次与虚拟手逻辑](src/workspace/integrations/eeg_demo/brain_runtime/mi_cued.py)、[RMS 模型入口](src/workspace/integrations/eeg_demo/brain_runtime/mi_rms_live_virtual.py)和[网页桥接](src/workspace/integrations/eeg_demo/brain_runtime/mi_web_bridge.py)已包含在公开源码中。启用与接入步骤见[实时 EEG 与 MI 使用说明](report/eeg_live_mi.md)。
 
@@ -76,6 +91,8 @@ MI 的[采集适配](src/workspace/integrations/eeg_demo/brain_runtime/mi_acquis
 | 工作 | 实际内容与源码入口 |
 | --- | --- |
 | 共享整数推理核 | [HLS MLP](src/workspace/integrations/z20_compute/hardware/hls/mlp.cpp)实现 D→32 ReLU→3，输入维度 1–1024；使用 INT8 输入和权重、INT32 接口与溢出检查，处理移位、舍入和饱和。 |
+| 完整 PL 脑电识别 | [FBCSP/SVM 核](src/workspace/integrations/pl_accel/hls/eeg.cpp)维护 48 组 SOS 状态、每带 CSP、重叠窗口和 64 位统计量，完成对数特征及 SVM；配套训练导出、整数参考和实时消费者。 |
+| 硬件空间绘制 | [地图核](src/workspace/integrations/pl_accel/hls/map.cpp)接收 XYZ/RGB 与轨迹，执行投影、遮挡、点覆盖和线段绘制；共享迭代除法器控制逻辑资源。 |
 | PS / PL 数值与内存配套 | [整数参考](src/workspace/integrations/z20_compute/z20_compute/npu.py)与[硬件适配](src/workspace/integrations/z20_compute/z20_compute/backend.py)覆盖权重与缓冲装载、缓存同步、MMIO、结果比对及超时后的内存所有权。 |
 | 连续图像与视频通路 | 工程包含相机、VDMA、HDMI、像素滤镜和帧管理；[图像 HLS](src/workspace/integrations/vision_demo/hls/vision_core.cpp)包含边缘、运动差分、拖影及灰度处理等实现。 |
 | 双目采集的帧一致性 | 自编写[VDMA 状态观测 RTL](src/workspace/integrations/z20_compute/hardware/rtl/z20_video_observer.sv)记录写入与完成状态、帧序号和硬件时间，供软件取得一致的相机快照。 |
@@ -85,9 +102,18 @@ MI 的[采集适配](src/workspace/integrations/eeg_demo/brain_runtime/mi_acquis
 | 双板与电脑协同 | 特征、分类结果、菜单状态和 JPEG 图像分别传输；[画面协议](src/workspace/integrations/z20_compute/z20_compute/visual_wire.py)携带会话、模式代数和序号，接收端据此处理切页与过期消息。 |
 | 发布与复用 | 配套源码路径恢复、文件摘要核对、安装事务、版本配对和回退工具；[PYNQ Skill](skill/README.md)整理固件核对、整数算例和会话恢复方法。 |
 
+### 两块目标器件的 HLS 资源
+
+| 新增核 · 100 MHz 目标时钟 | LUT | FF | DSP | BRAM18K | Verilog 联合仿真 |
+| --- | ---: | ---: | ---: | ---: | --- |
+| Z15 FBCSP/SVM · XC7Z015 CLG485 | 14,658 | 10,768 | 55 | 25 | PASS |
+| Z20 点云/轨迹绘制 · XC7Z020 CLG400 | 14,251 | 11,314 | 42 | 14 | PASS |
+
+表中资源为 HLS 综合估算。两套原整机设计合入新核后，Z15 综合占用 23,930 LUT、29,323 FF、66 DSP、88 个 BRAM36；Z20 占用 29,206 LUT、38,946 FF、48 DSP、20.5 个 BRAM36。原控制地址与外部端口通过集成脚本检查。两核均完成 C 仿真、HLS 综合、RTL 联合仿真与 IP 导出；源码 SHA256、定点算例和报告见 [PL 构建记录](report/pl_accel.md)。
+
 ## 运行与源码导航
 
-本公开版以 2026-11-01 参赛源码快照为基线，包含 4744 个原始源码、测试及配置条目，并记录本次实时展示入口修订。历史版本、当前入口和发布工具都保留在来源映射中。
+本公开版以 2026-11-01 参赛源码快照为基线，保留 4744 个原始源码、测试及配置条目，继续加入实时展示入口、Z15 PL 脑电和 Z20 PL 地图实现。历史版本、当前入口和发布工具都保留在来源映射中。
 
 | 目录 | 内容 |
 | --- | --- |
@@ -111,6 +137,7 @@ python -X utf8 -B build/restore_workspace.py --output C:/work/intent_action_runt
 - `integrations/eeg_demo/runtime`、`integrations/eye_c3`：实时状态、眼动菜单与设备交互。
 - `integrations/vision_demo`：Z15 图像流、脑电页、音频与显示硬件。
 - `integrations/z20_compute`：共享 MLP、相机、四模式展示和双板协议。
+- `integrations/pl_accel`：新增 HLS 核、定点参考、训练导出、驱动和硬件集成。
 - `integrations/pendulum_ble`、`multimodal/firmware`：外设通信与嵌入式固件。
 
 ## 在普通电脑验证
@@ -118,15 +145,15 @@ python -X utf8 -B build/restore_workspace.py --output C:/work/intent_action_runt
 使用 Python 3.10 或更新版本，在仓库根目录执行：
 
 ```sh
-python -m pip install numpy scipy pillow
+python -m pip install numpy scipy pillow opencv-python
 python -X utf8 -B build/verify_package.py
 python -X utf8 -B -m unittest discover -s sim -p "test_*.py" -v
 python -X utf8 -B -m unittest discover -s skill/tests -v
 python -X utf8 -B sim/run_checks.py --workspace C:/work/intent_action_runtime --output C:/work/intent_action_checks
 ```
 
-最小检查集包含原有 33 项及本次新增的 8 项实时入口测试，共 41 项，覆盖整数运算、板型识别、缓冲所有权、会话过期、路径恢复、实时接收展示与手动来源选择。本次扩展回归共通过 160 项，覆盖 MI 试次、虚拟手、实时桥接、显示生命周期及双板协议。板端依赖、模型与固件准备步骤见[复现说明](report/reproduction.md)和[外部输入清单](report/external_inputs.json)。
+运行 HLS C++ 比对还需可用的 `g++`。新增 PL 测试覆盖整数特征与分类、投影像素、训练导出、MMIO/缓存/缓冲所有权、重连复位、几何 socket、显示切换和原图恢复。工具入口、训练数据格式、Linux 节点及精确板型集成见 [PL 使用说明](report/pl_accel.md)；原系统依赖见[复现说明](report/reproduction.md)与[外部输入清单](report/external_inputs.json)。
 
-工程已有板端运行和机构分项动作记录。本次更新的默认实时展示入口已完成软件回归；当前 MI 使用实验模型，佩戴识别效果按实际试次记录。各版本状态与后续实板验收项集中见[当前状态](report/current_status.md)，本次检查见[实时 EEG 与 MI 使用说明](report/eeg_live_mi.md)。
+工程保留板端运行、机构分项动作、实时 EEG/MI 和双板展示记录。新的数值算例、源码身份与构建报告同代码一起发布，便于继续训练模型、比较两条 MI 路径和复用地图绘制模块。
 
 源码、模型和数据沿用各自版权声明，来源与许可见[第三方说明](report/third_party.md)。

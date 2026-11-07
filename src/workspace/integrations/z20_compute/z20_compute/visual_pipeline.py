@@ -107,6 +107,7 @@ class VisualPipeline:
 
     def render_loop(self):
         p=self.pipeline;last_key=None;last_preview=0.
+        map_key=None;map_frame=None;map_stats=None
         from .headless_preview import publish_frame
         from .video import AnalysisWorker
         # PNG compression never owns or waits on the HDMI ring. Frames returned
@@ -117,6 +118,25 @@ class VisualPipeline:
                 result=worker.result()
                 if result is not None and not result.valid:raise RuntimeError('visual preview failed: '+result.state)
                 state=self.state.snapshot();frame,key=self.display.render(state,self.state.latest())
+                render_kind='four-mode-visual'
+                if not state['menu'] and state['mode']=='spatial' and state.get('map_backend')=='pl':
+                    geometry=self.state.latest_geometry()
+                    if geometry is not None and p.map_renderer is not None:
+                        session,epoch,sequence,scene=geometry
+                        candidate_key=(session,epoch,sequence,state.get('map_view',0))
+                        try:
+                            if candidate_key!=map_key:
+                                map_frame,map_stats=p.map_renderer.render_geometry(scene,
+                                    view=state.get('map_view',0),sequence=sequence)
+                                map_key=candidate_key
+                            current=self.state.snapshot()
+                            if (current['session'],current['epoch'],current.get('map_backend'))!=(session,epoch,'pl'):continue
+                            frame,key=map_frame,('pl-map',candidate_key)
+                            render_kind='PL_pointcloud_map_renderer'
+                            self.state.publish('map',map_stats,epoch=epoch)
+                        except Exception as exc:
+                            with p.lock:p.errors['map']=type(exc).__name__+': '+str(exc)
+                            map_key=None
                 if key!=last_key:
                     if p.display is not None:p.display.show(frame.tobytes())
                     with p.lock:p.frames+=1
@@ -126,7 +146,7 @@ class VisualPipeline:
                     equal=p.display.readback()==frame.tobytes() if p.display is not None else None
                     if equal is False:raise RuntimeError('visual display readback differs')
                     worker.submit(state['frame_sequence'],(frame,dict(mode=state['mode'],epoch=state['epoch'],
-                        renderer='four-mode-visual',frame_sequence=state['frame_sequence']),equal))
+                        renderer=render_kind,frame_sequence=state['frame_sequence']),equal))
                     last_preview=now
                     if equal:
                         with p.lock:p.display_matches+=1

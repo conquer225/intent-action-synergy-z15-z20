@@ -1,0 +1,8 @@
+{
+  "part": "xc7z020clg400-2",
+  "kernel": "map",
+  "scope": "original_bd",
+  "implemented": false,
+  "additive_integration": true,
+  "preserved_original_control_address": true
+}

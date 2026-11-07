@@ -131,7 +131,8 @@ def task_status(paths, source):
             fields = ('state', 'valid', 'reason', 'level', 'score', 'class_id', 'label',
                       'frequency_hz', 'calibration_current', 'calibration_total',
                       'accepted_windows', 'warmup_samples', 'required_samples',
-                      'updated_at', 'input_age_seconds')
+                      'updated_at', 'input_age_seconds', 'backend', 'score_q24', 'features',
+                      'model_sha256', 'sample_count', 'window_count', 'clipped', 'timing')
             summary = {key: value[key] for key in fields if key in value}
             summary.update(source=source, control_enabled=False)
             if name == 'primary':

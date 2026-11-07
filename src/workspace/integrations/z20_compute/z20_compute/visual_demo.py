@@ -24,6 +24,9 @@ class DemoState:
         self.data = {}
         self.sound_input=None
         self.sound_sample_index=0
+        self.map_backend='original'
+        self.geometry=None;self.geometry_sequence=-1;self.geometry_received=-float('inf')
+        self.map_view=0;self.map_available=False
 
     def accept_sound(self,row):
         """One explicitly captured sound window; never activates an actuator."""
@@ -49,6 +52,7 @@ class DemoState:
         self.frame, self.sequence, self.received = None, -1, -float('inf')
         self.data = {}
         self.action=None;self.actions.clear()
+        self.geometry=None;self.geometry_sequence=-1;self.geometry_received=-float('inf')
 
     def attach_renderer(self):
         with self.lock:
@@ -74,7 +78,7 @@ class DemoState:
     def command(self, client, sequence, name):
         if (not isinstance(client,str) or not 1 <= len(client) <= 64
                 or type(sequence) is not int or sequence < 0
-                or name not in ('left','right','enter','back','stop','recorded_sound_0','recorded_sound_1','recorded_sound_2')):
+                or name not in ('left','right','enter','back','stop','recorded_sound_0','recorded_sound_1','recorded_sound_2','map_pl','map_original')):
             raise ValueError('invalid display command')
         with self.lock:
             if sequence <= self.clients.get(client,-1):
@@ -83,7 +87,11 @@ class DemoState:
             while len(self.clients)>64:self.clients.popitem(last=False)
             self.stopped=False
             mode=MODES[self.mode_index]
-            if name.startswith('recorded_sound_'):
+            if name in ('map_pl','map_original'):
+                if self.menu or mode!='spatial' or (name=='map_pl' and not self.map_available):
+                    return dict(self.snapshot(),accepted=False)
+                self.map_backend='pl' if name=='map_pl' else 'original';self._invalidate()
+            elif name.startswith('recorded_sound_'):
                 if self.menu or mode!='npu':return dict(self.snapshot(),accepted=False)
                 self.sample_index=2;self.sound_sample_index=int(name[-1]);self.sound_input=None;self._invalidate()
             elif name in ('back','stop'):
@@ -104,6 +112,7 @@ class DemoState:
                 self._invalidate()
             else:
                 if name=='left':self._invalidate()
+                else:self.map_view=(self.map_view+1)%3
                 self.action_id+=1
                 self.action=dict(id=self.action_id,name='capture' if name=='left' else 'view_next',epoch=self.epoch)
                 self.actions.append((self.now(),dict(self.action)))
@@ -114,7 +123,8 @@ class DemoState:
             raise ValueError('frame payload out of bounds')
         with self.lock:
             if (session!=self.session or type(epoch) is not int or epoch!=self.epoch
-                    or type(sequence) is not int or sequence<=self.sequence):
+                    or type(sequence) is not int or sequence<=self.sequence
+                    or (MODES[self.mode_index]=='spatial' and self.map_backend=='pl' and not self.menu)):
                 self.rejected_frames+=1;return False
             self.frame,self.sequence,self.received=jpeg,sequence,self.now()
             self.heartbeat=self.received;self.accepted_frames+=1
@@ -124,6 +134,23 @@ class DemoState:
         with self.lock:
             if not 0<=self.now()-self.received<=self.ttl:return None
             return self.epoch,self.sequence,self.frame
+
+    def accept_geometry(self,session,epoch,sequence,geometry):
+        from .visual_wire import GeometryFrame
+        if not isinstance(geometry,GeometryFrame):raise ValueError('expected validated geometry')
+        with self.lock:
+            if (session!=self.session or type(epoch) is not int or epoch!=self.epoch
+                    or type(sequence) is not int or sequence<=self.geometry_sequence
+                    or self.menu or MODES[self.mode_index]!='spatial' or self.map_backend!='pl'):
+                self.rejected_frames+=1;return False
+            self.geometry,self.geometry_sequence,self.geometry_received=geometry,sequence,self.now()
+            self.heartbeat=self.geometry_received;self.accepted_frames+=1;return True
+
+    def latest_geometry(self):
+        with self.lock:
+            if (self.menu or MODES[self.mode_index]!='spatial' or self.map_backend!='pl'
+                    or self.geometry is None or not 0<=self.now()-self.geometry_received<=self.ttl):return None
+            return self.session,self.epoch,self.geometry_sequence,self.geometry
 
     def publish(self, key, payload, *, epoch):
         with self.lock:
@@ -139,6 +166,8 @@ class DemoState:
                 menu=self.menu,stopped=self.stopped,sample_index=self.sample_index,
                 sound_input=dict(self.sound_input) if self.sound_input else None,
                 sound_sample_index=self.sound_sample_index,
+                map_backend=self.map_backend,geometry_sequence=self.geometry_sequence,
+                map_view=self.map_view,map_available=self.map_available,
                 action=dict(self.action) if self.action else None,
                 actions=[dict(action) for at,action in self.actions if 0<=now-at<=self.ttl],
                 renderer_online=online,

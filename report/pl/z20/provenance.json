@@ -1,0 +1,12 @@
+{
+  "scope": "Vivado_2023.1_post_synthesis_original_system_plus_extension",
+  "kernel_ip": "z20_map",
+  "extension_control_address": "0x83c40000",
+  "clock": "FCLK2_100MHz_GP1_HP2",
+  "build_tcl_sha256": "b834edc9bb57781b10e2bc979bb4dec1c2f39220365251acd3f638911630da36",
+  "integration_tcl_sha256": "3a59f29bc9d83763cedd78b393040164f2ccd9d178ee30041633027a097781d6",
+  "original_ports_and_control_addresses_preserved": true,
+  "baseline_entry": "system.tcl",
+  "baseline_entry_sha256": "0d9c8f4cee1bf1706e0e40b85e0d5568f4bf80f332bac7cf76e84ee37f256f3c",
+  "platform_driver_sha256": "5932073a2ee3b8eab80d773730bc60dc9480116dfef84ed13f520ae48df3bc01"
+}

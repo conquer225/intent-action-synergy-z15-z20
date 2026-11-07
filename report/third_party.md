@@ -14,3 +14,13 @@
 | EEG、录音及图像素材 | 原有数据来源及使用条件分别核对；本次没有公开原始采集、音视频和个人照片 |
 
 来源清单记录公开文件字节身份，外部输入清单记录未发布文件的路径与摘要。第三方版权和再分发条件仍以相应原始文件及来源为准。
+
+## 本次 PL 扩展的参考来源
+
+| 内容 | 参考与采用方式 |
+| --- | --- |
+| 脑电处理顺序 | [Xsingh-Luo/fpga_eeg_rehab](https://github.com/Xsingh-Luo/fpga_eeg_rehab/tree/7b828d17c8eb51da2c19a4fbdff8a3e941593501)：阅读 SOS、CSP、滑窗、log 方差和 SVM 的 RTL 及训练流程。上游 LICENSE 含 MIT 正文及第三方附注。 |
+| 空间显示分工 | [ymmz2333/fpga-orb-slam](https://github.com/ymmz2333/fpga-orb-slam)、[yilives/zynq-ultrascale-graphics](https://github.com/yilives/zynq-ultrascale-graphics)：参考几何投影及 PS/PL 职责组织。 |
+| 原创实现范围 | 新增 `integrations/pl_accel` 的 HLS 核、定点数值合同、参考模型、训练导出、驱动、实时消费者、地图适配与测试由本工程独立编写。算法参考按本表注明来源。 |
+
+外部工程的源码以只读方式研究。本次采用明确的八通道 Q8/Q28/Q14/Q12 合同、逐频带归一化及本工程模型格式，模型参数与来源随 SHA256 记录。

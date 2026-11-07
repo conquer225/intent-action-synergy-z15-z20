@@ -133,9 +133,18 @@ def main():
     parser.add_argument('--record-pairs',type=Path,help='record at most 20 static chessboard pairs, every 2s')
     parser.add_argument('--visual-token-file',type=Path,help='enable four modes using a private demo token')
     parser.add_argument('--visual-codec',type=Path,help='ARM libz20_visual.so for the original userspace')
+    parser.add_argument('--pl-map',action='store_true',help='open the independent PL map IP and DMA reservation')
+    parser.add_argument('--map-mode',choices=('original','pl'),default='original')
     args = parser.parse_args()
     from contextlib import ExitStack
     with ExitStack() as cleanup:
+        map_renderer=None
+        if args.pl_map:
+            from .pl_map import open_map_renderer
+            map_resources=open_map_renderer()
+            for resource in reversed(map_resources):cleanup.callback(resource.close)
+            map_renderer=map_resources[0]
+        if args.map_mode=='pl' and map_renderer is None:parser.error('--map-mode pl requires --pl-map')
         visual=visual_server=decoder=None
         if args.visual_token_file:
             if args.display_assets is None or args.sound_root is None:parser.error('visual demo requires display-assets and sound-root')
@@ -144,6 +153,7 @@ def main():
             from .visual_demo import DemoState
             from .visual_server import DemoServer
             visual=DemoState()
+            visual.map_available=map_renderer is not None
             if args.visual_codec:
                 from .visual_codec import NativeJPEG
                 decoder=NativeJPEG(args.visual_codec)
@@ -192,7 +202,8 @@ def main():
                 stereo=BoardStereo(args.calibration,library=args.display_assets/'libz20_stereo.so')
             pipeline[0]=HeadlessPipeline(runtime,snapshot,assets=args.display_assets,preview=args.preview,
                 media_root=args.media_root,sound_root=args.sound_root,hdmi=args.hdmi,keys=args.keys,
-                stereo=stereo,record_pairs=args.record_pairs,visual_state=visual,visual_decoder=decoder)
+                stereo=stereo,record_pairs=args.record_pairs,visual_state=visual,visual_decoder=decoder,
+                map_renderer=map_renderer,map_mode=args.map_mode)
             cleanup.callback(pipeline[0].close)
             pipeline[0].start()
         http = StatusHTTP((args.bind, args.http_port), snapshot, preview=args.preview,

@@ -398,8 +398,12 @@
     {
       "runtime_path": "integrations/eeg_demo/brain_runtime/cyton_guardianloop.py",
       "package_path": "src/workspace/integrations/eeg_demo/brain_runtime/cyton_guardianloop.py",
-      "sha256": "01efa812274f5df38dd21e6db91bb9b0777f17758c27598eaf2d7c5d8a1ed9c6",
-      "bytes": 58180
+      "sha256": "b6569805645ea658256d598aff757ed0cabe3048c4414c35834a34d42bbe6b9b",
+      "bytes": 59522,
+      "snapshot_sha256": "01efa812274f5df38dd21e6db91bb9b0777f17758c27598eaf2d7c5d8a1ed9c6",
+      "snapshot_bytes": 58180,
+      "revision_date": "2026-11-07",
+      "revision_reason": "Integrate Z15 PL FBCSP/SVM and optional Z20 PL map rendering while preserving original defaults"
     },
     {
       "runtime_path": "integrations/eeg_demo/brain_runtime/cyton_reader_sink.py",
@@ -518,8 +522,12 @@
     {
       "runtime_path": "integrations/eeg_demo/brain_runtime/mi_acquisition.py",
       "package_path": "src/workspace/integrations/eeg_demo/brain_runtime/mi_acquisition.py",
-      "sha256": "796063481367ab6e75a948d509543fa8926f6373d2933e662f6befd3c2a989f9",
-      "bytes": 15583
+      "sha256": "d025f860099eb5b4eaf2edc1582daebb6be86671091f5e26b4fadc9e365bde5b",
+      "bytes": 15710,
+      "snapshot_sha256": "796063481367ab6e75a948d509543fa8926f6373d2933e662f6befd3c2a989f9",
+      "snapshot_bytes": 15583,
+      "revision_date": "2026-11-07",
+      "revision_reason": "Integrate Z15 PL FBCSP/SVM and optional Z20 PL map rendering while preserving original defaults"
     },
     {
       "runtime_path": "integrations/eeg_demo/brain_runtime/mi_candidate.py",
@@ -554,8 +562,12 @@
     {
       "runtime_path": "integrations/eeg_demo/brain_runtime/mi_cued_server.py",
       "package_path": "src/workspace/integrations/eeg_demo/brain_runtime/mi_cued_server.py",
-      "sha256": "852661194e574d889130bad6a876f337ac2a84b34e0ae6070a3ddbead833f333",
-      "bytes": 4904
+      "sha256": "331daf92f5efa91be83e9e90581d82286c876769f92f5bbd80aa3454d2e432e6",
+      "bytes": 6834,
+      "snapshot_sha256": "852661194e574d889130bad6a876f337ac2a84b34e0ae6070a3ddbead833f333",
+      "snapshot_bytes": 4904,
+      "revision_date": "2026-11-07",
+      "revision_reason": "Integrate Z15 PL FBCSP/SVM and optional Z20 PL map rendering while preserving original defaults"
     },
     {
       "runtime_path": "integrations/eeg_demo/brain_runtime/mi_eegnet_portable.py",
@@ -14110,8 +14122,12 @@
     {
       "runtime_path": "integrations/z20_compute/build_visual_release.py",
       "package_path": "src/workspace/integrations/z20_compute/build_visual_release.py",
-      "sha256": "8e8a886e62ad7db5e3e6fea4e8811208a8aacbef1939843f8e5a1530734aacac",
-      "bytes": 9486
+      "sha256": "a0aba8adc1e9185594156d14c1b9d585e6b5aa377820f2b459ce48c9c9e20afb",
+      "bytes": 9530,
+      "snapshot_sha256": "8e8a886e62ad7db5e3e6fea4e8811208a8aacbef1939843f8e5a1530734aacac",
+      "snapshot_bytes": 9486,
+      "revision_date": "2026-11-07",
+      "revision_reason": "Integrate Z15 PL FBCSP/SVM and optional Z20 PL map rendering while preserving original defaults"
     },
     {
       "runtime_path": "integrations/z20_compute/build_z15_adapter.py",
@@ -14638,8 +14654,12 @@
     {
       "runtime_path": "integrations/z20_compute/run_visual_demo.py",
       "package_path": "src/workspace/integrations/z20_compute/run_visual_demo.py",
-      "sha256": "31974cf279d4560a93fc9f0363ea4b780a191a90031c853e0373345b73065259",
-      "bytes": 3982
+      "sha256": "8048a02f7588bce9b9e1f477e4748c111050a4bc3d1b7436b92be62a17059690",
+      "bytes": 4333,
+      "snapshot_sha256": "31974cf279d4560a93fc9f0363ea4b780a191a90031c853e0373345b73065259",
+      "snapshot_bytes": 3982,
+      "revision_date": "2026-11-07",
+      "revision_reason": "Integrate Z15 PL FBCSP/SVM and optional Z20 PL map rendering while preserving original defaults"
     },
     {
       "runtime_path": "integrations/z20_compute/start_fixed_photo_demo.cmd",
@@ -15364,14 +15384,22 @@
     {
       "runtime_path": "integrations/z20_compute/web/visual_demo/index.html",
       "package_path": "src/workspace/integrations/z20_compute/web/visual_demo/index.html",
-      "sha256": "12b466982f6e6c6d9a5936641520a43f7e4b494bd9021c531af3d62ac9440a4c",
-      "bytes": 3814
+      "sha256": "c45ebfe748c742fac4c156e04312d556b217cb60af209052e72a31f60818508d",
+      "bytes": 4343,
+      "snapshot_sha256": "12b466982f6e6c6d9a5936641520a43f7e4b494bd9021c531af3d62ac9440a4c",
+      "snapshot_bytes": 3814,
+      "revision_date": "2026-11-07",
+      "revision_reason": "Integrate Z15 PL FBCSP/SVM and optional Z20 PL map rendering while preserving original defaults"
     },
     {
       "runtime_path": "integrations/z20_compute/web/visual_demo/main.js",
       "package_path": "src/workspace/integrations/z20_compute/web/visual_demo/main.js",
-      "sha256": "f3a1a9eaebcaed4ddc7df333833d39eab2ec09a61cd6125d8692ef5ffcb00fd8",
-      "bytes": 9604
+      "sha256": "a78aa9fb39b6438f8e4e58780efa1ad95278b02b2412570152bd4121a1242cbe",
+      "bytes": 10053,
+      "snapshot_sha256": "f3a1a9eaebcaed4ddc7df333833d39eab2ec09a61cd6125d8692ef5ffcb00fd8",
+      "snapshot_bytes": 9604,
+      "revision_date": "2026-11-07",
+      "revision_reason": "Integrate Z15 PL FBCSP/SVM and optional Z20 PL map rendering while preserving original defaults"
     },
     {
       "runtime_path": "integrations/z20_compute/web/visual_demo/sound_input.js",
@@ -15550,8 +15578,12 @@
     {
       "runtime_path": "integrations/z20_compute/z20_compute/headless_pipeline.py",
       "package_path": "src/workspace/integrations/z20_compute/z20_compute/headless_pipeline.py",
-      "sha256": "7e81884153c8a1bb7a0531a8ec49eff30ba8d0c3d8b137ae744e466ce6e97263",
-      "bytes": 18405
+      "sha256": "393217504fb3f2ac3b2a650b8c1fecb6d2eecc72de69e66ecaa910909645d34f",
+      "bytes": 20274,
+      "snapshot_sha256": "7e81884153c8a1bb7a0531a8ec49eff30ba8d0c3d8b137ae744e466ce6e97263",
+      "snapshot_bytes": 18405,
+      "revision_date": "2026-11-07",
+      "revision_reason": "Integrate Z15 PL FBCSP/SVM and optional Z20 PL map rendering while preserving original defaults"
     },
     {
       "runtime_path": "integrations/z20_compute/z20_compute/headless_preview.py",
@@ -15568,8 +15600,12 @@
     {
       "runtime_path": "integrations/z20_compute/z20_compute/headless_server.py",
       "package_path": "src/workspace/integrations/z20_compute/z20_compute/headless_server.py",
-      "sha256": "c7fceeff2cb21ca5e1c5314ed6b6219cf5d253787eef528fd4e5a06b53082bda",
-      "bytes": 13936
+      "sha256": "3ee82f7b2a5af18dbb55538ac93591b40bfc466c7cb845b498ae6a4936c0b0bd",
+      "bytes": 14634,
+      "snapshot_sha256": "c7fceeff2cb21ca5e1c5314ed6b6219cf5d253787eef528fd4e5a06b53082bda",
+      "snapshot_bytes": 13936,
+      "revision_date": "2026-11-07",
+      "revision_reason": "Integrate Z15 PL FBCSP/SVM and optional Z20 PL map rendering while preserving original defaults"
     },
     {
       "runtime_path": "integrations/z20_compute/z20_compute/isolated_hdmi.py",
@@ -15790,8 +15826,12 @@
     {
       "runtime_path": "integrations/z20_compute/z20_compute/visual_demo.py",
       "package_path": "src/workspace/integrations/z20_compute/z20_compute/visual_demo.py",
-      "sha256": "2803f49ab16bd2b86bf2abd31ea7072785921b274f2f493eb6ea5993ed032415",
-      "bytes": 7158
+      "sha256": "1e7f4741cbfb1354488edb4a24de6c0fd29417e4413eea2299a9d62b97be34ae",
+      "bytes": 9147,
+      "snapshot_sha256": "2803f49ab16bd2b86bf2abd31ea7072785921b274f2f493eb6ea5993ed032415",
+      "snapshot_bytes": 7158,
+      "revision_date": "2026-11-07",
+      "revision_reason": "Integrate Z15 PL FBCSP/SVM and optional Z20 PL map rendering while preserving original defaults"
     },
     {
       "runtime_path": "integrations/z20_compute/z20_compute/visual_display.py",
@@ -15806,8 +15846,12 @@
     {
       "runtime_path": "integrations/z20_compute/z20_compute/visual_host.py",
       "package_path": "src/workspace/integrations/z20_compute/z20_compute/visual_host.py",
-      "sha256": "f3dd7acfb8ce72a5e4091c3af4a4916e693c8f3f34dc82624b6927e9f161a394",
-      "bytes": 15282
+      "sha256": "bb5523c48075ef2fc63bb2bc25adcea63b24701077fef640acc09c8a22dab7ea",
+      "bytes": 18740,
+      "snapshot_sha256": "f3dd7acfb8ce72a5e4091c3af4a4916e693c8f3f34dc82624b6927e9f161a394",
+      "snapshot_bytes": 15282,
+      "revision_date": "2026-11-07",
+      "revision_reason": "Integrate Z15 PL FBCSP/SVM and optional Z20 PL map rendering while preserving original defaults"
     },
     {
       "runtime_path": "integrations/z20_compute/z20_compute/visual_offline.py",
@@ -15818,12 +15862,12 @@
     {
       "runtime_path": "integrations/z20_compute/z20_compute/visual_pipeline.py",
       "package_path": "src/workspace/integrations/z20_compute/z20_compute/visual_pipeline.py",
-      "sha256": "f430c459202f5d107cf592862f958e7fed9259f79011bb94b7341ef9cc7d3fb0",
-      "bytes": 8257,
+      "sha256": "70ca28b37578b1533a8741bfbd3019b78114883be079eb059d955bb6d0160f6e",
+      "bytes": 9627,
       "snapshot_sha256": "9e3daa5da98c82f0422306c2e261f54f909a012188d5cff51e9af898efb64369",
       "snapshot_bytes": 9223,
-      "revision_date": "2026-11-05",
-      "revision_reason": "Wait for received EEG features instead of automatic recording fallback"
+      "revision_date": "2026-11-07",
+      "revision_reason": "Integrate Z15 PL FBCSP/SVM and optional Z20 PL map rendering while preserving original defaults"
     },
     {
       "runtime_path": "integrations/z20_compute/z20_compute/visual_profile.py",
@@ -15834,14 +15878,22 @@
     {
       "runtime_path": "integrations/z20_compute/z20_compute/visual_server.py",
       "package_path": "src/workspace/integrations/z20_compute/z20_compute/visual_server.py",
-      "sha256": "30baed157e760c387a6b9d362b49211c2386cd3b2120c3471c5f4535fb51ea1f",
-      "bytes": 6000
+      "sha256": "079331a1b0bbce945015bbece73c64bd64f9e77da50bfaee7cee3e967d8c076a",
+      "bytes": 6339,
+      "snapshot_sha256": "30baed157e760c387a6b9d362b49211c2386cd3b2120c3471c5f4535fb51ea1f",
+      "snapshot_bytes": 6000,
+      "revision_date": "2026-11-07",
+      "revision_reason": "Integrate Z15 PL FBCSP/SVM and optional Z20 PL map rendering while preserving original defaults"
     },
     {
       "runtime_path": "integrations/z20_compute/z20_compute/visual_wire.py",
       "package_path": "src/workspace/integrations/z20_compute/z20_compute/visual_wire.py",
-      "sha256": "bfac96028bf29130ad6665f7d5f73eaa1d77dadb3a87bdcb258907ba4caa0e06",
-      "bytes": 3208
+      "sha256": "ed17e1461c5fc0b387e0cc227cf3dad9ef1a38e3bdd42acbaaed1fa96180c03c",
+      "bytes": 6714,
+      "snapshot_sha256": "bfac96028bf29130ad6665f7d5f73eaa1d77dadb3a87bdcb258907ba4caa0e06",
+      "snapshot_bytes": 3208,
+      "revision_date": "2026-11-07",
+      "revision_reason": "Integrate Z15 PL FBCSP/SVM and optional Z20 PL map rendering while preserving original defaults"
     },
     {
       "runtime_path": "integrations/z20_compute/z20_compute/wireless_only.py",
@@ -28496,6 +28548,190 @@
       "package_path": "src/workspace/tools/start_screen_monitor.bat",
       "sha256": "5a7569eb25da0e44f888db82412dcdfc28114dd878b6049cc5380976d37672c9",
       "bytes": 88
+    },
+    {
+      "runtime_path": "integrations/eeg_demo/brain_runtime/pl_mi.py",
+      "package_path": "src/workspace/integrations/eeg_demo/brain_runtime/pl_mi.py",
+      "sha256": "a89d172ee568315a24f0ee08577d33cc83a560fe5b7710d0b89666379ad2bba2",
+      "bytes": 2415,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/__init__.py",
+      "package_path": "src/workspace/integrations/pl_accel/__init__.py",
+      "sha256": "2db6db7e1ff673752246e5728b51dc7c062eddcffe79bbdbf5989e4a2b4e7a5c",
+      "bytes": 98,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/backend.py",
+      "package_path": "src/workspace/integrations/pl_accel/backend.py",
+      "sha256": "060b0ab332f2d426e302239986f4942008c1111402766b5facaab71987a3517e",
+      "bytes": 7448,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/eeg.py",
+      "package_path": "src/workspace/integrations/pl_accel/eeg.py",
+      "sha256": "7682b2b3fd72dffe497404d5febf5d0bb0a0187ad8bbf6fd99262ce7af4ada6d",
+      "bytes": 7354,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/fixed.py",
+      "package_path": "src/workspace/integrations/pl_accel/fixed.py",
+      "sha256": "373a19eede95a1c68153b1f75a166cc0ee1eb5dd34a13f2eaabde4ee19f0ea7d",
+      "bytes": 1904,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/GLOSSARY.md",
+      "package_path": "src/workspace/integrations/pl_accel/glossary.md",
+      "sha256": "2243effec2197356b9922f2fea0c8255b536afe87fe5dc5c31c3d3cc1ba4f45c",
+      "bytes": 1010,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/hardware/integrate.tcl",
+      "package_path": "src/workspace/integrations/pl_accel/hardware/integrate.tcl",
+      "sha256": "3a59f29bc9d83763cedd78b393040164f2ccd9d178ee30041633027a097781d6",
+      "bytes": 5164,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/hardware/map.dtsi",
+      "package_path": "src/workspace/integrations/pl_accel/hardware/map.dtsi",
+      "sha256": "56a02b50336930a76dcf49fa58c507dfb3d5c23731a21c537e437ba10bdbdc49",
+      "bytes": 628,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/hls/eeg.cpp",
+      "package_path": "src/workspace/integrations/pl_accel/hls/eeg.cpp",
+      "sha256": "f6e4512c5c9802f70c0e56d5ef8f251ffdf039d5164ba757597138e077286a2e",
+      "bytes": 7217,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/hls/eeg_tb.cpp",
+      "package_path": "src/workspace/integrations/pl_accel/hls/eeg_tb.cpp",
+      "sha256": "4eb3723c47dec6623463eea0d724939c861fc8422b8a61cdb2b9cb032aed6da7",
+      "bytes": 1442,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/hls/eeg_vectors.h",
+      "package_path": "src/workspace/integrations/pl_accel/hls/eeg_vectors.h",
+      "sha256": "3a43bed028a3b639a5a022169525d339e724518c6e4bbb4084ef3e982be7aaa1",
+      "bytes": 5294,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/hls/log_table.h",
+      "package_path": "src/workspace/integrations/pl_accel/hls/log_table.h",
+      "sha256": "11568f8b3d6f49b89df307b29c3b546cf8fcb61a93d91edac6bf576917d24dae",
+      "bytes": 1675,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/hls/map.cpp",
+      "package_path": "src/workspace/integrations/pl_accel/hls/map.cpp",
+      "sha256": "3c6dc6452ab71b10d2ac761e0987ba7db486e8c643512fdf07843f0bfdfd422b",
+      "bytes": 5572,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/hls/map_tb.cpp",
+      "package_path": "src/workspace/integrations/pl_accel/hls/map_tb.cpp",
+      "sha256": "7de27ce7c39b1532389d4645d83b7d464d34358b236aaa1300bdb5c4a41f2a97",
+      "bytes": 1141,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/hls/map_vectors.h",
+      "package_path": "src/workspace/integrations/pl_accel/hls/map_vectors.h",
+      "sha256": "4ab6269128e1b6ae4feb6908bf1680c982685ce3c84ac92e52e6c0a21480ab1e",
+      "bytes": 28674,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/live.py",
+      "package_path": "src/workspace/integrations/pl_accel/live.py",
+      "sha256": "4d592bddebad8ff55052771ddf245710f7f1130d4fa3faa013dc284cfd179cdf",
+      "bytes": 6362,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/mapping.py",
+      "package_path": "src/workspace/integrations/pl_accel/mapping.py",
+      "sha256": "01c0177f9e5f7ff99eb28b36026a88feabec08be4ee7dbcf3099cf309003bdae",
+      "bytes": 6885,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/metadata.py",
+      "package_path": "src/workspace/integrations/pl_accel/metadata.py",
+      "sha256": "4e3349685867933dc5055a445eb4a26d8f06ab9c4fd0eeb13bec61962bd58128",
+      "bytes": 1179,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/README.md",
+      "package_path": "src/workspace/integrations/pl_accel/readme.md",
+      "sha256": "ef452c865581d14d050fa39745e230331418ebdd3a3f1dbdbde1d8c6087c386a",
+      "bytes": 1324,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/train.py",
+      "package_path": "src/workspace/integrations/pl_accel/train.py",
+      "sha256": "d0f7ad27cb031d2e5004b9ee32ba0028dd5301a419fb76c2e0ce840fff9a3597",
+      "bytes": 5356,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/pl_accel/view.py",
+      "package_path": "src/workspace/integrations/pl_accel/view.py",
+      "sha256": "5a5432f11b1cbac52474d672e29eafdd85c6777ac2db0b4223bbf6cd468b65c3",
+      "bytes": 1505,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/z20_compute/z20_compute/map_source.py",
+      "package_path": "src/workspace/integrations/z20_compute/z20_compute/map_source.py",
+      "sha256": "3f0c93569631dca0b53192e0b6f48a5923fec1010dbdae8dbbec681157a9379d",
+      "bytes": 1689,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
+    },
+    {
+      "runtime_path": "integrations/z20_compute/z20_compute/pl_map.py",
+      "package_path": "src/workspace/integrations/z20_compute/z20_compute/pl_map.py",
+      "sha256": "d4461ee47a3083dd2862791783355f9fe1866d047bc928fa5b18ab57d6648216",
+      "bytes": 1054,
+      "revision_date": "2026-11-07",
+      "revision_reason": "New independent PL extension and adapters"
     }
   ],
   "external_dependency_origin": {
@@ -28511,5 +28747,5 @@
     "scope": "Initial 2026-11-01 filename compaction; current content revisions are recorded per entry"
   },
   "publication_scope": "Source code and tests; binary/runtime assets, historical run records and external vendor SDKs are indexed separately.",
-  "revision_date": "2026-11-05"
+  "revision_date": "2026-11-07"
 }

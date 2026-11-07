@@ -16,7 +16,7 @@ from .training import PREPROCESSORS
 class HeadlessPipeline:
     def __init__(self,runtime,snapshot,*,assets,preview,media_root=None,sound_root=None,
                  hdmi=False,keys=False,camera=None,media=None,display=None,renderer=None,
-                 stereo=None,record_pairs=None,visual_state=None,visual_decoder=None):
+                 stereo=None,record_pairs=None,visual_state=None,visual_decoder=None,map_renderer=None,map_mode='original'):
         self.runtime,self.snapshot=runtime,snapshot
         self.assets,self.preview=Path(assets),Path(preview)
         self.media_root=Path(media_root) if media_root else None
@@ -33,6 +33,9 @@ class HeadlessPipeline:
         self.cloud_points,self.cloud_payload=None,None
         self.recorded_pairs=0
         self.visual=None
+        if map_mode not in ('original','pl'):raise ValueError('map mode')
+        if map_mode=='pl' and map_renderer is None:raise ValueError('PL map renderer is required')
+        self.map_renderer,self.map_mode,self.map_generation=map_renderer,map_mode,0
         if visual_state is not None:
             from .visual_pipeline import VisualPipeline
             self.visual=VisualPipeline(self,visual_state,decoder=visual_decoder)
@@ -55,10 +58,17 @@ class HeadlessPipeline:
         with self.lock:
             return dict(frames=self.frames,display_matches=self.display_matches,camera_frames=self.camera_frames,
                 audio_windows=self.audio_windows,errors=self.errors.copy(),
+                map_mode=self.map_mode,map_available=self.map_renderer is not None,
                 calibration_loaded=self.stereo is not None,recorded_pairs=self.recorded_pairs,
                 camera_pairing='single_left_camera' if self.visual is not None else 'completion_timestamp_5ms',
                 last_pair_skew_ns=getattr(getattr(self.camera,'reader',None),'last_pair_skew_ns',None),
                 physical_keys_open=self.key_input is not None,physical_key_presses_verified=False)
+
+    def set_map_mode(self,mode):
+        if mode not in ('original','pl') or (mode=='pl' and self.map_renderer is None):raise ValueError('map mode unavailable')
+        with self.lock:
+            self.map_mode=mode;self.map_generation+=1
+        return mode
 
     def cloud_detail(self):
         entry=self.runtime.environment_status().get('cloud',{})
@@ -247,6 +257,8 @@ class HeadlessPipeline:
                     image=self.image if time.monotonic()-self.image_time<2 else None
                     analysis=self.analysis
                     points=self.cloud_points
+                    cloud_metadata=dict(self.cloud_payload or {})
+                    map_mode,map_generation=self.map_mode,self.map_generation
                 frozen=state['page']=='overview' and state['detail']==1
                 if frozen and self.freeze_frame is not None:
                     frame=self.freeze_frame.copy()
@@ -254,9 +266,24 @@ class HeadlessPipeline:
                 else:
                     frame=self.renderer.render(state,image=image,analysis=analysis,
                         cloud_points=points if state.get('environment',{}).get('cloud',{}).get('valid') else None)
+                    if (state['page']=='cloud' and map_mode=='pl' and points is not None
+                            and state.get('environment',{}).get('cloud',{}).get('valid')):
+                        from .visual_wire import GeometryFrame
+                        try:
+                            bounded=points[::max(1,(len(points)+65535)//65536)]
+                            geometry=GeometryFrame(bounded,units=cloud_metadata.get('units','m'),
+                                frame_id=cloud_metadata.get('artifact_id',''),
+                                metric_verified=bool(cloud_metadata.get('metric_verified',False)))
+                            frame,_=self.map_renderer.render_geometry(geometry,view=state['detail'])
+                        except Exception as exc:
+                            with self.lock:
+                                self.errors['map']=type(exc).__name__+': '+str(exc)
+                                self.map_mode='original';self.map_generation+=1
                     self.freeze_frame=frame.copy()
                 with self.runtime.lock:
                     if version!=self.runtime.navigation.version:continue
+                with self.lock:
+                    if map_generation!=self.map_generation:continue
                 equal=None
                 if self.display is not None:
                     self.display.show(frame.tobytes());equal=self.display.readback()==frame.tobytes()

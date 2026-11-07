@@ -50,6 +50,7 @@ async function poll(){try{const r=await fetch('/api/state',{cache:'no-store'});i
  binding={session:state.session,epoch:state.epoch};$('#title').textContent=names[state.mode];$('#status').textContent=state.transport_label+' · '+(state.mode==='npu'?(state.data?.npu?.backend==='PL_z20_mlp'?'Z20 PL 推理':'软件整数参考'):'电脑辅助渲染');
  $('#middle').textContent=state.menu?'进入':'返回';$('#fluid').style.visibility=state.menu||state.mode!=='fluid'?'hidden':'visible';$('#three').hidden=state.menu||!['spectrum','spatial'].includes(state.mode);$('#npu').hidden=state.menu||state.mode!=='npu';$('#image').hidden=true;$('#menu').hidden=!state.menu;$('#message').hidden=true;
  $('#sound-controls').hidden=state.menu||state.mode!=='npu'||state.sample_index!==2;
+ $('#map-controls').hidden=state.menu||state.mode!=='spatial';$('#map-pl').disabled=!state.map_available;
  const actionLabels=state.menu?['上个模式','下个模式']:({fluid:['左侧随机注入','右侧随机注入'],spectrum:['上一段录音','下一段录音'],npu:['上一分类任务','下一分类任务'],spatial:['拍摄并生成','切换视图']}[state.mode]);
  document.querySelector('[data-command="left"]').textContent=actionLabels[0];document.querySelector('[data-command="right"]').textContent=actionLabels[1];
  $('#menu').replaceChildren(...Object.entries(names).map(([mode,title])=>{const p=document.createElement('p');p.textContent=title;p.className=mode===state.mode?'selected':'';return p;}));
@@ -59,7 +60,11 @@ async function poll(){try{const r=await fetch('/api/state',{cache:'no-store'});i
  if(!state.menu&&state.mode==='npu')npu(state.data?.npu||{});
  if(!state.menu&&state.mode==='spatial'){
   for(const action of state.actions||[])if(action.id>lastAction){lastAction=action.id;if(action.name==='view_next')viewIndex=(viewIndex+1)%3;}
-  if(viewIndex<2){$('#image').hidden=false;$('#image').src=viewIndex===0?'/api/original.png?epoch='+state.epoch:'/api/depth.png?epoch='+state.epoch;}else await cloud();
+  if(state.map_backend==='pl'){
+   $('#three').hidden=true;$('#image').hidden=false;$('#image').src='/api/pl-map.png?epoch='+state.epoch+'&t='+Math.floor(Date.now()/750);
+   $('#status').textContent=state.transport_label+' · Z20 PL 地图绘制';
+   $('#source').textContent='点云投影 · 深度遮挡 · 轨迹绘制 · 三视角';
+  }else if(viewIndex<2){$('#image').hidden=false;$('#image').src=viewIndex===0?'/api/original.png?epoch='+state.epoch:'/api/depth.png?epoch='+state.epoch;}else await cloud();
   if(!state.spatial_ready){$('#message').hidden=false;$('#message').textContent=state.spatial_message||'等待新鲜相机帧与深度结果';}
  }
  window.demoReady=true;

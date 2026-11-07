@@ -4,7 +4,7 @@ import socket
 import socketserver
 import threading
 import uuid
-from .visual_wire import read_json,write_json,read_frame,jpeg_dimensions
+from .visual_wire import read_json,write_json,read_frame,jpeg_dimensions,decode_geometry
 
 
 class _Server(socketserver.ThreadingTCPServer):
@@ -57,9 +57,14 @@ class _Frames(socketserver.StreamRequestHandler):
             session=hello['session'];write_json(self.wfile,dict(ok=True))
             while True:
                 meta,jpeg=read_frame(self.rfile)
-                jpeg_dimensions(jpeg)  # Reject oversized compressed dimensions before decoding.
                 accepted=False
-                if meta['session']==session:
+                if meta.get('kind')=='geometry':
+                    geometry=decode_geometry(meta,jpeg)
+                    if meta['session']==session:
+                        accepted=owner.state.accept_geometry(session,meta['epoch'],meta['sequence'],geometry)
+                else:
+                    jpeg_dimensions(jpeg)  # Reject oversized compressed dimensions before decoding.
+                if meta.get('kind')!='geometry' and meta['session']==session:
                     accepted=owner.state.accept_frame(session,meta['epoch'],meta['sequence'],jpeg)
                 write_json(self.wfile,dict(accepted=accepted,sequence=meta['sequence']))
         except (OSError,EOFError,ValueError,TypeError):pass

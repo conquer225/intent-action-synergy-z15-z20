@@ -587,6 +587,11 @@ def main():
     parser.add_argument('--mi-web-host', default='127.0.0.1')
     parser.add_argument('--mi-web-port', type=int, default=9104)
     parser.add_argument('--mi-audit-log', type=Path)
+    parser.add_argument('--pl-mi-model', type=Path, help='enable the separate PL filter-bank CSP/SVM observer')
+    parser.add_argument('--pl-mi-ip', default='z15_fbcsp_0')
+    parser.add_argument('--pl-mi-hwh', type=Path, help='matching loaded platform HWH, read as metadata')
+    parser.add_argument('--pl-mi-status', type=Path, default=Path('/run/guardianloop/pl-mi.json'))
+    parser.add_argument('--pl-mi-audit', type=Path)
     parser.add_argument('--isolated-primary-worker', action='store_true',
                         help='private /dev/null ARM replay only; never a live deployment flag')
     parser.add_argument('--primary-worker-cpus', choices=('inherit', '0,1'), default='inherit')
@@ -783,6 +788,7 @@ def main():
     interruption_reason = None
     shutdown_reason = 'SERVICE_STOPPED_OR_STREAM_TIMEOUT'
     mi = None
+    pl_mi = None
     primary_worker_blocked = False
     last_primary_poll = 0.
 
@@ -818,6 +824,8 @@ def main():
         poll_primary(now)
 
     def stream_configured():
+        if pl_mi is not None:
+            pl_mi.interrupt('stream_configured')
         print('CYTON_EEG_CHANNELS_CONFIGURED: gain=24 bias=on srb2=on acknowledgements=8/8', flush=True)
         print('CYTON_STREAM_STARTED', flush=True)
         publish_result({'valid':False, 'state':'INVALID', 'reason':'STREAM_STARTING',
@@ -827,6 +835,8 @@ def main():
                         'channel_map':list(channel_map)}, False, args.status_file, args.esp32_url)
 
     def reconfigure_stream(reason):
+        if pl_mi is not None:
+            pl_mi.interrupt(reason)
         if not awaiting_resume:
             invalidate_primary(reason)
 
@@ -939,10 +949,19 @@ def main():
         four_channel_fatigue.reset()
         reset_primary_stream()
         invalidate_primary('EXPLICIT_NEW_WEARING')
+        if pl_mi is not None:
+            pl_mi.interrupt('new_wearing')
 
     def poll_wear_session():
         wear_session.poll(new_wearing, recording=recorder.active is not None)
     try:
+        if args.pl_mi_model:
+            from pl_mi import create_pl_mi
+            pl_mi = create_pl_mi(args.pl_mi_model, channel_map,
+                status_path=args.pl_mi_status, audit_path=args.pl_mi_audit,
+                hwh_path=args.pl_mi_hwh,
+                ip_name=args.pl_mi_ip, packet_decoder=decode_eeg_counts,
+                microvolts_per_count=args.microvolts_per_count)
         if args.allow_experimental_mi:
             from mi_acquisition import MICandidateRuntime
             mi = MICandidateRuntime(args.mi_experimental_model, channel_map, source=args.mi_source,
@@ -950,13 +969,14 @@ def main():
                 packet_decoder=decode_eeg_counts, microvolts_per_count=args.microvolts_per_count,
                 reader_batch_samples=10 if args.live_primary_worker else 1,
                 status_paths={'primary':args.status_file,
+                              'pl_mi':args.pl_mi_status,
                               'seed':shadow.path if shadow is not None else LIVE_PATH,
                               'ssvep':ssvep.path if ssvep is not None else SSVEP_PATH})
         configure_serial(fd)
         for packet, malformed, received_at in configured_packets(fd, args.stream_timeout,
                 on_idle=on_idle, on_configured=stream_configured, on_reconfigure=reconfigure_stream,
                 packet_sink=mi.reader_sink if mi is not None else None,
-                packet_sinks=(ssvep.reader_sink,) if ssvep is not None else (),
+                packet_sinks=tuple(observer.reader_sink for observer in (ssvep, pl_mi) if observer is not None),
                 **({'wait_for_data': True} if args.wait_for_data else {}),
                 **({'reader_batch_samples': 10}
                    if args.isolated_reader_batch or args.live_primary_worker else {})):
@@ -1128,6 +1148,11 @@ def main():
         print('CYTON_READER_TIMEOUT: ' + str(exc), flush=True)
         raise
     finally:
+        if pl_mi is not None:
+            try:
+                pl_mi.close()
+            except Exception as exc:
+                print('PL_MI_CLOSE: '+type(exc).__name__+': '+str(exc), flush=True)
         invalidate_primary(shutdown_reason)
         if primary_worker is not None:
             primary_worker.close()

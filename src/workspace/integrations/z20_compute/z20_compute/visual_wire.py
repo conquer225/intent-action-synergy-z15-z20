@@ -6,6 +6,7 @@ import numpy as np
 
 MAX_JSON=65536
 MAX_JPEG=1024*1024
+MAX_GEOMETRY=(65536+1024)*16
 
 
 def _reject_constant(value):
@@ -28,9 +29,12 @@ def write_json(stream,value):
 
 
 def _frame_meta(meta):
+    geometry=meta.get('kind')=='geometry'
+    maximum=MAX_GEOMETRY if geometry else MAX_JPEG
     if (not isinstance(meta.get('session'),str) or not re.fullmatch('[0-9a-f]{32}',meta['session'])
             or any(type(meta.get(k)) is not int or meta[k]<0 for k in ('epoch','sequence','length'))
-            or not 1<=meta['length']<=MAX_JPEG):
+            or meta.get('kind') not in (None,'jpeg','geometry')
+            or not (0 if geometry else 1)<=meta['length']<=maximum):
         raise ValueError('invalid frame envelope')
 
 
@@ -47,6 +51,60 @@ def read_frame(stream):
 def write_frame(stream,session,epoch,sequence,jpeg):
     meta=dict(session=session,epoch=epoch,sequence=sequence,length=len(jpeg))
     _frame_meta(meta);write_json(stream,meta);stream.write(jpeg);stream.flush()
+
+
+class GeometryFrame:
+    """Owned geometry; coordinate units and source identity survive transport."""
+    def __init__(self,points,colors=None,*,trajectory=(),units='m',frame_id='',metric_verified=False):
+        def xyz(value,maximum):
+            value=np.asarray(value,np.float64)
+            if not value.size:value=np.empty((0,3),np.float64)
+            if (value.ndim!=2 or value.shape[1]!=3 or len(value)>maximum
+                    or not np.isfinite(value).all() or np.max(np.abs(value),initial=0)>2048):
+                raise ValueError('geometry coordinates exceed contract')
+            result=np.array(value,copy=True);result.flags.writeable=False;return result
+        self.points,self.trajectory=xyz(points,65536),xyz(trajectory,1024)
+        if colors is None:colors=np.tile([90,210,240],(len(self.points),1))
+        colors=np.asarray(colors)
+        if colors.shape!=self.points.shape or colors.dtype.kind not in 'iu' or np.any(colors<0) or np.any(colors>255):
+            raise ValueError('geometry RGB contract')
+        self.colors=colors.astype(np.uint8,copy=True);self.colors.flags.writeable=False
+        if (not isinstance(units,str) or not 1<=len(units)<=64 or not isinstance(frame_id,str)
+                or len(frame_id)>128 or type(metric_verified) is not bool):raise ValueError('geometry metadata')
+        self.units,self.frame_id,self.metric_verified=units,frame_id,metric_verified
+
+    def packed(self):
+        xyz=np.concatenate((self.points,self.trajectory))
+        rows=np.zeros((len(xyz),4),dtype='<i4')
+        rows[:,:3]=(np.sign(xyz)*np.floor(np.abs(xyz)*65536+.5)).astype(np.int32)
+        rgb=self.colors.astype(np.int32)
+        rows[:len(rgb),3]=(rgb[:,0]<<16)|(rgb[:,1]<<8)|rgb[:,2]
+        rows[len(rgb):,3]=0xffc440
+        return rows.tobytes()
+
+
+def write_geometry(stream,session,epoch,sequence,geometry):
+    if not isinstance(geometry,GeometryFrame):raise ValueError('expected owned geometry')
+    raw=geometry.packed()
+    meta=dict(session=session,epoch=epoch,sequence=sequence,length=len(raw),kind='geometry',schema=1,
+              point_count=len(geometry.points),trajectory_count=len(geometry.trajectory),
+              units=geometry.units,frame_id=geometry.frame_id,metric_verified=geometry.metric_verified)
+    _frame_meta(meta);write_json(stream,meta);stream.write(raw);stream.flush()
+
+
+def decode_geometry(meta,raw):
+    _frame_meta(meta)
+    count,trail=meta.get('point_count'),meta.get('trajectory_count')
+    if (meta.get('kind')!='geometry' or meta.get('schema')!=1 or type(count) is not int
+            or type(trail) is not int or not 0<=count<=65536 or not 0<=trail<=1024
+            or meta['length']!=(count+trail)*16 or len(raw)!=meta['length']):
+        raise ValueError('geometry envelope size/count mismatch')
+    words=np.frombuffer(raw,dtype='<i4').reshape(-1,4)
+    if np.any(words[:,3]<0) or np.any(words[:,3]>0xffffff):raise ValueError('geometry packed RGB')
+    rgb=np.stack(((words[:count,3]>>16)&255,(words[:count,3]>>8)&255,words[:count,3]&255),axis=1).astype(np.uint8)
+    return GeometryFrame(words[:count,:3].astype(np.float64)/65536,rgb,
+        trajectory=words[count:,:3].astype(np.float64)/65536,units=meta.get('units'),
+        frame_id=meta.get('frame_id'),metric_verified=meta.get('metric_verified'))
 
 
 def jpeg_dimensions(data):

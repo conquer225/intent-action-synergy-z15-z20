@@ -1,0 +1,19 @@
+{
+  "top": "z15_fbcsp",
+  "part": "xc7z015clg485-2",
+  "source_sha256": {
+    "eeg.cpp": "f6e4512c5c9802f70c0e56d5ef8f251ffdf039d5164ba757597138e077286a2e",
+    "eeg_tb.cpp": "4eb3723c47dec6623463eea0d724939c861fc8422b8a61cdb2b9cb032aed6da7",
+    "eeg_vectors.h": "3a43bed028a3b639a5a022169525d339e724518c6e4bbb4084ef3e982be7aaa1",
+    "log_table.h": "11568f8b3d6f49b89df307b29c3b546cf8fcb61a93d91edac6bf576917d24dae"
+  },
+  "cosim": true,
+  "resources": {
+    "BRAM_18K": "25",
+    "DSP": "55",
+    "FF": "10768",
+    "LUT": "14658",
+    "URAM": "0"
+  },
+  "report": "C:\\work\\intent_pl_eeg_20261107_final\\kernel\\solution\\syn\\report\\z15_fbcsp_csynth.xml"
+}

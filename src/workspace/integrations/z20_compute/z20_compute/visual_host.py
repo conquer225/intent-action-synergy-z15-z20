@@ -7,16 +7,17 @@ from urllib.request import urlopen
 import numpy as np
 from .visual_server import DemoClient,DemoServer
 from .visual_demo import DemoState
-from .visual_wire import write_json,read_json,write_frame
+from .visual_wire import write_json,read_json,write_frame,GeometryFrame,write_geometry
 from .wireless_only import require_wireless
 
 ROOT=Path(__file__).resolve().parents[1]
 
 
 class VisualHost:
-    def __init__(self,host,token,*,control_port=9022,frame_port=9023,http_port=9021,model=None,replay_npy=None):
+    def __init__(self,host,token,*,control_port=9022,frame_port=9023,http_port=9021,model=None,replay_npy=None,map_manifest=None):
         self.host,self.token,self.control_port,self.frame_port,self.http_port=host,token,control_port,frame_port,http_port
         self.model,self.replay_npy=model,replay_npy
+        self.map_manifest,self.spatial_context=map_manifest,None
         self.lock=threading.Lock();self.stopped=threading.Event()
         self.state={};self.cloud=dict(valid=False);self.images={};self.spatial_key=None
         self.renderer=self.controller=None;self.pending=None;self.sent=0;self.dropped=0;self.sequence=0
@@ -35,7 +36,7 @@ class VisualHost:
             return value
 
     def command(self,name):
-        if name not in ('left','right','enter','back','stop','recorded_sound_0','recorded_sound_1','recorded_sound_2'):raise ValueError('unknown demo action')
+        if name not in ('left','right','enter','back','stop','recorded_sound_0','recorded_sound_1','recorded_sound_2','map_pl','map_original'):raise ValueError('unknown demo action')
         with self.lock:client=self.controller
         if client is None:raise ConnectionError('board control channel unavailable')
         result=client.command(name)
@@ -74,6 +75,15 @@ class VisualHost:
                                     and state['epoch']<self.state.get('epoch',-1)):
                                 continue
                             self.state=state
+                            previous=self.spatial_context
+                            reuse=(previous is not None and previous['session']==state['session']
+                                and previous['epoch']+1==state['epoch']
+                                and not previous['menu'] and not state['menu']
+                                and previous['mode']==state['mode']=='spatial'
+                                and previous.get('map_backend')!=state.get('map_backend')
+                                and self.cloud.get('valid',False))
+                            self.spatial_context=state
+                            if reuse:self.spatial_key=key
                             if key!=self.spatial_key:
                                 self.cloud=dict(valid=False);self.images={}
                             start=(not state['menu'] and state['mode']=='spatial' and key!=self.spatial_key and not self.depth_busy)
@@ -104,10 +114,24 @@ class VisualHost:
                     with sock.makefile('rwb') as stream:
                         write_json(stream,dict(token=self.token,session=session))
                         if not read_json(stream).get('ok'):raise PermissionError('frame channel rejected')
+                        geometry_sent=None;geometry_at=0.
                         while not self.stopped.is_set():
                             with self.lock:
-                                pending=self.pending;self.pending=None;current=self.state.copy()
+                                pending=self.pending;self.pending=None;current=self.state.copy();cloud=dict(self.cloud)
                             if current.get('session')!=session:break
+                            if (not current.get('menu') and current.get('mode')=='spatial'
+                                    and current.get('map_backend')=='pl'):
+                                geometry_key=(current.get('epoch'),cloud.get('id'))
+                                if cloud.get('valid') and (geometry_key!=geometry_sent or time.monotonic()-geometry_at>.75):
+                                    points=np.asarray(cloud['points'],np.float64).reshape(-1,3)
+                                    colors=np.rint(np.asarray(cloud['colors'],np.float64).reshape(-1,3)*255).astype(np.uint8)
+                                    scene=GeometryFrame(points,colors,trajectory=cloud.get('trajectory',()),
+                                        units=cloud['units'],frame_id=cloud['id'],metric_verified=cloud.get('metric_verified',False))
+                                    self.sequence+=1
+                                    write_geometry(stream,session,current['epoch'],self.sequence,scene)
+                                    if read_json(stream).get('accepted'):
+                                        self.sent+=1;geometry_sent=geometry_key;geometry_at=time.monotonic()
+                                self.stopped.wait(.02);continue
                             if pending:
                                 jpeg,binding=pending
                                 if binding['epoch']!=current.get('epoch'):continue
@@ -120,6 +144,18 @@ class VisualHost:
     def _depth(self,key):
         import cv2
         try:
+            if self.map_manifest is not None:
+                from .map_source import load_fusion_geometry
+                geometry=load_fusion_geometry(self.map_manifest)
+                cloud=dict(valid=True,id=geometry.frame_id,units=geometry.units,
+                    metric_verified=geometry.metric_verified,points=geometry.points.ravel().tolist(),
+                    colors=(geometry.colors.astype(float)/255).ravel().tolist(),
+                    trajectory=geometry.trajectory.tolist())
+                with self.lock:
+                    if key!=(self.state.get('session'),self.state.get('epoch')):return
+                    self.cloud=cloud
+                self.depth_message='点云与已知位姿轨迹已载入'
+                return
             self.depth_message='正在读取相机画面'
             if self.replay_npy:
                 original=np.load(self.replay_npy,allow_pickle=False)
@@ -171,6 +207,13 @@ class _Handler(BaseHTTPRequestHandler):
         elif path=='/api/cloud':
             with host.lock:body=json.dumps(host.cloud).encode()
             kind='application/json'
+        elif path=='/api/pl-map.png':
+            try:
+                with urlopen('http://%s:%d/frame.png'%(host.host,host.http_port),timeout=2) as response:
+                    body=response.read(4*1024*1024+1)
+                if len(body)>4*1024*1024 or not body.startswith(b'\x89PNG\r\n\x1a\n'):raise ValueError('map preview')
+            except (OSError,ValueError):self.send_error(503);return
+            kind='image/png'
         elif path in ('/api/original.png','/api/depth.png'):
             with host.lock:body=host.images.get(path.split('/')[-1])
             if body is None:self.send_error(404);return
@@ -213,10 +256,12 @@ def main():
     parser.add_argument('--host',required=True);parser.add_argument('--token-file',type=Path,required=True)
     parser.add_argument('--model',type=Path);parser.add_argument('--offline',action='store_true')
     parser.add_argument('--replay-npy',type=Path);parser.add_argument('--seconds',type=float,default=0)
+    parser.add_argument('--map-manifest',type=Path,help='existing depth_npz/camera_to_world fusion manifest')
     parser.add_argument('--output',type=Path,default=ROOT/'artifacts/visual-demo/pc-run.json')
     args=parser.parse_args();route=require_wireless(args.host,allow_loopback=args.offline)
     if args.replay_npy and not args.offline:parser.error('recorded camera input is offline-only')
-    host=VisualHost(args.host,args.token_file.read_text().strip(),model=args.model,replay_npy=args.replay_npy).start()
+    host=VisualHost(args.host,args.token_file.read_text().strip(),model=args.model,replay_npy=args.replay_npy,
+                    map_manifest=args.map_manifest).start()
     server=start_http(host)
     from playwright.sync_api import sync_playwright
     from .visual_profile import CaptureProfile

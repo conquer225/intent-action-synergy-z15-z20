@@ -1,0 +1,26 @@
+
+test_offline_board_uses_real_recorded_features_and_never_claims_pl (test_visual_offline.OfflineTests.test_offline_board_uses_real_recorded_features_and_never_claims_pl) ... ERROR
+test_waiting_for_new_eeg_window_does_not_show_a_previous_prediction (test_visual_offline.OfflineTests.test_waiting_for_new_eeg_window_does_not_show_a_previous_prediction) ... FAIL
+
+======================================================================
+ERROR: test_offline_board_uses_real_recorded_features_and_never_claims_pl (test_visual_offline.OfflineTests.test_offline_board_uses_real_recorded_features_and_never_claims_pl)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\work\intent_runtime_pl_final\integrations\z20_compute\tests\test_visual_offline.py", line 47, in test_offline_board_uses_real_recorded_features_and_never_claims_pl
+    self.assertEqual(trace['backend'],'PS_integer_reference')
+                     ~~~~~^^^^^^^^^^^
+KeyError: 'backend'
+
+======================================================================
+FAIL: test_waiting_for_new_eeg_window_does_not_show_a_previous_prediction (test_visual_offline.OfflineTests.test_waiting_for_new_eeg_window_does_not_show_a_previous_prediction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\work\intent_runtime_pl_final\integrations\z20_compute\tests\test_visual_offline.py", line 25, in test_waiting_for_new_eeg_window_does_not_show_a_previous_prediction
+    self.assertTrue(entered.wait(1));time.sleep(.08)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 2 tests in 3.812s
+
+FAILED (failures=1, errors=1)

@@ -7,7 +7,7 @@
 ```sh
 python -X utf8 -B build/verify_package.py
 python -X utf8 -B build/restore_workspace.py --output C:/work/intent_action_runtime
-python -m pip install "numpy>=1.24" scipy pillow
+python -m pip install "numpy>=1.24" scipy pillow opencv-python
 python -X utf8 -B sim/run_checks.py --workspace C:/work/intent_action_runtime --output C:/work/intent_action_checks
 ```
 
@@ -25,4 +25,10 @@ python -X utf8 -B sim/run_checks.py --workspace C:/work/intent_action_runtime --
 
 Z20 先从 BD Tcl 重建工程及 IP runs，再执行综合、实现和导出；历史 `implement.tcl` 所引用的生成目录不能直接代替这一步。Z15 信号版本需要相应视觉/FFT HLS 导出。检查匹配版本的时序、资源、CDC、DRC 和配套摘要后，才进入实际板卡流程。
 
-Z15 使用匹配 PYNQ/Linux 介质；Z20 原环境为 ARMv7 Linux 5.4.0-xilinx-v2020.2，内核、设备树、UIO、驱动及 `.so` 须匹配 ABI。本仓库没有完整 SD 系统镜像。现有证据覆盖公开副本恢复和指定离线测试，尚未在干净机器上验收全套 FPGA 与整机启动链。
+Z15 使用匹配的 PYNQ/Linux 介质；Z20 原环境为 ARMv7 Linux 5.4.0-xilinx-v2020.2，内核、设备树、UIO、驱动及 `.so` 按此 ABI 配套。系统介质采用对应板卡发行版，固件由本仓库构建入口及匹配的厂商 IP 生成。
+
+## Z15 脑电 PL 与 Z20 地图绘制
+
+新增核的构建、训练导出、部署参数和切换方式集中在 [PL 说明](pl_accel.md)。先运行 `build/pl_vectors.py --check` 与 `sim/test_pl_*.py`，再使用 Vitis HLS 2023.1 构建两核、导出 IP，并用 `build/pl_platform.py` 加入对应原整机。
+
+模型训练在恢复工程根目录执行 `python -m integrations.pl_accel.train`；采集服务追加 `--pl-mi-model` 和配套 `--pl-mi-hwh`。地图显示追加 `--pl-map`，电脑端以 `--map-manifest` 接入已有融合清单。几何和原图分别传输，空间页显式选择绘制后端。

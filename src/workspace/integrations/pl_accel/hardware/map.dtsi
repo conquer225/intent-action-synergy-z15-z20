@@ -1,0 +1,24 @@
+/* Append to the current Navigator CLG400 device tree; keep its existing nodes. */
+/ {
+    reserved-memory {
+        #address-cells = <1>;
+        #size-cells = <1>;
+        ranges;
+        map@6000000 {
+            reg = <0x06000000 0x01000000>;
+            no-map;
+        };
+    };
+    map@83c40000 {
+        compatible = "generic-uio";
+        linux,uio-name = "navigator-map";
+        reg = <0x83c40000 0x10000>;
+        status = "okay";
+    };
+    map-dma@6000000 {
+        compatible = "generic-uio";
+        linux,uio-name = "navigator-map-dma";
+        reg = <0x06000000 0x01000000>;
+        status = "okay";
+    };
+};

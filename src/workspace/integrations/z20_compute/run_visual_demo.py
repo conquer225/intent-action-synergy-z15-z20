@@ -12,6 +12,8 @@ def main():
     parser.add_argument('action',choices=('init-config','verify','doctor','board','pc'))
     parser.add_argument('--config',type=Path,default=ROOT/'private/demo.json')
     parser.add_argument('--host');parser.add_argument('--seconds',type=float,default=0)
+    parser.add_argument('--pl-map',action='store_true',help='board: enable the selectable PL map renderer')
+    parser.add_argument('--map-manifest',type=Path,help='pc: reuse an existing known-pose fusion manifest')
     args=parser.parse_args()
     if args.action=='init-config':
         import ipaddress
@@ -50,12 +52,14 @@ def main():
             '--display-assets',str(ROOT/'assets/display'),'--sound-root',str(ROOT/'assets/sound'),
             '--media-root',str(ROOT/'media'),'--hdmi','--visual-token-file',str(token),
             '--visual-codec',str(ROOT/'assets/display/libz20_visual.so')]
+        if args.pl_map:command+=['--pl-map']
         (ROOT/'media').mkdir(exist_ok=True);(ROOT/'run').mkdir(exist_ok=True)
     else:
         require_wireless(row['host'])
         command=[sys.executable,'-m','z20_compute.visual_host','--host',row['host'],'--token-file',str(token),
             '--model',str(ROOT/'build/reconstruction/models/yolo26m-depth.pt')]
         if args.seconds:command+=['--seconds',str(args.seconds)]
+        if args.map_manifest:command+=['--map-manifest',str(args.map_manifest.resolve())]
     os.chdir(ROOT);os.execv(sys.executable,command)
 
 

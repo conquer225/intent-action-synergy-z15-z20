@@ -14,6 +14,7 @@ def create_release(output):
         for path in sorted(Path(source).rglob('*')):
             if path.is_file() and '__pycache__' not in path.parts:add(path,target+'/'+path.relative_to(source).as_posix())
     tree(HERE/'z20_compute','z20_compute');tree(HERE/'web/visual_demo','web/visual_demo')
+    tree(HERE.parent/'pl_accel','pl_accel')
     tree(HERE/'third_party/visual','third_party/visual')
     payload['web/visual_demo/LICENSE']=payload['third_party/visual/spectrum/LICENSE']
     for row in json.loads(payload['third_party/visual/sources.json'])['files']:
